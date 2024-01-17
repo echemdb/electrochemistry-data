@@ -1,0 +1,24 @@
+name: Validate Examples
+
+on:
+  push: { branches: [ "main" ] }
+  pull_request: { branches: [ "main" ] }
+
+jobs:
+  verify-file-schemas:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        file: [autotag, svgdigitizer]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with: { submodules: recursive }
+      - name: Install Dependencies
+        shell: bash -l {0}
+        run: |
+          pip install check-jsonschema
+      - name: Check svgdigitizer yaml
+        shell: bash -l {0}
+        run: |
+            find ./literature/ -name "*.yaml" | parallel check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/main/schemas/svgdigitizer.json {} --no-cache
