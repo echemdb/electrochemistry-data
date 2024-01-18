@@ -1,0 +1,7 @@
+name: echemdb-data
+channels:
+  - conda-forge
+dependencies:
+  - svgdigitizer>=0.10,<0.11
+  - pip:
+    - check-jsonschema
