@@ -30,6 +30,10 @@ jobs:
         shell: bash -l {0}
         run:
           zip -r data.zip generated/svgdigitizer
+      - name: Rename Files
+        shell: bash -l {0}
+        run: |
+          mv data.zip data-${{ github.ref_name }}.zip
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
