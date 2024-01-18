@@ -4,7 +4,7 @@ experimental:
   tags:
   - BCV
   instrumentation:
-  - supplier: Biologic
+  - name: Biologic
     type: potentiostat
 system:
   type: electrochemical
@@ -13,11 +13,12 @@ system:
       function: counter electrode
       crystallographic orientation: poly
       material: Au
-      shape: mesh
+      shape:
+        type: mesh
     - name: REF
       function: reference electrode
       source:
-        supplier: homemade
+        manufacturer: homemade
       type: RHE
     - name: WE
       function: working electrode
@@ -25,7 +26,9 @@ system:
       geometric electrolyte contact area:
         unit: 1 / cm2
       material: Cu
-      preparation procedure: Sputter and heating under UHV conditions.
+      preparation procedure:
+        description:
+          - Sputter and heating under UHV conditions.
       shape:
         diameter:
           unit: mm
@@ -35,7 +38,7 @@ system:
           value: 2
         type: head shaped
       source:
-        supplier: Mateck
+        manufacturer: Mateck
   electrolyte:
     components:
     - name: water

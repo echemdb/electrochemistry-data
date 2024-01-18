@@ -7,9 +7,6 @@ on:
 jobs:
   verify-file-schemas:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        file: [autotag, svgdigitizer]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
