@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="6526px"
+   version="1.1"
+   width="4875px"
+   id="svg106"
+   sodipodi:docname="briega_martos_2018_understanding_j3045_p1_f1b_blue.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview108"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="0.28041562"
+     inkscape:cx="146.21154"
+     inkscape:cy="3865.6905"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg106" />
+  <defs
+     id="defs102" />
+  <image
+     height="6526px"
+     sodipodi:insensitive="true"
+     width="4875px"
+     x="0"
+     xlink:href="briega_martos_2018_understanding_j3045_p1.png"
+     y="0"
+     id="image104" />
+  <g
+     id="g12819"
+     transform="translate(1213.2244,4.237986)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1232.4786,3532.6633 -162.2497,-49.9122"
+       id="path223" />
+    <text
+       xml:space="preserve"
+       style="font-size:85.3333px;line-height:1.25;font-family:sans-serif"
+       x="591.50183"
+       y="3450.0566"
+       id="text2367"><tspan
+         sodipodi:role="line"
+         id="tspan2365"
+         x="591.50183"
+         y="3450.0566">j2: 400 uA / cm2</tspan></text>
+  </g>
+  <g
+     id="g12814"
+     transform="translate(1213.2244,4.237986)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1232.4786,4049.7405 -221.0692,37.4538"
+       id="path225" />
+    <text
+       xml:space="preserve"
+       style="font-size:85.3333px;line-height:1.25;font-family:sans-serif"
+       x="471.95712"
+       y="4179.2319"
+       id="text6877"><tspan
+         sodipodi:role="line"
+         id="tspan6875"
+         x="471.95712"
+         y="4179.2319">j1: -400 uA / cm2</tspan></text>
+  </g>
+  <g
+     id="g12824"
+     transform="translate(1213.2244,4.237986)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1353.7671,4081.8288 -1.8806,92.7316"
+       id="path227" />
+    <text
+       xml:space="preserve"
+       style="font-size:85.3333px;line-height:1.25;font-family:sans-serif"
+       x="1328.7976"
+       y="4229.812"
+       id="text8987"><tspan
+         sodipodi:role="line"
+         id="tspan8985"
+         x="1328.7976"
+         y="4229.812">E1: 0.1 V vs RHE</tspan></text>
+  </g>
+  <g
+     id="g12829"
+     transform="translate(1213.2244,4.237986)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 2321.9372,4081.8288 -94.55,133.7187"
+       id="path229" />
+    <text
+       xml:space="preserve"
+       style="font-size:85.3333px;line-height:1.25;font-family:sans-serif"
+       x="2227.3872"
+       y="4256.561"
+       id="text11553"><tspan
+         sodipodi:role="line"
+         id="tspan11551"
+         x="2227.3872"
+         y="4256.561">E2: 0.9 V vs RHE</tspan></text>
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-size:85.3333px;line-height:1.25;font-family:sans-serif"
+     x="2778.9761"
+     y="4051.6394"
+     id="text25387"><tspan
+       sodipodi:role="line"
+       id="tspan25385"
+       x="2778.9761"
+       y="4051.6394">scan rate: 50 mV / s</tspan></text>
+  <g
+     id="g57171">
+    <text
+       xml:space="preserve"
+       style="font-size:85.3333px;line-height:1.25;font-family:sans-serif"
+       x="2517.8291"
+       y="3221.7373"
+       id="text15141"><tspan
+         sodipodi:role="line"
+         x="2517.8291"
+         y="3221.7373"
+         id="tspan51906">curve: blue</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 2512.8744,3824.7773 0.888,-25.8526 v -16.9406 l 3.5783,-6.6807 16.0369,-4.9074 14.731,-1.7798 11.5706,-2.2313 9.8206,-3.5661 8.4625,-2.6762 12.0407,-1.3348 11.1266,1.7863 13.8169,-1.3414 11.1527,-8.467 8.9065,-14.2644 6.2423,-16.4956 5.7984,-22.7314 5.3544,-27.1939 4.0222,-20.0552 1.7761,-6.6873 3.5522,-5.7973 4.0223,8.0286 3.5782,13.3679 3.5522,21.8415 5.3543,24.5178 5.3544,20.9516 8.9065,21.8415 9.7945,13.8194 12.0407,9.8084 8.0185,2.6697 7.1565,1.7863 3.5522,-1.3414 3.1342,-7.1322 1.7761,-10.6917 3.1081,-2.2313 2.6903,8.467 7.1304,11.1433 5.7984,4.011 12.0146,5.3524 9.3766,2.2313 17.813,1.3348 23.1935,1.3349 59.2895,0.4449 653.2706,-1.4703 v 4.4139 l -682.7158,1.8878 -44.1436,1.2585 -25.2283,1.8969 -24.5635,2.517 -11.3397,6.3017 -8.8281,10.7157 -3.8046,10.0865 -2.5117,9.4571 -2.5118,-13.8711 -2.5487,-12.6034 -4.3955,-1.8878 -8.8281,2.517 -10.7119,6.931 -8.2001,8.8279 -6.3163,11.345 -7.5353,16.3973 -4.4324,18.9052 -3.5205,16.9533 -5.0604,25.5353 -3.7676,16.3882 -2.5303,11.0303 -2.5117,8.5133 -2.8442,-4.0993 -6.6118,-19.229 -3.4721,-28.0524 -5.6699,-32.7762 -6.3163,-19.2291 -8.8281,-14.5004 -10.3979,-7.5648 -7.8677,-2.5216 -12.6141,2.207 -9.1421,0.9485 -12.3002,-2.207 -8.8096,-3.4701 -13.556,-3.7801 h -15.4584 l -9.7699,2.5216 z"
+       id="path57086" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+     x="-656.16888"
+     y="3245.1831"
+     id="text2747"><tspan
+       sodipodi:role="line"
+       id="tspan2745"
+       x="-656.16888"
+       y="3245.1831">Figure: 1b</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+     x="-663.30115"
+     y="3387.8284"
+     id="text3499"><tspan
+       sodipodi:role="line"
+       id="tspan3497"
+       x="-663.30115"
+       y="3387.8284">Tags: BCV</tspan></text>
+</svg>

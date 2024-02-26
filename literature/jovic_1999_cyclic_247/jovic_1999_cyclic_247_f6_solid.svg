@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="7176px"
+   version="1.1"
+   width="5825px"
+   id="svg20603"
+   sodipodi:docname="jovic_1999_cyclic_247_f6_solid.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata28">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     id="namedview20605"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="0.10493311"
+     inkscape:cx="5374.8525"
+     inkscape:cy="6108.6533"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg20603" />
+  <defs
+     id="defs20599" />
+  <image
+     xlink:href="jovic_1999_cyclic_247_p3.png"
+     id="image20601"
+     y="0"
+     x="0"
+     width="5825px"
+     sodipodi:insensitive="true"
+     height="7176px" />
+  <g
+     id="g40553">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.14398px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 3029.0715,3480.6204 -176.1678,-214.314"
+       id="path20640" />
+    <text
+       xml:space="preserve"
+       style="font-size:85.3333px;line-height:1.25;font-family:sans-serif"
+       x="2597.8938"
+       y="3250.8208"
+       id="text22982"><tspan
+         sodipodi:role="line"
+         id="tspan22980"
+         x="2597.8938"
+         y="3250.8208">j2: 25 uA / cm2</tspan></text>
+  </g>
+  <g
+     id="g40396">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 3037.4678,4624.2412 -209.603,71.4555"
+       id="path20642" />
+    <text
+       xml:space="preserve"
+       style="font-size:85.3333px;line-height:1.25;font-family:sans-serif"
+       x="2202.3848"
+       y="4770.7021"
+       id="text24900"><tspan
+         sodipodi:role="line"
+         id="tspan24898"
+         x="2202.3848"
+         y="4770.7021">j1: -25 uA / cm2</tspan></text>
+  </g>
+  <g
+     id="g40391">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 3183.9518,4736.215 -57.1644,562.178"
+       id="path20644" />
+    <text
+       xml:space="preserve"
+       style="font-size:85.3333px;line-height:1.25;font-family:sans-serif"
+       x="3102.9688"
+       y="5351.9658"
+       id="text27478"><tspan
+         sodipodi:role="line"
+         id="tspan27476"
+         x="3102.9688"
+         y="5351.9658">E1: -1.1 V vs SCE</tspan></text>
+  </g>
+  <g
+     id="g40386">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 4533.6373,4729.0771 452.674,319.2597"
+       id="path20646" />
+    <text
+       xml:space="preserve"
+       style="font-size:85.3333px;line-height:1.25;font-family:sans-serif"
+       x="4985.1206"
+       y="5080.4956"
+       id="text30056"><tspan
+         sodipodi:role="line"
+         id="tspan30054"
+         x="4985.1206"
+         y="5080.4956">E2: -0.2 V vs SCE</tspan></text>
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-size:85.3333px;line-height:1.25;font-family:sans-serif"
+     x="4742.1392"
+     y="4261.0356"
+     id="text36132"><tspan
+       sodipodi:role="line"
+       id="tspan36130"
+       x="4742.1392"
+       y="4261.0356">scan rate: 100 mV / s</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="5269.6191"
+     y="3638.2124"
+     id="text837"><tspan
+       sodipodi:role="line"
+       id="tspan835"
+       x="5269.6191"
+       y="3638.2124">comment: CV was obtained before cycling between 0.2 V and 0.5 V.</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+     x="5310.0508"
+     y="3773.6401"
+     id="text3898"><tspan
+       sodipodi:role="line"
+       id="tspan3896"
+       x="5310.0508"
+       y="3773.6401">Figure: 6</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+     x="5330.2666"
+     y="3894.9358"
+     id="text4562"><tspan
+       sodipodi:role="line"
+       id="tspan4560"
+       x="5330.2666"
+       y="3894.9358">Tags: BCV</tspan></text>
+  <g
+     id="g8483">
+    <text
+       xml:space="preserve"
+       style="font-size:85.3333px;line-height:1.25;font-family:sans-serif"
+       x="3369.948"
+       y="3293.7034"
+       id="text38914"><tspan
+         sodipodi:role="line"
+         id="tspan38912"
+         x="3369.948"
+         y="3293.7034">curve: solid</tspan></text>
+    <path
+       style="fill:none;stroke:#00ff00;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 3084.4033,3962.7432 c 44.9858,-4.1668 103.9747,2.1814 155.8311,-0.8423 73.3301,-4.2757 145.9941,-15.1098 219.0059,-23.1641 77.2034,-8.5166 164.1225,-6.3019 231.6408,-29.4815 72.1809,-24.7803 126.4925,-40.5851 187.8397,-126.3496 12.5921,-17.6039 43.5618,-115.9448 59.9498,-204.7623 15.4183,-83.5619 20.2334,-160.2717 30.1795,-157.8609 12.9149,3.1303 23.6523,136.6896 45.4859,203.4228 22.2632,68.046 44.4067,72.2812 93.9199,101.922 50.1592,30.0275 99.7052,55.6804 148.2501,82.9695 23.4708,13.1939 102.2247,42.1038 234.589,48.8551 53.015,2.7041 109.6919,-19.7643 153.3041,-16.0042 13.1741,1.1358 16.3575,359.4045 3.3694,361.7809 -29.547,5.406 -83.6215,10.4483 -127.192,14.7407 -57.7807,5.6924 -120.3256,2.9065 -176.8893,16.0044 -76.808,17.7856 -178.3486,63.36 -216.479,87.1811 -76.1777,47.5902 -106.3431,95.8421 -138.9845,158.7793 -31.3527,60.4526 -41.8922,197.7667 -53.5932,198.2635 -11.8363,0.5025 -22.912,-107.2524 -35.6938,-177.2053 -14.6508,-80.1819 -32.0704,-155.5308 -85.0753,-232.4831 -33.7245,-48.9609 -81.578,-76.3541 -149.0925,-83.3907 -77.0895,-8.0345 -148.4924,-4.6073 -232.4832,-6.7387 -91.9123,-2.3324 -134.084,-21.9428 -170.1507,-26.9546 -59.0237,-8.2018 -135.4235,-8.1581 -178.5741,-8.4233 -8.8959,-0.055 -12.5854,-179.0149 0.8424,-180.2587 z"
+       id="path5431"
+       sodipodi:nodetypes="sssssssssssssssssssssssss" />
+  </g>
+</svg>
