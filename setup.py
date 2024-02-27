@@ -20,9 +20,9 @@
 from distutils.core import setup
 
 setup(
-    name='electrochemistry_data',
+    name='echemdb_ecdata',
     version="0.2.1",
-    packages=['electrochemistry-data_ecdata'],
+    packages=['echemdb_ecdata'],
     license='GPL 3.0+',
     long_description=open('README.md').read(),
     include_package_data=True,
