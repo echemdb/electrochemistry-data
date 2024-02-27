@@ -1,4 +1,6 @@
 
+- [ ] Added a news file.
+
 # Adding Literature Checklist (delete if not applicable)
 
 For contributors and reviewers alike.
