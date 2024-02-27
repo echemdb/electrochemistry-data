@@ -12,14 +12,31 @@ described [here](https://echemdb.github.io/svgdigitizer/workflow.html).
 
 ## Accessing Data
 
+***Direct download***
+
 The resulting data can be downloaded as a ZIP from the release section.
 
 Alternatively you can use the [`unitpackages`](https://echemdb.github.io/unitpackage/) interface
 (see [`unitpackages` installation instructions](https://echemdb.github.io/unitpackage/installaton.html)).
 
-## Create Data Locally
+***From the API***
 
-To create the output data packages locally clone the repository
+Install the latest version of the module.
+
+```sh
+pip install git@github.com:echemdb/electrochemistry-data.git
+```
+
+In your preferred Python environment retrieve the URL via
+
+```py
+from echemdb_ecdata.url import ECHEMDB_DATABASE_URL
+ECHEMDB_DATABASE_URL
+```
+
+## Development
+
+Clone the repository
 
 ```sh
 git clone git@github.com:echemdb/electrochemistry-data.git
@@ -33,7 +50,9 @@ conda create -f environment.yaml
 conda activate echemdb-data
 ```
 
-Run the makefile in the `data` folder.
+***Create data locally***
+
+Run the makefile in the `data` folder to create data locally.
 
 ```sh
 cd data
