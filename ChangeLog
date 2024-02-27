@@ -3,3 +3,12 @@ electrochemistry-data Change Log
 ================================
 
 .. current developments
+
+v0.2.1
+====================
+
+**Added:**
+
+* Added rever to update version number in `url.py`` and update the ChangeLog.
+
+
