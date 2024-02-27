@@ -24,7 +24,7 @@ Alternatively you can use the [`unitpackages`](https://echemdb.github.io/unitpac
 Install the latest version of the module.
 
 ```sh
-pip install git@github.com:echemdb/electrochemistry-data.git
+pip install git+https://github.com/echemdb/electrochemistry-data.git
 ```
 
 In your preferred Python environment retrieve the URL via
