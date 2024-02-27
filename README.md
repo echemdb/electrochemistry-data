@@ -39,7 +39,7 @@ ECHEMDB_DATABASE_URL
 Clone the repository
 
 ```sh
-git clone git@github.com:echemdb/electrochemistry-data.git
+git clone git+pip install git@github.com:echemdb/electrochemistry-data.git
 cd electrochemistry-data
 ```
 
