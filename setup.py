@@ -24,6 +24,12 @@ setup(
     version="0.2.1",
     packages=['echemdb_ecdata'],
     license='GPL 3.0+',
-    long_description=open('README.md').read(),
+    description="a Python library to interact with a collection of frictionless datapackages",
+    long_description=open('README.md', encoding="UTF-8").read(),
+    long_description_content_type="text/markdown",
     include_package_data=True,
+    install_requires=[
+      "svgdigitizer>=0.11.0,<0.12.0",
+    ],
+    python_requires=">=3.9",
 )
