@@ -24,5 +24,5 @@ import os
 
 ECHEMDB_DATABASE_URL = os.environ.get(
     "ECHEMDB_DATABASE_URL",
-    "https://github.com/echemdb/electrochemistry-data/releases/download/0.2.0/data-0.2.0.zip",
+    "https://github.com/echemdb/electrochemistry-data/releases/download/0.2.1/data-0.2.1.zip",
 )

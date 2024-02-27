@@ -21,7 +21,7 @@ from distutils.core import setup
 
 setup(
     name='electrochemistry_data',
-    version='0.2.0',
+    version="0.2.1",
     packages=['echemdb_ecdata'],
     license='GPL 3.0+',
     long_description=open('README.md').read(),
