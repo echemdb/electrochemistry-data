@@ -29,7 +29,7 @@ jobs:
       - name: zip-data
         shell: bash -l {0}
         run:
-          zip -r data-${{ github.ref_name }}.zip data/generated/svgdigitizer
+          zip -r data-${{ github.ref_name }}.zip data/generated
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
