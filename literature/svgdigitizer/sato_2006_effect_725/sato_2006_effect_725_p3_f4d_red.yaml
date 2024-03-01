@@ -12,27 +12,27 @@ system:
           unit: volume percent
         source:
           refinement: Milli-Q SP-TOC
-          supplied purity:
+          purity:
             grade: ultrapure water
         purity:
-          total ionic conductivity:
+          total ion conductivity:
             value: 18.2
             unit: MOhm cm
       - name: H2SO4
         type: acid
         source:
           supplier: Cica-Merck
-          supplied purity:
+          purity:
             grade: ultrapure
         concentration:
           value: 7.5
-          unit: mol L⁻¹
+          unit: mol L-1
     ph:
       value: -1.468
       comment: Estimated with CurTiPot on extraction from publication using a temperature of 25°C.
     temperature:
       value: 25
-      unit: °C
+      unit: deg_C
     comment: The electrolyte was at room temperature.
   electrodes:
     - name: REF
