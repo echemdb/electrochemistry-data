@@ -1,0 +1,62 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  instrumentation:
+  - manufacturer: Ivium Technologies
+    name: Compactstat
+    type: potentiostat
+system:
+  type: electrochemical
+  electrodes:
+    - name: REF
+      function: reference electrode
+      type: Pt
+    - name: WE
+      function: working electrode
+      crystallographic orientation: '111'
+      source:
+        manufacturer: Mateck
+      material: Au
+      preparation procedure:
+         description:
+         - Flame annealing in butane flame.
+      shape:
+        type: disk
+  electrolyte:
+    components:
+    - name: BMP-TFSI
+      proportion:
+        unit: volume percent
+        value: 100
+      source:
+        supplier: IoLiTec
+      purity:
+        refinement: Vacuum dried at 100°C for 12 h, water content 225 ppm.
+      type: solvent
+    temperature:
+      unit: K
+      value: 298.15
+    type: ionic liquid
+  atmosphere:
+      type: glovebox
+      components:
+      - name: Ar
+        proportion:
+          value: 100
+        type: gas
+source:
+  citation key: wen_2015_potential-dependent_6062
+  url: https://doi.org/10.1002/anie.201501715
+  techniques:
+  - CV
+  - STM
+curation:
+  process:
+  - role: curator
+    name: Maren-Kathrin Heubach
+    orcid: https://orcid.org/0000-0002-3769-7169
+    date: 2022-08-24
+  - role: reviewer
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2024-02-29
