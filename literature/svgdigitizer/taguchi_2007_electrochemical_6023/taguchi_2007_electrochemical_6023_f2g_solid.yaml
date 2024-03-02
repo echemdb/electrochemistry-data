@@ -29,7 +29,7 @@ system:
       type: solvent
       source:
         refinement: Elga Purelab Ultra
-        supplied purity:
+        purity:
           grade: ultra-pure
           total ion conductivity:
             value: 18.2

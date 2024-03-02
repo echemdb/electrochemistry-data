@@ -55,7 +55,7 @@ system:
       type: gas
       source:
         supplier: MTI
-        supplied purity:
+        purity:
           grade: 6N
     temperature:
       unit: K

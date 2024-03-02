@@ -44,7 +44,7 @@ system:
         value: 100
       source:
         supplier: IoLiTec
-        supplied purity:
+        purity:
             grade: '>99%'
       purity:
         refinement: Vacuum dried at 80°C for 24 h.

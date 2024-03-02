@@ -26,7 +26,7 @@ system:
       type: solvent
       purity:
         grade: nanopure
-        total ionic conductivity:
+        total ion conductivity:
           value: 18
           unit: MOhm cm
     - name: H2SO4

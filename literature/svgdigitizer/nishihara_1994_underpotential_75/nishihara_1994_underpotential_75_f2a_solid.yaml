@@ -28,7 +28,7 @@ system:
     - name: Ar
       type: gas
       source:
-        supplied purity:
+        purity:
           value: 99.9995
           unit: percent
   electrodes:
