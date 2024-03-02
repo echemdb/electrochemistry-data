@@ -36,7 +36,7 @@ system:
       name: NaF
       source:
         supplier: Merck, Suprapur
-        supplied purity:
+        purity:
           value: 99.99
           unit: pct
       type: salt

@@ -14,23 +14,23 @@ system:
           refinement: Milli-Q
           quality: ultrapure water
         purity:
-          total ionic conductivity: { value: 18.2, unit: MOhm cm }
+          total ion conductivity: { value: 18.2, unit: MOhm cm }
           total organic carbon: { value: 3, unit: "ppb" }
       - name: H2SO4
         type: acid
         source:
           supplier: Merck
-          supplied purity:
+          purity:
             grade: suprapur
         concentration:
           value: 0.1
-          unit: mol L⁻¹
+          unit: mol L-1
     ph:
       value: 1.041
       comment: Estimated with CurTiPot on extraction from publication using a temperature of 25°C.
     temperature:
       value: 20
-      unit: °C
+      unit: deg_C
     comment: The electrolyte was at room temperature.
   electrodes:
     - name: REF

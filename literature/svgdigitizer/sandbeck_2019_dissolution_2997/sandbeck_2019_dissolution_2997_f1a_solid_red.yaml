@@ -20,7 +20,7 @@ system:
         refinement: PureLab Plus System, Elga
       purity:
         grade: ultrapure
-        total ionic conductivity:
+        total ion conductivity:
           value: 18.2
           unit: MOhm cm
     - name: HClO4
