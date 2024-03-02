@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    height="7017px"
    version="1.1"
    width="4959px"
    id="svg6"
-   sodipodi:docname="wen_2015_sipotential-dependent_6062_sf1_black.svg"
-   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
+   sodipodi:docname="wen_2015_potential-dependent_6062_sf1_black.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata
+     id="metadata42">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
   <sodipodi:namedview
      id="namedview8"
      pagecolor="#ffffff"
@@ -22,22 +36,23 @@
      showgrid="false"
      inkscape:snap-text-baseline="true"
      inkscape:zoom="0.33536431"
-     inkscape:cx="2093.246"
-     inkscape:cy="1574.4072"
+     inkscape:cx="2795.6664"
+     inkscape:cy="5585.8031"
      inkscape:window-width="1920"
-     inkscape:window-height="1017"
+     inkscape:window-height="1027"
      inkscape:window-x="-8"
-     inkscape:window-y="32"
+     inkscape:window-y="22"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg6" />
   <defs
      id="defs2" />
   <image
+     sodipodi:absref="E:\Github\echemdb\electrochemistry-data\literature\svgdigitizer\wen_2015_potential-dependent_6062\wen_2015_potential-dependent_6062_si_p2.png"
+     xlink:href="wen_2015_potential-dependent_6062_si_p2.png"
      height="7017px"
      sodipodi:insensitive="true"
      width="4959px"
      x="0"
-     xlink:href="wen_2015_sipotential-dependent_6062_si_p2.png"
      y="0"
      id="image4" />
   <text
@@ -49,7 +64,7 @@
        sodipodi:role="line"
        id="tspan11618"
        x="-948.81311"
-       y="1113.274">figure: 1black</tspan></text>
+       y="1113.274">figure: 1</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:40px;line-height:1.25;font-family:sans-serif;word-spacing:0px;fill:#000000"
@@ -190,10 +205,11 @@
        style="fill:none;stroke:#ff00ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 2566.803,1097.4605 c 0,0 -59.3207,4.246 -130.7254,30.8364 -19.8962,7.4092 -51.0585,-27.555 -82.2304,-28.9915 -93.2797,-4.2985 -202.5688,-4.551 -310.7363,11.0695 -41.635,6.0125 -88.1494,29.4804 -114.9118,61.9364 -89.4208,108.4447 -69.889,332.5594 -145.4848,394.2846 -23.1001,18.8616 -65.5619,-43.1089 -89.083,-24.7746 -49.2834,38.4156 -50.0762,691.0522 -50.0762,691.0522 0,0 -2.8172,-463.6735 15.8136,-695.7963 4.2823,-53.3539 14.5283,-107.8992 37.9525,-156.027 25.8436,-53.0988 82.6315,-90.8829 107.5321,-144.4305 59.9281,-128.8723 53.6298,-183.9398 85.9203,-185.5456 29.173,-1.4507 33.0344,21.3825 126.2449,27.1466 51.7306,3.199 121.9099,-5.8088 173.6855,-8.1704 72.3192,-3.2986 144.2506,1.3345 216.1186,-7.3796 37.9934,-4.6068 83.6539,-3.0179 114.3847,-25.8289 52.0901,-38.66563 86.7902,-141.23127 130.7253,-142.84901 41.3475,-1.52247 102.3135,84.97514 285.1711,119.12871 212.3678,39.6654 586.8747,29.198 635.0762,23.4381 7.6208,-0.9107 5.8484,21.7221 -1.4799,24.0026 -74.3732,23.1446 -242.7194,27.8998 -256.4244,27.8998 -13.7051,0 -127.6692,11.5112 -193.1062,10.979 -59.863,-0.4869 -124.2019,-8.9858 -184.0657,-9.3602 -202.4757,-1.2664 -374.2541,21.0848 -374.2541,21.0848"
        id="path14146"
-       sodipodi:nodetypes="csssssscsssssssssssssssc" />
+       sodipodi:nodetypes="csssssscsssssssssssssssc"
+       inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
-       style="font-size:53.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+       style="font-size:53.33330154px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
        x="3086.8054"
        y="843.3894"
        id="text5102"><tspan
@@ -202,4 +218,14 @@
          x="3086.8054"
          y="843.3894">curve: black</tspan></text>
   </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="3141.6255"
+     y="1699.4297"
+     id="text850"><tspan
+       sodipodi:role="line"
+       id="tspan848"
+       x="3141.6255"
+       y="1699.4297">tags: BCV</tspan></text>
 </svg>
