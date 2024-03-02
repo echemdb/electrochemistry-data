@@ -1,7 +1,7 @@
 # ********************************************************************
 #  This file is part of electrochemistry-data.
 #
-#        Copyright (C) 2022-2023 Albert Engstfeld
+#        Copyright (C) 2022-2024 Albert Engstfeld
 #        Copyright (C) 2022      Johannes Hermann
 #        Copyright (C) 2022      Julian Rüth
 #        Copyright (C) 2022      Nicolas Hörmann
@@ -49,7 +49,9 @@ $ACTIVITIES = [
 
 $VERSION_BUMP_PATTERNS = [
     ('setup.py', r"    version=", r'    version="$VERSION",'),
-    ('echemdb_ecdata/url.py', r'    "https://github.com/echemdb/electrochemistry-data/releases/download/0.2.0/data-0.2.0.zip",', r'    "https://github.com/echemdb/electrochemistry-data/releases/download/$VERSION/data-$VERSION.zip",')
+    ('echemdb_ecdata/url.py', r'def get_echemdb_database_url(version="', r'def get_echemdb_database_url(version="$VERSION"):'),
+    ('echemdb_ecdata/url.py', r'        >>> get_echemdb_database_url(version="', r'        >>> get_echemdb_database_url(version="$VERSION")')
+    ('echemdb_ecdata/url.py', r"        'https://github.com/echemdb/electrochemistry-data/releases/download/", r"        'https://github.com/echemdb/electrochemistry-data/releases/download/$VERSION/data-$VERSION.zip'")
 ]
 
 $CHANGELOG_FILENAME = 'ChangeLog'

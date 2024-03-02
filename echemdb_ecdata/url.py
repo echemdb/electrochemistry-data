@@ -1,6 +1,7 @@
 r"""
 URL to a ZIP containing the latest echemdb electrochemistry data.
 """
+
 # ********************************************************************
 #  This file is part of electrochemistry-data.
 #
@@ -22,7 +23,26 @@ URL to a ZIP containing the latest echemdb electrochemistry data.
 
 import os
 
-ECHEMDB_DATABASE_URL = os.environ.get(
-    "ECHEMDB_DATABASE_URL",
-    "https://github.com/echemdb/electrochemistry-data/releases/download/0.2.0/data-0.2.0.zip",
-)
+
+def get_echemdb_database_url(version="0.2.0"):
+    """Returns a URL to an asset of a certain version of the echemdb electrochemistry-data.
+
+    EXAMPLES:
+
+    By default a URL is returned with the most recent version::
+
+        >>> from echemdb_ecdata.url import get_echemdb_database_url
+        >>> get_echemdb_database_url()
+        'https://github.com/echemdb/electrochemistry-data/releases/download/0.2.0/data-0.2.0.zip'
+
+    A URL with a specific version can be created::
+
+        >>> from echemdb_ecdata.url import get_echemdb_database_url
+        >>> get_echemdb_database_url(version="0.2.0")
+        'https://github.com/echemdb/electrochemistry-data/releases/download/0.2.0/data-0.2.0.zip'
+
+    """
+    return os.environ.get(
+        "ECHEMDB_DATABASE_URL",
+        f"https://github.com/echemdb/electrochemistry-data/releases/download/{version}/data-{version}.zip",
+    )
