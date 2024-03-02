@@ -1,0 +1,66 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  instrumentation:
+  - name: pgstat 30 autolab
+    type: potentiostat
+system:
+  type: electrochemical
+  electrodes:
+    - name: CE
+      function: counter electrode
+      crystallographic orientation: poly
+      material: Pt
+      shape:
+        type: wire
+    - name: REF
+      function: reference electrode
+      type: leakless ag/agcl-3.4m kcl edaq electrode
+    - name: WE
+      function: working electrode
+      crystallographic orientation: '111'
+      geometric electrolyte contact area:
+        value: 0.03
+        unit: cm-2
+      material: Au
+      preparation procedure:
+        description:
+        - Annealed in butane flame, cooled in an Ar atmosphere.
+      shape:
+        type: polished bead
+      source:
+        manufacturer: Prepared by the Clavilier method.
+  electrolyte:
+    components:
+    - name: BMB-TFSI
+      proportion:
+        unit: volume percent
+        value: 100
+      source:
+        supplier: Solvionic
+        purity:
+          value: 99.5
+          unit: pct
+      purity:
+        refinement: Vacuum-dried at 60 to 80°C.
+      type: solvent
+    temperature:
+      unit: K
+      value: 298.15
+    type: ionic liquid
+source:
+  citation key: rudnev_2020_structural_501
+  url: https://doi.org/10.1002/celc.201902010
+  techniques:
+  - CV
+  - STM
+curation:
+  process:
+  - role: curator
+    name: Jerome Mayer
+    orcid: https://orcid.org/0000-0002-7451-9994
+    date: 2022-01-10
+  - role: reviewer
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2024-02-29
