@@ -1,0 +1,67 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  instrumentation:
+  - name: parstat 2263
+    type: potentiostat
+system:
+  type: electrochemical
+  electrodes:
+    - name: CE
+      function: counter electrode
+      crystallographic orientation: poly
+      material: Pt
+      shape:
+        type: wire
+    - name: REF
+      function: reference electrode
+      material: Pt
+      shape:
+        type: wire
+    - name: WE
+      function: working electrode
+      crystallographic orientation: '111'
+      geometric electrolyte contact area:
+        value: 0.3
+        unit: cm-2
+      material: Au
+      preparation procedure:
+         description:
+         - Annealed at 350°C for 4h under vacuum in a quartz ampule.
+      description: Au on mica
+      source:
+        manufacturer: Molecular Imaging
+  electrolyte:
+    components:
+    - name: BMB-TFSI
+      proportion:
+        unit: volume percent
+        value: 100
+      source:
+        supplier: MERCK/emd
+        purity:
+          grade: ultrapure
+      purity:
+        refinement: vacuum dried at 120 °C
+      type: solvent
+    temperature:
+      unit: K
+      value: 298.15
+    type: ionic liquid
+source:
+  citation key: atkin_2009_afm_13266
+  url: https://doi.org/10.1021/jp9026755
+  techniques:
+  - CV
+  - STM
+  - AFMn
+curation:
+  process:
+  - role: curator
+    name: Jerome Mayer
+    orcid: https://orcid.org/0000-0002-7451-9994
+    date: 2022-01-10
+  - role: reviewer
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2024-02-29
