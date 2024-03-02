@@ -50,7 +50,7 @@ $ACTIVITIES = [
 $VERSION_BUMP_PATTERNS = [
     ('setup.py', r"    version=", r'    version="$VERSION",'),
     ('echemdb_ecdata/url.py', r'def get_echemdb_database_url(version="', r'def get_echemdb_database_url(version="$VERSION"):'),
-    ('echemdb_ecdata/url.py', r'        >>> get_echemdb_database_url(version="', r'        >>> get_echemdb_database_url(version="$VERSION")')
+    ('echemdb_ecdata/url.py', r'        >>> get_echemdb_database_url(version="', r'        >>> get_echemdb_database_url(version="$VERSION")'),
     ('echemdb_ecdata/url.py', r"        'https://github.com/echemdb/electrochemistry-data/releases/download/", r"        'https://github.com/echemdb/electrochemistry-data/releases/download/$VERSION/data-$VERSION.zip'")
 ]
 
