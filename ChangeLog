@@ -4,6 +4,31 @@ electrochemistry-data Change Log
 
 .. current developments
 
+v0.3.0
+====================
+
+**Added:**
+
+* Added `atkin_2009_afm_13266` `f4_1` and `f4_2`.
+* Added `berger_2017_lithium_261_f1` black and pink trace.
+* Added `gasparotto_2009_in_11140` figure `f1_dashed.
+* Added `rudnev_2020_structural_501` figure `2c_1`.
+* Added `schuett_2021_electrodeposition_20461` figure `sf1_blue`.
+* Added `get_echemdb_database_url` to `echemdb_ecdata.url`, which allows creating a url of the echemdb database asset with a specific version.
+* Added `wen_2015_potential-dependent_6062` figures `f1_black`, `f1_blueinset` and `sf1_black`.
+
+**Changed:**
+
+* Changed `svgdigitizer` dependency from 0.11.0 to 0.12.0.
+* Changed directory for currently available literature data to `literature/svgdigitizer`.
+* Changed validation of SVG files against version 0.2.0 of the echemdb metadata schema.
+
+**Removed:**
+
+* Removed `ECHEMDB_DATABASE_URL` from `echemdb_ecdata.url`.
+
+
+
 v0.2.1
 ====================
 

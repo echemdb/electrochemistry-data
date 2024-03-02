@@ -1,3 +1,0 @@
-**Added:**
-
-* Added `atkin_2009_afm_13266` `f4_1` and `f4_2`.
