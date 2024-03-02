@@ -10,7 +10,7 @@ For contributors and reviewers alike.
 **Filename**
 
 - [ ] Words and identifiers in the filenames must be lowercase.
-- [ ] The filename must be of type `NAME_YEAR_FIRST-WORD_VOLUME_fxy_IDENTIFIER`, where x is the figure number and y the subfigure label, i.e., 2b. For supporting information figures, use `sfxy` instead.
+- [ ] The filename must be of type `<Name>_<Year>_<FirstWordFirstPage>_<FirstPageNumber>_<fxy>_<Identifier>`, where x is the figure number and y the subfigure label, i.e., 2b. For supporting information figures, use `sfxy` instead.
 - [ ] The figure number must match that of the figure in the article.
 
 **Bib file**
