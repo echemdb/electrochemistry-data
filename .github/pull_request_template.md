@@ -1,7 +1,7 @@
 
 - [ ] Added a news file.
 
-# Adding Literature Checklist (delete if not applicable)
+# Literature Addition Checklist <!-- (delete section if not applicable) -->
 
 For contributors and reviewers alike.
 
@@ -26,6 +26,7 @@ For contributors and reviewers alike.
 - [ ] Comments should be complete sentences ending with a period.
 - [ ] A `tags` text label should be included in the SVG indicating the type of measurement (BCV, ORR, COOR, etc).
 - [ ] The units on the axis should be identical to those in the figure.
+- [ ] Considered a possible scaling factor?
 
 **YAML**
 
