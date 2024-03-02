@@ -1,0 +1,73 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  instrumentation:
+  - manufacturer: Zahner Elektrik
+    name: Zahner IM6
+    type: potentiostat
+system:
+  type: electrochemical
+  electrodes:
+    - name: CE
+      function: counter electrode
+      crystallographic orientation: poly
+      material: Pt
+      source:
+        manufacturer: Mateck GmbH
+      shape:
+        type: wire
+    - name: REF
+      function: reference electrode
+      material: Zn
+      source:
+        manufacturer: Mateck GmbH
+        purity:
+          grade: '>99.99%'
+      type: sheet
+    - name: WE
+      function: working electrode
+      crystallographic orientation: '111'
+      material: Au
+      preparation procedure:
+         description:
+         - Annealed in a furnace in air at 960°C for 2h.
+      shape:
+        diameter:
+          unit: mm
+          value: 12
+        type: disk
+      source:
+        manufacturer: Mateck GmbH
+  electrolyte:
+    components:
+    - name: MPPi-TFSI
+      proportion:
+        unit: volume percent
+        value: 100
+      source:
+        supplier: IoLiTec
+        purity:
+            grade: '>99%'
+      purity:
+        refinement: Vacuum dried at 80°C for 24 h.
+      type: solvent
+    temperature:
+      unit: K
+      value: 298.15
+    type: ionic liquid
+source:
+  citation key: schuett_2021_electrodeposition_20461
+  url: https://doi.org/10.1002/anie.202107195
+  techniques:
+  - CV
+  - STM
+curation:
+  process:
+  - role: curator
+    name: Maren-Kathrin Heubach
+    orcid: https://orcid.org/0000-0002-3769-7169
+    date: 2024-02-28
+  - role: reviewer
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2024-02-29
