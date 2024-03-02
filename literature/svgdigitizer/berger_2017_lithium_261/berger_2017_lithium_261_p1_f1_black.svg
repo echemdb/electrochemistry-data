@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="6591px"
+   version="1.1"
+   width="4961px"
+   id="svg6"
+   sodipodi:docname="berger_2017_lithium_261_p1_f1_black.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="0.49036565"
+     inkscape:cx="1462.1742"
+     inkscape:cy="3677.8677"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
+  <defs
+     id="defs2" />
+  <image
+     height="6591px"
+     sodipodi:insensitive="true"
+     width="4961px"
+     x="0"
+     xlink:href="berger_2017_lithium_261_p1.png"
+     y="0"
+     id="image4" />
+  <g
+     id="g25925">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="672.96722"
+       y="4103.0605"
+       id="text1597"><tspan
+         sodipodi:role="line"
+         id="tspan1595"
+         x="672.96722"
+         y="4103.0605">E1: -3 V vs Pt</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 852.42512,4084.707 95.84685,-154.4766"
+       id="path1830"
+       sodipodi:nodetypes="cc" />
+  </g>
+  <g
+     id="g25920">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="1843.5223"
+       y="4062.2749"
+       id="text5926"><tspan
+         sodipodi:role="line"
+         id="tspan5924"
+         x="1843.5223"
+         y="4062.2749">E2: 0 V vs Pt</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1855.758,4039.8425 c 2.5491,-110.6317 2.5491,-110.6317 2.5491,-110.6317"
+       id="path6147"
+       sodipodi:nodetypes="cc" />
+  </g>
+  <g
+     id="g25930">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="522.05939"
+       y="3754.3413"
+       id="text7023"><tspan
+         sodipodi:role="line"
+         id="tspan7021"
+         x="522.05939"
+         y="3754.3413">j1: -1000 uA / cm2</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 740.26392,3738.0269 c 55.06096,-86.1601 55.06096,-86.1601 55.06096,-86.1601"
+       id="path10728"
+       sodipodi:nodetypes="cc" />
+  </g>
+  <g
+     id="g25935">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="497.58786"
+       y="2993.6843"
+       id="text11546"><tspan
+         sodipodi:role="line"
+         id="tspan11544"
+         x="497.58786"
+         y="2993.6843">j2: 500 uA / cm2</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 793.79541,2814.7363 675.0065,2981.4486"
+       id="path12835"
+       sodipodi:nodetypes="cc" />
+  </g>
+  <g
+     id="g25940">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 977.67533,3623.7435 c -7.66993,32.6981 9.85093,-273.8232 38.93397,-396.5497 27.6219,-116.5608 79.3099,-126.8959 79.3099,-126.8959 0,0 26.8589,-12.3753 259.5599,-10.094 156.2601,1.5319 167.7366,9.3642 231.0397,-7.21 58.9824,-10.7396 39.6333,-68.3364 102.1946,-37.6369 31.8629,19.178 71.0244,17.3761 91.4344,21.0539 48.7546,-1.6274 57.4622,-7.2536 77.1469,-5.047 44.702,4.326 23.793,4.326 40.376,2.884 47.6026,-4.1394 1.442,0 47.586,-4.326 46.1439,-4.326 0,0 46.1439,-4.326 17.2388,-1.6161 43.981,-15.862 62.006,-14.42 80.6998,6.456 80.7519,5.768 80.7519,5.768 -33.1413,13.9232 -19.2861,23.3434 -161.5039,37.492 -87.9715,8.7519 -84.066,8.8377 -175.9238,11.536 -68.0873,2.0001 -59.2669,0.7722 -139.8739,1.442 -66.58,0.5532 -28.2268,4.9575 -66.332,5.768 -41.0899,0.874 7.21,-2.884 -95.1719,-2.884 -61.3994,1.6511 -81.6518,-8.4174 -141.9857,15.862 -34.6159,-7.541 -77.8196,-8.578 -103.9989,-7.8798 -54.3176,1.4487 -110.1892,23.7418 -110.1892,23.7418 -37.741,37.4381 -134.1059,374.9197 -134.1059,374.9197 z"
+       id="path13300"
+       sodipodi:nodetypes="sscsccccsssssssssccsscs" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="1329.6201"
+       y="2940.6628"
+       id="text20813"><tspan
+         sodipodi:role="line"
+         id="tspan20811"
+         x="1329.6201"
+         y="2940.6628">curve: black</tspan></text>
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="864.66089"
+     y="3774.7341"
+     id="text26956"><tspan
+       sodipodi:role="line"
+       id="tspan26954"
+       x="864.66089"
+       y="3774.7341">scan rate: 50 mV / s</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="862.62158"
+     y="3823.6772"
+     id="text28378"><tspan
+       sodipodi:role="line"
+       id="tspan28376"
+       x="862.62158"
+       y="3823.6772">figure: 1</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="876.89667"
+     y="3699.2803"
+     id="text31064"><tspan
+       sodipodi:role="line"
+       id="tspan31062"
+       x="876.89667"
+       y="3699.2803">tags: BCV</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+     x="862.62158"
+     y="3852.2273"
+     id="text1311"><tspan
+       sodipodi:role="line"
+       id="tspan1309"
+       x="862.62158"
+       y="3852.2273">comment: 1st cycle</tspan></text>
+</svg>
