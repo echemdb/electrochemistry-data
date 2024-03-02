@@ -42,3 +42,8 @@ jobs:
         shell: bash -l {0}
         run: |
           pip install -e .
+      - name: test building packages
+        shell: bash -l {0}
+        run: |
+          cd data
+          make

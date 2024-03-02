@@ -27,7 +27,7 @@ CP=cp
 SAMPLING_INTERVAL=.001
 
 # The directory which we search for .yaml and .svg files to digitize.
-SOURCE_DIR=../literature
+SOURCE_DIR=../literature/svgdigitizer
 
 # All the .yaml files in SOURCE_DIR directory and its subdirectories.
 SOURCE_METADATA=${wildcard ${SOURCE_DIR}/**/*.yaml}
