@@ -32,7 +32,7 @@ system:
         manufacturer: Prepared by the Clavilier method.
   electrolyte:
     components:
-    - name: BMB-TFSI
+    - name: BMP-TFSI
       proportion:
         unit: volume percent
         value: 100

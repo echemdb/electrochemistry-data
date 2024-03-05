@@ -33,7 +33,7 @@ system:
         manufacturer: Molecular Imaging
   electrolyte:
     components:
-    - name: BMB-TFSI
+    - name: BMP-TFSI
       proportion:
         unit: volume percent
         value: 100
