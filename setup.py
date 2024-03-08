@@ -21,7 +21,7 @@ from distutils.core import setup
 
 setup(
     name='echemdb_ecdata',
-    version="0.3.0",
+    version="0.3.1",
     packages=['echemdb_ecdata'],
     license='GPL 3.0+',
     description="a Python library to interact with a collection of frictionless datapackages",
