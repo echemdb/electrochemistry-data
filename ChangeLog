@@ -4,6 +4,15 @@ electrochemistry-data Change Log
 
 .. current developments
 
+v0.3.2
+====================
+
+**Fixed:**
+
+* Fixed id and filenames for `schuett_2021_electrodeposition_20461`.
+
+
+
 v0.3.1
 ====================
 
