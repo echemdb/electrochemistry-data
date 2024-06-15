@@ -27,7 +27,7 @@ system:
         value: 0.1
       name: KClO4
       type: salt
-      purification: calcinated, twice recrystallized, and dried
+      purification: Purified by calcination, recrystallization, and drying.
       source:
         supplier: Fisher
         purity:
@@ -37,7 +37,7 @@ system:
         value: 1
       name: KOH
       type: salt
-      comment: Estimated concentration to adjust pH
+      comment: Estimated the concentration necessary to adjust pH.
       source:
         supplier: Merck
         purity:
