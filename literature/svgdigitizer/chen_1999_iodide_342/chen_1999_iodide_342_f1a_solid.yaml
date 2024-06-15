@@ -62,7 +62,7 @@ system:
       source:
         supplier: Aldrich
         purity: 
-          value: "99.99"
+          value: 99.99
           unit: percent
       type: salt
     ph:
