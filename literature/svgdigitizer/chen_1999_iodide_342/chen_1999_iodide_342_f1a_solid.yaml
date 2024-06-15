@@ -27,7 +27,7 @@ system:
         value: 0.1
       name: KClO4
       type: salt
-      purification: Purified by calcination, recrystallization, and drying.
+      # purification: Purified by calcination, recrystallization, and drying.
       source:
         supplier: Fisher
         purity:
@@ -62,7 +62,7 @@ system:
       source:
         supplier: Aldrich
         purity: 
-          value: ">99.99"
+          value: "99.99"
           unit: percent
       type: salt
     ph:
@@ -70,7 +70,7 @@ system:
     temperature:
       unit: deg_C
       value: 20
-      uncertainty: +-2
+      # uncertainty: +-2
     type: aqueous
 source:
   citation key: chen_1999_iodide_342
