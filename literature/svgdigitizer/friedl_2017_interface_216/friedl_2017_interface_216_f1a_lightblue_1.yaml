@@ -55,6 +55,10 @@ curation:
     name: Jerome Mayer
     orcid: https://orcid.org/0000-0002-7451-9994
     date: 2022-01-10
+  - role: curator
+    name: Maren-Kathrin Heubach
+    orcid: https://orcid.org/0000-0002-3769-7169
+    date: 2024-12-17
   - role: reviewer
     name: Albert Engstfeld
     orcid: https://orcid.org/0000-0002-9686-3948
