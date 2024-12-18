@@ -1,0 +1,79 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  instrumentation:
+  - manufacturer: CH Instruments
+    name: CHI631A
+    type: potentiostat
+system:
+  type: electrochemical
+  electrodes:
+    - name: CE
+      function: counter electrode
+      crystallographic orientation: poly
+      material: Li
+      shape:
+        type: ring
+    - name: REF
+      function: reference electrode
+      material: Li
+      shape:
+        type: wire
+    - name: WE
+      function: working electrode
+      crystallographic orientation: '111'
+      material: Au
+      preparation procedure:
+         description:
+         - Electrochemical polishing and flame annealing.
+      shape:
+        type: disk
+  electrolyte:
+    components:
+    - name: EMIm-TFSI
+      proportion:
+        unit: volume percent
+        value: 100
+      source:
+        supplier: IoLiTec
+        purity:
+            grade: '99%'
+      purity:
+        refinement: Vacuum dried at 80°C for 24 h.
+      type: solvent
+    - concentration:
+        unit: mol / l
+        value: 0.5
+      name: lithium bis(trifluoromethylsulfonyl)imide
+      source:
+        supplier: Aldrich
+        purity:
+            grade: '99.95%'
+      type: salt
+    temperature:
+      unit: K
+      value: 298.15
+    type: ionic liquid
+  atmosphere:
+      type: glovebox
+      components:
+      - name: Ar
+        proportion:
+          value: 100
+        type: gas
+source:
+  citation key: hu_2015_an_877
+  url: https://doi.org/10.1007/s11434-015-0746-7
+  techniques:
+  - CV
+  - STM
+curation:
+  process:
+  - role: curator
+    name: Maren-Kathrin Heubach
+    orcid: https://orcid.org/0000-0002-3769-7169
+    date: 2022-06-29
+  - role: reviewer
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2024-02-29
