@@ -30,7 +30,9 @@ system:
       source:
         manufacturer: MaTeck
       preparation procedure:
-        description: stored in oven at 960°C, annealed for 5 min by inductive heating in N2
+        description: 
+          - stored in oven at 960°C
+          - annealed for 5 min by inductive heating in N2
       geometric electrolyte contact area:
         value: 0.58
         unit: cm-2
