@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="7016px"
+   version="1.1"
+   width="4961px"
+   id="svg6"
+   sodipodi:docname="wallauer_2013_the_1143_p3_f3d_1.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:snap-bbox="true"
+     inkscape:snap-text-baseline="true"
+     inkscape:zoom="0.33541211"
+     inkscape:cx="2188.3527"
+     inkscape:cy="3851.9778"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
+  <defs
+     id="defs2" />
+  <image
+     height="7016px"
+     sodipodi:insensitive="true"
+     width="4961px"
+     x="0"
+     xlink:href="wallauer_2013_the_1143_p3.png"
+     y="0"
+     id="image4" />
+  <text
+     xml:space="preserve"
+     style="font-size:40px;line-height:1.25;font-family:sans-serif;word-spacing:0px"
+     x="73.786057"
+     y="3560.7043"
+     id="text37233"><tspan
+       sodipodi:role="line"
+       id="tspan37231"
+       x="73.786057"
+       y="3560.7043">scan rate: 100 mV / s</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:40px;line-height:1.25;font-family:sans-serif;word-spacing:0px"
+     x="145.46394"
+     y="3366.7524"
+     id="text40449"><tspan
+       sodipodi:role="line"
+       id="tspan40447"
+       x="145.46394"
+       y="3366.7524">figure: 3d lower</tspan></text>
+  <g
+     id="g43055">
+    <text
+       xml:space="preserve"
+       style="font-size:40px;line-height:1.25;font-family:sans-serif;word-spacing:0px"
+       x="573.4231"
+       y="3364.6443"
+       id="text9053"><tspan
+         sodipodi:role="line"
+         id="tspan9051"
+         x="573.4231"
+         y="3364.6443">j2: 40 uA / cm2</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1009.9516,3301.9082 -168.44948,62.7361"
+       id="path42949" />
+  </g>
+  <g
+     id="g43050">
+    <text
+       xml:space="preserve"
+       style="font-size:40px;line-height:1.25;font-family:sans-serif;word-spacing:0px"
+       x="562.8822"
+       y="3868.4976"
+       id="text20145"><tspan
+         sodipodi:role="line"
+         id="tspan20143"
+         x="562.8822"
+         y="3868.4976">j1: -40 uA / cm2</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1011.815,3793.4677 -135.65403,75.0299"
+       id="path42951" />
+  </g>
+  <g
+     id="g43045">
+    <text
+       xml:space="preserve"
+       style="font-size:40px;line-height:1.25;font-family:sans-serif;word-spacing:0px"
+       x="771.59137"
+       y="4035.0432"
+       id="text21655"><tspan
+         sodipodi:role="line"
+         id="tspan21653"
+         x="771.59137"
+         y="4035.0432">E1: -3 V vs. Fc0/Fc+</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1011.0696,3917.9414 0.7454,117.1018"
+       id="path42953" />
+  </g>
+  <g
+     id="g43040">
+    <text
+       xml:space="preserve"
+       style="font-size:40px;line-height:1.25;font-family:sans-serif;word-spacing:0px"
+       x="1787.7308"
+       y="4028.7188"
+       id="text32861"><tspan
+         sodipodi:role="line"
+         id="tspan32859"
+         x="1787.7308"
+         y="4028.7188">E2: 2 V vs. Fc0/Fc+</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1841.7642,3916.8234 17.143,111.8954"
+       id="path42955" />
+  </g>
+  <g
+     id="g9975">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1406.4149,3566.7653 c -41.0851,-0.9262 -67.1462,1.3934 -95.1312,11.8585 -26.5008,9.9101 -37.6453,66.8188 -60.5196,77.997 -5.7413,2.8056 -5.659,3.2681 -15.3108,11.5364 -16.4598,14.1004 -9.3859,42.9023 -23.9992,57.783 -3.8397,3.91 -11.2465,2.6504 -15.0659,6.5802 -16.3707,16.8441 -17.2421,61.7956 -26.3521,65.3534 -6.0496,2.3626 -11.8477,-20.8588 -22.1359,-25.2981 -3.8071,-1.6428 -12.2783,4.8841 -12.4306,0.4632 -0.2561,-7.4304 2.5251,-116.5784 20.3363,-171.2252 6.557,-20.1176 20.8924,-36.8029 31.0955,-55.3395 12.3186,-22.3801 17.4803,-50.2585 36.366,-67.4616 4.6557,-4.2409 11.3524,-9.161 17.3925,-7.3786 15.8308,4.6715 43.6328,35.6656 69.5697,45.3257 17.6128,6.5598 37.0748,7.9576 55.8666,7.6234 20.1954,-0.3591 40.7956,-3.2358 59.7102,-10.3225 18.433,-6.9063 25.1611,-29.5769 50.4738,-30.6535 12.3917,-0.527 35.1615,21.3472 54.7805,26.5011 13.4502,3.5333 35.4158,3.0202 41.6364,2.6352 31.3059,-1.9378 63.151,-8.1026 91.7055,-21.0817 5.0823,-2.3101 30.9275,-10.011 53.7585,-49.0151 0,0 2.7836,27.3444 0,40.5824 -2.9621,14.0871 -7.3707,29.1946 -17.3925,39.5282 -17.625,18.1735 -44.352,25.2536 -68.5475,32.7032 -15.4476,4.7561 -31.7786,6.7097 -47.929,7.3521 -20.3351,0.8089 -40.7194,-7.1228 -60.8923,-4.4347 -23.9634,3.1933 -59.9647,28.1324 -68.4306,24.0257 -38.4915,-18.6715 -48.5543,-15.6382 -48.5543,-15.6382"
+       id="path81"
+       sodipodi:nodetypes="csssaasasaaasaaasasssaaaaasc" />
+    <text
+       xml:space="preserve"
+       style="font-size:53.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="1571.6429"
+       y="3405.7537"
+       id="text2385"><tspan
+         sodipodi:role="line"
+         id="tspan2383"
+         x="1571.6429"
+         y="3405.7537">curve: solid</tspan></text>
+  </g>
+</svg>
