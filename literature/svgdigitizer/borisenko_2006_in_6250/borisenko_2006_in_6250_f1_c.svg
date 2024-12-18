@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="6601px"
+   version="1.1"
+   width="5100px"
+   id="svg6"
+   sodipodi:docname="borisenko_2006_in_6250_f1c.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:snap-text-baseline="true"
+     inkscape:zoom="0.35649924"
+     inkscape:cx="911.6429"
+     inkscape:cy="1318.3759"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
+  <defs
+     id="defs2" />
+  <image
+     height="6601px"
+     sodipodi:insensitive="true"
+     width="5100px"
+     x="0"
+     xlink:href="borisenko_2006_in_6250_p2.png"
+     y="0"
+     id="image4" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+     x="147.2654"
+     y="1604.4916"
+     id="text5109"><tspan
+       sodipodi:role="line"
+       id="tspan5107"
+       x="147.2654"
+       y="1604.4916">figure: 1</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 726.18288,1624.0233 H 1849.6075"
+     id="path6784" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+     x="-1567.9358"
+     y="1791.0765"
+     id="text8540"><tspan
+       sodipodi:role="line"
+       id="tspan8538"
+       x="-1567.9358"
+       y="1791.0765">comment: Baseline of the y-axis was not given and therby it was selected by the curator. The original data is very noisy. </tspan></text>
+  <g
+     id="g9345">
+    <text
+       xml:space="preserve"
+       style="font-size:53.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="2293.1323"
+       y="2178.7759"
+       id="text8123-6"><tspan
+         sodipodi:role="line"
+         id="tspan8121-8"
+         x="2293.1323"
+         y="2178.7759">E2: 3 V vs. Fc/Fc+</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 2381.3458,1979.6925 -88.2135,199.0834"
+       id="path9260" />
+  </g>
+  <g
+     id="g19570">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+       x="206.28125"
+       y="1400.3323"
+       id="text2212"><tspan
+         sodipodi:role="line"
+         id="tspan2210"
+         x="206.28125"
+         y="1400.3323">I1: 0 uA</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 323.30619,1400.3323 402.87669,223.691"
+       id="path27499" />
+  </g>
+  <g
+     id="g27740">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+       x="-162.64482"
+       y="938.18298"
+       id="text26676"><tspan
+         sodipodi:role="line"
+         id="tspan26674"
+         x="-162.64482"
+         y="938.18298">I_scale_bar: 100 uA</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 237.70674,938.18298 442.93461,64.40092"
+       id="path27619" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 237.70674,938.18298 680.57937,1121.9022"
+       id="path27654" />
+  </g>
+  <g
+     id="g11676">
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1663.1426,1623.2252 c 0,0 -90.2585,-0.4869 -135.3721,0.4959 -12.2423,0.2667 -16.7854,5.4229 -26.0331,4.4628 -3.9079,-0.4057 -6.9918,-4.161 -10.9091,-4.4628 -9.5733,-0.7375 -18.4229,6.2987 -28.0165,6.6942 -22.7158,0.9365 -47.4699,5.924 -61.9836,7.438 -19.766,2.0619 -34.3842,6.3197 -56.0331,10.6612 -16.3492,3.2787 -38.8308,25.7157 -44.1323,23.5537 -9.5612,-3.8992 -11.8984,4.9666 -17.6033,3.2232 -75.225,-22.988 -72.7572,-18.0688 -115.5374,-26.7769 -9.0824,-1.8488 -22.1083,13.0367 -30,10.9091 -16.1019,-4.3411 -20.8531,1.6459 -30,-2.4794 -7.1996,-3.2471 -12.5771,-4.9903 -19.091,-4.4628 -7.1287,0.5772 -15.1868,2.7461 -19.8347,8.1819 -61.2153,71.592 -84.33963,87.9187 -95.20674,97.686 -8.09923,7.2795 -30.81573,5.9611 -43.14055,14.8761 -7.74109,5.5994 -13.0529,14.2796 -17.35539,22.8099 -11.80166,23.3986 -28.2645,63.4712 -28.2645,63.4712 -12.88839,37.423 -30.97566,119.225 -34.71079,113.5538 0,0 35.54422,-126.43 58.0166,-190.9093 10.04724,-28.8282 23.73197,-61.6395 41.15708,-81.8183 12.24294,-14.1777 27.69043,-31.6168 58.01659,-54.5455 15.322,-11.5845 36.3382,-14.774 55.5373,-15.3719 62.3502,-1.9418 77.9501,-6.534 117.0249,-6.9422 104.4043,-1.0907 248.0429,-2.6686 302.9756,-4.9587 60.8037,-2.5349 62.3865,2.3025 176.0333,-3.9669 32.7862,-1.8087 63.8957,-7.0998 95.2067,-25.2893 12.4685,-7.2433 31.9587,-34.2165 44.6282,-45.124 5.6382,-4.854 15.0571,-1.1439 22.314,0.4959 12.1956,2.7558 21.7849,14.0216 34.2149,15.3719 15.2759,1.6594 29.8657,-11.2346 45.1241,-9.4215 3.4507,0.41 11.1655,1.1833 9.4215,4.4628 -16.9601,31.8931 -30.7438,42.8926 -30.7438,42.8926 -7.3555,1.6311 -21.0948,9.2709 -28.2645,10.1653 -30.6836,3.8277 -52.0061,-0.674 -80.3307,8.4298 -12.6088,4.0526 -18.7759,1.1871 -37.1902,2.2314 -6.804,0.3859 -19.643,-6.6106 -33.2231,-3.719 -16.8866,3.5956 -36.2599,3.5202 -36.1984,3.471"
+       id="path53"
+       sodipodi:nodetypes="cssassssssssassassssssssssssaaassssssc" />
+    <text
+       xml:space="preserve"
+       style="font-size:53.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="1377.5223"
+       y="1560.0018"
+       id="text10301"><tspan
+         sodipodi:role="line"
+         id="tspan10299"
+         x="1377.5223"
+         y="1560.0018">curve: c</tspan></text>
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-size:53.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+     x="1705.7872"
+     y="1761.3243"
+     id="text17610"><tspan
+       sodipodi:role="line"
+       id="tspan17608"
+       x="1705.7872"
+       y="1761.3243">scan rate: 10 mV / s</tspan></text>
+  <g
+     id="g19558">
+    <text
+       xml:space="preserve"
+       style="font-size:53.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="112.2022"
+       y="2115.0115"
+       id="text8123"><tspan
+         sodipodi:role="line"
+         id="tspan8121"
+         x="112.2022"
+         y="2115.0115">E1: -4 V vs. Fc/Fc+</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 498.3352,2115.0115 272.86408,-135.567"
+       id="path9258" />
+  </g>
+</svg>
