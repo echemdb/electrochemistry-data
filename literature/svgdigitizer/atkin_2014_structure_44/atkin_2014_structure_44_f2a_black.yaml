@@ -47,7 +47,6 @@ source:
   url: https://doi.org/10.1016/j.molliq.2013.08.006
   figure: 2a
   curve: black
-  cycle: 1
   techniques:
   - CV
   - EIS
