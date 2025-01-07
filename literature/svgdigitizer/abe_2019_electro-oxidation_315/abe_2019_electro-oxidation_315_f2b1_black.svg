@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="7016px"
+   version="1.1"
+   width="4961px"
+   id="svg3348"
+   sodipodi:docname="abe_2019_electro-oxidation_315_f2b1_black.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3350"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.5856596"
+     inkscape:cx="1273.2871"
+     inkscape:cy="2727.8868"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3348" />
+  <defs
+     id="defs3344" />
+  <image
+     height="7016px"
+     sodipodi:insensitive="true"
+     width="4961px"
+     x="0"
+     xlink:href="abe_2019_electro-oxidation_315_p4.png"
+     y="0"
+     id="image3346" />
+  <g
+     id="g21003"
+     transform="translate(166.23736,-2130.1112)">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.01318px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 713.12398,4614.6134 85.02886,136.6329"
+       id="path466"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="153.72534"
+       y="4620.3008"
+       id="text12078"><tspan
+         sodipodi:role="line"
+         id="tspan12076"
+         x="153.72534"
+         y="4620.3008">j2: 50 uA / cm2</tspan></text>
+  </g>
+  <g
+     id="g14202"
+     transform="translate(163.80825,-2499.4686)">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.03582px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 669.00263,5565.4145 799.92854,5430.9302"
+       id="path451"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="92.746017"
+       y="5599.541"
+       id="text12078-9"><tspan
+         sodipodi:role="line"
+         id="tspan12076-7"
+         x="92.746017"
+         y="5599.541">j1: -50 uA / cm2</tspan></text>
+  </g>
+  <g
+     id="g20959"
+     transform="translate(155.46761,-2478.0891)">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.03994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 740.79586,5746.0058 808.4268,5566.3931"
+       id="path481"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="146.60843"
+       y="5780.3579"
+       id="text15529"><tspan
+         sodipodi:role="line"
+         id="tspan15527"
+         x="146.60843"
+         y="5780.3579">E1: 0.0 V vs RHE</tspan></text>
+  </g>
+  <g
+     id="g20954"
+     transform="translate(305.18073,-2483.9767)">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1253.0722,5764.1322 103.6679,-193.2448"
+       id="path494"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="1267.2344"
+       y="5788.8706"
+       id="text15529-1"><tspan
+         sodipodi:role="line"
+         id="tspan15527-0"
+         x="1267.2344"
+         y="5788.8706">E2: 0.8 V vs RHE</tspan></text>
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+     x="164.26411"
+     y="2064.0732"
+     id="text9174"><tspan
+       sodipodi:role="line"
+       x="164.26411"
+       y="2064.0732"
+       id="tspan9176">figure: 2</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+     x="87.467171"
+     y="2180.4556"
+     id="text7770"><tspan
+       sodipodi:role="line"
+       id="tspan7768"
+       x="87.467171"
+       y="2180.4556">scan rate: 50 mV / s</tspan></text>
+  <g
+     id="g3805">
+    <path
+       style="opacity:0.7;fill:none;fill-opacity:0.32549;stroke:#d53bcd;stroke-width:2.712"
+       d="m 1026.1824,2675.4095 c 5.2477,-6.5441 16.2875,-9.6228 19.5901,-10.8588 4.7287,-1.7696 9.7639,-4.636 12.3429,-8.9766 2.9748,-5.0067 5.1857,-9.7291 6.9194,-13.8389 2.3601,-5.5946 2.8683,-8.3609 4.4883,-14.2129 1.6309,-5.8913 1.8695,-10.6512 4.6753,-17.5792 0.5041,-1.2446 2.8868,-1.9137 3.5533,-0.7481 2.3293,4.0738 2.9907,6.6895 4.3013,10.4728 1.57,4.5321 2.6945,9.8185 4.1142,14.3999 1.7168,5.5398 2.2616,8.4861 5.2364,13.4648 2.379,3.9816 5.9601,8.5112 9.7245,11.2208 5.3122,3.8236 13.4619,8.1853 19.8234,9.7247 5.8967,1.4269 9.492,2.3241 15.522,2.9921 4.4679,0.4949 9.5401,-0.4777 14.0259,-0.187 6.7367,0.4366 11.9368,1.4711 18.5142,2.9922 3.9248,0.9075 6.6662,2.7724 10.6598,2.2442 3.708,-0.4904 8.5902,-3.3256 11.2207,-5.9845 3.262,-3.2973 5.4077,-7.5389 8.2285,-11.2207 1.942,-2.5348 2.1034,-4.8063 5.2364,-5.4234 2.5188,-0.4961 3.5481,1.0967 5.0492,3.1793 2.3734,3.2929 2.749,6.7235 3.7403,10.6597 1.4058,5.5824 3.0025,11.0824 4.4883,16.644 1.5148,5.6702 3.3947,11.3239 5.4234,16.8312 2.7378,7.4323 5.7631,14.7591 9.9116,21.5063 3.1884,5.1856 6.3644,9.908 10.4727,14.4 4.1801,4.5705 16.4571,14.2129 20.9454,16.4571 4.4883,2.2441 12.2007,5.9404 19.2622,8.0415 13.7299,4.0852 31.2311,5.9844 34.2233,5.9844 2.9922,0 20.6132,0.5608 30.857,0.9351 13.7051,0.5007 27.4337,0.3805 41.1427,0 17.9739,-0.4989 35.9445,-1.4544 53.8595,-2.9922 10.7547,-0.9232 21.4952,-2.1126 32.1661,-3.7403 9.2823,-1.4159 18.6569,-2.6313 27.6779,-5.2363 8.4968,-2.4537 15.9189,-7.0278 23.3765,-11.7818 5.8003,-3.6975 12.3039,-6.8529 17.7662,-11.0337 5.3315,-4.0807 11.2577,-9.4146 17.2051,-12.5299 6.5263,-3.4185 11.1684,-5.885 17.7661,-9.1636 7.3958,-3.6753 14.8598,-8.0443 22.6285,-10.8466 5.0143,-1.8087 10.7957,-3.4682 15.1481,-6.5454 5.6568,-3.9999 7.9835,-6.584 12.3427,-11.9688 2.3324,-2.8811 7.4042,-9.4257 9.9117,-12.1558 3.6097,-3.9302 7.4805,-8.0415 9.7246,-11.0337 2.2442,-2.9922 2.6058,-5.7094 6.5455,-7.2936 3.7087,-1.4914 4.8186,-1.3697 8.4155,0.3741 7.0953,3.4398 14.8522,14.4734 17.0181,21.1323 1.6933,5.206 6.3838,11.18 9.1636,15.8961 2.2149,3.7576 6.6867,10.3508 9.5376,13.6519 3.5533,4.1143 1.1221,1.4961 6.5454,6.1714 2.8329,2.4421 3.9202,3.6008 10.0987,5.2363 6.3584,1.6832 17.4767,-0.2898 25.0597,-0.1869 9.0619,0.123 15.2704,0.8118 24.3116,0.1869 2.9851,-0.2063 5.8684,-0.661 8.7896,-1.3091 4.0295,-0.8939 5.4088,-2.4944 8.7895,-4.8623 0.5777,-0.4046 5.1542,-3.9731 5.6104,-1.8701 1.1033,5.0861 2.2756,16.6464 2.2442,29.1739 -0.014,5.5196 -0.1531,9.3402 -1.1222,17.3921 -0.9539,7.9259 -0.8267,16.8499 -4.1142,24.1246 -2.2521,4.9834 -7.5598,10.5012 -12.1558,13.4649 -6.5769,4.2411 -15.2963,5.8674 -22.6285,8.6026 -8.8654,3.3071 -14.9233,4.7459 -23.1895,9.3506 -3.4026,1.8955 -11.0559,7.0178 -14.026,9.5376 -5.5272,4.6891 -8.3789,8.1765 -12.9038,13.8389 -5.2925,6.623 -7.4754,10.5433 -11.5947,17.9532 -2.6599,4.7847 -7.4318,8.4382 -10.8468,12.7168 -2.9717,3.7233 -4.4853,6.9542 -8.9766,7.2935 -4.9541,0.3744 -8.5612,5.8481 -13.4648,5.0494 -3.3474,-0.5452 -5.9831,-3.2076 -9.3506,-2.8052 -6.1166,0.7309 -12.5278,3.4394 -18.8883,6.3584 -5.0674,2.3255 -11.4469,3.7037 -17.018,3.9272 -7.5118,0.3013 -18.5463,-1.2254 -25.9948,-2.2441 -5.7674,-0.7888 -11.4466,-3.3628 -16.644,-5.9844 -6.7711,-3.4154 -13.6878,-13.7918 -16.6442,-16.083 -7.4805,-5.7974 -9.5376,-16.8311 -12.5298,-19.0753 -2.9922,-2.2441 -11.5947,-15.335 -16.083,-19.8233 -4.4883,-4.4883 -11.2207,-9.7247 -14.961,-10.4727 -3.7402,-0.7481 -32.7386,-7.5647 -48.6232,-8.4155 -17.3386,-0.9286 -33.3519,-6.5827 -50.4933,-9.3507 -7.1768,-1.1589 -17.6086,-0.6469 -24.8726,-0.935 -10.4674,-0.4151 -20.5706,-0.7745 -31.0441,-0.5611 -14.7107,0.2998 -31.6084,-1.0175 -46.192,0.9351 -14.0264,1.878 -26.7137,4.6075 -39.8336,9.9117 -7.4551,3.014 -11.2168,7.1161 -17.7662,11.7818 -6.4765,4.6138 -15.896,10.8466 -17.3921,13.8388 -1.4961,2.9922 -10.6095,14.1566 -14.587,22.0675 -3.1202,6.2058 -4.3279,14.2629 -8.2286,20.0103 -2.4773,3.6502 -5.7717,8.2006 -9.9116,9.7246 -5.8546,2.1552 -18.4827,-1.9765 -24.6856,-1.309 -12.8081,1.3782 -22.1457,7.461 -29.548,9.5376 -5.6387,1.5818 -13.3283,10.401 -17.7661,15.335 -5.0906,5.6598 -7.4374,16.0938 -12.1558,22.0675 -1.7486,2.2138 -3.2107,6.0304 -5.9844,6.5454 -2.4145,0.4483 -3.5655,-2.6952 -5.4233,-4.3013 -4.239,-3.6646 -3.1827,-8.6095 -7.6675,-11.9688 -1.4529,-1.0883 -3.8811,-1.4869 -5.6105,-0.9351 -3.0421,0.9707 -3.6807,4.9694 -5.0492,7.8545 -3.0601,6.4513 -5.4095,12.3014 -7.6675,19.0753 -1.129,3.3869 -1.0766,8.673 -4.4883,9.7246 -2.7789,0.8565 -4.8983,-6.3462 -6.7325,-8.6026 -3.8301,-4.7117 -3.6496,-8.3464 -5.7973,-14.0259 -2.0964,-5.5438 -5.6398,-11.81 -10.6598,-14.961 -7.3908,-4.6391 -8.3871,-6.4491 -14.6336,-5.0961 -1.7232,0.3733 -2.8531,1.5247 -5.0494,3.3195 -0.6049,0.4943 -2.2838,2.1669 -2.4779,1.4026 -1.1585,-4.5638 0.6997,-12.225 -3.3177,-22.5956"
+       id="path3773"
+       sodipodi:nodetypes="cssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssc" />
+    <text
+       xml:space="preserve"
+       style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="1619.4252"
+       y="2599.427"
+       id="text3406"><tspan
+         sodipodi:role="line"
+         id="tspan3404"
+         x="1619.4252"
+         y="2599.427">curve: black</tspan></text>
+  </g>
+</svg>
