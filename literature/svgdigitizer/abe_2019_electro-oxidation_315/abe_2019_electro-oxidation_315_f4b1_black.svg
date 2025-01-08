@@ -68,7 +68,7 @@
          id="tspan612"
          x="178.97093"
          y="4847.8472"
-         style="stroke-width:0.985737;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1">j2: 50 uA / cm2</tspan></text>
+         style="stroke-width:0.985737;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1">j2: 0.05 mA / cm2</tspan></text>
   </g>
   <g
      id="g6">
@@ -89,7 +89,7 @@
          id="tspan612-5"
          x="67.864777"
          y="5230.7446"
-         style="stroke-width:0.985737;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1">j1: -50 uA / cm2</tspan></text>
+         style="stroke-width:0.985737;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1">j1: -0.05 mA / cm2</tspan></text>
   </g>
   <g
      id="g1">

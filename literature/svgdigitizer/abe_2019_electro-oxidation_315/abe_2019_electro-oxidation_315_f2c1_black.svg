@@ -58,7 +58,7 @@
          sodipodi:role="line"
          id="tspan12076"
          x="153.72534"
-         y="4620.3008">j2: 100 uA / cm2</tspan></text>
+         y="4620.3008">j2: 0.1 mA / cm2</tspan></text>
   </g>
   <g
      id="g14202"
@@ -78,7 +78,7 @@
          sodipodi:role="line"
          id="tspan12076-7"
          x="92.746017"
-         y="5599.541">j1: -50 uA / cm2</tspan></text>
+         y="5599.541">j1: -0.05 mA / cm2</tspan></text>
   </g>
   <g
      id="g20959"
