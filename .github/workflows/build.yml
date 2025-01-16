@@ -14,7 +14,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v3
       - uses: conda-incubator/setup-miniconda@v2
-        with: { miniforge-variant: "Mambaforge" }
+        with: { miniforge-variant: "Miniforge3" }
       - name: install dependencies
         shell: bash -l {0}
         run: |
