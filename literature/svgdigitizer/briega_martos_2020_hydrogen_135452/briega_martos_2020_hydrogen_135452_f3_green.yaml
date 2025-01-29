@@ -36,7 +36,7 @@ system:
          description:
          - Annealed in a propane-flame, cooled in Ar/H2 (3:1) reducing atmosphere and protected with an ultrapure water drop.
   electrolyte:
-    type: acid
+    type: aqueous
     components:
     - name: water
       source:
@@ -49,6 +49,7 @@ system:
         supplier: Merck
         purity:
             grade: '>99%'
+      type: acid
 source:
   citation key: briega_martos_2020_hydrogen_135452
   url: https://doi.org/10.1016/j.electacta.2019.135452
