@@ -26,6 +26,10 @@ jobs:
         run: |
           cd data
           make
+      - name: Validate Data Package Metdata
+        shell: bash -l {0}
+        run: |
+            find . -name "*.json" | parallel check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/main/schemas/echemdb_package.json {} --no-cache
       - name: zip-data
         shell: bash -l {0}
         run:
