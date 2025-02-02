@@ -6879,7 +6879,7 @@ packages:
 - pypi: .
   name: echemdb-ecdata
   version: 0.3.2
-  sha256: 97dc95b37495c6e27eef67150005bc4c0d74005d8c96b09efdd4028bb08d5d3e
+  sha256: e6ec653189aeef725a02d35d02197e5a52502fa73e4bf4b0a1d13e2d7a9c8ede
   requires_dist:
   - svgdigitizer>=0.12.0,<0.13.0
   requires_python: '>=3.9'
