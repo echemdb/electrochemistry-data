@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="6675px"
+   version="1.1"
+   width="5062px"
+   id="svg6"
+   sodipodi:docname="chen_2024_deconvolution_4958_f1a_grey.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.22288995"
+     inkscape:cx="4517.9247"
+     inkscape:cy="4190.4088"
+     inkscape:window-width="1440"
+     inkscape:window-height="787"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
+  <defs
+     id="defs2" />
+  <image
+     height="6675px"
+     sodipodi:insensitive="true"
+     width="5062px"
+     x="0"
+     xlink:href="chen_2024_svgdigitizer_4958_p0.png"
+     y="0"
+     id="image4" />
+  <g
+     id="g21003"
+     transform="translate(2109.4967,-1029.4912)">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.01318px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 713.12398,4614.6134 85.02886,136.6329"
+       id="path466"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="153.72534"
+       y="4620.3008"
+       id="text12078"><tspan
+         sodipodi:role="line"
+         id="tspan12076"
+         x="153.72534"
+         y="4620.3008">j2: 50 uA / cm2</tspan></text>
+  </g>
+  <g
+     id="g14202"
+     transform="translate(2110.3515,-1249.5306)">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.03582px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 669.00263,5565.4145 799.92854,5430.9302"
+       id="path451"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="92.746017"
+       y="5599.541"
+       id="text12078-9"><tspan
+         sodipodi:role="line"
+         id="tspan12076-7"
+         x="92.746017"
+         y="5599.541">j1: -50 uA / cm2</tspan></text>
+  </g>
+  <g
+     id="g20959"
+     transform="translate(2268.2376,-1610.0938)">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.03994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 740.79586,5746.0058 808.4268,5566.3931"
+       id="path481"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="146.60843"
+       y="5780.3579"
+       id="text15529"><tspan
+         sodipodi:role="line"
+         id="tspan15527"
+         x="146.60843"
+         y="5780.3579">E1: 0.2 V vs RHE</tspan></text>
+  </g>
+  <g
+     id="g20954-6"
+     transform="translate(2218.5679,-1614.7709)">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1253.0722,5764.1322 103.6679,-193.2448"
+       id="path494-1"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="1267.2344"
+       y="5788.8706"
+       id="text15529-1-7"><tspan
+         sodipodi:role="line"
+         id="tspan15527-0-1"
+         x="1267.2344"
+         y="5788.8706">E2: 0.8 V vs RHE</tspan></text>
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+     x="4536.4023"
+     y="3176.5408"
+     id="text9174"><tspan
+       sodipodi:role="line"
+       x="4536.4023"
+       y="3176.5408"
+       id="tspan9176">figure: 1b</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+     x="3225.1858"
+     y="3329.8872"
+     id="text9174-5"><tspan
+       x="3225.1858"
+       y="3329.8872"
+       id="tspan9176-2"
+       sodipodi:role="line">curve: grey</tspan></text>
+  <g
+     id="g1">
+    <text
+       xml:space="preserve"
+       style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="4286.7632"
+       y="3349.4756"
+       id="text7770"><tspan
+         sodipodi:role="line"
+         id="tspan7768"
+         x="4286.7632"
+         y="3349.4756">scan rate: 50 mV / s</tspan></text>
+    <path
+       style="fill:none;stroke:#00ffff;stroke-width:3.8"
+       d="m 2961.6986,3907.7035 c 0,0 1.739,-87.5926 15.1622,-96.7229 13.4231,-9.1304 20.5469,-6.4811 27.6192,-10.1851 7.0723,-3.704 8.2183,-13.9666 12.7387,-13.9966 4.5204,-0.03 6.7026,10.9029 23.7342,9.8294 17.0315,-1.0734 67.6594,-1.8741 82.0566,1.45 14.3971,3.324 14.2136,-12.3628 20.3435,-12.7838 6.1299,-0.421 11.3192,26.7056 18.3915,36.9109 7.0723,10.2053 18.2624,21.3811 29.4886,35.2053 11.2262,13.8242 18.2143,35.2896 36.3185,50.0877 18.1042,14.7981 38.8812,17.4965 63.2815,21.6655 24.4003,4.169 56.1083,4.5686 77.2143,-0.4287 21.106,-4.9973 47.4335,-25.9056 62.7343,-42.3457 15.3008,-16.4401 25.6033,-29.2687 43.914,-42.3456 18.3107,-13.0769 56.6058,-22.4683 65.871,-33.7197 9.2652,-11.2514 17.8968,-36.4823 21.0451,-60.8276 3.1482,-24.3452 7.2913,-284.2152 11.6052,-284.1063 4.3139,0.1089 5.8558,318.9205 9.6954,351.2073 3.8396,32.2868 6.901,77.9311 24.3095,95.6698 17.4085,17.7387 48.2046,12.0396 50.0179,12.2121 1.8133,0.1725 2.177,27.0772 -0.3348,31.4773 -2.5119,4.4001 -31.1113,4.3649 -50.1281,26.5433 -19.0168,22.1784 -24.5237,62.7517 -28.5696,113.2652 -4.0459,50.5135 0.31,426.2145 -8.375,426.1222 -8.685,-0.092 -6.5628,-383.3452 -14.8784,-412.4065 -8.3157,-29.0613 -33.2619,-20.9457 -71.1898,-44.3053 -23.1623,-14.2656 -58.2079,-60.4362 -85.733,-77.5652 -27.5251,-17.129 -61.1213,-22.199 -83.8149,-20.7888 -22.6936,1.4102 -56.0741,5.5868 -80.648,22.5259 -24.5739,16.9391 -35.2709,41.1191 -46.3587,56.5994 -11.0878,15.4803 -22.2527,27.0032 -28.8761,36.7179 -6.6234,9.7147 -9.4733,26.5666 -15.8404,27.7851 -6.3672,1.2184 -10.2435,-7.9611 -30.6223,-7.6219 -20.3787,0.3392 -64.9445,1.512 -78.1418,2.3456 -13.1973,0.8335 -8.9391,9.506 -16.9882,9.1464 -8.0491,-0.3596 -7.0964,-16.054 -26.9328,-10.4441 -19.8365,5.6099 -25.3877,67.5604 -28.1885,86.9726"
+       id="path1"
+       sodipodi:nodetypes="czzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzc" />
+  </g>
+</svg>
