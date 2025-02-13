@@ -32,7 +32,7 @@ jobs:
         run:
           zip -r data-${{ github.ref_name }}.zip data/generated
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: |
             data-${{ github.ref_name }}.zip
