@@ -10,7 +10,7 @@ description = "a database for published electrochemical data inferred from SVG a
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
-    "svgdigitizer>=0.12.0,<0.13.0",
+    "svgdigitizer>=0.12.3,<0.13.0",
 ]
 
 [tool.setuptools]
