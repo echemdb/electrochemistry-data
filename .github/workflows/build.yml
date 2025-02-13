@@ -29,10 +29,12 @@ jobs:
         run: pixi run -e dev validate
       - name: zip-data
         shell: bash -l {0}
-        run:
-          zip -r data-${{ github.ref_name }}.zip data/generated
+        run: |
+          ref_name_sanitized=$(echo "${{ github.ref_name }}" | tr '/' '-')
+          echo "REF_NAME_SANITIZED=$ref_name_sanitized" >> "$GITHUB_ENV"
+          zip -r "data-${ref_name_sanitized}.zip" data/generated
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            data-${{ github.ref_name }}.zip
+            data-${{ env.REF_NAME_SANITIZED }}.zip
