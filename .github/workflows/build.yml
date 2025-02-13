@@ -24,13 +24,13 @@ jobs:
       - name: digitize
         shell: pixi run bash -e {0}
         run: pixi run -e dev convert
+      - name: validate packages
+        shell: pixi run bash -e {0}
+        run: pixi run -e dev validate
       - name: zip-data
         shell: bash -l {0}
         run:
           zip -r data-${{ github.ref_name }}.zip data/generated
-      - name: validate packages
-        shell: pixi run bash -e {0}
-        run: pixi run -e dev validate
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
