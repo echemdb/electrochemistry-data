@@ -1,13 +1,8 @@
-name: Documentation
+name: data
 on:
   push:
     tags:
       - "[0-9]+.[0-9]+.[0-9]"
-  pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
 
 jobs:
   github-release:
@@ -29,12 +24,10 @@ jobs:
         run: pixi run -e dev validate
       - name: zip-data
         shell: bash -l {0}
-        run: |
-          ref_name_sanitized=$(echo "${{ github.ref_name }}" | tr '/' '-')
-          echo "REF_NAME_SANITIZED=$ref_name_sanitized" >> "$GITHUB_ENV"
-          zip -r "data-${ref_name_sanitized}.zip" data/generated
+        run:
+          zip -r data-${{ github.ref_name }}.zip data/generated
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            data-${{ env.REF_NAME_SANITIZED }}.zip
+            data-${{ github.ref_name }}.zip
