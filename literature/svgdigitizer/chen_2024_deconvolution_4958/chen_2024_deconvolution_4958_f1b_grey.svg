@@ -4,7 +4,7 @@
    version="1.1"
    width="5062px"
    id="svg6"
-   sodipodi:docname="chen_2024_svgdigitizer_4958_f1b_grey.svg"
+   sodipodi:docname="chen_2024_deconvolution_4958_f1b_grey.svg"
    inkscape:version="1.3.2 (091e20e, 2023-11-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -21,15 +21,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="0.18389361"
-     inkscape:cx="3393.2663"
-     inkscape:cy="4073.0072"
-     inkscape:window-width="1440"
-     inkscape:window-height="787"
+     inkscape:zoom="0.14326642"
+     inkscape:cx="3071.2012"
+     inkscape:cy="3734.3015"
+     inkscape:window-width="1344"
+     inkscape:window-height="449"
      inkscape:window-x="0"
      inkscape:window-y="25"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="g988" />
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg6" />
   <defs
      id="defs2" />
   <image
@@ -130,6 +130,16 @@
        id="tspan7768"
        x="4286.7632"
        y="3349.4756">scan rate: 50 mV / s</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+     x="4267.9229"
+     y="3479.4812"
+     id="text7770-7"><tspan
+       sodipodi:role="line"
+       id="tspan7768-9"
+       x="4267.9229"
+       y="3479.4812">tags: BCV</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
