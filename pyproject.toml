@@ -66,6 +66,7 @@ pytest-remotedata = "*"
 convert = "cd data && make"
 validate = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/main/schemas/echemdb_package.json --no-cache $(find ./data/generated/svgdigitizer/ -type f -name '*.json')"
 validate_yaml = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/main/schemas/svgdigitizer.json --no-cache $(find ./literature/svgdigitizer/ -type f -name '*.yaml')"
+validate_identifiers = 'python -c "from echemdb_ecdata.validate import validate_identifiers; validate_identifiers()"'
 doctest = "pytest -n auto --doctest-modules echemdb_ecdata"
 
 [tool.pixi.feature.lint.dependencies]
