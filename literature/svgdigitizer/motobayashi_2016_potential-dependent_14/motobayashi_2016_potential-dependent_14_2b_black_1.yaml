@@ -1,0 +1,58 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  instrumentation:
+  - name: potentiostat
+    type: potentiostat
+system:
+  type: electrochemical
+  electrodes:
+    - name: CE
+      function: counter electrode
+      crystallographic orientation: poly
+    - name: REF
+      function: reference electrode
+      source:
+        manufacturer: homemade
+    - name: WE
+      function: working electrode
+      crystallographic orientation: poly
+      material: Au
+  electrolyte:
+    components:
+    - name: BMIM-TFSI
+      proportion:
+        unit: volume percent
+        value: 100
+      source:
+        supplier: IoLiTec
+      type: solvent
+    - concentration:
+        unit: ppm
+        value: '< 1'
+      name: water
+      type: solute
+    temperature:
+      unit: K
+      value: 298.15
+    type: ionic liquid
+source:
+  citation key: motobayashi_2016_potential-dependent_14
+  url: https://doi.org/10.1016/j.elecom.2016.01.018
+  techniques:
+  - CV
+  - SEIRAS
+curation:
+  process:
+  - role: curator
+    name: Jerome Mayer
+    orcid: https://orcid.org/0000-0002-7451-9994
+    date: 2022-01-10
+  - role: curator
+    name: Maren-Kathrin Heubach
+    orcid: https://orcid.org/0000-0002-3769-7169
+    date: 2023-02-19
+  - role: reviewer
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2024-02-29
