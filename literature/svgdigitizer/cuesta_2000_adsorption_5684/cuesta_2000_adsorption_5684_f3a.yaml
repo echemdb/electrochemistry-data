@@ -1,0 +1,67 @@
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: H2O
+        type: solvent
+        proportion:
+          value: 100
+          unit: volume percent
+        source:
+          refinement: Milli-Q
+          purity:
+            grade: ultrapure water
+        purity:
+          total ion conductivity:
+            value: 18.2
+            unit: MOhm cm
+          total organic carbon:
+            value: 3
+            unit: ppb
+      - name: H2SO4
+        type: acid
+        source:
+          supplier: Merck
+          purity:
+            grade: Suprapur
+        concentration:
+          value: 0.1
+          unit: mol L-1
+    ph:
+      value: 1.038
+      comment: Estimated with CurTiPot on extraction from publication using a temperature of 25°C.
+    temperature:
+      value: 25
+      unit: deg_C
+    comment: The electrolyte was at room temperature.
+  electrodes:
+    - name: REF
+      function: reference electrode
+      type: Hg/Hg2Cl2-sat
+    - name: CE
+      function: counter electrode
+      material: Pt
+    - name: WE
+      function: working electrode
+      material: Au
+      crystallographic orientation: '100'
+      source:
+        manufacturer: Mateck
+      shape:
+        type: cylinder
+      geometric electrolyte contact area:
+        unit: cm-2
+      preparation procedure:
+        description:
+          - Annealed in a hydrogen flame for 6 min.
+          - Cooled down in nitrogen stream.
+source:
+  citation key: cuesta_2000_adsorption_5684
+  url: https://doi.org/10.1039/B006464P 
+curation:
+  process:
+  - role: curator
+    name: Johannes M. Hermann
+    orcid: https://orcid.org/0000-0001-7119-1295
+    date: 2025-06-09
