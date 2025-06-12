@@ -45,7 +45,7 @@ system:
     - name: WE
       function: working electrode
       material: Au
-      crystallographic orientation: '100'
+      crystallographic orientation: '111'
       source:
         manufacturer: Mateck
       shape:
