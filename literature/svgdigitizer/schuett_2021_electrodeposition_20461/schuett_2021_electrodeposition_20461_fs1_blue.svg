@@ -4,8 +4,8 @@
    version="1.1"
    width="4961px"
    id="svg1"
-   sodipodi:docname="schuett_2021_electrodeposition_20461_sf2_blue.svg"
-   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="schuett_2021_electrodeposition_20461_fs2_blue.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -20,15 +20,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.32775245"
-     inkscape:cx="1035.8428"
-     inkscape:cy="2414.9324"
+     inkscape:zoom="1.0165447"
+     inkscape:cx="1194.2416"
+     inkscape:cy="2996.425"
      inkscape:window-width="1920"
-     inkscape:window-height="991"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g34594"
+     inkscape:current-layer="svg1"
      inkscape:pageshadow="2"
      showgrid="false" />
   <defs
@@ -151,13 +151,19 @@
      y="2994.5291"
      id="text20037"><tspan
        sodipodi:role="line"
-       id="tspan20035"
        x="1022.6273"
-       y="2994.5291">Figure: S1</tspan><tspan
+       y="2994.5291"
+       id="tspan20303">Figure: S1</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:32px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+     x="1022.6273"
+     y="3065.4978"
+     id="text20037-5"><tspan
        sodipodi:role="line"
        x="1022.6273"
-       y="3034.5291"
-       id="tspan20303">tags: BCV</tspan></text>
+       y="3065.4978"
+       id="tspan20303-5">tags: BCV</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:32px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
