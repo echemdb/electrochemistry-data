@@ -39,15 +39,24 @@ git diff --cached --exit-code
 
 $PROJECT = 'electrochemistry-data'
 
+command('pixi', 'pixi install --manifest-path "$PWD/pyproject.toml" -e dev')
+
+command('build', 'python -m build')
+command('twine', 'twine upload dist/echemdb_ecdata-' + $VERSION + '.tar.gz dist/echemdb_ecdata-' + $VERSION + '-py3-none-any.whl')
+
 $ACTIVITIES = [
     'version_bump',
+    'pixi',
     'changelog',
     'tag',
     'push_tag',
+    'build',
+    'twine',
     'ghrelease',
 ]
 
 $VERSION_BUMP_PATTERNS = [
+    ('pyproject.toml', r'version =', 'version = "$VERSION"'),
     ('setup.py', r"    version=", r'    version="$VERSION",'),
     ('echemdb_ecdata/url.py', re.escape(r'def get_echemdb_database_url(version="'), r'def get_echemdb_database_url(version="$VERSION"):'),
     ('echemdb_ecdata/url.py', re.escape(r'        >>> get_echemdb_database_url(version="'), r'        >>> get_echemdb_database_url(version="$VERSION")'),
