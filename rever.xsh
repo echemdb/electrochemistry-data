@@ -1,7 +1,7 @@
 # ********************************************************************
 #  This file is part of electrochemistry-data.
 #
-#        Copyright (C) 2022-2024 Albert Engstfeld
+#        Copyright (C) 2022-2025 Albert Engstfeld
 #        Copyright (C) 2022      Johannes Hermann
 #        Copyright (C) 2022      Julian Rüth
 #        Copyright (C) 2022      Nicolas Hörmann
@@ -38,6 +38,8 @@ git diff --exit-code
 git diff --cached --exit-code
 
 $PROJECT = 'electrochemistry-data'
+
+from rever.activities.command import command
 
 command('pixi', 'pixi install --manifest-path "$PWD/pyproject.toml" -e dev')
 
