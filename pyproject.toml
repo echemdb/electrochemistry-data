@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "echemdb-ecdata"
-version = "0.3.2"
+version = "0.4.1"
 classifiers = ["License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)"]
 description = "a database for published electrochemical data inferred from SVG and raw CSV files."
 readme = "README.md"

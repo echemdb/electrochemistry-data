@@ -4,6 +4,33 @@ electrochemistry-data Change Log
 
 .. current developments
 
+v0.4.1
+====================
+
+**Fixed:**
+
+* Fixed ubuntu runner to version 24.04, required for building the database.
+
+
+
+v0.4.0
+====================
+
+**Added:**
+
+* Added test for validation of YAML associated with SVGs and output Data Packages, according to the echemdb metadata-schemas.
+
+**Changed:**
+
+* Simplified tracing of `engstfeld_2018_polycrystalline_17743_f4b_1`
+
+**Fixed:**
+
+* Fixed various issues regarding identifiers and file references.
+* Fixed breaking tests on GitHub (tests should be more stable now since we switched to pixi for locked versions of dependencies.)
+
+
+
 v0.3.2
 ====================
 
