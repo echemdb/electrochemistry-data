@@ -4,6 +4,15 @@ electrochemistry-data Change Log
 
 .. current developments
 
+v0.4.1
+====================
+
+**Fixed:**
+
+* Fixed ubuntu runner to version 24.04, required for building the database.
+
+
+
 v0.4.0
 ====================
 
