@@ -16,7 +16,7 @@ experimental:
       type: universal programmer
       model: EG&G PAR model 175
 source:
-  citation key: garcia_2011_enthalpic_501
+  citationKey: garcia_2011_enthalpic_501
   url: https://doi.org/10.1021/jp1088146
   techniques:
   - CV
@@ -49,11 +49,11 @@ system:
       type: RHE
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Pt
       shape: 
         type: wire
     - name: WE
       function: working electrode
       material: Pt
-      crystallographic orientation: '110'
+      crystallographicOrientation: '110'

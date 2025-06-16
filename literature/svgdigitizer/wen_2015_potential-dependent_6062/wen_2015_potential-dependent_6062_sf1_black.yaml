@@ -16,7 +16,7 @@ system:
         type: wire, pseudo-reference
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Au
       shape:
         type: disk
@@ -32,7 +32,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: wen_2015_potential-dependent_6062
+  citationKey: wen_2015_potential-dependent_6062
   url: https://doi.org/10.1002/anie.201501715
   techniques:
   - CV

@@ -16,12 +16,12 @@ system:
       type: SCE
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Pt
-      geometric electrolyte contact area:
+      geometricElectrolyteContactArea:
           unit: cm2
           value: 0.043
-      preparation procedure:
+      preparationProcedure:
         description:
           - A Pt single crystal bead was cut along the (111) orientation.
           - The electrode was annealed in a hydrogen+air flame.
@@ -53,7 +53,7 @@ system:
       value: 298.15
     type: aqueous
 source:
-  citation key: li_2000_chronocoulometric_95
+  citationKey: li_2000_chronocoulometric_95
   url: https://doi.org/10.1016/S0022-0728(00)00199-6
 curation:
   process:

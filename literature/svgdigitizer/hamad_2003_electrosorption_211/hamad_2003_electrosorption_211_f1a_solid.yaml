@@ -18,9 +18,9 @@ system:
       type: SCE
     - name: WE
       function: working electrode
-      crystallographic orientation: '100'
+      crystallographicOrientation: '100'
       material: Ag
-      preparation procedure:
+      preparationProcedure:
         description:
           - Electrode etched with a cyanide solution.
           - Rinsed with Milli-Q water.
@@ -44,7 +44,7 @@ system:
       value: 293
     type: aqueous
 source:
-  citation key: hamad_2003_electrosorption_211
+  citationKey: hamad_2003_electrosorption_211
   techniques:
   - Monte-Carlo simulations
   url: https://doi.org/10.1016/S0022-0728(03)00178-5

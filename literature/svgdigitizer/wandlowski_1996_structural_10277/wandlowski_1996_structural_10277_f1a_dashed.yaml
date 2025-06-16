@@ -11,9 +11,9 @@ system:
       type: SCE
     - name: WE
       function: working electrode
-      crystallographic orientation: '100'
+      crystallographicOrientation: '100'
       material: Au
-      preparation procedure:
+      preparationProcedure:
         description:
           - Electrodes were annealed and quenched in water. Measurements
             with hanging meniscus technique.
@@ -31,7 +31,7 @@ system:
       value: 293
     type: aqueous
 source:
-  citation key: wandlowski_1996_structural_10277
+  citationKey: wandlowski_1996_structural_10277
   url: https://doi.org/10.1021/jp9600064
   techniques:
   - SXRD

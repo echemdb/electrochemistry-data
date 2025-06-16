@@ -9,7 +9,7 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Pt
       shape:
         type: wire
@@ -18,12 +18,12 @@ system:
       type: leakless ag/agcl-3.4m kcl edaq electrode
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
-      geometric electrolyte contact area:
+      crystallographicOrientation: '111'
+      geometricElectrolyteContactArea:
         value: 0.03
         unit: cm-2
       material: Au
-      preparation procedure:
+      preparationProcedure:
         description:
         - Annealed in butane flame, cooled in an Ar atmosphere.
       shape:
@@ -49,7 +49,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: rudnev_2020_structural_501
+  citationKey: rudnev_2020_structural_501
   url: https://doi.org/10.1002/celc.201902010
   techniques:
   - CV

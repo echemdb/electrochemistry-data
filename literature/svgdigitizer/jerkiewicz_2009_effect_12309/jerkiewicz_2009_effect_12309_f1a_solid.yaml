@@ -13,7 +13,7 @@ experimental:
       type: universal programmer
       model: EG&G PAR model 175
 source:
-  citation key: jerkiewicz_2009_effect_12309
+  citationKey: jerkiewicz_2009_effect_12309
   url: https://doi.org/10.1021/jp900478u
   techniques:
   - CV
@@ -26,7 +26,7 @@ system:
       type: solvent
       purity:
         grade: nanopure
-        total ion conductivity:
+        totalIonConductivity:
           value: 18
           unit: MOhm cm
     - name: H2SO4
@@ -62,7 +62,7 @@ system:
       material: Pt
       shape:
         type: gauze
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
     - name: WE
       function: working electrode
       material: Pt
@@ -70,12 +70,12 @@ system:
         diameter:
           value: 1.172
           unit: mm
-      crystallographic orientation: '111'
-      geometric electrolyte contact area:
+      crystallographicOrientation: '111'
+      geometricElectrolyteContactArea:
         value: 4.31
         unit: mm-2
-      preparation procedure:
+      preparationProcedure:
         description:
           - Annealing the Pt(111) electrode in a H2/O2 flame. Cooling in Ar/H2 (2:1) gas atmosphere. Protecting the Pt(111) surface with droplet of high purity water.
-  electrochemical cell:
+  electrochemicalCell:
     type: glass cell
