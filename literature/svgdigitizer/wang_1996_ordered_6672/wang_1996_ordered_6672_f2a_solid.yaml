@@ -11,7 +11,7 @@ system:
       type: Ag/AgCl_3M
     - name: WE
       function: working electrode
-      crystallographic orientation: '110'
+      crystallographicOrientation: '110'
       material: Au
   electrolyte:
     components:
@@ -27,7 +27,7 @@ system:
       value: 298.15
     type: aqueous
 source:
-  citation key: wang_1996_ordered_6672
+  citationKey: wang_1996_ordered_6672
   url: https://doi.org/10.1021/jp952938y
   techniques:
   - SXRD

@@ -11,9 +11,9 @@ system:
       type: Ag/AgCl
     - name: WE
       function: working electrode
-      crystallographic orientation: '100'
+      crystallographicOrientation: '100'
       material: Ag
-      preparation procedure:
+      preparationProcedure:
         description:
           - Etched with chromic acid.
           - Annealed in H2/Ar in an induction heating furnace.
@@ -31,7 +31,7 @@ system:
       value: 298.15
     type: aqueous
 source:
-  citation key: nakamura_2011_structure_165433
+  citationKey: nakamura_2011_structure_165433
   url: https://doi.org/10.1103/PhysRevB.84.165433
   techniques:
   - XAS

@@ -11,7 +11,7 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Au
       shape:
         type: mesh
@@ -22,11 +22,11 @@ system:
       type: RHE
     - name: WE
       function: working electrode
-      crystallographic orientation: '100'
-      geometric electrolyte contact area:
+      crystallographicOrientation: '100'
+      geometricElectrolyteContactArea:
         unit: 1 / cm2
       material: Cu
-      preparation procedure:
+      preparationProcedure:
         description:
           - Sputter and heating under UHV conditions.
       shape:
@@ -63,7 +63,7 @@ system:
       value: 298.15
     type: aqueous
 source:
-  citation key: engstfeld_2018_polycrystalline_17743
+  citationKey: engstfeld_2018_polycrystalline_17743
   url: https://doi.org/10.1002/chem.201803418
   techniques:
   - XPS

@@ -9,7 +9,7 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Pt
       shape:
         type: wire
@@ -20,12 +20,12 @@ system:
         type: wire
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
-      geometric electrolyte contact area:
+      crystallographicOrientation: '111'
+      geometricElectrolyteContactArea:
         value: 0.3
         unit: cm-2
       material: Au
-      preparation procedure:
+      preparationProcedure:
          description:
          - Annealed at 350°C for 4h under vacuum in a quartz ampule.
       description: Au on mica
@@ -49,7 +49,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: atkin_2009_afm_13266
+  citationKey: atkin_2009_afm_13266
   url: https://doi.org/10.1021/jp9026755
   techniques:
   - CV
