@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<svg width="4959" height="7009" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+ <g class="layer" id="image-layer">
+  <title>image-layer</title>
+  <image height="7009" id="svg_1" width="4959" x="0" xlink:href="cuesta_2000_adsorption_5684_p1.png" y="0"/>
+ </g>
+ <g class="layer" id="digitization-layer">
+  <title>digitization-layer</title>
+  <text fill="#ff00ff" font-family="Serif" font-size="54" id="svg_20" stroke="#ff00ff" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="2894.8" xml:space="preserve" y="3455.49">Figure: 2a</text>
+  <text fill="#ff00ff" font-family="Serif" font-size="54" id="svg_21" stroke="#ff00ff" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="2897.19" xml:space="preserve" y="3524.55">tags: BCV</text>
+  <text fill="#ff00ff" font-family="Serif" font-size="54" id="svg_22" stroke="#ff00ff" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="3369.34" xml:space="preserve" y="3483.24">scan rate: 10 mV s⁻¹</text>
+  <g id="svg_2">
+   <path d="m3210.28,3615.79l-132.67,-0.87l132.67,0.87z" fill="#ff00ff" id="svg_6" stroke="#ff00ff" stroke-width="5"/>
+   <text fill="#ff00ff" font-family="Serif" font-size="54" id="svg_18" stroke="#ff00ff" stroke-width="0" text-anchor="middle" x="2909.94" xml:space="preserve" y="3625.58">j2: 6 µA cm⁻²</text>
+  </g>
+  <g id="svg_3" transform="matrix(1 0 0 1 0 0)">
+   <path d="m3211.52,4689.22l-122.16,0.26l122.16,-0.26z" fill="#ff00ff" id="svg_7" stroke="#ff00ff" stroke-width="5"/>
+   <text fill="#ff00ff" font-family="Serif" font-size="54" id="svg_17" stroke="#ff00ff" stroke-width="0" text-anchor="middle" x="2890.75" xml:space="preserve" y="4702.06">j1: -2.5 µA cm⁻²</text>
+  </g>
+  <g id="svg_4">
+   <path d="m3210.98,4689.07l-16,94.33l16,-94.33z" fill="#ff00ff" id="svg_8" stroke="#ff00ff" stroke-width="5"/>
+   <text fill="#ff00ff" font-family="Serif" font-size="54" id="svg_15" stroke="#ff00ff" stroke-width="0" text-anchor="middle" x="3195.35" xml:space="preserve" y="4830.65">E1: -0.4 V vs. SCE</text>
+  </g>
+  <g id="svg_5">
+   <path d="m4006.87,4688.86l-0.64,104.06l0.64,-104.06z" fill="#ff00ff" id="svg_9" stroke="#ff00ff" stroke-width="5"/>
+   <text fill="#ff00ff" font-family="Serif" font-size="54" id="svg_16" stroke="#ff00ff" stroke-width="0" text-anchor="middle" x="4008.52" xml:space="preserve" y="4839.51">E2: 0.8 V vs. SCE</text>
+  </g>
+  <g id="svg_12" transform="matrix(1 0 0 1 0 0)">
+   <text fill="#ff00ff" font-family="Serif" font-size="54" font-weight="normal" id="svg_19" stroke="#ff00ff" stroke-width="0" text-anchor="middle" x="3446.71" xml:space="preserve" y="4299.31">curve: black</text>
+   <path d="m3337.46,4490.2c-32.44,0.26 -94.99,-0.86 -97.54,4.45l0.08,-28.76c8.77,-8.63 34.32,-7.15 60.34,-7.28c17.8,-0.24 50.47,-0.87 80.53,-2.34c30.06,-1.47 63.57,-4.32 88.12,-6.25c19.99,-2.1 43.37,-2.85 76.53,-7.91c16.58,-2.53 36.72,-2.19 46.38,-9.14c9.65,-6.96 20.55,-5.81 33.1,-18.68c12.56,-12.88 16.62,-15.05 23.65,-18.34c3.51,-1.65 16.51,-15.31 22.3,-26.55c5.78,-11.24 5.9,-10.99 11.66,-44.48c5.76,-33.49 5.54,-86.52 10.84,-208.51c0,-69.03 2.53,-136.69 2.53,-205.72c2.24,-102.31 0.58,-237.27 6.73,-306.94l2.36,295.35c2.51,104.41 2.16,258.34 4.09,311.85c1.93,53.5 2.31,134.99 3.94,160.97c1.63,25.98 4.86,44.83 24.42,45.52c14.46,1.84 28.46,4.83 43.37,5.52c14.92,0.69 71.5,5.5 107.71,5.26c36.46,0.17 69.7,1.27 106.16,1.44l10.78,-0.78l0.17,78.2c-20.67,4.71 -126.18,11.2 -159.25,12.05c-33.06,0.85 -71.44,3.39 -107.01,7.85c-35.57,4.46 -66.99,8.28 -96.82,14.98c-29.82,6.7 -48.02,16.69 -72.22,26.55c-24.2,9.85 -44.67,22.01 -57.21,12.09c-12.55,-9.91 -27.85,-33.39 -36.72,-44.45c-8.87,-11.06 -26.15,-14.76 -40.03,-17.43c-13.88,-2.67 -33.3,-5.96 -61.58,-10.53c-28.28,-4.56 -55.72,-9.46 -84.15,-10.93c-7.11,-0.37 -11.88,-0.2 -18.69,0.82c-6.8,1.02 -14.83,3.19 -20.25,9.44c-5.42,6.25 -11.01,17.14 -12.27,18.68c-1.26,1.53 -0.28,-51.46 0.02,-60.45" fill="#000000" fill-opacity="0" id="svg_11" stroke="#ff00ff" stroke-width="5"/>
+  </g>
+ </g>
+</svg>
