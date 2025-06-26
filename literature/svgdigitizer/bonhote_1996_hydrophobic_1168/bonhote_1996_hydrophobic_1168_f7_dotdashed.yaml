@@ -1,0 +1,76 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  instrumentation:
+  - manufacturer: Ecochemie
+    name: Autolab P20
+    type: potentiostat
+system:
+  type: electrochemical
+  electrodes:
+    - name: CE
+      function: counter electrode
+      crystallographic orientation: poly
+      material: Pt
+      shape:
+        type: disk
+    - name: REF
+      function: reference electrode
+      material: Li
+      shape:
+        type: wire
+    - name: WE
+      function: working electrode
+      crystallographic orientation: '111'
+      material: Au
+      preparation procedure:
+         description:
+         - Electrochemical polishing and flame annealing.
+      shape:
+        diameter:
+          unit: mm
+          value: 1
+        type: disk
+  electrolyte:
+    components:
+    - name: EMIm-TAc
+      proportion:
+        unit: volume percent
+        value: 100
+      source:
+        supplier: Homemade
+      type: solvent
+    temperature:
+      unit: K
+      value: 298.15
+    type: ionic liquid
+  atmosphere:
+      type: inert chamber
+      components:
+      - name: Ar
+        type: gas
+        proportion:
+          value: 100
+source:
+  citation key: bonhote_1996_hydrophobic_1168
+  url: https://doi.org/10.1021/ic951325x
+  techniques:
+  - CV
+  - NMR
+  - KFTGA
+  - Flourescence
+  - Phosphorescence
+  - Conductivity
+  - Viscosity
+  - Melting points
+  - Miscibility
+curation:
+  process:
+  - role: curator
+    name: Maren-Kathrin Heubach
+    orcid: https://orcid.org/0000-0002-3769-7169
+    date: 2022-06-29
+  - role: reviewer
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2024-02-29
