@@ -1,0 +1,65 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  instrumentation:
+  - name: potentiostat
+    type: potentiostat
+system:
+  type: electrochemical
+  electrodes:
+    - name: CE
+      function: counter electrode
+      crystallographic orientation: poly
+    - name: REF
+      function: reference electrode
+      source:
+        manufacturer: homemade
+      type: micro-Ag/Ag+, normalized against ferrocene
+    - name: WE
+      function: working electrode
+      crystallographic orientation: 'poly'
+      material: Au
+      shape:
+        type: micro-electrode
+      source:
+        manufacturer: homemade
+  electrolyte:
+    components:
+    - name: EMIM-TFSI
+      proportion:
+        unit: volume percent
+        value: 100
+      source:
+        supplier: Merck KGaA
+        quality: ultra-pure grade
+      purity:
+        refinement: as-received
+      type: solvent
+    - concentration:
+        unit: mol / l
+        value: < 0.095
+      name: H-TFSI
+      source:
+        supplier: Fluka
+        purity:
+          grade: '> 95%'
+      type: solute
+    temperature:
+      unit: K
+      value: 298.15
+    type: ionic liquid
+source:
+  citation key: meng_2012_the_5222
+  url: https://doi.org/10.1039/c2cp23801b
+  techniques:
+  - CV
+curation:
+  process:
+  - role: curator
+    name: Jerome Mayer
+    orcid: https://orcid.org/0000-0002-7451-9994
+    date: 2022-01-10
+  - role: reviewer
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2024-02-29
