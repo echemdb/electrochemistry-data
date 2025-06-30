@@ -4,6 +4,12 @@ on:
     tags:
       - "[0-9]+.[0-9]+.[0-9]"
 
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
 jobs:
   github-release:
     runs-on: ubuntu-24.04
