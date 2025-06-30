@@ -32,6 +32,12 @@ jobs:
         shell: bash -l {0}
         run:
           zip -r data-${{ github.ref_name }}.zip data/generated
+        if: ${{ github.event_name == 'push' }}
+      - name: zip-data
+        shell: bash -l {0}
+        run:
+          zip -r data-pr.zip data/generated
+        if: ${{ github.event_name == 'pull_request' }}
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
