@@ -33,7 +33,7 @@ jobs:
         run:
           zip -r data-${{ github.ref_name }}.zip data/generated
         if: ${{ github.event_name == 'push' }}
-      - name: zip-data
+      - name: zip-data-for-pr
         shell: bash -l {0}
         run:
           zip -r data-pr.zip data/generated
