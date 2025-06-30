@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with: { submodules: recursive }
       - uses: prefix-dev/setup-pixi@v0.8.1
         with:
@@ -28,18 +28,37 @@ jobs:
       - name: validate packages
         shell: pixi run bash -e {0}
         run: pixi run -e dev validate
-      - name: zip-data
+      - name: create-output-folder
         shell: bash -l {0}
-        run:
-          zip -r data-${{ github.ref_name }}.zip data/generated
-        if: ${{ github.event_name == 'push' }}
+        run: mkdir -p data/generated
+      - name: create-zip-name
+        id: vars
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "zip_name=artifact-pr.zip" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.event_name }}" == "release" ]]; then
+            echo "zip_name=data-${GITHUB_REF_NAME}.zip" >> $GITHUB_OUTPUT
+          else
+            echo "zip_name=artifact-other.zip" >> $GITHUB_OUTPUT
+          fi
+
+      - name: create-zip
+        shell: bash -l {0}
+        run: |
+          zip -r "${{ steps.vars.outputs.zip_name }}" data/generated
       - name: zip-data-for-pr
         shell: bash -l {0}
         run:
           zip -r data-pr.zip data/generated
         if: ${{ github.event_name == 'pull_request' }}
+      - name: Upload artifact (for PR)
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.vars.outputs.zip_name }}
+          path: ${{ steps.vars.outputs.zip_name }}
       - name: Release
+        if: ${{ github.event_name == 'release' }}
         uses: softprops/action-gh-release@v2
         with:
-          files: |
-            data-${{ github.ref_name }}.zip
+          files: ${{ steps.vars.outputs.zip_name }}
