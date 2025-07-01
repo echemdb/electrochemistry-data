@@ -35,11 +35,11 @@ jobs:
         id: vars
         run: |
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            echo "zip_name=artifact-pr.zip" >> $GITHUB_OUTPUT
+            echo "zip_name=artifact-pr" >> $GITHUB_OUTPUT
           elif [[ "${{ github.event_name }}" == "release" ]]; then
-            echo "zip_name=data-${GITHUB_REF_NAME}.zip" >> $GITHUB_OUTPUT
+            echo "zip_name=data-${GITHUB_REF_NAME}" >> $GITHUB_OUTPUT
           else
-            echo "zip_name=artifact-other.zip" >> $GITHUB_OUTPUT
+            echo "zip_name=artifact-other" >> $GITHUB_OUTPUT
           fi
 
       - name: create-zip
