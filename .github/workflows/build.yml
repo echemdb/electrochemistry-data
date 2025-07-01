@@ -49,7 +49,7 @@ jobs:
       - name: zip-data-for-pr
         shell: bash -l {0}
         run:
-          zip -r data-pr.zip data/generated
+          zip -r data-pr data/generated
         if: ${{ github.event_name == 'pull_request' }}
       - name: Upload artifact (for PR)
         if: ${{ github.event_name == 'pull_request' }}
