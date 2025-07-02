@@ -1,6 +1,6 @@
 **Added:**
 
-* Added upload data artifact for all PRs.
+* Added possibility to specify tag or branch of metadata-schema for validation.
 
 **Changed:**
 
