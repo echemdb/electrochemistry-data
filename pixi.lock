@@ -5815,7 +5815,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/attrs?source=hash-mapping
+  - pkg:pypi/attrs?source=compressed-mapping
   size: 57181
   timestamp: 1741918625732
 - conda: https://conda.anaconda.org/conda-forge/noarch/babel-2.17.0-pyhd8ed1ab_0.conda
@@ -6530,7 +6530,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/charset-normalizer?source=hash-mapping
+  - pkg:pypi/charset-normalizer?source=compressed-mapping
   size: 50481
   timestamp: 1746214981991
 - conda: https://conda.anaconda.org/conda-forge/noarch/check-jsonschema-0.33.1-pyhd8ed1ab_0.conda
@@ -9064,7 +9064,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/jupyter-lsp?source=hash-mapping
+  - pkg:pypi/jupyter-lsp?source=compressed-mapping
   size: 57659
   timestamp: 1748550130303
 - conda: https://conda.anaconda.org/conda-forge/noarch/jupyter_client-8.6.3-pyhd8ed1ab_1.conda
@@ -14177,6 +14177,7 @@ packages:
   constrains:
   - psutil >=3.0
   license: MIT
+  license_family: MIT
   purls:
   - pkg:pypi/pytest-xdist?source=hash-mapping
   size: 39300
@@ -15706,6 +15707,7 @@ packages:
   constrains:
   - __glibc >=2.17
   license: MIT
+  license_family: MIT
   purls:
   - pkg:pypi/rpds-py?source=hash-mapping
   size: 386174
@@ -15721,6 +15723,7 @@ packages:
   constrains:
   - __glibc >=2.17
   license: MIT
+  license_family: MIT
   purls:
   - pkg:pypi/rpds-py?source=hash-mapping
   size: 386382
@@ -15736,6 +15739,7 @@ packages:
   constrains:
   - __glibc >=2.17
   license: MIT
+  license_family: MIT
   purls:
   - pkg:pypi/rpds-py?source=compressed-mapping
   size: 389020
@@ -15751,6 +15755,7 @@ packages:
   constrains:
   - __glibc >=2.17
   license: MIT
+  license_family: MIT
   purls:
   - pkg:pypi/rpds-py?source=compressed-mapping
   size: 388125
@@ -15766,6 +15771,7 @@ packages:
   constrains:
   - __glibc >=2.17
   license: MIT
+  license_family: MIT
   purls:
   - pkg:pypi/rpds-py?source=hash-mapping
   size: 386639
@@ -15780,6 +15786,7 @@ packages:
   constrains:
   - __osx >=10.13
   license: MIT
+  license_family: MIT
   purls:
   - pkg:pypi/rpds-py?source=hash-mapping
   size: 377568
@@ -15794,6 +15801,7 @@ packages:
   constrains:
   - __osx >=10.13
   license: MIT
+  license_family: MIT
   purls:
   - pkg:pypi/rpds-py?source=hash-mapping
   size: 377527
@@ -15808,6 +15816,7 @@ packages:
   constrains:
   - __osx >=10.13
   license: MIT
+  license_family: MIT
   purls:
   - pkg:pypi/rpds-py?source=compressed-mapping
   size: 369273
@@ -15822,6 +15831,7 @@ packages:
   constrains:
   - __osx >=10.13
   license: MIT
+  license_family: MIT
   purls:
   - pkg:pypi/rpds-py?source=compressed-mapping
   size: 368619
@@ -15836,6 +15846,7 @@ packages:
   constrains:
   - __osx >=10.13
   license: MIT
+  license_family: MIT
   purls:
   - pkg:pypi/rpds-py?source=hash-mapping
   size: 377464
@@ -15853,6 +15864,7 @@ packages:
   - ucrt >=10.0.20348.0
   - python_abi 3.10.* *_cp310
   license: MIT
+  license_family: MIT
   purls:
   - pkg:pypi/rpds-py?source=compressed-mapping
   size: 248892
@@ -15870,6 +15882,7 @@ packages:
   - ucrt >=10.0.20348.0
   - python_abi 3.11.* *_cp311
   license: MIT
+  license_family: MIT
   purls:
   - pkg:pypi/rpds-py?source=hash-mapping
   size: 249152
@@ -15887,6 +15900,7 @@ packages:
   - ucrt >=10.0.20348.0
   - python_abi 3.12.* *_cp312
   license: MIT
+  license_family: MIT
   purls:
   - pkg:pypi/rpds-py?source=hash-mapping
   size: 250960
@@ -15904,6 +15918,7 @@ packages:
   - ucrt >=10.0.20348.0
   - python_abi 3.13.* *_cp313
   license: MIT
+  license_family: MIT
   purls:
   - pkg:pypi/rpds-py?source=compressed-mapping
   size: 250938
@@ -15921,6 +15936,7 @@ packages:
   - ucrt >=10.0.20348.0
   - python_abi 3.9.* *_cp39
   license: MIT
+  license_family: MIT
   purls:
   - pkg:pypi/rpds-py?source=hash-mapping
   size: 248765
