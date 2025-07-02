@@ -20,8 +20,6 @@ jobs:
       - uses: prefix-dev/setup-pixi@v0.8.10
         with:
           pixi-version: v0.49.0
-      - name: Download Artifact
-        uses: actions/download-artifact@v4
       - name: digitize
         shell: pixi run bash -e {0}
         run: pixi run -e dev convert
