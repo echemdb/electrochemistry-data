@@ -15,7 +15,7 @@ system:
           quality: ultrapure water
         purity:
           totalIonConductivity: { value: 18.2, unit: MOhm cm }
-          total organic carbon: { value: 3, unit: "ppb" }
+          totalOrganicCarbon: { value: 3, unit: "ppb" }
       - name: H2SO4
         type: acid
         source:
