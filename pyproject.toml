@@ -63,7 +63,7 @@ pytest-doctestplus = "*"
 pytest-remotedata = "*"
 
 [tool.pixi.feature.test.tasks]
-convert = "cd data && make"
+convert = "cd data && make -j$(nproc)"
 validate = { args = [ { "arg" = "version", "default" = "heads/camel-case" } ],cmd = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --no-cache $(find ./data/generated/svgdigitizer/ -type f -name '*.json')" }
 validate-yaml = { args = [ { "arg" = "version", "default" = "heads/camel-case" } ], cmd = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --no-cache $(find ./literature/svgdigitizer/ -type f -name '*.yaml')" }
 doctest = "pytest -n auto --doctest-modules echemdb_ecdata"
