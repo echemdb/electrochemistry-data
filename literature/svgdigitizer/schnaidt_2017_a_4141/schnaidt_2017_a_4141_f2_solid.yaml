@@ -18,9 +18,9 @@ system:
       type: RHE
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Pt
-      preparation procedure:
+      preparationProcedure:
         description:
           - The electrode was prepared under UHV conditions by sputtering the electrode surface and subsequent controlled heating and cooling cycles, including oxygen adsorption during the cooling process.
           - The final step only involved controlled heating and cooling.
@@ -62,7 +62,7 @@ system:
       value: 298.15
     type: aqueous
 source:
-  citation key: schnaidt_2017_a_4141
+  citationKey: schnaidt_2017_a_4141
   url: https://doi.org/10.1039/C6CP06051J
   techniques:
     - STM

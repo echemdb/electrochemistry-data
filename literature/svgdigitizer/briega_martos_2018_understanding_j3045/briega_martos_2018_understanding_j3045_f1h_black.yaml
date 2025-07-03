@@ -16,7 +16,7 @@ system:
       type: Ag/AgCl
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Pt
   electrolyte:
     components:
@@ -39,7 +39,7 @@ system:
       value: 298.15
     type: aqueous
 source:
-  citation key: briega_martos_2018_understanding_j3045
+  citationKey: briega_martos_2018_understanding_j3045
   url: https://doi.org/10.1149/2.0081815jes
   techniques:
   - ORR

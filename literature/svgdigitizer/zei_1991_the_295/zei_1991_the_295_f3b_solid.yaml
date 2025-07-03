@@ -15,7 +15,7 @@ system:
       type: Ag/AgCl
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Ag
   electrolyte:
     components:
@@ -34,7 +34,7 @@ system:
       value: 298.15
     type: aqueous
 source:
-  citation key: zei_1991_the_295
+  citationKey: zei_1991_the_295
   url: https://doi.org/10.1016/0022-0728(91)85074-Y
   techniques:
   - LEED 

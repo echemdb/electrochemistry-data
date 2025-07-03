@@ -10,7 +10,7 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Pt
       source:
         manufacturer: Mateck GmbH
@@ -26,9 +26,9 @@ system:
       type: sheet
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Au
-      preparation procedure:
+      preparationProcedure:
          description:
          - Annealed in a furnace in air at 960°C for 2h.
       shape:
@@ -56,7 +56,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: schuett_2021_electrodeposition_20461
+  citationKey: schuett_2021_electrodeposition_20461
   url: https://doi.org/10.1002/anie.202107195
   techniques:
   - CV

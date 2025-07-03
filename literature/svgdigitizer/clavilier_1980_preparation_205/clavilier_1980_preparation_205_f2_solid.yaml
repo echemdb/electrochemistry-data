@@ -6,7 +6,7 @@ curation:
       date: 2022-06-03
 source:
   url: https://doi.org/10.1016/S0022-0728(79)80022-4
-  citation key: clavilier_1980_preparation_205
+  citationKey: clavilier_1980_preparation_205
   techniques:
   - CV
 system:
@@ -34,12 +34,12 @@ system:
       function: working electrode
       type: single crystal
       material: Pt
-      crystallographic orientation: '110'
+      crystallographicOrientation: '110'
       source:
         manufacturer: Johnson Matthey
         purity:
           grade: 5 N
-      preparation procedure:
+      preparationProcedure:
         description:
           - Annealing and protecting the electrode surface with a droplet of ultra-pure water.
 

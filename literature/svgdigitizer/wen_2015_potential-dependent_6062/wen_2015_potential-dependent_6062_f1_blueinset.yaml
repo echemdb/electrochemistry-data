@@ -13,11 +13,11 @@ system:
       type: Pt
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       source:
         manufacturer: Mateck
       material: Au
-      preparation procedure:
+      preparationProcedure:
          description:
          - Flame annealing in butane flame.
       shape:
@@ -45,7 +45,7 @@ system:
           value: 100
         type: gas
 source:
-  citation key: wen_2015_potential-dependent_6062
+  citationKey: wen_2015_potential-dependent_6062
   url: https://doi.org/10.1002/anie.201501715
   techniques:
   - CV
