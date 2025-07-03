@@ -189,7 +189,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl
@@ -375,7 +375,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl
@@ -562,7 +562,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl
@@ -840,7 +840,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a6/a5/c0b6468d3824fe3fde30dbb5e1f687b291608f9473681bbf7dabbf5a87d7/text_unidecode-1.3-py2.py3-none-any.whl
@@ -1105,7 +1105,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a6/a5/c0b6468d3824fe3fde30dbb5e1f687b291608f9473681bbf7dabbf5a87d7/text_unidecode-1.3-py2.py3-none-any.whl
@@ -1366,7 +1366,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a6/a5/c0b6468d3824fe3fde30dbb5e1f687b291608f9473681bbf7dabbf5a87d7/text_unidecode-1.3-py2.py3-none-any.whl
@@ -1576,7 +1576,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl
@@ -1773,7 +1773,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl
@@ -1970,7 +1970,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl
@@ -2182,7 +2182,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl
@@ -2380,7 +2380,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl
@@ -2578,7 +2578,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl
@@ -2790,7 +2790,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl
@@ -2988,7 +2988,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl
@@ -3186,7 +3186,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl
@@ -3396,7 +3396,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl
@@ -3594,7 +3594,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl
@@ -3792,7 +3792,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl
@@ -4003,7 +4003,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl
@@ -4200,7 +4200,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl
@@ -4397,7 +4397,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/e9/e58082fbb8cecbb6fb4133033c40cc50c248b1a331582be3a0f39138d65b/simpleeval-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/ea/ec6101e1710ac74e88b10312e9b59734885155e47d7dbb1171e4d347a364/svg.path-6.3-py2.py3-none-any.whl
-      - pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+      - pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
       - pypi: https://files.pythonhosted.org/packages/a6/00/c23f53a9e91092239ff6f1fcc39463626e293f6b24898739996fe2a6eebd/svgpathtools-1.7.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl
@@ -7527,7 +7527,9 @@ packages:
 - pypi: ./
   name: echemdb-ecdata
   version: 0.4.1
-  sha256: 6c3a3fb35506538a210c6b47ba195530a6916a6eca8f3c6061db762fde2eca9c
+  sha256: cbb7a92795f5b56242321b748387e76e7e3dc9968414f94c36594f22705f5992
+  requires_dist:
+  - svgdigitizer @ git+https://github.com/echemdb/svgdigitizer@camel-case
   requires_python: '>=3.9'
   editable: true
 - conda: https://conda.anaconda.org/conda-forge/noarch/exceptiongroup-1.3.0-pyhd8ed1ab_0.conda
@@ -17342,7 +17344,7 @@ packages:
   - pytest-cov ; extra == 'test'
   - zest-releaser[recommended] ; extra == 'test'
   requires_python: '>=3.8'
-- pypi: git+https://github.com/echemdb/svgdigitizer?branch=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
+- pypi: git+https://github.com/echemdb/svgdigitizer?rev=camel-case#8e6503d821813459f6316c6a98637f9725e7ca61
   name: svgdigitizer
   version: 0.12.6
   requires_dist:
