@@ -9,9 +9,6 @@ classifiers = ["License :: OSI Approved :: GNU General Public License v3 or late
 description = "a database for published electrochemical data inferred from SVG and raw CSV files."
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = [
-    "svgdigitizer@git+https://github.com/echemdb/svgdigitizer#egg=camel-case",
-]
 
 [tool.setuptools]
 packages = [
@@ -39,6 +36,7 @@ jupytext = ">=1.16.6,<2"
 
 [tool.pixi.pypi-dependencies]
 echemdb_ecdata = { path = ".", editable = true }
+svgdigitizer = { git = "https://github.com/echemdb/svgdigitizer", branch = "camel-case" }
 
 [tool.pixi.feature.python-39.dependencies]
 python = "3.9.*"
