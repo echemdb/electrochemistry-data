@@ -38,7 +38,7 @@ system:
         supplier: Merck/EMD
         purity:
           grade: ultrapure
-      comment: '< 10 ppm chloride, Li-free synthesis'
+      comment: '< 10 ppm chloride, Li-free synthesis.'
       type: solvent
     temperature:
       unit: K
