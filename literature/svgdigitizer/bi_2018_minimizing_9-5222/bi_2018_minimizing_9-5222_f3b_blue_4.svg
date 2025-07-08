@@ -4,8 +4,8 @@
    version="1.1"
    width="4961px"
    id="svg6"
-   sodipodi:docname="bi_2018_minimizing_9-5222_p4_f3b_blue_4.svg"
-   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="bi_2018_minimizing_9-5222_f3b_blue_4.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -21,14 +21,16 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="0.35051674"
-     inkscape:cx="3553.3253"
-     inkscape:cy="908.65847"
-     inkscape:window-width="1920"
-     inkscape:window-height="1001"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
+     inkscape:cx="3103.9887"
+     inkscape:cy="1128.3341"
+     inkscape:window-width="1536"
+     inkscape:window-height="953"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg6" />
+     inkscape:current-layer="g8147"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
   <defs
      id="defs2" />
   <image
@@ -60,7 +62,7 @@
              sodipodi:role="line"
              id="tspan7616"
              x="2843.5054"
-             y="1401.8849">curve: black</tspan></text>
+             y="1401.8849">curve: blue</tspan></text>
       </g>
     </g>
   </g>
@@ -73,7 +75,7 @@
        sodipodi:role="line"
        id="tspan8610"
        x="3126.8999"
-       y="823.03107">Figure: 3 a</tspan></text>
+       y="823.03107">Figure: 3b</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:21.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
