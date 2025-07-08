@@ -4,8 +4,8 @@
    version="1.1"
    width="4959px"
    id="svg6"
-   sodipodi:docname="endres_2006_probing_1377_p12_f11_b_black.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="endres_2006_probing_1377_f11_b_black.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -21,14 +21,16 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="0.47427675"
-     inkscape:cx="489.16587"
-     inkscape:cy="1358.9112"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
+     inkscape:cx="2424.7446"
+     inkscape:cy="2033.6228"
+     inkscape:window-width="1536"
+     inkscape:window-height="953"
      inkscape:window-x="-8"
-     inkscape:window-y="284"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg6" />
+     inkscape:current-layer="svg6"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
   <defs
      id="defs2" />
   <image
@@ -113,7 +115,7 @@
        sodipodi:role="line"
        id="tspan10448"
        x="390.0676"
-       y="980.44019">Figure: 11 b</tspan></text>
+       y="980.44019">Figure: 11b</tspan></text>
   <g
      id="g18471"
      transform="translate(8.4338937,284.64393)">
@@ -165,4 +167,18 @@
        id="tspan1485"
        x="776.33386"
        y="1815.3521">scan rate: 10 mV / s</tspan></text>
+  <g
+     id="svg6-9"
+     transform="translate(1626.6677,1099.6239)">
+    <text
+       xml:space="preserve"
+       style="text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#0000aa;stroke-width:3.77953"
+       x="1153.969"
+       y="942.25891"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         x="1153.969"
+         y="942.25891">tags: BCV</tspan></text>
+  </g>
 </svg>
