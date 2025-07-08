@@ -22,15 +22,15 @@
      showgrid="false"
      inkscape:snap-bbox="true"
      inkscape:snap-text-baseline="true"
-     inkscape:zoom="0.33541211"
-     inkscape:cx="2188.3527"
-     inkscape:cy="3850.4871"
+     inkscape:zoom="0.94868871"
+     inkscape:cx="423.74279"
+     inkscape:cy="3175.4357"
      inkscape:window-width="1536"
      inkscape:window-height="953"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g9975"
+     inkscape:current-layer="svg6"
      inkscape:showpageshadow="2"
      inkscape:deskcolor="#d1d1d1" />
   <defs
@@ -62,7 +62,7 @@
        sodipodi:role="line"
        id="tspan40447"
        x="145.46394"
-       y="3366.7524">figure: 3d lower</tspan></text>
+       y="3366.7524">figure: 3d</tspan></text>
   <g
      id="g43055">
     <text
@@ -149,4 +149,14 @@
          x="1571.6429"
          y="3405.7537">curve: bottom</tspan></text>
   </g>
+  <text
+     xml:space="preserve"
+     style="text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#0000aa;stroke-width:3.77953"
+     x="404.76923"
+     y="2926.1443"
+     id="text1"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       x="404.76923"
+       y="2926.1443">tags: BCV</tspan></text>
 </svg>
