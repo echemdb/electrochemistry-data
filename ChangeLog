@@ -4,6 +4,21 @@ electrochemistry-data Change Log
 
 .. current developments
 
+v0.5.0
+====================
+
+**Added:**
+
+* Added possibility to specify tag or branch of metadata-schema for validation.
+
+**Changed:**
+
+* Changed metadata keys to use camelCase for consistency with JSON naming conventions.
+* Changed validation of metadata to echemdb-metadata-schema 0.3.0.
+* Changed pixi task name from `validate_yaml` to `validate-yaml`.
+
+
+
 v0.4.1
 ====================
 
