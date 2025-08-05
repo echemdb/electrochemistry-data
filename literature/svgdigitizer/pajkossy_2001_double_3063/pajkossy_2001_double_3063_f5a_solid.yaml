@@ -16,14 +16,14 @@ system:
       type: SCE
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Pt
-      preparation procedure:
+      preparationProcedure:
         description:
           - The electrode was annealed in a hydrogen or propane gas flame.
           - Cooling in N2 for about 1 min.
           - Immersed in water.
-          - Transferred to the electrochemical cell with water protecting the surface.
+          - Transferred to the electrochemicalCell with water protecting the surface.
   electrolyte:
     components:
     - concentration:
@@ -38,7 +38,7 @@ system:
       value: 298.15
     type: aqueous
 source:
-  citation key: pajkossy_2001_double_3063
+  citationKey: pajkossy_2001_double_3063
   url: https://doi.org/10.1016/S0013-4686(01)00597-7
   techniques:
   - EIS

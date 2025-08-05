@@ -11,7 +11,7 @@ system:
       type: Ag/AgCl
     - name: WE
       function: working electrode
-      crystallographic orientation: '100'
+      crystallographicOrientation: '100'
       material: Ag
   electrolyte:
     components:
@@ -27,7 +27,7 @@ system:
       value: 298.15
     type: aqueous
 source:
-  citation key: ocko_1997_halide_55
+  citationKey: ocko_1997_halide_55
   url: https://doi.org/10.1557/PROC-451-55
   techniques:
   - SXRD

@@ -16,9 +16,9 @@ system:
       type: RHE
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Pt
-      preparation procedure:
+      preparationProcedure:
         description:
           - Flame annealed.
           - Cooled in a hydrogen/argon atmosphere.
@@ -37,7 +37,7 @@ system:
       value: 298.15
     type: aqueous
 source:
-  citation key: gomez-marin_2012_surface_558
+  citationKey: gomez-marin_2012_surface_558
   url: https://doi.org/10.1016/j.electacta.2012.04.066
 curation:
   process:

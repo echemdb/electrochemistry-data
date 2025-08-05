@@ -5,7 +5,7 @@ curation:
     orcid: https://orcid.org/0000-0002-2911-2925
     date: 2023-03-15
 source:
-  citation key: domke_2003_determination_113
+  citationKey: domke_2003_determination_113
   url: https://doi.org/10.1016/S0022-0728(02)01471-7
   techniques:
   - CV
@@ -33,17 +33,17 @@ system:
       type: RHE
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Pt
     - name: WE
       function: working electrode
-      crystallographic orientation: '311'
+      crystallographicOrientation: '311'
       material: Pt
       source:
         manufacturer: Goodfellow
         purity:
           grade: 5N
-      preparation procedure:
+      preparationProcedure:
         description:
           - heating for 10 s in a gas-oxygen flame 
           - cooled in a reductive atmosphere (H2+Ar)

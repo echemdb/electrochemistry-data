@@ -5,7 +5,7 @@ curation:
     orcid: https://orcid.org/0000-0002-2911-2925
     date: 2023-03-17
 source:
-  citation key: sandbeck_2019_dissolution_2997
+  citationKey: sandbeck_2019_dissolution_2997
   url: https://doi.org/10.1002/cphc.201900866
   techniques:
   - CV
@@ -20,7 +20,7 @@ system:
         refinement: PureLab Plus System, Elga
       purity:
         grade: ultrapure
-        total ion conductivity:
+        totalIonConductivity:
           value: 18.2
           unit: MOhm cm
     - name: HClO4
@@ -46,7 +46,7 @@ system:
     - name: WE
       function: working electrode
       material: Pt
-      crystallographic orientation: '100'
+      crystallographicOrientation: '100'
       source:
         manufacturer: MaTecK
       shape:
@@ -57,7 +57,7 @@ system:
         diameter:
           value: 5
           unit: mm
-      preparation procedure:
+      preparationProcedure:
         description:
           - flame annealing in a butane torch, while glowing red hot for at least 30 s
           - cooling in Ar/H2 (ca. 40% H2) for 2 min

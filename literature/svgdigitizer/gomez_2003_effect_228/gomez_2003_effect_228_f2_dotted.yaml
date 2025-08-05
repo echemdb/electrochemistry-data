@@ -16,7 +16,7 @@ experimental:
       type: universal programmer
       model: EG&G PAR model 175
 source:
-  citation key: gomez_2003_effect_228
+  citationKey: gomez_2003_effect_228
   url: https://doi.org/10.1021/jp034982g
   techniques:
   - CV
@@ -55,8 +55,8 @@ system:
     - name: WE
       function: working electrode
       material: Pt
-      crystallographic orientation: '100'
-      preparation procedure:
+      crystallographicOrientation: '100'
+      preparationProcedure:
         description:
           - heated in gas/air flame
           - cooled in H2/Ar

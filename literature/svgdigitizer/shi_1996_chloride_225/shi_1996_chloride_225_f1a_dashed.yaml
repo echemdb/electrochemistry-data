@@ -16,9 +16,9 @@ system:
       type: SCE
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Au
-      preparation procedure:
+      preparationProcedure:
         description:
           - The Au electrode was prepared by flame annealing.
   electrolyte:
@@ -35,7 +35,7 @@ system:
       value: 298.15
     type: aqueous
 source:
-  citation key: shi_1996_chloride_225
+  citationKey: shi_1996_chloride_225
   url: https://doi.org/10.1016/0022-0728(92)80223-Q
 curation:
   process:

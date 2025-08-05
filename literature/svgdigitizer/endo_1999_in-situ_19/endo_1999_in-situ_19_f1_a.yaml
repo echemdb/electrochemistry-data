@@ -16,9 +16,9 @@ system:
       type: Ag/AgCl
     - name: WE
       function: working electrode
-      crystallographic orientation: '100'
+      crystallographicOrientation: '100'
       material: Ag
-      preparation procedure:
+      preparationProcedure:
         description:
           - Etched with H2O2 and NaCN solution.
       source:
@@ -42,7 +42,7 @@ system:
       value: 298.15
     type: aqueous
 source:
-  citation key: endo_1999_in-situ_19
+  citationKey: endo_1999_in-situ_19
   url: https://doi.org/10.1016/S0022-0728(99)00148-5
   techniques:
   - EXAFS

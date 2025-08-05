@@ -10,7 +10,7 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Pt
       source:
         manufacturer: MaTecK GmbH
@@ -24,9 +24,9 @@ system:
       type: wire
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Au
-      preparation procedure:
+      preparationProcedure:
         description:
           - Annealed in a hydrogen stream and slowly cooled in Argon.
       shape:
@@ -54,7 +54,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: berger_2017_lithium_261
+  citationKey: berger_2017_lithium_261
   url: https://doi.org/10.1002/celc.201600730
   techniques:
     - CV
