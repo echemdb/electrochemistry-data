@@ -16,7 +16,7 @@ experimental:
       type: X-Y recorder
       model: Phillips PM 8133
 source:
-  citation key: taguchi_2007_electrochemical_6023
+  citationKey: taguchi_2007_electrochemical_6023
   url: https://doi.org/10.1016/j.electacta.2007.03.057
   techniques:
   - CV
@@ -31,7 +31,7 @@ system:
         refinement: Elga Purelab Ultra
         purity:
           grade: ultra-pure
-          total ion conductivity:
+          totalIonConductivity:
             value: 18.2
             unit: MOhm cm
     - name: HClO4
@@ -53,11 +53,11 @@ system:
     - name: WE
       function: working electrode
       material: Pt
-      crystallographic orientation: '331'
+      crystallographicOrientation: '331'
       source:
         purity:
           grade: 4N
-      preparation procedure:
+      preparationProcedure:
         description:
           - flame-annealing
           - cooling in a gas stream of H2/Ar

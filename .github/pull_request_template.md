@@ -15,7 +15,7 @@ For contributors and reviewers alike.
 
 **Bib file**
 
-- [ ] The identifier must be identical with the filename as well as the citation key in the YAML.
+- [ ] The identifier must be identical with the filename as well as the citationKey in the YAML.
 - [ ] Remove typos (or unwanted whitespace), specifically in the title such as `Pt (111)` to `Pt(111)`.
 
 **SVG**

@@ -15,7 +15,7 @@ system:
           purity:
             grade: ultrapure water
         purity:
-          total ion conductivity:
+          totalIonConductivity:
             value: 18.2
             unit: MOhm cm
       - name: H2SO4
@@ -44,19 +44,19 @@ system:
     - name: WE
       function: working electrode
       material: Au
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       source:
         manufacturer: homemade
       shape:
         type: bead shaped
-      geometric electrolyte contact area:
+      geometricElectrolyteContactArea:
         unit: cm-2
-      preparation procedure:
+      preparationProcedure:
         description:
           - Annealed in a hydrogen flame for 1 min.
           - Quenched in ultrapure water.
 source:
-  citation key: sato_2006_effect_725
+  citationKey: sato_2006_effect_725
   url: https://doi.org/10.1016/j.elecom.2006.03.001
 curation:
   process:

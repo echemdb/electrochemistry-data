@@ -16,7 +16,7 @@ system:
       type: RHE
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Pt
   electrolyte:
     components:
@@ -33,7 +33,7 @@ system:
       value: 298.15
     type: aqueous
 source:
-  citation key: mello_2018_bromide_18562
+  citationKey: mello_2018_bromide_18562
   url: https://doi.org/10.1021/acs.jpcc.8b05685
 curation:
   process:

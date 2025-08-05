@@ -14,8 +14,8 @@ system:
           refinement: Milli-Q
           quality: ultrapure water
         purity:
-          total ion conductivity: { value: 18.2, unit: MOhm cm }
-          total organic carbon: { value: 3, unit: "ppb" }
+          totalIonConductivity: { value: 18.2, unit: MOhm cm }
+          totalOrganicCarbon: { value: 3, unit: "ppb" }
       - name: H2SO4
         type: acid
         source:
@@ -42,7 +42,7 @@ system:
     - name: WE
       function: working electrode
       material: Pt
-      crystallographic orientation: '100'
+      crystallographicOrientation: '100'
       source:
         manufacturer: MaTecK
       shape:
@@ -50,12 +50,12 @@ system:
         diameter:
           value: 4
           unit: mm
-      preparation procedure:
+      preparationProcedure:
         description:
           - Annealed in hydrogen or bunsen burner flame.
           - Cooled down in H2 + N2 for 1 min.
 source:
-  citation key: kibler_2000_in-situ_73
+  citationKey: kibler_2000_in-situ_73
   url: https://doi.org/10.1016/S0022-0728(00)00065-6
 curation:
   process:
