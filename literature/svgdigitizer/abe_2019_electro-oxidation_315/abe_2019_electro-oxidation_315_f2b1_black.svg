@@ -5,7 +5,7 @@
    width="4961px"
    id="svg3348"
    sodipodi:docname="abe_2019_electro-oxidation_315_f2b1_black.svg"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -21,14 +21,14 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="0.32205048"
-     inkscape:cx="1226.5158"
-     inkscape:cy="3142.3645"
-     inkscape:window-width="1440"
-     inkscape:window-height="791"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
-     inkscape:window-maximized="0"
+     inkscape:zoom="0.64410096"
+     inkscape:cx="579.87804"
+     inkscape:cy="3070.1709"
+     inkscape:window-width="2880"
+     inkscape:window-height="1711"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg3348" />
   <defs
      id="defs3344" />
@@ -45,30 +45,32 @@
      transform="translate(166.23736,-2130.1112)">
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.01318px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 713.12398,4614.6134 85.02886,136.6329"
+       d="m 713.12398,4614.6134 84.73204,-20.6103"
        id="path466"
        inkscape:connector-type="polyline"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
        style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
-       x="153.72534"
-       y="4620.3008"
+       x="6.6174898"
+       y="4634.5723"
        id="text12078"><tspan
          sodipodi:role="line"
          id="tspan12076"
-         x="153.72534"
-         y="4620.3008">j2: 0.05 mA / cm2</tspan></text>
+         x="6.6174898"
+         y="4634.5723">j2: 0.1 mA / cm2</tspan></text>
   </g>
   <g
      id="g14202"
-     transform="translate(163.80825,-2499.4686)">
+     transform="translate(-7.4516375,-2501.6642)">
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.03582px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 669.00263,5565.4145 799.92854,5430.9302"
+       d="m 824.9927,5570.4623 145.48108,17.6658"
        id="path451"
        inkscape:connector-type="polyline"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
        style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
@@ -78,17 +80,18 @@
          sodipodi:role="line"
          id="tspan12076-7"
          x="92.746017"
-         y="5599.541">j1: -0.05 mA / cm2</tspan></text>
+         y="5599.541">j1: -0.1 mA / cm2</tspan></text>
   </g>
   <g
      id="g20959"
      transform="translate(155.46761,-2478.0891)">
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.03994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 740.79586,5746.0058 808.4268,5566.3931"
+       d="M 740.79586,5746.0058 808.18665,5565.707"
        id="path481"
        inkscape:connector-type="polyline"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
        style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
@@ -102,7 +105,7 @@
   </g>
   <g
      id="g20954"
-     transform="translate(305.18073,-2483.9767)">
+     transform="translate(477.89068,-2483.9767)">
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 1253.0722,5764.1322 103.6679,-193.2448"
@@ -118,7 +121,7 @@
          sodipodi:role="line"
          id="tspan15527-0"
          x="1267.2344"
-         y="5788.8706">E2: 0.8 V vs RHE</tspan></text>
+         y="5788.8706">E2: 1 V vs RHE</tspan></text>
   </g>
   <text
      xml:space="preserve"

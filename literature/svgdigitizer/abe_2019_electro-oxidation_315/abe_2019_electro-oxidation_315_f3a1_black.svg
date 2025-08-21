@@ -5,7 +5,7 @@
    width="4961px"
    id="svg136"
    sodipodi:docname="abe_2019_electro-oxidation_315_f3a1_black.svg"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -22,13 +22,13 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="0.52195753"
-     inkscape:cx="1410.0764"
-     inkscape:cy="1467.5524"
-     inkscape:window-width="1440"
-     inkscape:window-height="787"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
-     inkscape:window-maximized="0"
+     inkscape:cx="1191.6678"
+     inkscape:cy="1947.4765"
+     inkscape:window-width="2880"
+     inkscape:window-height="1711"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg136" />
   <defs
      id="defs132">
@@ -51,13 +51,14 @@
      id="image134" />
   <g
      id="g729"
-     transform="translate(6.4362096,-932.11035)">
+     transform="translate(-181.87,-923.98202)">
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.12445px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 868.59215,2159.1973 95.95504,149.1287"
+       d="m 951.90749,2115.1689 201.96191,23.1396"
        id="path466"
        inkscape:connector-type="polyline"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
        style="font-size:78.8589px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.985737"
@@ -69,17 +70,18 @@
          id="tspan612"
          x="248.62241"
          y="2150.2017"
-         style="stroke-width:0.985737">j2: 0.05 mA / cm2</tspan></text>
+         style="stroke-width:0.985737">j2: 0.1 mA / cm2</tspan></text>
   </g>
   <g
      id="g868"
      transform="translate(2.7807485,-922.4791)">
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.853465px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 778.58766,2664.988 190.32936,-43.3126"
+       d="m 778.58766,2664.988 190.32936,117.5605"
        id="path466-0"
        inkscape:connector-type="polyline"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
        style="font-size:78.8589px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.985737"
@@ -91,7 +93,7 @@
          id="tspan612-5"
          x="64.198914"
          y="2702.8552"
-         style="stroke-width:0.985737">j1: -0.05 mA / cm2</tspan></text>
+         style="stroke-width:0.985737">j1: -0.1 mA / cm2</tspan></text>
   </g>
   <g
      id="g20959"
