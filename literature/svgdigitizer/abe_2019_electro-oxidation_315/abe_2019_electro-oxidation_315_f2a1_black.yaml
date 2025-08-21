@@ -42,4 +42,7 @@ system:
       material: Pt
       preparation procedure:
         description:
-          - Annealed in hydrogen/oxygen flame and subsequently cooled in air down to 473 degree kelvin and then protected with water and immediately transferred into the electrochemical cell. 
+          - Annealed in hydrogen/oxygen flame
+          - subsequently cooled in air down to 473 K
+          - protected with water
+          - immediately transferred into the electrochemical cell.
