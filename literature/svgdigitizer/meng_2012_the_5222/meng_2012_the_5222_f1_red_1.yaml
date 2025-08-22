@@ -1,9 +1,5 @@
 # This file is part of echemdb (https://github.com/echemdb/website)
 # Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
-experimental:
-  instrumentation:
-  - name: potentiostat
-    type: potentiostat
 system:
   type: electrochemical
   electrodes:
@@ -59,7 +55,11 @@ curation:
     name: Jerome Mayer
     orcid: https://orcid.org/0000-0002-7451-9994
     date: 2022-01-10
+  - role: curator
+    name: Maren-Kathrin Heubach
+    orcid: https://orcid.org/0000-0002-3769-7169
+    date: 2024-12-17
   - role: reviewer
     name: Albert Engstfeld
     orcid: https://orcid.org/0000-0002-9686-3948
-    date: 2024-02-29
+    date: 2025-08-23
