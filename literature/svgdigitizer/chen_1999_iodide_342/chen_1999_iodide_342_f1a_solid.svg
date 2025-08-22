@@ -5,7 +5,7 @@
    width="5100px"
    id="svg1"
    sodipodi:docname="chen_1999_iodide_342_f1a_solid.svg"
-   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -21,12 +21,12 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="0.70606061"
-     inkscape:cx="2918.3047"
-     inkscape:cy="3327.618"
-     inkscape:window-width="2560"
-     inkscape:window-height="1371"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:cx="3512.4463"
+     inkscape:cy="2955.1287"
+     inkscape:window-width="2880"
+     inkscape:window-height="1711"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg1" />
   <defs
@@ -176,4 +176,14 @@
        id="path1"
        sodipodi:nodetypes="sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss" />
   </g>
+  <text
+     xml:space="preserve"
+     style="font-size:40px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#00aa00;stroke:#00d400;stroke-width:0.5"
+     x="3270.2576"
+     y="2298.6694"
+     id="text1"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       x="3270.2576"
+       y="2298.6694">comment: Estimated the concentration of the KOH solution, necessary to adjust the pH..</tspan></text>
 </svg>
