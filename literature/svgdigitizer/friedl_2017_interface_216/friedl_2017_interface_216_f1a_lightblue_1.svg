@@ -4,8 +4,8 @@
    version="1.1"
    width="4961px"
    id="svg1"
-   sodipodi:docname="friedl_2017_interface_216_p1_f1a_lightblue_1.svg"
-   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="friedl_2017_interface_216_f1a_lightblue_1.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -20,13 +20,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.23688712"
-     inkscape:cx="1217.8797"
-     inkscape:cy="1741.3357"
-     inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     inkscape:window-x="-8"
-     inkscape:window-y="417"
+     inkscape:zoom="0.47377424"
+     inkscape:cx="1832.0962"
+     inkscape:cy="858.00359"
+     inkscape:window-width="2880"
+     inkscape:window-height="1711"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg1" />
   <defs
@@ -89,7 +89,7 @@
          sodipodi:role="line"
          id="tspan6"
          x="270.14203"
-         y="696.99628">j1: 0.01 mA / cm2</tspan></text>
+         y="696.99628">j1: 0.1 mA / cm2</tspan></text>
   </g>
   <g
      id="g7">
@@ -106,7 +106,7 @@
          sodipodi:role="line"
          id="tspan6-6"
          x="187.24307"
-         y="1451.636">j2: -0.01 mA / cm2</tspan></text>
+         y="1451.636">j2: -0.1 mA / cm2</tspan></text>
   </g>
   <g
      id="g8">
