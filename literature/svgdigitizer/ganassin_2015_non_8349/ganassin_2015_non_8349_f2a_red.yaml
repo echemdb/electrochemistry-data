@@ -1,0 +1,48 @@
+curation:
+  process:
+  - role: curator
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2025-08-25
+source:
+  url: https://doi.org/10.1039/C4CP04791E
+  citation key: ganassin_2015_non_8349
+  techniques:
+  - CV
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          refinement: Millipore Super Q
+        purity:
+          grade: ultrapure
+      - name: HClO4
+        type: acid
+        concentration:
+          value: 0.1
+          unit: mol / l
+        source:
+          supplier: Merck
+        purity:
+          grade: suprapur
+      - name: Ar
+        type: gas
+        source:
+          supplier: Air Liquide
+        purity:
+          grade: 5.0
+  electrodes:
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Pt
+      crystallographic orientation: '111'
+      source:
+        manufacturer: Mateck
+      preparation procedure:
+        url: https://doi.org/10.1039/C3CP51998H
+
