@@ -61,7 +61,7 @@ system:
       name: KI
       source:
         supplier: Aldrich
-        purity: 
+        purity:
           value: 99.99
           unit: percent
       type: salt
@@ -70,7 +70,7 @@ system:
     temperature:
       unit: deg_C
       value: 20
-      # uncertainty: +-2
+      uncertainty: 2
     type: aqueous
 source:
   citation key: chen_1999_iodide_342
