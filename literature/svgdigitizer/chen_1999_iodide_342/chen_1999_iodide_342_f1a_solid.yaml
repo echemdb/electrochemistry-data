@@ -1,0 +1,83 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  tags:
+  - BCV
+system:
+  type: electrochemical
+  electrodes:
+    - name: REF
+      function: reference electrode
+      type: SCE-sat
+    - name: WE
+      function: working electrode
+      crystallographic orientation: '111'
+      material: Au
+      source:
+        manufacturer: homemade
+      shape:
+        type: cylinder
+        diameter:
+          value: 3
+          unit: mm
+  electrolyte:
+    components:
+    - concentration:
+        unit: mol l⁻¹
+        value: 0.1
+      name: KClO4
+      type: salt
+      # purification: Purified by calcination, recrystallization, and drying.
+      source:
+        supplier: Fisher
+        purity:
+          grade: ACS Certified
+    - concentration:
+        unit: mmol l⁻¹
+        value: 1
+      name: KOH
+      type: salt
+      comment: Estimated the concentration necessary to adjust pH.
+      source:
+        supplier: Merck
+        purity:
+          grade: Suprapure
+    - name: H2O
+      type: solvent
+      proportion:
+        value: 100
+        unit: volume percent
+      source:
+        refinement: Milli-Q plus UV
+        purity:
+          grade: ultrapure water
+      purity:
+        total ion conductivity:
+          value: 18.3
+          unit: MOhm cm
+    - concentration:
+        unit: mmol l⁻¹
+        value: 1
+      name: KI
+      source:
+        supplier: Aldrich
+        purity:
+          value: 99.99
+          unit: percent
+      type: salt
+    ph:
+      value: 11
+    temperature:
+      unit: deg_C
+      value: 20
+      uncertainty: 2
+    type: aqueous
+source:
+  citation key: chen_1999_iodide_342
+  url: https://doi.org/10.1016/S0022-0728(98)00437-9
+curation:
+  process:
+  - role: curator
+    name: Johannes M. Hermann
+    orcid: https://orcid.org/0000-0001-7119-1295
+    date: 2024-06-15
