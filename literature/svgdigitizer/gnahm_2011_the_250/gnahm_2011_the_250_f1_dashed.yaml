@@ -30,8 +30,8 @@ system:
       source:
         manufacturer: MaTeck
       preparation procedure:
-        description: 
-          - stored in oven at 960°C
+        description:
+          - stored in an oven at 960°C
           - annealed for 5 min by inductive heating in N2
       geometric electrolyte contact area:
         value: 0.58
@@ -43,7 +43,7 @@ system:
         unit: volume percent
         value: 100
       purity:
-        refinement: vacuum-drying at 2E-4 mbar at 80°C for 24 h
+        refinement: Vacuum-drying at 2E-4 mbar at 80°C for 24 h.
       type: solvent
     temperature:
       unit: K
@@ -63,4 +63,4 @@ curation:
   - role: reviewer
     name: Albert Engstfeld
     orcid: https://orcid.org/0000-0002-9686-3948
-    date: 2024-02-29
+    date: 2025-08-23
