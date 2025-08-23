@@ -4,7 +4,7 @@
    version="1.1"
    width="4959px"
    id="svg6"
-   sodipodi:docname="howlett_2006_electrochemistry_1483_f1_dashed-negativegoing-1.svg"
+   sodipodi:docname="howlett_2006_electrochemistry_1483_f1_Au_solid_positive.svg"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -20,15 +20,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="0.94855352"
-     inkscape:cx="3289.2187"
-     inkscape:cy="1254.0146"
+     inkscape:zoom="0.67072863"
+     inkscape:cx="2968.4136"
+     inkscape:cy="1262.0603"
      inkscape:window-width="1536"
      inkscape:window-height="953"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g51211"
+     inkscape:current-layer="g51318"
      inkscape:showpageshadow="2"
      inkscape:deskcolor="#d1d1d1" />
   <defs
@@ -120,12 +120,12 @@
   <g
      id="g41351">
     <g
-       id="g51211">
+       id="g51318">
       <path
          style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 2931.1408,1224.042 c 0,0 -73.6875,1.4496 -168.8556,3.2277 -81.4387,1.5215 -313.2616,6.3399 -349.2712,6.8203 -71.3017,0.9512 -214.3406,20.2782 -230.313,48.4704 -23.8574,42.1095 -36.027,72.979 -97.3432,39.1737 -46.5637,-25.6718 -77.2005,-12.6515 -102.0669,-6.3734 -28.2014,7.12 -45.1901,5.4676 -59.2821,3.4385 -56.1656,-8.0874 -84.54,46.115 -122.2626,99.2718 -37.7226,53.1568 -88.0133,186.0451 -106.5743,242.9104 -15.8437,48.5403 -48.8682,181.6185 -74.3077,230.5732 -36.506,70.2503 -71.7245,6.6637 -105.8548,-18.3209 -27.2077,-19.9172 -48.46,-41.6209 -80.2675,-14.7021 -7.8406,6.6354 -16.8563,-2.184 -30.2696,3.7666 -14.0265,6.2226 -46.0538,41.9274 -52.5256,54.899 -59.6445,119.5465 -113.0552,319.4541 -145.2685,489.6451 -12.6462,66.8133 -21.1338,134.3973 -26.7935,182.6758 -23.5608,200.9804 -31.5296,312.8354 -40.2028,458.3178 -22.6778,380.3917 -29.0509,744.6281 -40.9847,1122.1811 -3.914,123.8277 -11.3207,359.6415 -11.3207,359.6415"
-         id="path858"
-         sodipodi:nodetypes="csssssszssssssssssc" />
+         d="m 1041.4048,4530.8936 c 0,0 8.3241,-428.2811 36.2852,-972.0871 27.4735,-534.3218 67.3124,-1178.3085 118.4613,-1581.9579 4.9373,-38.9636 12.8425,-101.8557 22.0316,-166.9145 18.3982,-130.2591 48.6719,-286.0252 117.6778,-393.5639 21.1488,-32.9583 66.8344,-77.7116 111.9327,-104.1721 95.7033,-56.1522 171.1075,-64.93 171.1075,-64.93 l 5.4521,34.1742 5.2181,-36.9002 c 0,0 77.4488,-11.4637 177.3484,-20.0118 27.2331,-2.3302 56.4823,-2.6032 86.1524,-10.3373 21.5495,-5.6173 59.8095,-3.7117 79.4099,-8.042 22.5708,-4.9866 128.3022,-5.4343 155.0858,-0.6093 26.956,4.8561 42.4701,-0.3846 59.6024,2.153 5.8522,0.8669 20.764,5.4497 38.414,4.4576 12.3318,-0.6933 33.0436,-2.5547 40.618,1.0973 7.2522,3.4966 50.6783,0.5193 76.027,0.356 121.801,-0.7848 240.5673,-7.0579 360.8016,-11.9273 72.5818,-2.9395 217.6738,-10.4365 217.6738,-10.4365 v 0"
+         id="path860"
+         sodipodi:nodetypes="cssssscccssssssssscc" />
       <text
          xml:space="preserve"
          style="font-size:29.3333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px"
@@ -133,9 +133,9 @@
          y="1268.7695"
          id="text31291"><tspan
            sodipodi:role="line"
-           id="tspan31289"
            x="2743.2854"
-           y="1268.7695">curve: dashed-negativegoing</tspan></text>
+           y="1268.7695"
+           id="tspan2">curve: Au_solid_positive</tspan></text>
     </g>
   </g>
   <text
