@@ -1,0 +1,59 @@
+experimental:
+  instrumentation:
+  - manufacturer: Princeton Applied Research
+    name: Parstat 2263
+    type: potentiostat
+system:
+  type: electrochemical
+  electrodes:
+    - name: CE
+      function: counter electrode
+      crystallographic orientation: poly
+      material: Pt
+      shape:
+        type: wire
+    - name: REF
+      function: reference electrode
+      material: Pt
+      shape:
+        type: wire
+    - name: WE
+      function: working electrode
+      crystallographic orientation: '111'
+      material: Au
+      preparation procedure:
+         description:
+         - Annealing in a hydrogen flame.
+  electrolyte:
+    components:
+    - name: BMP-FAP
+      proportion:
+        unit: volume percent
+        value: 100
+      source:
+        supplier: MERCK
+      purity:
+        refinement: Vacuum dried at 100°C and 1e-3 mbar.
+      type: solvent
+    temperature:
+      unit: K
+      value: 298.15
+    type: ionic liquid
+source:
+  citation key: atkin_2011_an_6849
+  url: https://doi.org/10.1039/c0cp02846k
+  techniques:
+  - CV
+  - STM
+  - AFM
+  - EIS
+curation:
+  process:
+  - role: curator
+    name: Maren-Kathrin Heubach
+    orcid: https://orcid.org/0000-0002-3769-7169
+    date: 2022-06-29
+  - role: reviewer
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2025-08-23
