@@ -4,7 +4,7 @@
    version="1.1"
    width="4961px"
    id="svg6"
-   sodipodi:docname="hu_2015_an_877_f1b_solid.svg"
+   sodipodi:docname="hu_2015_an_877_f1_d_dashed.svg"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -20,15 +20,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="0.50493097"
-     inkscape:cx="4505.5664"
-     inkscape:cy="4300.5879"
+     inkscape:zoom="0.50493099"
+     inkscape:cx="4400.6014"
+     inkscape:cy="4021.3416"
      inkscape:window-width="1536"
      inkscape:window-height="953"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g34719"
+     inkscape:current-layer="g42086"
      inkscape:showpageshadow="2"
      inkscape:deskcolor="#d1d1d1" />
   <defs
@@ -99,7 +99,7 @@
   </g>
   <g
      id="g34713"
-     transform="translate(-3.8511079,101.87931)">
+     transform="translate(-5.4917817,561.05155)">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -117,12 +117,12 @@
   </g>
   <g
      id="g42086"
-     transform="translate(-3.8511079,101.87931)">
+     transform="translate(-3.6387219,548.25374)">
     <path
        style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 4164.9258,4187.7012 c -21.4838,2.6543 -27.2332,3.4477 -73.079,4.1397 -46.2133,0.6975 -54.451,2.1837 -163.497,1.1953 -91.0334,-0.8252 -118.1129,0.9487 -141.6107,0.7602 -31.3791,-0.2516 -45.1808,0.6131 -57.8164,2.5109 -37.7298,5.6669 -55.0491,6.7181 -100.5638,5.962 -40.5113,-0.673 -104.4298,1.0568 -132.6882,13.3038 -20.8928,9.0549 -36.5871,24.6485 -48.8564,37.3958 -8.3674,8.6933 -24.2242,17.3099 -33.2493,23.5317 -35.567,24.5195 -164.3295,18.4885 -165.313,18.0788 1.2532,-3.4388 7.2933,-15.3277 22.8573,-24.1104 12.3077,-6.9451 52.6704,-25.1114 78.1372,-31.5962 126.0783,-32.1044 196.825,-48.7097 224.1364,-50.1477 141.9263,-7.4724 150.0775,-3.7353 217.2323,-3.9961 137.2925,-0.5332 251.7707,0.1333 374.3106,2.9722 z"
+       d="m 4162.4502,4193.0237 c -21.4838,2.6543 -40.5516,2.3513 -89.3681,4.0335 -46.1911,1.5918 -100.6568,3.999 -152.4066,3.6533 -199.2804,-1.3313 -371.1982,12.8108 -460.2474,16.6354 -73.7619,3.168 -144.2548,21.9957 -193.3619,23.9452 -90.3639,3.5874 -120.2655,32.3868 -141.4397,61.231 -34.2544,46.6626 -70.2313,130.8256 -106.2637,279.4303 39.8616,-211.1665 93.3368,-299.8157 121.0355,-323.8614 48.8518,-41.3296 87.2537,-48.5755 161.8226,-53.2266 121.3014,-7.5659 282.3611,0.9585 315.9276,-19.5905 35.6446,-21.8212 108.2901,-17.5715 176.4628,-16.5088 89.7289,1.3988 129.7103,0.9834 217.1836,6.8732 30.8153,2.0749 101.6346,1.6277 151.5218,5.1313"
        id="path34764"
-       sodipodi:nodetypes="csssssssscssssc" />
+       sodipodi:nodetypes="csssssccssssc" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -132,7 +132,7 @@
          sodipodi:role="line"
          id="tspan41721"
          x="3934.782"
-         y="4163.0479">curve: solid</tspan></text>
+         y="4163.0479">curve: d_dashed</tspan></text>
   </g>
   <text
      xml:space="preserve"
@@ -153,7 +153,7 @@
        sodipodi:role="line"
        id="tspan44600"
        x="4489.7227"
-       y="4113.4336">figure: 1b</tspan></text>
+       y="4113.4336">figure: 1d</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
