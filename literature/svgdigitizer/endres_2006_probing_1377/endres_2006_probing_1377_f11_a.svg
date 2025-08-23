@@ -4,8 +4,8 @@
    version="1.1"
    width="4959px"
    id="svg6"
-   sodipodi:docname="endres_2006_probing_1377_f11_a_black.svg"
-   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="endres_2006_probing_1377_f11_a.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -21,14 +21,14 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="0.47427674"
-     inkscape:cx="1545.5112"
-     inkscape:cy="1236.6198"
-     inkscape:window-width="1536"
-     inkscape:window-height="953"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:cx="1819.6127"
+     inkscape:cy="1964.0432"
+     inkscape:window-width="2880"
+     inkscape:window-height="1711"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg6"
+     inkscape:current-layer="g18471"
      showguides="false"
      inkscape:showpageshadow="2"
      inkscape:deskcolor="#d1d1d1" />
@@ -106,7 +106,7 @@
        sodipodi:role="line"
        id="tspan8134"
        x="455.4303"
-       y="702.1217">comments: j-axis offset not given, zero estimate by curator.</tspan></text>
+       y="702.1217">comment: j-axis offset not given. Basline estimate by curator.</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:29.3333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px"
@@ -128,7 +128,7 @@
          sodipodi:role="line"
          id="tspan11332"
          x="1522.3179"
-         y="942.48767">curve: black</tspan></text>
+         y="942.48767">curve: a</tspan></text>
     <path
        style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 2512.1934,1082.405 c 0,0 -271.2451,2.0512 -581.4572,1.4909 -210.3682,-0.3799 -346.3921,1.6013 -420.4225,-0.45 -54.1286,-1.4998 -52.9829,11.2207 -71.2491,56.1126 l -17.785,43.7094 c 0,0 1.7687,-3.6593 17.806,-43.6295 27.3228,-68.0969 22.3718,-55.7486 123.0379,-55.3135 75.2279,0.3251 221.012,2.5528 288.1032,-6.3927 12.0392,-1.6052 22.2873,-1.413 26.3214,-3.0275 22.0822,-8.8379 31.0904,-0.1869 65.9228,2.7058 42.7934,3.5538 569.7225,4.7945 569.7225,4.7945 z"
