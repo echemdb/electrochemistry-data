@@ -38,7 +38,7 @@ system:
       type: solvent
     - concentration:
         unit: ppm
-        value: 14
+        value: 3014
       name: water
       type: solute
     temperature:
@@ -60,8 +60,8 @@ curation:
   - role: curator
     name: Maren-Kathrin Heubach
     orcid: https://orcid.org/0000-0002-3769-7169
-    date: 2022-06-29    
+    date: 2022-06-29
   - role: reviewer
     name: Albert Engstfeld
     orcid: https://orcid.org/0000-0002-9686-3948
-    date: 2024-02-29
+    date: 2025-08-23
