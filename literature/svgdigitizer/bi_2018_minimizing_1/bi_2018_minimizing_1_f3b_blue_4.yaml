@@ -38,7 +38,7 @@ system:
       type: solvent
     - concentration:
         unit: ppm
-        value: 14
+        value: 22800
       name: water
       type: solute
     temperature:
@@ -46,7 +46,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: bi_2018_minimizing_9-5222
+  citation key: bi_2018_minimizing_1
   url: https://doi.org/10.1038/s41467-018-07674-0
   techniques:
   - CV
@@ -60,7 +60,7 @@ curation:
   - role: curator
     name: Maren-Kathrin Heubach
     orcid: https://orcid.org/0000-0002-3769-7169
-    date: 2022-06-29    
+    date: 2022-06-29
   - role: reviewer
     name: Albert Engstfeld
     orcid: https://orcid.org/0000-0002-9686-3948

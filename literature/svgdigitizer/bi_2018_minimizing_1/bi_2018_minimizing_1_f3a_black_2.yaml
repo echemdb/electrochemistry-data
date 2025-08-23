@@ -31,14 +31,14 @@ system:
         manufacturer: Homemade by the Clavilier method.
   electrolyte:
     components:
-    - name: BMIM-BF4
+    - name: BMPY-TFSI
       proportion:
         unit: volume percent
         value: 100
       type: solvent
     - concentration:
         unit: ppm
-        value: 3014
+        value: 1260
       name: water
       type: solute
     temperature:
@@ -46,7 +46,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: bi_2018_minimizing_9-5222
+  citation key: bi_2018_minimizing_1
   url: https://doi.org/10.1038/s41467-018-07674-0
   techniques:
   - CV
@@ -54,13 +54,9 @@ source:
 curation:
   process:
   - role: curator
-    name: Jerome Mayer
-    orcid: https://orcid.org/0000-0002-7451-9994
-    date: 2022-01-10
-  - role: curator
     name: Maren-Kathrin Heubach
     orcid: https://orcid.org/0000-0002-3769-7169
-    date: 2022-06-29
+    date: 2023-02-19
   - role: reviewer
     name: Albert Engstfeld
     orcid: https://orcid.org/0000-0002-9686-3948

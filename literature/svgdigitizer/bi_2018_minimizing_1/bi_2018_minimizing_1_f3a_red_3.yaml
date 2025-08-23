@@ -46,7 +46,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: bi_2018_minimizing_9-5222
+  citation key: bi_2018_minimizing_1
   url: https://doi.org/10.1038/s41467-018-07674-0
   techniques:
   - CV
