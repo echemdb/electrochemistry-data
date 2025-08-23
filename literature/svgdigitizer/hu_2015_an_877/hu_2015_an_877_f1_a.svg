@@ -5,7 +5,7 @@
    width="4961px"
    id="svg6"
    sodipodi:docname="hu_2015_an_877_f1_a.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -21,14 +21,16 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="0.50493097"
-     inkscape:cx="4004.5078"
-     inkscape:cy="4342.1777"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="1912"
-     inkscape:window-y="-8"
+     inkscape:cx="3186.5742"
+     inkscape:cy="5227.4472"
+     inkscape:window-width="2880"
+     inkscape:window-height="1711"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g34719" />
+     inkscape:current-layer="svg6"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
   <defs
      id="defs2" />
   <image
@@ -140,6 +142,16 @@
        id="tspan43078"
        x="4479.8203"
        y="4057.9805">scan rate: 50 mV / s</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:40px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#00aa00;stroke:#00d400;stroke-width:0.5"
+     x="3148.9453"
+     y="5951.3086"
+     id="text1"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       x="3148.9453"
+       y="5951.3086">comment: j-axis offset not given. Basline estimate by curator.</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"

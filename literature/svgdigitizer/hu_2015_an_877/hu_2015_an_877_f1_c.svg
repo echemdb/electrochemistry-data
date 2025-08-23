@@ -5,7 +5,7 @@
    width="4961px"
    id="svg6"
    sodipodi:docname="hu_2015_an_877_f1_c.svg"
-   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -21,12 +21,12 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="0.71408025"
-     inkscape:cx="4190.0053"
-     inkscape:cy="4557.611"
-     inkscape:window-width="1536"
-     inkscape:window-height="953"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:cx="3509.4095"
+     inkscape:cy="5683.5349"
+     inkscape:window-width="2880"
+     inkscape:window-height="1711"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg6"
      inkscape:showpageshadow="2"
@@ -164,4 +164,14 @@
        id="tspan46538"
        x="4489.7227"
        y="4160.9648">tags: BCV</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:40px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#00aa00;stroke:#00d400;stroke-width:0.5"
+     x="2879.2283"
+     y="6011.9292"
+     id="text1"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       x="2879.2283"
+       y="6011.9292">comment: j-axis offset not given. Basline estimate by curator.</tspan></text>
 </svg>
