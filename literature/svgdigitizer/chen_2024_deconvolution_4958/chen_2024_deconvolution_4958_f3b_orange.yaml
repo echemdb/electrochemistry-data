@@ -24,7 +24,7 @@ system:
       type: RHE
     - name: WE
       function: working electrode
-      crystallographic orientation: '1911'
+      crystallographic orientation: '19 1 1'
       geometric electrolyte contact area:
         unit: 1 / cm2
       material: Pt
@@ -61,6 +61,6 @@ curation:
     orcid: https://orcid.org/0009-0008-1149-1534
     date: 2025-02-11
   - role: reviewer
-    name:
-    orcid:
-    date: 
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2025-08-25
