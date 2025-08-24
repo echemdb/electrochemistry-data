@@ -4,8 +4,8 @@
    version="1.1"
    width="4961px"
    id="svg6"
-   sodipodi:docname="wallauer_2013_the_1143_f3e_bottom_2.svg"
-   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="wallauer_2013_the_1143_f3e_bottom.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -23,11 +23,11 @@
      inkscape:snap-text-baseline="true"
      inkscape:zoom="0.67082423"
      inkscape:cx="417.39697"
-     inkscape:cy="3165.5088"
-     inkscape:window-width="1536"
-     inkscape:window-height="953"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:cy="1337.9064"
+     inkscape:window-width="2880"
+     inkscape:window-height="1711"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg6"
      inkscape:showpageshadow="2"
@@ -159,4 +159,14 @@
        id="tspan1"
        x="248.76442"
        y="2875.5481">tags: BCV</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:40px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#00aa00;stroke:#00d400;stroke-width:0.5"
+     x="101.36784"
+     y="336.89899"
+     id="text2"><tspan
+       sodipodi:role="line"
+       id="tspan2"
+       x="101.36784"
+       y="336.89899">comment: Reference electrode given as E1/2(Fc/Fc+).</tspan></text>
 </svg>
