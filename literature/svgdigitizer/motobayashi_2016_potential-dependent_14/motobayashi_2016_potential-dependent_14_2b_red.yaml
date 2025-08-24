@@ -1,9 +1,5 @@
 # This file is part of echemdb (https://github.com/echemdb/website)
 # Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
-experimental:
-  instrumentation:
-  - name: potentiostat
-    type: potentiostat
 system:
   type: electrochemical
   electrodes:
