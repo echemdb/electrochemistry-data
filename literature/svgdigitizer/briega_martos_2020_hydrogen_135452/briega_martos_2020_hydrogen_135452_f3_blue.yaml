@@ -1,0 +1,70 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  instrumentation:
+  - manufacturer: eDAQ
+    name: EA161
+    type: potentiostat
+  tags:
+  - BCV
+system:
+  type: electrochemical
+  electrodes:
+    - name: CE
+      function: counter electrode
+      crystallographic orientation: poly
+      material: Pt
+      shape:
+        type: coiled wire
+    - name: REF
+      function: reference electrode
+      type: RHE
+    - name: WE
+      function: working electrode
+      crystallographic orientation: '15 15 14'
+      geometric electrolyte contact area:
+        unit: 1 / cm2
+      material: Pt
+      shape:
+        diameter:
+          unit: mm
+          value: 2
+        height:
+          unit: mm
+        type: bead
+      preparation procedure:
+         description:
+         - Annealed in a propane-flame
+         - cooled in Ar/H2 (3:1) reducing atmosphere
+         - protected with an ultrapure water drop.
+  electrolyte:
+    type: aqueous
+    components:
+    - name: water
+      source:
+        quality: ultrapure water
+      type: solvent
+    - concentration:
+        unit: 0.1 mol / l
+      name: HClO4
+      source:
+        supplier: Merck
+        purity:
+            grade: '>99%'
+      type: acid
+source:
+  citation key: briega_martos_2020_hydrogen_135452
+  url: https://doi.org/10.1016/j.electacta.2019.135452
+  techniques:
+  - CV
+  - ORR
+curation:
+  process:
+  - role: curator
+    name: Nadine Woelfel
+    orcid: https://orcid.org/0009-0008-1149-1534
+    date: 2025-01-08
+  - role: reviewer
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2025-08-24
