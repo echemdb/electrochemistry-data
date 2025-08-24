@@ -19,7 +19,7 @@ system:
           total organic carbon:
             value: 3
             unit: ppb
-      - name: H3PO4
+      - name: H2SO4
         type: acid
         source:
           supplier: Merck
@@ -29,7 +29,7 @@ system:
           value: 0.1
           unit: mol L-1
     ph:
-      value: 1.641
+      value: 1.038
       comment: Estimated with CurTiPot on extraction from publication using a temperature of 25°C.
     temperature:
       value: 25
@@ -58,10 +58,14 @@ system:
           - Cooled down in nitrogen stream.
 source:
   citation key: cuesta_2000_adsorption_5684
-  url: https://doi.org/10.1039/B006464P 
+  url: https://doi.org/10.1039/B006464P
 curation:
   process:
   - role: curator
     name: Johannes M. Hermann
     orcid: https://orcid.org/0000-0001-7119-1295
     date: 2025-06-09
+  - role: reviewer
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2025-08-23
