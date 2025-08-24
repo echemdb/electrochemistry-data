@@ -55,6 +55,9 @@ system:
 source:
   citation key: briega_martos_2020_hydrogen_135452
   url: https://doi.org/10.1016/j.electacta.2019.135452
+  techniques:
+  - CV
+  - ORR
 curation:
   process:
   - role: curator
