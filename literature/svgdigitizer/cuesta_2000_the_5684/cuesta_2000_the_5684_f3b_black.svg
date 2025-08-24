@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<svg width="4959" height="7009" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+ <g class="layer" id="image-layer">
+  <title>image-layer</title>
+  <image height="7009" id="svg_1" width="4959" x="0" xlink:href="cuesta_2000_adsorption_5684_p1.png" y="0"/>
+ </g>
+ <g class="layer" id="digitization-layer">
+  <title>digitization-layer</title>
+  <text fill="#ff00ff" font-family="Serif" font-size="54" id="svg_20" stroke="#ff00ff" stroke-width="0" style="cursor: text;" text-anchor="middle" x="2894.38" xml:space="preserve" y="4724.69">Figure: 2a</text>
+  <text fill="#ff00ff" font-family="Serif" font-size="54" id="svg_21" stroke="#ff00ff" stroke-width="0" text-anchor="middle" x="2896.77" xml:space="preserve" y="4793.75">tags: BCV</text>
+  <text fill="#ff00ff" font-family="Serif" font-size="54" id="svg_22" stroke="#ff00ff" stroke-width="0" text-anchor="middle" x="3368.92" xml:space="preserve" y="4752.44">scan rate: 10 mV s⁻¹</text>
+  <g id="svg_2" transform="matrix(1 0 0 1 0 0)">
+   <path d="m3210.53,4886.97l-132.67,-0.87l132.67,0.87z" fill="#ff00ff" id="svg_6" stroke="#ff00ff" stroke-width="5"/>
+   <text fill="#ff00ff" font-family="Serif" font-size="54" id="svg_18" stroke="#ff00ff" stroke-width="0" text-anchor="middle" x="2910.19" xml:space="preserve" y="4896.76">j2: 6 µA cm⁻²</text>
+  </g>
+  <g id="svg_3">
+   <path d="m3211.1,5958.42l-122.16,0.26l122.16,-0.26z" fill="#ff00ff" id="svg_7" stroke="#ff00ff" stroke-width="5"/>
+   <text fill="#ff00ff" font-family="Serif" font-size="54" id="svg_17" stroke="#ff00ff" stroke-width="0" text-anchor="middle" x="2890.33" xml:space="preserve" y="5971.26">j1: -2.5 µA cm⁻²</text>
+  </g>
+  <g id="svg_4">
+   <path d="m3210.56,5958.27l-16,94.33l16,-94.33z" fill="#ff00ff" id="svg_8" stroke="#ff00ff" stroke-width="5"/>
+   <text fill="#ff00ff" font-family="Serif" font-size="54" id="svg_15" stroke="#ff00ff" stroke-width="0" text-anchor="middle" x="3194.93" xml:space="preserve" y="6099.85">E1: -0.4 V vs. SCE</text>
+  </g>
+  <g id="svg_5" transform="matrix(1 0 0 1 0 0)">
+   <path d="m4004.47,5959.38l-0.64,104.06l0.64,-104.06z" fill="#ff00ff" id="svg_9" stroke="#ff00ff" stroke-width="5"/>
+   <text fill="#ff00ff" font-family="Serif" font-size="54" id="svg_16" stroke="#ff00ff" stroke-width="0" text-anchor="middle" x="4006.12" xml:space="preserve" y="6110.03">E2: 0.8 V vs. SCE</text>
+  </g>
+  <g id="svg_12">
+   <text fill="#ff00ff" font-family="Serif" font-size="54" font-weight="normal" id="svg_19" stroke="#ff00ff" stroke-width="0" text-anchor="middle" x="3446.29" xml:space="preserve" y="5568.51">curve: black</text>
+   <path d="m3338.5,5757.73c-32.02,-0.57 -90.42,-2.11 -94.84,0.71l-0.13,-31.25c12.72,-3.85 32.86,-3.2 58.88,-3.33c17.8,-0.24 51.09,-1.91 81.15,-3.38c30.06,-1.47 64.19,-5.36 88.74,-7.29c19.99,-2.1 37.55,-4.72 70.71,-9.78c16.58,-2.53 62.09,-3.64 68.42,-6.44c6.32,-2.8 13.48,-1.24 23.33,-10.78c9.85,-9.54 6.22,-4.03 13.25,-7.32c3.51,-1.65 10.27,-13.65 18.97,-20.73c8.7,-7.08 13.38,-20.97 16.44,-63.61c3.06,-42.64 7.72,-140.1 8.35,-208.72c0.62,-68.61 1.95,-132.72 3.78,-205.93c1.82,-73.2 1,-234.36 7.15,-304.03l3.61,293.06c2.51,104.41 3.62,258.76 5.55,312.27c1.93,53.5 -0.81,96.74 3.32,137.06c4.12,40.33 5.48,48.78 24.42,50.72c18.94,1.94 35.53,3.17 50.44,3.86c14.92,0.69 60.69,3.21 96.9,2.97c36.46,0.17 97.72,1.98 103.67,1.86c5.95,-0.12 9.82,-0.24 14.73,-0.36l1,95.46c-38.55,14.07 -119.94,19.52 -162.78,23.69c-42.84,4.18 -69.98,4.64 -106.18,8.06c-36.19,3.42 -60.41,3.01 -88.3,12.28c-27.88,9.27 -49.53,18.12 -69.52,35.28c-19.98,17.17 -38.42,20.96 -50.35,-2.05c-11.93,-23.01 -23.48,-40.87 -38.18,-57.13c-14.69,-16.26 -36.75,-13.93 -50.22,-14.31c-13.46,-0.38 -33.09,1.72 -60.33,-0.55c-27.24,-2.27 -48.65,-9.04 -99.95,-11.55" fill="#000000" fill-opacity="0" id="svg_11" stroke="#ff00ff" stroke-width="2"/>
+  </g>
+ </g>
+</svg>
