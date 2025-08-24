@@ -1,0 +1,63 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  instrumentation:
+  - name: potgal 10v/15a
+    type: potentiostat
+system:
+  type: electrochemical
+  electrodes:
+    - name: CE
+      function: counter electrode
+      crystallographic orientation: poly
+      material: Pt
+      shape:
+        type: disk
+    - name: REF
+      function: reference electrode
+      material: Ag/agtfsi/emim-tfsi
+      source:
+        manufacturer: homemade
+      type: microreference
+    - name: WE
+      function: working electrode
+      crystallographic orientation: '111'
+      material: Au
+      description: Au on mica
+      source:
+        manufacturer: agilent technologies or phasis
+  electrolyte:
+    components:
+    - name: BMB-TFSI
+      proportion:
+        unit: volume percent
+        value: 100
+      source:
+        supplier: Synthezied in-house.
+      purity:
+        refinement: vacuum-dried at 50-80 °C for 24h
+      type: solvent
+    temperature:
+      unit: K
+      value: 298.15
+    type: ionic liquid
+source:
+  citation key: wallauer_2013_the_1143
+  url: https://doi.org/10.5560/ZNB.2013-3153
+  techniques:
+  - CV
+  - EIS
+curation:
+  process:
+  - role: curator
+    name: Jerome Mayer
+    orcid: https://orcid.org/0000-0002-7451-9994
+    date: 2022-01-10
+  - role: reviewer
+    name: Maren-Kathrin Heubach
+    orcid: https://orcid.org/0000-0002-3769-7169
+    date: 2025-07-08
+  - role: reviewer
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2025-08-24
