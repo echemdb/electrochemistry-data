@@ -38,7 +38,7 @@ system:
   electrodes:
     - name: REF
       function: reference electrode
-      type: Hg/Hg2Cl2-sat
+      type: Pt wire
     - name: CE
       function: counter electrode
       material: Pt
@@ -50,6 +50,9 @@ system:
         manufacturer: Mateck
       shape:
         type: cylinder
+        diameter:
+          unit: mm
+          value: 12
       geometric electrolyte contact area:
         unit: cm-2
       preparation procedure:
@@ -59,6 +62,9 @@ system:
 source:
   citation key: cuesta_2000_adsorption_5684
   url: https://doi.org/10.1039/B006464P
+  technique:
+    - CV
+    - in situ STM
 curation:
   process:
   - role: curator
