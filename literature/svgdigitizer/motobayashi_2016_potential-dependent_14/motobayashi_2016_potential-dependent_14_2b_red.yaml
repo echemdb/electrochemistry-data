@@ -5,40 +5,49 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
+      crystallographic orientation: poly
     - name: REF
       function: reference electrode
-      material: Pt
-      shape:
-        type: wire, pseudo-reference
+      source:
+        manufacturer: homemade
     - name: WE
       function: working electrode
-      crystallographicOrientation: '111'
+      crystallographic orientation: poly
       material: Au
-      shape:
-        type: disk
   electrolyte:
     components:
-    - name: BMPY-TFSI
+    - name: BMIM-TFSI
       proportion:
         unit: volume percent
         value: 100
+      source:
+        supplier: IoLiTec
       type: solvent
+    - concentration:
+        unit: ppm
+        value:  700
+      name: water
+      type: solute
     temperature:
       unit: K
       value: 298.15
     type: ionic liquid
 source:
-  citationKey: wen_2015_potential-dependent_6062
-  url: https://doi.org/10.1002/anie.201501715
+  citation key: motobayashi_2016_potential-dependent_14
+  url: https://doi.org/10.1016/j.elecom.2016.01.018
   techniques:
   - CV
-  - STM
+  - SEIRAS
 curation:
   process:
   - role: curator
     name: Jerome Mayer
     orcid: https://orcid.org/0000-0002-7451-9994
     date: 2022-01-10
+  - role: curator
+    name: Maren-Kathrin Heubach
+    orcid: https://orcid.org/0000-0002-3769-7169
+    date: 2023-02-19
   - role: reviewer
     name: Albert Engstfeld
     orcid: https://orcid.org/0000-0002-9686-3948
