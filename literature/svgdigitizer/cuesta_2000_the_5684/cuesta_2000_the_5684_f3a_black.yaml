@@ -62,7 +62,7 @@ system:
 source:
   citationKey: cuesta_2000_adsorption_5684
   url: https://doi.org/10.1039/B006464P
-  technique:
+  techniques:
     - CV
     - in situ STM
 curation:

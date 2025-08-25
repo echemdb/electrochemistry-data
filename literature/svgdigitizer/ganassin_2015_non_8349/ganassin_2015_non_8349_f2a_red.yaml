@@ -34,7 +34,7 @@ system:
         source:
           supplier: Air Liquide
         purity:
-          grade: 5.0
+          grade: "5.0"
   electrodes:
     - name: WE
       function: working electrode
