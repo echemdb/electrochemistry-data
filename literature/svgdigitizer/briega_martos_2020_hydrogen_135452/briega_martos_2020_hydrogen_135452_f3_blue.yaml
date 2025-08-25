@@ -12,7 +12,7 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Pt
       shape:
         type: coiled wire
@@ -21,8 +21,8 @@ system:
       type: RHE
     - name: WE
       function: working electrode
-      crystallographic orientation: '15 15 14'
-      geometric electrolyte contact area:
+      crystallographicOrientation: '15 15 14'
+      geometricElectrolyteContactArea:
         unit: 1 / cm2
       material: Pt
       shape:
@@ -32,7 +32,7 @@ system:
         height:
           unit: mm
         type: bead
-      preparation procedure:
+      preparationProcedure:
          description:
          - Annealed in a propane-flame
          - cooled in Ar/H2 (3:1) reducing atmosphere
@@ -53,7 +53,7 @@ system:
             grade: '>99%'
       type: acid
 source:
-  citation key: briega_martos_2020_hydrogen_135452
+  citationKey: briega_martos_2020_hydrogen_135452
   url: https://doi.org/10.1016/j.electacta.2019.135452
   techniques:
   - CV

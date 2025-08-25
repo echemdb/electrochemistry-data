@@ -5,7 +5,7 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
     - name: REF
       function: reference electrode
       source:
@@ -13,7 +13,7 @@ system:
       type: micro-Ag/Ag+, normalized against ferrocene
     - name: WE
       function: working electrode
-      crystallographic orientation: 'poly'
+      crystallographicOrientation: 'poly'
       material: Au
       shape:
         type: micro-electrode
@@ -45,7 +45,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: meng_2012_the_5222
+  citationKey: meng_2012_the_5222
   url: https://doi.org/10.1039/c2cp23801b
   techniques:
   - CV

@@ -10,7 +10,7 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Pt
       shape:
         type: disk
@@ -21,9 +21,9 @@ system:
         type: wire
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Au
-      preparation procedure:
+      preparationProcedure:
          description:
          - Electrochemical polishing and flame annealing.
       shape:
@@ -52,7 +52,7 @@ system:
         proportion:
           value: 100
 source:
-  citation key: bonhote_1996_hydrophobic_1168
+  citationKey: bonhote_1996_hydrophobic_1168
   url: https://doi.org/10.1021/ic951325x
   techniques:
   - CV

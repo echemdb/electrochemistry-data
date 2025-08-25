@@ -5,14 +5,14 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
     - name: REF
       function: reference electrode
       source:
         manufacturer: homemade
     - name: WE
       function: working electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Au
   electrolyte:
     components:
@@ -33,7 +33,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: motobayashi_2016_potential-dependent_14
+  citationKey: motobayashi_2016_potential-dependent_14
   url: https://doi.org/10.1016/j.elecom.2016.01.018
   techniques:
   - CV

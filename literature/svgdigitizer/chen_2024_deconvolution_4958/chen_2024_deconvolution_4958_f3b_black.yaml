@@ -15,7 +15,7 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Pt
       shape:
         type: coiled wire
@@ -24,8 +24,8 @@ system:
       type: RHE
     - name: WE
       function: working electrode
-      crystallographic orientation: '100'
-      geometric electrolyte contact area:
+      crystallographicOrientation: '100'
+      geometricElectrolyteContactArea:
         unit: 1 / cm2
       material: Pt
       shape:
@@ -35,7 +35,7 @@ system:
         height:
           unit: mm
         type: bead
-      preparation procedure:
+      preparationProcedure:
          description:
          - flame annealing
   electrolyte:
@@ -52,7 +52,7 @@ system:
         supplier: Merck
       type: acid
 source:
-  citation key: chen_deconvolution_4958
+  citationKey: chen_deconvolution_4958
   url: https://doi.org/10.1021/acs.jpclett.4c01056
 curation:
   process:

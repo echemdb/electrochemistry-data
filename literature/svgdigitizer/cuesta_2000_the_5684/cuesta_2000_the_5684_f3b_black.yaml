@@ -13,10 +13,10 @@ system:
           purity:
             grade: ultrapure water
         purity:
-          total ion conductivity:
+          totalIonConductivity:
             value: 18.2
             unit: MOhm cm
-          total organic carbon:
+          totalOrganicCarbon:
             value: 3
             unit: ppb
       - name: H3PO4
@@ -45,7 +45,7 @@ system:
     - name: WE
       function: working electrode
       material: Au
-      crystallographic orientation: '100'
+      crystallographicOrientation: '100'
       source:
         manufacturer: Mateck
       shape:
@@ -53,14 +53,14 @@ system:
         diameter:
           unit: mm
           value: 12
-      geometric electrolyte contact area:
+      geometricElectrolyteContactArea:
         unit: cm-2
-      preparation procedure:
+      preparationProcedure:
         description:
           - Annealed in a hydrogen flame for 6 min.
           - Cooled down in nitrogen stream.
 source:
-  citation key: cuesta_2000_adsorption_5684
+  citationKey: cuesta_2000_adsorption_5684
   url: https://doi.org/10.1039/B006464P
   technique:
     - CV

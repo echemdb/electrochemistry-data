@@ -11,7 +11,7 @@ system:
       type: SCE-sat
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Au
       source:
         manufacturer: homemade
@@ -52,7 +52,7 @@ system:
         purity:
           grade: ultrapure water
       purity:
-        total ion conductivity:
+        totalIonConductivity:
           value: 18.3
           unit: MOhm cm
     - concentration:
@@ -73,7 +73,7 @@ system:
       uncertainty: 2
     type: aqueous
 source:
-  citation key: chen_1999_iodide_342
+  citationKey: chen_1999_iodide_342
   url: https://doi.org/10.1016/S0022-0728(98)00437-9
 curation:
   process:

@@ -9,7 +9,7 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Pt
       shape:
         type: disk
@@ -21,7 +21,7 @@ system:
       type: microreference
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Au
       description: Au on mica
       source:
@@ -42,7 +42,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: wallauer_2013_the_1143
+  citationKey: wallauer_2013_the_1143
   url: https://doi.org/10.5560/ZNB.2013-3153
   techniques:
   - CV

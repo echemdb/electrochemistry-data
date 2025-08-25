@@ -9,7 +9,7 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Pt
       shape:
         type: wire
@@ -22,9 +22,9 @@ system:
         type: wire
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Au
-      preparation procedure:
+      preparationProcedure:
          description:
          - Electrochemical polishing and annealing in an H2 flame.
       source:
@@ -46,7 +46,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: bi_2018_minimizing_1
+  citationKey: bi_2018_minimizing_1
   url: https://doi.org/10.1038/s41467-018-07674-0
   techniques:
   - CV

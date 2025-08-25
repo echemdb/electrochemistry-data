@@ -6,7 +6,7 @@ curation:
     date: 2025-08-23
 source:
   url: https://doi.org/10.1016/S0022-0728(79)80023-6
-  citation key: clavilier_1980_the_211
+  citationKey: clavilier_1980_the_211
   techniques:
   - CV
 system:
@@ -30,7 +30,7 @@ system:
       function: working electrode
       type: single crystal
       material: Pt
-      crystallographic orientation: '111'
-      preparation procedure:
+      crystallographicOrientation: '111'
+      preparationProcedure:
         url: https://doi.org/10.1016/S0022-0728(79)80022-4
 

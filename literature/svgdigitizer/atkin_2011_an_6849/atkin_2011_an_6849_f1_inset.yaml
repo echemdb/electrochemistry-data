@@ -8,7 +8,7 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Pt
       shape:
         type: wire
@@ -19,9 +19,9 @@ system:
         type: wire
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Au
-      preparation procedure:
+      preparationProcedure:
          description:
          - Annealing in a hydrogen flame.
   electrolyte:
@@ -40,7 +40,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: atkin_2011_an_6849
+  citationKey: atkin_2011_an_6849
   url: https://doi.org/10.1039/c0cp02846k
   techniques:
   - CV

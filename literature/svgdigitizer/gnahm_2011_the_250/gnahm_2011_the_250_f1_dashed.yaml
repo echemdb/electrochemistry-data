@@ -9,7 +9,7 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Pt
       shape:
         type: wire
@@ -20,7 +20,7 @@ system:
         type: wire, pseudo-reference
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Au
       shape:
         diameter:
@@ -29,11 +29,11 @@ system:
         type: disk
       source:
         manufacturer: MaTeck
-      preparation procedure:
+      preparationProcedure:
         description:
           - stored in an oven at 960°C
           - annealed for 5 min by inductive heating in N2
-      geometric electrolyte contact area:
+      geometricElectrolyteContactArea:
         value: 0.58
         unit: cm-2
   electrolyte:
@@ -50,7 +50,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: gnahm_2011_the_250
+  citationKey: gnahm_2011_the_250
   url: https://doi.org/10.1016/j.jelechem.2010.11.019
   techniques:
   - CV

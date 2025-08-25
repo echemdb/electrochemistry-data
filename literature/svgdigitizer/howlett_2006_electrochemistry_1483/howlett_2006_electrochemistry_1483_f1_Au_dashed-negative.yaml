@@ -9,7 +9,7 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Pt
       shape:
         type: wire
@@ -20,8 +20,8 @@ system:
       type: AgTfO/PMP-TFSI
     - name: WE
       function: working electrode
-      crystallographic orientation: poly
-      geometric electrolyte contact area:
+      crystallographicOrientation: poly
+      geometricElectrolyteContactArea:
         unit: cm-2
         value: 1
       material: Au
@@ -44,7 +44,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: howlett_2006_electrochemistry_1483
+  citationKey: howlett_2006_electrochemistry_1483
   url: https://doi.org/10.1524/zpch.2006.220.10.1483
   techniques:
   - CV

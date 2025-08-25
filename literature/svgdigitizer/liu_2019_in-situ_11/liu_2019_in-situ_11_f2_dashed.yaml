@@ -9,7 +9,7 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Pt
       shape:
         type: wire
@@ -22,7 +22,7 @@ system:
         type: wire, quasi-reference
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Au
       shape:
         type: polished bead
@@ -45,7 +45,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: liu_2019_in-situ_11
+  citationKey: liu_2019_in-situ_11
   url: https://doi.org/10.1016/j.electacta.2019.04.066
   techniques:
   - CV

@@ -6,7 +6,7 @@ curation:
     date: 2025-08-25
 source:
   url: https://doi.org/10.1039/C4CP04791E
-  citation key: ganassin_2015_non_8349
+  citationKey: ganassin_2015_non_8349
   techniques:
   - CV
 system:
@@ -40,9 +40,9 @@ system:
       function: working electrode
       type: single crystal
       material: Pt
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       source:
         manufacturer: Mateck
-      preparation procedure:
+      preparationProcedure:
         url: https://doi.org/10.1039/C3CP51998H
 

@@ -9,7 +9,7 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Au
     - name: REF
       function: reference electrode
@@ -18,7 +18,7 @@ system:
         type: wire, pseudo-reference
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Au
       shape:
         diameter:
@@ -44,7 +44,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: friedl_2017_interface_216
+  citationKey: friedl_2017_interface_216
   url: https://doi.org/10.1002/celc.201600557
   techniques:
   - CV

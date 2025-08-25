@@ -7,7 +7,7 @@ system:
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Pt
       shape:
         type: ring
@@ -18,9 +18,9 @@ system:
         type: wire
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Au
-      geometric electrolyte contact area:
+      geometricElectrolyteContactArea:
         unit: cm-2
         value: 0.3
       description: Au on mica
@@ -40,7 +40,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: endres_2006_probing_1377
+  citationKey: endres_2006_probing_1377
   url: https://doi.org/10.1524/zpch.2006.220.10.1377
   techniques:
   - CV
