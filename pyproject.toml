@@ -97,6 +97,7 @@ sphinx_rtd_theme = "*"
 doc = "cd doc && make html SPHINXOPTS='-W -n --keep-going'"
 
 [tool.pixi.feature.dev.dependencies]
+make = "*"
 pybtex = "*"
 pip = "*"
 conda = "*"

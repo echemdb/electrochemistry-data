@@ -52,7 +52,7 @@ system:
         supplier: Merck
       type: acid
 source:
-  citationKey: chen_deconvolution_4958
+  citationKey: chen_2024_deconvolution_4958
   url: https://doi.org/10.1021/acs.jpclett.4c01056
 curation:
   process:

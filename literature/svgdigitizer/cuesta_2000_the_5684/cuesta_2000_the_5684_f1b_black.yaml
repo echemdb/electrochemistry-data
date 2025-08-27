@@ -60,7 +60,7 @@ system:
           - Annealed in a hydrogen flame for 6 min.
           - Cooled down in nitrogen stream.
 source:
-  citationKey: cuesta_2000_adsorption_5684
+  citationKey: cuesta_2000_the_5684
   url: https://doi.org/10.1039/B006464P
   techniques:
     - CV
