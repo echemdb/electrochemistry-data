@@ -5,7 +5,7 @@
    width="5062px"
    id="svg6"
    sodipodi:docname="chen_2024_deconvolution_4958_f3b_black.svg"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -23,12 +23,12 @@
      showgrid="false"
      inkscape:zoom="0.37279653"
      inkscape:cx="1097.1132"
-     inkscape:cy="4066.5615"
-     inkscape:window-width="1440"
-     inkscape:window-height="781"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
-     inkscape:window-maximized="0"
+     inkscape:cy="4065.2202"
+     inkscape:window-width="2880"
+     inkscape:window-height="1711"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg6"
      inkscape:pageshadow="2" />
   <defs
@@ -223,19 +223,16 @@
   </g>
   <g
      id="g1">
-    <g
-       id="g6437">
-      <text
-         xml:space="preserve"
-         style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+    <text
+       xml:space="preserve"
+       style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="1183.8987"
+       y="4922.0581"
+       id="text3406"><tspan
+         sodipodi:role="line"
+         id="tspan3404"
          x="1183.8987"
-         y="4922.0581"
-         id="text3406"><tspan
-           sodipodi:role="line"
-           id="tspan3404"
-           x="1183.8987"
-           y="4922.0581">curve: black</tspan></text>
-    </g>
+         y="4922.0581">curve: black</tspan></text>
     <path
        style="fill:none;stroke:#00ffff;stroke-width:3.8"
        d="m 847.3947,5057.8213 c 0,0 0.92115,-53.2609 8.51372,-53.7602 7.59257,-0.4993 25.43198,29.2607 38.83799,39.1303 13.40601,9.8696 22.38102,23.9778 44.37533,24.0617 21.99431,0.084 38.98485,-24.0986 50.07653,-62.508 11.09163,-38.4095 15.47233,-59.7539 21.37773,-95.1998 5.9053,-35.446 3.321,-128.6851 9.2095,-128.7118 5.8886,-0.027 4.818,46.3532 11.9345,44.9133 7.1165,-1.4399 12.8348,-50.4037 21.6292,-50.8367 8.7944,-0.4331 20.3242,37.1576 28.3597,45.7671 8.0355,8.6095 8.8971,1.7897 19.4598,14.4546 10.5627,12.6649 17.1851,120.734 43.2584,150.7224 26.0733,29.9885 40.4279,16.8146 67.4467,32.2655 27.0188,15.4509 47.5489,40.4965 75.4612,45.9551 27.9124,5.4586 38.6642,0.1661 54.9459,-5.2244 16.2816,-5.3904 15.2683,-0.9451 22.9806,-3.1658 7.7123,-2.2207 23.024,-21.3144 25.5897,-15.335 2.5657,5.9794 0.2333,72.3051 -0.9197,83.2258 -1.1531,10.9207 -47.7849,-4.6968 -88.2563,-5.9251 -40.4713,-1.2282 -61.8586,34.0494 -81.2987,47.7695 -19.4401,13.7202 -57.5989,16.6684 -72.527,28.2424 -14.9281,11.574 -26.5635,49.9001 -29.7503,75.1173 -3.1867,25.2172 -13.7728,57.5803 -17.5561,68.6479 -3.7833,11.0676 -8.3545,13.2052 -20.9535,24.6511 -12.599,11.446 -18.2511,46.9202 -26.9286,47.1563 -8.6775,0.2361 -18.0298,-53.5901 -23.7252,-52.2992 -5.6953,1.2909 -1.9858,13.7461 -6.5507,13.7896 -4.5649,0.044 -10.2927,-96.306 -17.9127,-128.6178 -7.62,-32.3118 -15.42162,-44.8334 -23.43117,-66.6144 -8.00955,-21.781 -17.97044,-47.108 -36.30102,-53.1064 -18.33059,-5.9983 -25.69223,-4.02 -60.62687,29.0496 -34.93464,33.0697 -36.96422,134.1737 -36.96422,134.1737"

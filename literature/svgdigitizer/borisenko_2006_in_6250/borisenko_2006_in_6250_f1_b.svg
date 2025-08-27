@@ -5,7 +5,7 @@
    width="5100px"
    id="svg6"
    sodipodi:docname="borisenko_2006_in_6250_f1_b.svg"
-   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -21,15 +21,15 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:snap-text-baseline="true"
-     inkscape:zoom="1.0083321"
-     inkscape:cx="751.73644"
-     inkscape:cy="656.03385"
-     inkscape:window-width="1536"
-     inkscape:window-height="953"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:zoom="0.35649923"
+     inkscape:cx="314.16617"
+     inkscape:cy="1070.1285"
+     inkscape:window-width="2880"
+     inkscape:window-height="1711"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g11676"
+     inkscape:current-layer="svg6"
      inkscape:showpageshadow="2"
      inkscape:deskcolor="#d1d1d1" />
   <defs
@@ -123,35 +123,33 @@
        id="path27654" />
   </g>
   <g
-     id="g11676"
-     transform="translate(-8.4151652,-269.28529)"
-     style="stroke:#ff0000;stroke-opacity:1">
+     id="g1">
     <text
        xml:space="preserve"
        style="font-size:53.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;stroke:#ff0000;stroke-opacity:1"
-       x="1377.5223"
-       y="1560.0018"
+       x="1369.1072"
+       y="1290.7166"
        id="text10301"><tspan
          sodipodi:role="line"
          id="tspan10299"
-         x="1377.5223"
-         y="1560.0018">curve: b</tspan></text>
+         x="1369.1072"
+         y="1290.7166">curve: b</tspan></text>
     <path
        style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 2021.0422,1607.9978 c 0,0 -20.1944,3.6184 -29.4531,4.5582 -23.7211,2.4079 -69.4251,1.0519 -69.4251,1.0519 -37.5544,0 -116.9505,4.8245 -153.9273,4.9089 -134.4673,0.3068 -306.2914,-1.3272 -363.956,10.5189 -42.3625,8.7026 -50.4584,13.717 -82.0478,35.7645 -42.4825,29.6503 -56.5926,1.0089 -75.3859,-1.4025 -5.9027,-0.7574 -39.8532,-8.5645 -45.9501,-12.1629 -8.2609,-4.8756 -43.1104,-1.8624 -43.1104,-1.8624 0,0 5.424,-5.7852 13.2826,-8.5335 5.6351,-1.9707 13.5442,-0.8468 16.866,-2.014 7.4277,-2.6098 10.7859,3.8506 37.9044,-1.0472 24.4751,-4.4204 49.729,-7.3205 65.1871,-12.9495 28.9246,-10.5328 83.6676,-4.9928 125.5262,-7.0127 57.4842,-2.7739 151.0734,2.9179 172.5109,-7.0126 6.6465,-3.0789 10.4321,-7.9555 32.9555,-7.0751 40.1816,1.5706 130.6903,-1.6725 147.2693,3.5688 8.9938,2.8433 23.8417,2.645 53.6467,-2.4544 29.805,-5.0994 32.6301,-3.6839 80.9959,1.0518 17.0971,1.6741 45.0578,0.1466 70.4771,0.1388 24.4323,-0.01 46.634,1.965 46.634,1.965 z"
+       d="m 2012.627,1338.7125 c 0,0 -20.1944,3.6184 -29.4531,4.5582 -23.7211,2.4079 -69.4251,1.0519 -69.4251,1.0519 -37.5544,0 -116.9505,4.8245 -153.9273,4.9089 -134.4673,0.3068 -306.2914,-1.3272 -363.956,10.5189 -42.3625,8.7026 -50.4584,13.717 -82.0478,35.7645 -42.4825,29.6503 -56.5926,1.0089 -75.3859,-1.4025 -5.9027,-0.7574 -39.8532,-8.5645 -45.9501,-12.1629 -8.2609,-4.8756 -43.1104,-1.8624 -43.1104,-1.8624 0,0 5.424,-5.7852 13.2826,-8.5335 5.6351,-1.9707 13.5442,-0.8468 16.866,-2.014 7.4277,-2.6098 10.7859,3.8506 37.9044,-1.0472 24.4751,-4.4204 49.729,-7.3205 65.1871,-12.9495 28.9246,-10.5328 83.6676,-4.9928 125.5262,-7.0127 57.4842,-2.7739 151.0734,2.9179 172.5109,-7.0126 6.6465,-3.0789 10.4321,-7.9555 32.9555,-7.0751 40.1816,1.5706 130.6903,-1.6725 147.2693,3.5688 8.9938,2.8433 23.8417,2.645 53.6467,-2.4544 29.805,-5.0994 32.6301,-3.6839 80.9959,1.0518 17.0971,1.6741 45.0578,0.1466 70.4771,0.1388 24.4323,-0.01 46.634,1.965 46.634,1.965 z"
        id="path19860"
        sodipodi:nodetypes="cssssssscsssssssszssc" />
-    <text
-       xml:space="preserve"
-       style="text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#0000aa;stroke-width:3.77953;stroke:none"
-       x="692.84857"
-       y="835.90637"
-       id="text1"><tspan
-         sodipodi:role="line"
-         id="tspan1"
-         x="692.84857"
-         y="835.90637">tags: BCV</tspan></text>
   </g>
+  <text
+     xml:space="preserve"
+     style="text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#0000aa;stroke:none;stroke-width:3.77953;stroke-opacity:1"
+     x="684.43341"
+     y="566.62109"
+     id="text1"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       x="684.43341"
+       y="566.62109">tags: BCV</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:53.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"

@@ -4,8 +4,8 @@
    version="1.1"
    width="4961px"
    id="svg6"
-   sodipodi:docname="borisenko_2012_an_1736_p2_f1_green_1.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="borisenko_2012_an_1736_f1_green.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -20,15 +20,17 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="0.67082422"
-     inkscape:cx="1055.4181"
-     inkscape:cy="5775.7306"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
-     inkscape:window-y="284"
+     inkscape:zoom="0.33541211"
+     inkscape:cx="596.28139"
+     inkscape:cy="5329.2649"
+     inkscape:window-width="2880"
+     inkscape:window-height="1711"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g19191" />
+     inkscape:current-layer="svg6"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
   <defs
      id="defs2" />
   <image
@@ -40,7 +42,7 @@
      y="0"
      id="image4" />
   <g
-     id="g19191">
+     id="g1">
     <path
        style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 1909.5152,4718.0202 c 0,0 4.9211,64.5455 -0.068,95.5457 -2.6785,16.6436 -3.4176,57.5899 -12.4468,41.4288 -5.9603,-10.6681 -11.5367,9.9576 -35.7863,37.1262 -21.3179,23.884 -54.2553,60.641 -65.2536,68.8845 -4.6539,3.4882 -15.5456,5.5837 -27.9793,12.7388 -22.464,12.927 -51.6493,32.2439 -70.1472,34.3117 -26.1531,2.9235 -81.2048,9.2927 -119.9013,35.8231 -23.9936,16.45 -82.7896,25.4052 -105.5457,15.1499 -36.0486,-16.2457 -33.9912,-7.6246 -66.2958,22.1459 -23.0301,21.2235 -17.3506,51.167 -59.0062,21.1156 -30.3584,-21.9014 -67.8539,-9.6472 -108.3178,-9.0454 -15.8278,0.2354 -37.3068,4.8847 -53.4728,-5.8408 -14.5068,-9.6248 -36.9688,1.3795 -71.162,5.7615 -34.4848,4.4193 -73.244,7.4608 -79.0944,9.3056 -10.2086,3.2191 -20.8643,0.6934 -31.1353,1.1207 -8.52635,0.3547 -17.71441,3.903 -17.71441,3.903 0,0 -17.15133,-68.7543 18.38271,-78.4002 32.4747,-8.8154 119.7844,-12.0831 152.2889,-29.0353 20.3077,-10.5911 40.3901,-6.8177 51.3631,-51.6837 10.4124,-42.5736 12.4532,-161.6847 17.0483,-252.9112 9.8457,-195.468 13.6526,-225.6326 34.3026,-65.0486 4.8526,37.7365 22.0323,84.1806 34.9718,105.6604 17.9957,29.8733 33.4068,20.9201 55.4988,27.5098 20.7569,6.1913 22.163,2.9141 27.8906,33.0091 4.0153,21.0981 12.1156,23.0317 34.6144,36.7849 33.4402,20.4414 81.5742,49.777 97.8477,49.7603 24.1625,-0.025 104.4535,17.2112 126.9298,15.6272 33.9996,-2.396 76.0371,-19.6663 98.7315,-69.5387 4.958,-10.8955 19.6918,-13.5004 31.1197,-20.4348 18.7774,-11.3941 11.9682,-35.4081 17.3735,-44.1658 15.6278,-25.3201 12.7094,-11.4533 38.5797,-66.9053 9.6341,-20.6502 27.9805,-13.7077 45.1246,0.4503 23.4043,19.3279 41.2591,19.8468 41.2591,19.8468 z"
@@ -56,17 +58,17 @@
          id="tspan5274"
          x="948.0874"
          y="5485.7886">curve: green</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:29.3333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px"
-       x="915.29193"
-       y="5628.8965"
-       id="text3004"><tspan
-         sodipodi:role="line"
-         id="tspan3002"
-         x="915.29193"
-         y="5628.8965">scan rate: 10 mV / s</tspan></text>
   </g>
+  <text
+     xml:space="preserve"
+     style="font-size:29.3333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px"
+     x="915.29193"
+     y="5628.8965"
+     id="text3004"><tspan
+       sodipodi:role="line"
+       id="tspan3002"
+       x="915.29193"
+       y="5628.8965">scan rate: 10 mV / s</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:29.3333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px"
