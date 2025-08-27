@@ -52,7 +52,8 @@ system:
         value: 100
       type: gas
     ph:
-      uncertainty: 0.1
+      uncertainty:
+        value: 0.1
       value: 0.29
     temperature:
       unit: K

@@ -70,7 +70,8 @@ system:
     temperature:
       unit: deg_C
       value: 20
-      uncertainty: 2
+      uncertainty:
+        value: 2
     type: aqueous
 source:
   citationKey: chen_1999_iodide_342
