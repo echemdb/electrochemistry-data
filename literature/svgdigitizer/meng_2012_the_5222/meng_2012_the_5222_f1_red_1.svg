@@ -5,7 +5,7 @@
    width="4961px"
    id="svg1"
    sodipodi:docname="meng_2012_the_5222_f1_red_1.svg"
-   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -20,13 +20,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.3617705"
-     inkscape:cx="856.89684"
-     inkscape:cy="1004.7807"
-     inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     inkscape:window-x="-8"
-     inkscape:window-y="417"
+     inkscape:zoom="1.447082"
+     inkscape:cx="637.14427"
+     inkscape:cy="1136.4249"
+     inkscape:window-width="2880"
+     inkscape:window-height="1711"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg1" />
   <defs
@@ -76,7 +76,7 @@
        sodipodi:role="line"
        id="tspan3"
        x="2093.8689"
-       y="1028.2762">comment: Parts of the curve are hardly visible.</tspan></text>
+       y="1028.2762">comment: Parts of the curve are hardly visible. Also the units on the y-axis are given in `uA / cm2 / M` which is currently not supported by the echemdb module of unitpackage, nor is M a supported unit  by astropy.  See also issue unitpackage/issues/112.</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:32px;font-family:Arial;-inkscape-font-specification:Arial;fill:none;stroke:#0000ff;stroke-width:1.13386;stroke-opacity:1"
@@ -147,7 +147,7 @@
          sodipodi:role="line"
          id="tspan8"
          x="234.54874"
-         y="1360.3827">j1: -100 uA / cm2 M</tspan></text>
+         y="1360.3827">j1: -100 uA / cm2</tspan></text>
   </g>
   <g
      id="g10">
@@ -164,6 +164,6 @@
          sodipodi:role="line"
          id="tspan9"
          x="205.23013"
-         y="830.69342">j2: 0 uA / cm2 M</tspan></text>
+         y="830.69342">j2: 0 uA / cm2</tspan></text>
   </g>
 </svg>
