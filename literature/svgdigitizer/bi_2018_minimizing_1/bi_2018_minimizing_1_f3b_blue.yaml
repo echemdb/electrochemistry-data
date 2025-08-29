@@ -1,0 +1,67 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  instrumentation:
+  - name: autolab electrochemical workstation
+    type: potentiostat
+system:
+  type: electrochemical
+  electrodes:
+    - name: CE
+      function: counter electrode
+      crystallographicOrientation: poly
+      material: Pt
+      shape:
+        type: wire
+    - name: REF
+      function: reference electrode
+      material: Ag
+      source:
+        manufacturer: homemade
+      shape:
+        type: wire
+    - name: WE
+      function: working electrode
+      crystallographicOrientation: '111'
+      material: Au
+      preparationProcedure:
+         description:
+         - Electrochemical polishing and annealing in an H2 flame.
+      source:
+        manufacturer: Homemade by the Clavilier method.
+  electrolyte:
+    components:
+    - name: BMIM-BF4
+      proportion:
+        unit: volume percent
+        value: 100
+      type: solvent
+    - concentration:
+        unit: ppm
+        value: 22800
+      name: water
+      type: solute
+    temperature:
+      unit: K
+      value: 298.15
+    type: ionic liquid
+source:
+  citationKey: bi_2018_minimizing_1
+  url: https://doi.org/10.1038/s41467-018-07674-0
+  techniques:
+  - CV
+  - MD
+curation:
+  process:
+  - role: curator
+    name: Jerome Mayer
+    orcid: https://orcid.org/0000-0002-7451-9994
+    date: 2022-01-10
+  - role: curator
+    name: Maren-Kathrin Heubach
+    orcid: https://orcid.org/0000-0002-3769-7169
+    date: 2022-06-29
+  - role: reviewer
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2025-08-23

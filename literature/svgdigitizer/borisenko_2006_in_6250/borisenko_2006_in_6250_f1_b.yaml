@@ -1,0 +1,68 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  instrumentation:
+  - name: PARSTAT 2263
+    type: potentiostat, galvanostat
+system:
+  type: electrochemical
+  electrodes:
+    - name: CE
+      function: counter electrode
+      crystallographicOrientation: poly
+      material: Pt
+      shape:
+        type: ring
+    - name: REF
+      function: reference electrode
+      material: Pt
+      shape:
+        type: wire
+    - name: WE
+      function: working electrode
+      crystallographicOrientation: '111'
+      material: Au
+      preparationProcedure:
+         description:
+         - Annealed at 350 °C for 4h under vacuum.
+      description: Au on mica
+      source:
+        manufacturer: Molecular Imaging
+  electrolyte:
+    components:
+    - name: BMP-TFSI
+      proportion:
+        unit: volume percent
+        value: 100
+      source:
+        supplier: Merck/EMD
+        purity:
+          grade: ultrapure
+      comment: '< 10 ppm chloride, Li-free synthesis.'
+      type: solvent
+    temperature:
+      unit: K
+      value: 298.15
+    type: ionic liquid
+source:
+  citationKey: borisenko_2006_in_6250
+  url: https://doi.org/10.1021/jp057337d
+  techniques:
+  - CV
+  - SEM
+  - EDX
+  - STM
+curation:
+  process:
+  - role: curator
+    name: Jerome Mayer
+    orcid: https://orcid.org/0000-0002-7451-9994
+    date: 2022-01-10
+  - role: curator
+    name: Maren-Kathrin Heubach
+    orcid: https://orcid.org/0000-0002-3769-7169
+    date: 2023-02-17
+  - role: reviewer
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2025-08-23

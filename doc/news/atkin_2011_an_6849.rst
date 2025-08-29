@@ -1,0 +1,3 @@
+**Added:**
+
+* Added atkin_2011_an_6849 figures "f1_black" and "f1_inset".

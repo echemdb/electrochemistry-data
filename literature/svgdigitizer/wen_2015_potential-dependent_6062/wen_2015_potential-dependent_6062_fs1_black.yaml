@@ -2,7 +2,8 @@
 # Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
 experimental:
   instrumentation:
-  - name: potentiostat
+  - manufacturer: Ivium Technologies
+    name: Compactstat
     type: potentiostat
 system:
   type: electrochemical
