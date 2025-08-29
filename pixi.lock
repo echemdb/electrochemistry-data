@@ -7632,8 +7632,8 @@ packages:
   timestamp: 1733217860944
 - pypi: ./
   name: echemdb-ecdata
-  version: 0.5.0
-  sha256: ade35b93661edaa411d46d7dacc636ed570f7f813910a087fb1a7d3ec999a22d
+  version: 0.5.1
+  sha256: 1914ec7a5635a7134123d87d7a9555ffd23fec542654cc52d917ed510055546f
   requires_dist:
   - svgdigitizer>=0.13.0,<0.14.0
   requires_python: '>=3.9'

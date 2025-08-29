@@ -1,3 +1,0 @@
-**Added:**
-
-* Added hu_2015_an_877 figures "f1_a", "f1_b", "f1_c", "f1_d_dashed", and "f1_d_solid".
