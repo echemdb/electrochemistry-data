@@ -71,8 +71,53 @@ source:
   techniques:
   - XPS
   - STM
-figureDescription:
+figureDescription: #This section will be updated by module `svgdigitizer.electrochemistry.cv.CV`
+    originalFilename: 17080801Cu100_UHVNa_C01_cycle11.csv
+    measurementType: CV
+    type: raw
+    scanRate:
+      value: 50
+      unit: mV / s
+    comment: A description of the measurement data. # Add whatever you think is important to understand the data. This will be updated by the `svgdigitizer.electrochemistry.cv.CV` module and takes the comment from the svg file.
+    fields:
+      - name: E [V]
+        unit: V
+        type: number
+        dimension: E
+      - name: t [s]
+        unit: s
+        type: number
+        dimension: t
+      - name: I / [A cm-2]
+        unit: A cm-2
+        type: number
+        dimension: j
+dataDescription:
   originalFilename: 17080801Cu100_UHVNa_C01_cycle11.csv
+  type: raw
+  comment: A description of the measurement data. # Add whatever you think is important to understand the data. This will be updated by the `svgdigitizer.electrochemistry.cv.CV` module and takes the comment from the svg file.
+  dialect:
+    delimiter: ','
+    decimal: '.'
+    encoding: utf-8
+    header: 0
+    columnHeader: 2
+  fields:
+    - name: E
+      unit: V
+      reference: RHE
+      type: number
+      dimension: E
+      original: E [V vs. RHE]
+    - name: t [s]
+      unit: s
+      type: number
+      dimension: t
+    - name: j
+      unit: mA cm-2
+      type: number
+      original: j [mA/cm\+(-2)]
+      dimension: j
 curation:
   process:
   - role: experimentalist
