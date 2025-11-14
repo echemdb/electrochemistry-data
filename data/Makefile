@@ -1,7 +1,7 @@
 # ********************************************************************
 #  This file is part of echemdb.
 #
-#        Copyright (C) 2022 Albert Engstfeld
+#        Copyright (C) 2025 Albert Engstfeld
 #        Copyright (C) 2022 Johannes Hermann
 #        Copyright (C) 2022 Julian Rüth
 #        Copyright (C) 2022 Nicolas Hörmann
@@ -42,6 +42,9 @@ SOURCE_BIB=../literature/bibliography/bibliography.bib
 # directory with the same subdirectory structure as they had in SOURCE_DIR.
 TARGET_DIR=generated/svgdigitizer
 
+TARGET_BIB_DIR = generated/bibliography
+TARGET_BIB = ${TARGET_BIB_DIR}/bibliography.bib
+
 # The .csv files that we are going to generate from the .yaml and .svg files.
 TARGET_CSV=${patsubst %.yaml,%.csv,${patsubst ${SOURCE_DIR}/%,${TARGET_DIR}/%,${wildcard ${SOURCE_DIR}/**/*.yaml}}}
 # The .json files that we are going to generate from the .yaml and .svg files.
@@ -49,15 +52,20 @@ TARGET_JSON=${patsubst %.yaml,%.json,${patsubst ${SOURCE_DIR}/%,${TARGET_DIR}/%,
 
 # We create a data package, i.e., a .csv and a .json file, from a .yaml and a
 # .svg files by invoking the svgdigitizer.
+# We also include the bibliography data from the bibliography.bib file.
 ${TARGET_DIR}/%.csv ${TARGET_DIR}/%.json : ${SOURCE_DIR}/%.yaml ${SOURCE_DIR}/%.svg
-	${SVGDIGITIZER} cv --sampling-interval ${SAMPLING_INTERVAL} --si-units --bibliography ${SOURCE_BIB} --metadata $< ${patsubst %.yaml,%.svg,$<} --outdir=${@D} 2>&1 | awk '{ print "'$<': "$$0 }'
+	@mkdir -p ${@D} ${TARGET_BIB_DIR}
+	${CP} ${SOURCE_BIB} ${TARGET_BIB}
+	${SVGDIGITIZER} cv --sampling-interval ${SAMPLING_INTERVAL} --si-units \
+		--bibliography ${TARGET_BIB} --metadata $< ${patsubst %.yaml,%.svg,$<} \
+		--outdir=${@D} 2>&1 | awk '{ print "'$<': "$$0 }'
 
 # The default action when calling "make" is to digitize all the .yaml/.svg
 all: ${TARGET_CSV} ${TARGET_JSON}
 
 # Remove the entire TARGET_DIR to delete all the generated output.
 clean:
-	rm -rf ${TARGET_DIR}
+	rm -rf ${TARGET_DIR} ${TARGET_BIB_DIR}
 
 
 .PHONY: all clean
