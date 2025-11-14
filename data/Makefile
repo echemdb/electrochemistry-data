@@ -35,6 +35,9 @@ SOURCE_METADATA=${wildcard ${SOURCE_DIR}/**/*.yaml}
 # All the .svg files corresponding to the SOURCE_METADATA .yaml files.
 SOURCE_SVG=${patsubst %.yaml,%.svg,${SOURCES_METADATA}}
 
+# The directory with the bibliography file
+SOURCE_BIB=../literature/bibliography/bibliography.bib
+
 # The files for the digitized .csv, .json, and .bib are written to this
 # directory with the same subdirectory structure as they had in SOURCE_DIR.
 TARGET_DIR=generated/svgdigitizer
@@ -43,22 +46,14 @@ TARGET_DIR=generated/svgdigitizer
 TARGET_CSV=${patsubst %.yaml,%.csv,${patsubst ${SOURCE_DIR}/%,${TARGET_DIR}/%,${wildcard ${SOURCE_DIR}/**/*.yaml}}}
 # The .json files that we are going to generate from the .yaml and .svg files.
 TARGET_JSON=${patsubst %.yaml,%.json,${patsubst ${SOURCE_DIR}/%,${TARGET_DIR}/%,${wildcard ${SOURCE_DIR}/**/*.yaml}}}
-# The .bib files that we are going to create, the same .bib files that were present in SOURCE_DIR.
-TARGET_BIB=${patsubst ${SOURCE_DIR}/%,${TARGET_DIR}/%,${wildcard ${SOURCE_DIR}/**/*.bib}}
 
 # We create a data package, i.e., a .csv and a .json file, from a .yaml and a
 # .svg files by invoking the svgdigitizer.
 ${TARGET_DIR}/%.csv ${TARGET_DIR}/%.json : ${SOURCE_DIR}/%.yaml ${SOURCE_DIR}/%.svg
-	${SVGDIGITIZER} cv --sampling-interval ${SAMPLING_INTERVAL} --si-units --bibliography --metadata $< ${patsubst %.yaml,%.svg,$<} --outdir=${@D} 2>&1 | awk '{ print "'$<': "$$0 }'
-
-# We create a .bib file describing a publication by copying the .bib file from SOURCE_DIR to TARGET_DIR.
-${TARGET_DIR}/%.bib: ${SOURCE_DIR}/%.bib
-	@mkdir -p ${@D}
-	${CP} $< $@
+	${SVGDIGITIZER} cv --sampling-interval ${SAMPLING_INTERVAL} --si-units --bibliography ${SOURCE_BIB} --metadata $< ${patsubst %.yaml,%.svg,$<} --outdir=${@D} 2>&1 | awk '{ print "'$<': "$$0 }'
 
 # The default action when calling "make" is to digitize all the .yaml/.svg
-# pairs and copy over all the .bib files.
-all: ${TARGET_CSV} ${TARGET_JSON} ${TARGET_BIB}
+all: ${TARGET_CSV} ${TARGET_JSON}
 
 # Remove the entire TARGET_DIR to delete all the generated output.
 clean:
