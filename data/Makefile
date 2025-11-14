@@ -43,7 +43,6 @@ SOURCE_BIB=../literature/bibliography/bibliography.bib
 TARGET_DIR=generated/svgdigitizer
 
 TARGET_BIB_DIR = generated/bibliography
-TARGET_BIB = ${TARGET_BIB_DIR}/bibliography.bib
 
 # The .csv files that we are going to generate from the .yaml and .svg files.
 TARGET_CSV=${patsubst %.yaml,%.csv,${patsubst ${SOURCE_DIR}/%,${TARGET_DIR}/%,${wildcard ${SOURCE_DIR}/**/*.yaml}}}
@@ -54,10 +53,8 @@ TARGET_JSON=${patsubst %.yaml,%.json,${patsubst ${SOURCE_DIR}/%,${TARGET_DIR}/%,
 # .svg files by invoking the svgdigitizer.
 # We also include the bibliography data from the bibliography.bib file.
 ${TARGET_DIR}/%.csv ${TARGET_DIR}/%.json : ${SOURCE_DIR}/%.yaml ${SOURCE_DIR}/%.svg
-	@mkdir -p ${@D} ${TARGET_BIB_DIR}
-	${CP} ${SOURCE_BIB} ${TARGET_BIB}
 	${SVGDIGITIZER} cv --sampling-interval ${SAMPLING_INTERVAL} --si-units \
-		--bibliography ${TARGET_BIB} --metadata $< ${patsubst %.yaml,%.svg,$<} \
+		--bibliography ${SOURCE_BIB} --metadata $< ${patsubst %.yaml,%.svg,$<} \
 		--outdir=${@D} 2>&1 | awk '{ print "'$<': "$$0 }'
 
 # The default action when calling "make" is to digitize all the .yaml/.svg
