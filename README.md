@@ -47,14 +47,14 @@ If you want to work on the data and repository itself, install [pixi](https://pi
 and get a copy of the latest unreleased version of the metadata-schema:
 
 ```sh
-git clone https://github.com/echemdb/electzrochemistry-dataa.git
+git clone https://github.com/echemdb/electrochemistry-data.git
 cd metadata-schema
 ```
 
-To preview the website, run
+For possible commands run
 
 ```sh
-pixi run preview
+pixi run
 ```
 
-Mor pixi tasks can be inferred from the [pyproject.toml](pyproject.toml).
+More pixi tasks can be inferred from the [pyproject.toml](pyproject.toml).
