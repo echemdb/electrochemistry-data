@@ -10,7 +10,7 @@ description = "a database for published electrochemical data inferred from SVG a
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    # "svgdigitizer>=0.14.0,<0.15.0", # Revert once published
+    "svgdigitizer>=0.14.1,<0.15.0",
 ]
 
 [tool.setuptools]
@@ -39,7 +39,6 @@ jupytext = ">=1.16.6,<2"
 
 [tool.pixi.pypi-dependencies]
 echemdb_ecdata = { path = ".", editable = true }
-svgdigitizer = { git = "https://github.com/DunklesArchipel/svgdigitizer.git", rev = "0ff52740b285a439cf63728b04c6f3c766b196d3" }
 
 [tool.pixi.feature.python-310.dependencies]
 python = "3.10.*"
@@ -95,6 +94,7 @@ myst-nb = "*"
 sphinx = "*"
 sphinx-design = "*"
 sphinx_rtd_theme = "*"
+unitpackage = "*"
 
 [tool.pixi.feature.doc.tasks]
 doc = "cd doc && make html SPHINXOPTS='-W -n --keep-going'"
