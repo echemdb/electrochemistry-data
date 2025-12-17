@@ -1,15 +1,11 @@
 # This file is part of echemdb (https://github.com/echemdb/website)
 # Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
-experimental:
-  instrumentation:
-  - name: potentiostat
-    type: potentiostat
 system:
   type: electrochemical
   electrodes:
     - name: CE
       function: counter electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
     - name: REF
       function: reference electrode
       source:
@@ -17,7 +13,7 @@ system:
       type: micro-Ag/Ag+, normalized against ferrocene
     - name: WE
       function: working electrode
-      crystallographic orientation: 'poly'
+      crystallographicOrientation: 'poly'
       material: Au
       shape:
         type: micro-electrode
@@ -49,7 +45,7 @@ system:
       value: 298.15
     type: ionic liquid
 source:
-  citation key: meng_2012_the_5222
+  citationKey: meng_2012_the_5222
   url: https://doi.org/10.1039/c2cp23801b
   techniques:
   - CV
@@ -59,7 +55,11 @@ curation:
     name: Jerome Mayer
     orcid: https://orcid.org/0000-0002-7451-9994
     date: 2022-01-10
+  - role: curator
+    name: Maren-Kathrin Heubach
+    orcid: https://orcid.org/0000-0002-3769-7169
+    date: 2024-12-17
   - role: reviewer
     name: Albert Engstfeld
     orcid: https://orcid.org/0000-0002-9686-3948
-    date: 2024-02-29
+    date: 2025-08-23

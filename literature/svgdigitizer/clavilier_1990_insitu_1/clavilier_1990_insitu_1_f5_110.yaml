@@ -5,7 +5,7 @@ curation:
     orcid: https://orcid.org/0000-0002-2911-2925
     date: 2023-03-05
 source:
-  citation key: clavilier_1990_insitu_1
+  citationKey: clavilier_1990_insitu_1
   url: https://doi.org/10.1016/0301-0104(90)80014-O
   techniques:
   - CV
@@ -30,8 +30,8 @@ system:
     - name: WE
       function: working electrode
       material: Pt
-      crystallographic orientation: '110'
-      preparation procedure:
+      crystallographicOrientation: '110'
+      preparationProcedure:
         description:
           - heating in a gas flame
           - cooling in air to 300-200 °C 

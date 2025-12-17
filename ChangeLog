@@ -4,6 +4,78 @@ electrochemistry-data Change Log
 
 .. current developments
 
+v0.5.1
+====================
+
+**Added:**
+
+* Added figures from abe_2019_electro-oxidation_315.
+* Added atkin_2011_an_6849 figures "f1_black" and "f1_inset".
+* Added atkin_2014_structure_44 figures "f2a_black" and "f2b_black".
+* Added bi_2018_minimizing_1 figures "f3a_black", "f3a_blue", "f3a_red", "f3b_black", "f3b_blue", and "f3b_red".
+* Added bonhote_1996_hydrophobic_1168 figures "f7_bold", "f7_solid", "f7_dashed", and "f7_dotdashed".
+* Added borisenko_2006_in_6250 figures "f1_a", "f1_b", and "f1_c".
+* Added borisenko_2012_an_1736 figures "f1_black", "f1_green", and "f1_purple".
+* Added briega_martos_2020_hydrogen_135452 figures "f3_black", "f3_blue", "f3_brown", "f3_darkblue", "f3_green", "f3_olive", and "f3_purple".
+* Added `chen_1999_iodide_342` figures `f1a_solid`.
+* Added chen_2024_deconvolution_4958 figures "f1a_grey", "f1b_grey", "f3b_black", "f3b_orange", "f3b_red", "f3c_green", and "f3c_olive".
+* Added clavilier_1980_the_211 figures "f1_black" and "f2_black".
+* Added cuesta_2000_the_5684 figures "f1a_black", "f1b_black", "f3a_black", and "f3b_black".
+* Added endres_2006_probing_1377 figures "f11_a", "f11_b" and "f11_c".
+* Added friedl_2017_interface_216 figure "f1a_lightblue".
+* Added ganassin_2015_non_8349 figures "f2a_black" and "f2a_red".
+* Added gnahm_2011_the_250 figure "f1_dashed" and "f1_solid".
+* Added howlett_2006_electrochemistry_1483 figures "f1_Au_dashed_negative", "f1_Au_dashed_positive", "f1_Au_solid_negative", and "f1_Au_solid_positive".
+* Added hu_2015_an_877 figures "f1_a", "f1_b", "f1_c", "f1_d_dashed", and "f1_d_solid".
+* Added liu_2019_in-situ_11 figure "f2_dashed".
+* Added meng_2012_the_5222 figure "f1_red".
+* Added motobayashi_2016_potential-dependent_14 figures "f2b_black" and "f2b_red".
+* Added wallauer_2013_the_1143 "f3d_bottom" and "f3e_bottom".
+
+
+
+v0.5.0
+====================
+
+**Added:**
+
+* Added possibility to specify tag or branch of metadata-schema for validation.
+
+**Changed:**
+
+* Changed metadata keys to use camelCase for consistency with JSON naming conventions.
+* Changed validation of metadata to echemdb-metadata-schema 0.3.0.
+* Changed pixi task name from `validate_yaml` to `validate-yaml`.
+
+
+
+v0.4.1
+====================
+
+**Fixed:**
+
+* Fixed ubuntu runner to version 24.04, required for building the database.
+
+
+
+v0.4.0
+====================
+
+**Added:**
+
+* Added test for validation of YAML associated with SVGs and output Data Packages, according to the echemdb metadata-schemas.
+
+**Changed:**
+
+* Simplified tracing of `engstfeld_2018_polycrystalline_17743_f4b_1`
+
+**Fixed:**
+
+* Fixed various issues regarding identifiers and file references.
+* Fixed breaking tests on GitHub (tests should be more stable now since we switched to pixi for locked versions of dependencies.)
+
+
+
 v0.3.2
 ====================
 

@@ -11,7 +11,7 @@ system:
       type: SCE
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Au
   electrolyte:
     components:
@@ -32,7 +32,7 @@ system:
       value: 298.15
     type: aqueous
 source:
-  citation key: lipkowski_1998_ionic_2875
+  citationKey: lipkowski_1998_ionic_2875
   url: https://doi.org/10.1016/S0013-4686(98)00028-0
   techniques:
   - SHG 

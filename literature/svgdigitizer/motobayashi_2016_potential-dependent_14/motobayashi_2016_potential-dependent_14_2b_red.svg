@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="6615px"
+   version="1.1"
+   width="4961px"
+   id="svg6"
+   sodipodi:docname="motobayashi_2016_potential-dependent_14_2b_red_2.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="0.34548286"
+     inkscape:cx="3380.7755"
+     inkscape:cy="4890.2571"
+     inkscape:window-width="1536"
+     inkscape:window-height="953"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs2" />
+  <image
+     height="6615px"
+     sodipodi:insensitive="true"
+     width="4961px"
+     x="0"
+     xlink:href="motobayashi_2016_potential-dependent_14_p1.png"
+     y="0"
+     id="image4" />
+  <g
+     id="g12539">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 4518.3139,5540.0722 c 149.0667,170.7755 149.0667,170.7755 149.0667,170.7755"
+       id="path1584" />
+    <text
+       xml:space="preserve"
+       style="font-size:32px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="4607.1675"
+       y="5741.0503"
+       id="text5791"><tspan
+         sodipodi:role="line"
+         id="tspan5789"
+         x="4607.1675"
+         y="5741.0503">E2: 1.0 V vs Fc/Fc+</tspan></text>
+  </g>
+  <g
+     id="g12534">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 2908.9721,5540.0722 c -37.6285,136.0415 -37.6285,136.0415 -37.6285,136.0415"
+       id="path1586" />
+    <text
+       xml:space="preserve"
+       style="font-size:21.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="2779.4463"
+       y="5693.9761"
+       id="text7841"><tspan
+         sodipodi:role="line"
+         id="tspan7839"
+         x="2779.4463"
+         y="5693.9761">E1: -2.0 V vs Fc/Fc+</tspan></text>
+  </g>
+  <g
+     id="g12529">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 2803.3229,5337.4573 c -159.1975,70.9152 -159.1975,70.9152 -159.1975,70.9152"
+       id="path1588" />
+    <text
+       xml:space="preserve"
+       style="font-size:21.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="2644.1255"
+       y="5408.3726"
+       id="text10565"><tspan
+         sodipodi:role="line"
+         id="tspan10563"
+         x="2644.1255"
+         y="5408.3726">j1: -10 uA / cm2</tspan></text>
+  </g>
+  <g
+     id="g12524">
+    <path
+       style="fill:none;stroke:#00ff00;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 2803.3229,4729.6124 c -195.3788,-94.0713 -195.3788,-94.0713 -195.3788,-94.0713"
+       id="path1590" />
+    <text
+       xml:space="preserve"
+       style="font-size:21.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="2607.9441"
+       y="4635.541"
+       id="text12351"><tspan
+         sodipodi:role="line"
+         id="tspan12349"
+         x="2607.9441"
+         y="4635.541">j2: 5 uA / cm2</tspan></text>
+  </g>
+  <g
+     id="g27260">
+    <path
+       style="fill:none;stroke:#00ff00;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 4487.746,4677.0896 c 0,0 3.2212,96.4899 -28.7879,181.1494 -18.9233,50.0493 -80.9833,98.663 -129.3764,107.8896 -110.619,21.0906 -235.5728,24.9225 -361.029,20.2141 -171.1615,-6.4237 -266.9309,-9.3953 -318.2027,9.0093 -66.7745,23.9697 -128.2826,9.584 -225.174,27.0744 -90.4108,16.3205 -125.8907,6.7317 -176.4841,139.8638 -14.377,37.8317 -63.6093,132.6233 -71.0266,167.4364 -12.5929,59.1044 -38.6658,36.6819 -83.478,-17.5293 -34.6771,-41.9503 -92.9487,-56.3639 -140.7619,-66.4457 -35.7965,-7.548 -68.8165,-12.4024 -68.8165,-12.4024 0,0 6.5208,-40.2047 36.7759,-70.8022 37.2829,-37.7048 101.863,-70.3234 108.0804,-72.5643 101.5755,-36.6104 106.0746,-33.6834 135.7179,-84.5576 9.7127,-16.6691 33.2879,-60.5181 73.7911,-39.9374 17.5922,8.939 216.7671,-2.2496 259.3822,-13.1977 39.3633,-10.1126 123.5462,-21.661 240.4854,-12.6986 39.9213,3.0596 143.4219,1.5998 194.4611,0.4953 76.3013,-1.6512 98.544,-6.9315 123.2754,-30.6517 15.9054,-15.255 39.2082,-1.1302 48.9006,-0.8478 29.6165,0.8632 108.2694,12.2948 139.0437,-31.6096 21.8227,-31.1336 24.5599,-48.8407 61.0821,-40.4685 43.4902,9.9695 81.8045,-37.8705 95.1308,-62.2154 36.2284,-66.1833 87.0105,-97.2041 87.0105,-97.2041 z"
+       id="path1790"
+       sodipodi:nodetypes="cssssssssscssssssssssssc" />
+    <text
+       xml:space="preserve"
+       style="font-size:21.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="3076.2207"
+       y="4883.4746"
+       id="text12983"><tspan
+         sodipodi:role="line"
+         id="tspan12981"
+         x="3076.2207"
+         y="4883.4746">curve: red</tspan></text>
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-size:21.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+     x="3465.0974"
+     y="5380.8276"
+     id="text13557"><tspan
+       sodipodi:role="line"
+       id="tspan13555"
+       x="3465.0974"
+       y="5380.8276">Figure: 2b</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:21.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+     x="3899.0022"
+     y="5290.772"
+     id="text14389"><tspan
+       sodipodi:role="line"
+       id="tspan14387"
+       x="3899.0022"
+       y="5290.772">tags: BCV</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:21.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+     x="4277.6455"
+     y="5339.8931"
+     id="text14755"><tspan
+       sodipodi:role="line"
+       id="tspan14753"
+       x="4277.6455"
+       y="5339.8931">scan rate: 2 mV / s</tspan></text>
+</svg>

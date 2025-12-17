@@ -1,0 +1,36 @@
+curation:
+  process:
+  - role: curator
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2025-08-23
+source:
+  url: https://doi.org/10.1016/S0022-0728(79)80023-6
+  citationKey: clavilier_1980_the_211
+  techniques:
+  - CV
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          refinement: Millipore Super Q
+        purity:
+          grade: ultrapure
+      - name: H2SO4
+        type: acid
+        concentration:
+          value: 0.5
+          unit: mol / l
+  electrodes:
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Pt
+      crystallographicOrientation: '111'
+      preparationProcedure:
+        url: https://doi.org/10.1016/S0022-0728(79)80022-4
+

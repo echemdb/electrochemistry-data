@@ -1,0 +1,104 @@
+[build-system]
+requires = ["setuptools>=61.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "echemdb-ecdata"
+version = "0.5.1"
+classifiers = ["License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)"]
+description = "a database for published electrochemical data inferred from SVG and raw CSV files."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "svgdigitizer>=0.13.0,<0.14.0",
+]
+
+[tool.setuptools]
+packages = [
+    "echemdb_ecdata",
+]
+
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["linux-64", "osx-64", "win-64"]
+
+[tool.pixi.environments]
+python-39 = ["test", "python-39"]
+python-310 = ["test", "python-310"]
+python-311 = ["test", "python-311"]
+python-312 = ["test", "python-312"]
+python-313 = ["test", "python-313"]
+dev = ["dev", "doc", "test", "lint"]
+
+[tool.pixi.dependencies]
+pixi-kernel = ">=0.6.1,<0.7"
+ipykernel = ">=6.29.5,<7"
+pip = ">=25.0,<26"
+jupyterlab = ">=4.3.4,<5"
+jupytext = ">=1.16.6,<2"
+
+[tool.pixi.pypi-dependencies]
+echemdb_ecdata = { path = ".", editable = true }
+
+[tool.pixi.feature.python-39.dependencies]
+python = "3.9.*"
+
+[tool.pixi.feature.python-310.dependencies]
+python = "3.10.*"
+
+[tool.pixi.feature.python-311.dependencies]
+python = "3.11.*"
+
+[tool.pixi.feature.python-312.dependencies]
+python = "3.12.*"
+
+[tool.pixi.feature.python-313.dependencies]
+python = "3.13.*"
+
+[tool.pixi.feature.test.dependencies]
+check-jsonschema = "*"
+pytest = "*"
+pytest-xdist = "*"
+pytest-doctestplus = "*"
+pytest-remotedata = "*"
+
+[tool.pixi.feature.test.tasks]
+convert = "cd data && make -j$(nproc)"
+# To validate the metadata against a specific version preceded the version by `tags` such as `tags/0.3.1`.
+# To validate the metadata against metadata in a specific branch use `head/branch-name`.
+validate = { args = [ { "arg" = "version", "default" = "tags/0.3.1" } ],cmd = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --no-cache $(find ./data/generated/svgdigitizer/ -type f -name '*.json')" }
+validate-yaml = { args = [ { "arg" = "version", "default" = "tags/0.3.1" } ], cmd = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --no-cache $(find ./literature/svgdigitizer/ -type f -name '*.yaml')" }
+doctest = "pytest -n auto --doctest-modules echemdb_ecdata"
+
+[tool.pixi.feature.lint.dependencies]
+black = "*"
+isort = "*"
+pylint = "*"
+
+[tool.pixi.feature.dev.tasks]
+test = "pixi run doctest"
+
+[tool.pixi.feature.lint.tasks]
+pylint = "pylint echemdb_ecdata"
+black = "black echemdb_ecdata"
+isort = "isort --profile black echemdb_ecdata"
+lint = { depends-on = ["pylint", "black", "isort"] }
+
+[tool.pixi.feature.doc.dependencies]
+jupytext = "*"
+linkchecker = "*"
+myst-parser = "*"
+myst-nb = "*"
+sphinx = "*"
+sphinx-design = "*"
+sphinx_rtd_theme = "*"
+
+[tool.pixi.feature.doc.tasks]
+doc = "cd doc && make html SPHINXOPTS='-W -n --keep-going'"
+
+[tool.pixi.feature.dev.dependencies]
+make = "*"
+pybtex = "*"
+pip = "*"
+conda = "*"
+jupyterlab = "*"

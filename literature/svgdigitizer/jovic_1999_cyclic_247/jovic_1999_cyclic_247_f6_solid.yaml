@@ -16,9 +16,9 @@ system:
       type: SCE
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Ag
-      preparation procedure:
+      preparationProcedure:
         description:
           - Ag crystal polished with fine emery paper and alumina.
           - Etched with cyanide and H2O2.
@@ -36,7 +36,7 @@ system:
       value: 298.15
     type: aqueous
 source:
-  citation key: jovic_1999_cyclic_247
+  citationKey: jovic_1999_cyclic_247
   url: https://doi.org/10.1016/S1388-2481(99)00049-1
 curation:
   process:

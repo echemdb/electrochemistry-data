@@ -16,9 +16,9 @@ system:
       type: SCE
     - name: WE
       function: working electrode
-      crystallographic orientation: '100'
+      crystallographicOrientation: '100'
       material: Au
-      preparation procedure:
+      preparationProcedure:
         description:
           - Annealed with a Bunsen burner
           - Cooled in air.
@@ -44,7 +44,7 @@ system:
       value: 293
     type: aqueous
 source:
-  citation key: pajkossy_1996_impedance_209
+  citationKey: pajkossy_1996_impedance_209
   url: https://doi.org/10.1016/0022-0728(96)04700-6
   techniques:
   - EIS
