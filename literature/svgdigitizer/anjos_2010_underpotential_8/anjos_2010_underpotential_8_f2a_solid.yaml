@@ -39,7 +39,7 @@ system:
       function: working electrode
       type: single crystal
       material: Rh
-      crystallographicOrientation: (111)
+      crystallographicOrientation: "111"
       source:
         supplier: MaTecK GmbH
       preparationProcedure:
