@@ -23,7 +23,9 @@ system:
         type: disk
   electrolyte:
     components:
-    - name: BMPY-TFSI
+    - name: BMPyr-TFSI
+      chemicalIdentifiers:
+        cas: 223437-11-4
       proportion:
         unit: volume percent
         value: 100
