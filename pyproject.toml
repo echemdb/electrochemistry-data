@@ -67,8 +67,8 @@ convert = "cd data && make -j$(nproc)"
 # Metadata schema version is managed in config.toml (see schema.version)
 # To validate the metadata against a specific version preceded the version by `tags` such as `tags/0.2.0`.
 # To validate the metadata against metadata in a specific branch use `head/branch-name`.
-validate = { args = [ { "arg" = "version", "default" = "tags/0.3.0" } ],cmd = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --no-cache $(find ./data/generated/svgdigitizer/ -type f -name '*.json')" }
-validate-yaml = { args = [ { "arg" = "version", "default" = "tags/0.3.0" } ], cmd = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --no-cache $(find ./literature/svgdigitizer/ -type f -name '*.yaml')" }
+validate = { args = [ { "arg" = "version", "default" = "tags/0.3.1" } ],cmd = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --no-cache $(find ./data/generated/svgdigitizer/ -type f -name '*.json')" }
+validate-yaml = { args = [ { "arg" = "version", "default" = "tags/0.3.1" } ], cmd = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --no-cache $(find ./literature/svgdigitizer/ -type f -name '*.yaml')" }
 doctest = "pytest -n auto --doctest-modules echemdb_ecdata"
 
 [tool.pixi.feature.lint.dependencies]

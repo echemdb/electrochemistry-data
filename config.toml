@@ -3,4 +3,4 @@
 
 [schema]
 # Version of the metadata-schema to use for validation
-version = "0.3.2"
+version = "0.3.1"
