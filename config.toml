@@ -1,0 +1,6 @@
+# Configuration for echemdb-ecdata project
+# This file contains shared configuration values used across the project
+
+[schema]
+# Version of the metadata-schema to use for validation
+version = "0.3.2"
