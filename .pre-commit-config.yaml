@@ -7,4 +7,4 @@ repos:
         entry: pixi run sync_config
         language: system
         files: ^config\.toml$
-        stages: [pre-commit, commit]
+        stages: [pre-commit]

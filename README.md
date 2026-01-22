@@ -57,4 +57,10 @@ For possible commands run
 pixi run
 ```
 
+Enable pre commit hooks
+
+```sh
+pixi run -e dev pre-commit install
+```
+
 More pixi tasks can be inferred from the [pyproject.toml](pyproject.toml).

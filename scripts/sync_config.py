@@ -37,11 +37,11 @@ def sync_schema_version():
     updated_content = re.sub(old_pattern, new_value, content)
 
     if updated_content == content:
-        print(f"✓ pyproject.toml already has version tags/{schema_version}")
+        print(f"[OK] pyproject.toml already has version tags/{schema_version}")
     else:
         with open(pyproject_path, "w") as f:
             f.write(updated_content)
-        print(f"✓ Updated pyproject.toml with schema version tags/{schema_version}")
+        print(f"[OK] Updated pyproject.toml with schema version tags/{schema_version}")
 
 
 if __name__ == "__main__":
