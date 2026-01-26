@@ -22,11 +22,10 @@ jobs:
         os: ["ubuntu-latest", "macos-latest", "windows-latest"]
     steps:
       - name: checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with: { submodules: recursive }
       - uses: prefix-dev/setup-pixi@v0.9.3
-        with:
-          pixi-version: v0.49.0
+        with: { pixi-version: v0.63.2 }
       - name: doctest
         shell: pixi run bash -e {0}
         run: pixi run -e ${{ matrix.environment }} doctest
