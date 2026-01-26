@@ -19,7 +19,7 @@ jobs:
         with: { submodules: recursive }
       - uses: prefix-dev/setup-pixi@v0.9.3
         with:
-          pixi-version: v0.49.0
+          pixi-version: v0.63.2
       - name: digitize
         shell: pixi run bash -e {0}
         run: pixi run -e dev convert
