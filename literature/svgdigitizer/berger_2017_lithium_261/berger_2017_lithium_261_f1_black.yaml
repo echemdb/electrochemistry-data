@@ -56,7 +56,11 @@ system:
     - concentration:
         unit: mol / l
         value: 0.02
-      name: lithium bis(trifluoromethylsulfonyl)imide
+      name: Li-TFSI
+      chemicalIdentifiers:
+        cas: 90076-65-6
+        inchi: InChI=InChI=1S/C2HF6NO4S2.Li/c3-1(4,5)14(10,11)9-15(12,13)2(6,7)8;/h9H;
+        inchikey: InChIKey=UGEOMRBXRFUYJH-UHFFFAOYSA-N
       type: salt
     temperature:
       unit: K
