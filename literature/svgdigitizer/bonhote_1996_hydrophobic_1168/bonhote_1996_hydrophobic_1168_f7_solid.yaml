@@ -34,6 +34,10 @@ system:
   electrolyte:
     components:
     - name: EMMIm-TFSI
+      chemicalIdentifiers:
+        cas: 174899-90-2
+        inchi: InChI=1S/C7H13N2.C2F6NO4S2/c1-4-9-6-5-8(3)7(9)2;3-1(4,5)14(10,11)9-15(12,13)2(6,7)8/h5-6H,4H2,1-3H3;/q+1;-1
+        inchikey: InChIKey=XDJYSDBSJWNTQT-UHFFFAOYSA-N
       proportion:
         unit: volume percent
         value: 100
