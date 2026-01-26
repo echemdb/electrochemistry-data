@@ -4922,7 +4922,7 @@ packages:
   license: LGPL-2.1-or-later
   license_family: LGPL
   purls:
-  - pkg:pypi/astroid?source=compressed-mapping
+  - pkg:pypi/astroid?source=hash-mapping
   size: 517247
   timestamp: 1767498394297
 - conda: https://conda.anaconda.org/conda-forge/osx-64/astroid-4.0.3-py312hb401068_0.conda
@@ -9171,7 +9171,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/json5?source=hash-mapping
+  - pkg:pypi/json5?source=compressed-mapping
   size: 34017
   timestamp: 1767325114901
 - conda: https://conda.anaconda.org/conda-forge/noarch/jsonpatch-1.33-pyhd8ed1ab_1.conda
@@ -9579,7 +9579,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/jupyter-server-terminals?source=hash-mapping
+  - pkg:pypi/jupyter-server-terminals?source=compressed-mapping
   size: 22052
   timestamp: 1768574057200
 - conda: https://conda.anaconda.org/conda-forge/noarch/jupyterlab-4.4.6-pyhd8ed1ab_0.conda
@@ -17262,7 +17262,7 @@ packages:
   - roman-numerals 4.1.0
   license: 0BSD OR CC0-1.0
   purls:
-  - pkg:pypi/roman-numerals-py?source=hash-mapping
+  - pkg:pypi/roman-numerals-py?source=compressed-mapping
   size: 11074
   timestamp: 1766025162370
 - conda: https://conda.anaconda.org/conda-forge/linux-64/rpds-py-0.27.0-py39h17f49b6_0.conda
