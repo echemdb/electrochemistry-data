@@ -26,7 +26,7 @@ jobs:
         shell: pixi run bash -e {0}
         run: pixi run -e dev validate
       - name: upload data artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: data-${{ github.event.pull_request.number }}
           path: |
