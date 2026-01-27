@@ -49,7 +49,7 @@ TARGET_BIB=${patsubst ${SOURCE_DIR}/%,${TARGET_DIR}/%,${wildcard ${SOURCE_DIR}/*
 # We create a data package, i.e., a .csv and a .json file, from a .yaml and a
 # .svg files by invoking the svgdigitizer.
 ${TARGET_DIR}/%.csv ${TARGET_DIR}/%.json : ${SOURCE_DIR}/%.yaml ${SOURCE_DIR}/%.svg
-	${SVGDIGITIZER} cv --sampling-interval ${SAMPLING_INTERVAL} --si-units --bibliography --metadata $< ${patsubst %.yaml,%.svg,$<} --outdir=${@D} 2>&1 | awk '{ print "'$<': "$$0 }'
+	${SVGDIGITIZER} cv --sampling-interval ${SAMPLING_INTERVAL} --si-units --bibliography --metadata $< ${patsubst %.yaml,%.svg,$<} --outdir=${@D} | awk '{ print "'$<': "$$0 }'
 
 # We create a .bib file describing a publication by copying the .bib file from SOURCE_DIR to TARGET_DIR.
 ${TARGET_DIR}/%.bib: ${SOURCE_DIR}/%.bib
