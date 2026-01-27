@@ -15,11 +15,10 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with: { submodules: recursive }
       - uses: prefix-dev/setup-pixi@v0.9.3
-        with:
-          pixi-version: v0.49.0
+        with: { pixi-version: v0.63.2 }
       - name: digitize
         shell: pixi run bash -e {0}
         run: pixi run -e dev convert
@@ -27,7 +26,7 @@ jobs:
         shell: pixi run bash -e {0}
         run: pixi run -e dev validate
       - name: upload data artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: data-${{ github.event.pull_request.number }}
           path: |

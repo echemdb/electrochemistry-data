@@ -39,6 +39,10 @@ system:
   electrolyte:
     components:
     - name: BMIm-PF6
+      chemicalIdentifiers:
+        cas: 174501-64-5
+        inchi: InChI=1S/C8H15N2.F6P/c1-3-4-5-10-7-6-9(2)8-10;1-7(2,3,4,5)6/h6-8H,3-5H2,1-2H3;/q+1;-1
+        inchikey: InChIKey=IXQYBUDWDLYNMA-UHFFFAOYSA-N
       proportion:
         unit: volume percent
         value: 100
