@@ -57,4 +57,21 @@ For possible commands run
 pixi run
 ```
 
+Enable pre commit hooks
+
+```sh
+pixi run -e dev pre-commit install
+```
+
+When you commit changes, for example to `config.toml`, the pre-commit hook automatically:
+
+1. Reads the `schema.version` from `config.toml`
+2. Updates all `"default" = "tags/X.Y.Z"` values in `pyproject.toml` to match
+
+To commit without running the hook (not recommended):
+
+```bash
+git commit --no-verify
+```
+
 More pixi tasks can be inferred from the [pyproject.toml](pyproject.toml).

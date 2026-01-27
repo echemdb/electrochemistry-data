@@ -1,0 +1,10 @@
+exclude: '.pixi/'
+repos:
+  - repo: local
+    hooks:
+      - id: sync-config-to-pyproject
+        name: Sync config.toml to pyproject.toml
+        entry: pixi run sync_config
+        language: system
+        files: ^config\.toml$
+        stages: [pre-commit]
