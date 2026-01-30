@@ -93,28 +93,34 @@ dataDescription:
   originalFilename: 17080801Cu100_UHVNa_C01_cycle11.csv
   type: raw
   comment: A description of the measurement data. # Add whatever you think is important to understand the data. This will be updated by the `svgdigitizer.electrochemistry.cv.CV` module and takes the comment from the svg file.
+  scanRate:
+    value: 50
+    unit: mV / s
   dialect:
-    delimiter: ','
+    delimiters: ','
     decimal: '.'
     encoding: utf-8
-    header: 0
-    columnHeader: 2
+    headerLines: 0
+    columnHeaderLines: 2
+  fieldMapping:
+    E / V vs. RHE: E # If the header consists of multiple lines, separate by " / ".
+    t: t
+    j / mA cm\+(-2): j
+    <I> / mA: I
   fields:
     - name: E
       unit: V
       reference: RHE
-      type: number
       dimension: E
-      original: E [V vs. RHE]
-    - name: t [s]
+    - name: t
       unit: s
-      type: number
       dimension: t
     - name: j
       unit: mA cm-2
-      type: number
-      original: j [mA/cm\+(-2)]
       dimension: j
+    - name: I
+      unit: mA
+      dimension: I
 curation:
   process:
   - role: curator

@@ -8,22 +8,25 @@ version = "0.5.1"
 classifiers = ["License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)"]
 description = "a database for published electrochemical data inferred from SVG and raw CSV files."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = [
     "svgdigitizer>=0.13.0,<0.14.0",
+    "unitpackage>=0.11.2,<0.12.0",
 ]
+
+[project.scripts]
+echemdb_ecdata = "echemdb_ecdata.entrypoint:cli"
 
 [tool.setuptools]
 packages = [
     "echemdb_ecdata",
 ]
 
-[tool.pixi.project]
+[tool.pixi.workspace]
 channels = ["conda-forge"]
 platforms = ["linux-64", "osx-64", "win-64"]
 
 [tool.pixi.environments]
-python-39 = ["test", "python-39"]
 python-310 = ["test", "python-310"]
 python-311 = ["test", "python-311"]
 python-312 = ["test", "python-312"]
@@ -39,9 +42,7 @@ jupytext = ">=1.16.6,<2"
 
 [tool.pixi.pypi-dependencies]
 echemdb_ecdata = { path = ".", editable = true }
-
-[tool.pixi.feature.python-39.dependencies]
-python = "3.9.*"
+unitpackage = { git = "https://github.com/echemdb/unitpackage.git", rev = "refs/pull/127/head" }
 
 [tool.pixi.feature.python-310.dependencies]
 python = "3.10.*"
