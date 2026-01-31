@@ -48,6 +48,19 @@ from unitpackage.entry import Entry
 
 logger = logging.getLogger("echemdb_ecdata")
 
+
+class DataDescription:
+
+    def __init__(self, data_description_dict):
+        self.original_filename = data_description_dict.get("originalFilename", None)
+        self.type = data_description_dict.get("type", None)
+        self.measurement_type = data_description_dict.get("measurementType", None)
+        self.scan_rate = data_description_dict.get("scanRate", None)
+        self.comment = data_description_dict.get("comment", None)
+        self.dialect = Dialect(data_description_dict.get("dialect", None))
+        self.field_mapping = data_description_dict.get("fieldMapping", None)
+        self.field_units = data_description_dict.get("fieldUnits", None)
+
 class Dialect:
 
     def __init__(self, dialect_dict):
@@ -56,6 +69,8 @@ class Dialect:
         self.column_header_lines = dialect_dict.get("columnHeaderLines", None)
         self.header_lines = dialect_dict.get("headerLines", None)
         self.encoding = dialect_dict.get("encoding", None)
+
+
 
 @click.group(help=__doc__.split("EXAMPLES")[0])
 def cli():
@@ -75,7 +90,7 @@ def cli():
     help="write output files to this directory",
 )
 @click.option(
-    "--metadata", type=click.File("rb"), default=None, help="yaml file with metadata"
+    "--metadata", type=click.Path(exists=True), default=None, help="yaml file with metadata"
 )
 def convert(csv, outdir, metadata):
     """
@@ -105,15 +120,25 @@ def convert(csv, outdir, metadata):
     """
     import yaml
 
-    metadata_file = metadata if metadata else Path(csv).with_suffix(".yaml")
+    csvpath = Path(csv)
+
+
+    metadata_file = metadata if metadata else csvpath.with_suffix(".yaml")
 
     # Load metadata
-    metadata = yaml.safe_load(open(metadata_file, 'r'))
-    dialect = Dialect(metadata["dataDescription"]["dialect"])
-    fieldmapping = metadata["dataDescription"].get("fieldMapping", {})
-    fields = metadata["dataDescription"]["fields"]
-    scanRate = metadata["dataDescription"]["scanRate"]["value"] * u.Unit(metadata["dataDescription"]["scanRate"]["unit"])
+    metadata = yaml.safe_load(open(metadata_file, 'r', encoding='utf-8'))
+    data_description = DataDescription(metadata["dataDescription"])
+    dialect = data_description.dialect
+    fieldmapping = data_description.field_mapping
+    field_units = data_description.field_units
+    scanRate = data_description.scan_rate["value"] * u.Unit(data_description.scan_rate["unit"])
+
+    # clean metadata and create figure description
+    metadata.setdefault("figureDescription", {key: value for key, value in metadata["dataDescription"].items() if key not in ["fieldMapping", "fieldUnits", "dialect"]})
+
     del metadata["dataDescription"]
+
+
     # These sshould include a number of exceptions
     #    if metadata:
     #     metadata = yaml.load(metadata, Loader=yaml.SafeLoader)
@@ -123,10 +148,11 @@ def convert(csv, outdir, metadata):
     #         logger.warning("No units to the fields provided in the metadata")
 
     #construct entry
+
     raw_entry = Entry.from_csv(csv, **dialect.__dict__)
-    raw_entry.metadata.from_dict(metadata)
+    raw_entry.metadata.from_dict({"echemdb": metadata})
     mapped_entry = raw_entry.rename_fields(fieldmapping)
-    entry = mapped_entry.update_fields(fields)
+    entry = mapped_entry.update_fields(field_units)
     entry.df.head()
 
     def add_time_axis(entry, scanRate):
@@ -148,6 +174,8 @@ def convert(csv, outdir, metadata):
     if not 't' in entry.df.columns:
         entry = add_time_axis(entry, scanRate)
 
+    entry.metadata.echemdb["figureDescription"].__dict__.setdefault("fields", {})
+    entry.metadata.echemdb["figureDescription"].__dict__["fields"] = entry.mutable_resource.schema.to_dict()["fields"]
 
     entry.save(outdir=outdir)
 
