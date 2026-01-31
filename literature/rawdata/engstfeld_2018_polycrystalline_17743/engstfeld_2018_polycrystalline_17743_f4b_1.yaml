@@ -65,33 +65,15 @@ system:
 source:
   citationKey: engstfeld_2018_polycrystalline_17743
   url: https://doi.org/10.1002/chem.201803418
+  figure: 4b
+  originalFilename: 17080801Cu100_UHVNa_C01_cycle11.csv
+  curve: '1'
   techniques:
   - XPS
   - STM
-figureDescription: #This section will be updated by module `svgdigitizer.electrochemistry.cv.CV`
-    originalFilename: 17080801Cu100_UHVNa_C01_cycle11.csv
-    measurementType: CV
-    type: raw
-    scanRate:
-      value: 50
-      unit: mV / s
-    comment: A description of the measurement data. # Add whatever you think is important to understand the data. This will be updated by the `svgdigitizer.electrochemistry.cv.CV` module and takes the comment from the svg file.
-    fields:
-      - name: E [V]
-        unit: V
-        type: number
-        dimension: E
-      - name: t [s]
-        unit: s
-        type: number
-        dimension: t
-      - name: I / [A cm-2]
-        unit: A cm-2
-        type: number
-        dimension: j
 dataDescription:
-  originalFilename: 17080801Cu100_UHVNa_C01_cycle11.csv
   type: raw
+  measurementType: CV
   comment: A description of the measurement data. # Add whatever you think is important to understand the data. This will be updated by the `svgdigitizer.electrochemistry.cv.CV` module and takes the comment from the svg file.
   scanRate:
     value: 50
@@ -107,20 +89,16 @@ dataDescription:
     t: t
     j / mA cm\+(-2): j
     <I> / mA: I
-  fields:
+  fieldUnits:
     - name: E
       unit: V
       reference: RHE
-      dimension: E
     - name: t
       unit: s
-      dimension: t
     - name: j
       unit: mA cm-2
-      dimension: j
     - name: I
       unit: mA
-      dimension: I
 curation:
   process:
   - role: curator
