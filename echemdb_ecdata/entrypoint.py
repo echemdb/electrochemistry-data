@@ -38,6 +38,8 @@ EXAMPLES::
 # ********************************************************************
 import logging
 from pathlib import Path
+from dataclasses import dataclass
+import yaml
 import pandas as pd
 
 import astropy.units as u
@@ -49,29 +51,57 @@ from unitpackage.entry import Entry
 logger = logging.getLogger("echemdb_ecdata")
 
 
-class DataDescription:
-    """Container for data description metadata from YAML configuration."""
-
-    def __init__(self, data_description_dict):
-        self.original_filename = data_description_dict.get("originalFilename", None)
-        self.type = data_description_dict.get("type", None)
-        self.measurement_type = data_description_dict.get("measurementType", None)
-        self.scan_rate = data_description_dict.get("scanRate", None)
-        self.comment = data_description_dict.get("comment", None)
-        self.dialect = Dialect(data_description_dict.get("dialect", None))
-        self.field_mapping = data_description_dict.get("fieldMapping", None)
-        self.field_units = data_description_dict.get("fieldUnits", None)
-
-
+@dataclass
 class Dialect:
     """Container for CSV dialect information."""
 
-    def __init__(self, dialect_dict):
-        self.delimiters = dialect_dict.get("delimiters", None)
-        self.decimal = dialect_dict.get("decimal", None)
-        self.column_header_lines = dialect_dict.get("columnHeaderLines", None)
-        self.header_lines = dialect_dict.get("headerLines", None)
-        self.encoding = dialect_dict.get("encoding", None)
+    delimiters: str = None
+    decimal: str = None
+    column_header_lines: int = None
+    header_lines: int = None
+    encoding: str = None
+
+    @classmethod
+    def from_dict(cls, dialect_dict):
+        """Create Dialect from dictionary."""
+        if dialect_dict is None:
+            dialect_dict = {}
+        return cls(
+            delimiters=dialect_dict.get("delimiters"),
+            decimal=dialect_dict.get("decimal"),
+            column_header_lines=dialect_dict.get("columnHeaderLines"),
+            header_lines=dialect_dict.get("headerLines"),
+            encoding=dialect_dict.get("encoding"),
+        )
+
+
+@dataclass
+class DataDescription:
+    """Container for data description metadata from YAML configuration."""
+
+    # pylint: disable=too-many-instance-attributes
+    original_filename: str = None
+    type: str = None
+    measurement_type: str = None
+    scan_rate: dict = None
+    comment: str = None
+    dialect: Dialect = None
+    field_mapping: dict = None
+    field_units: dict = None
+
+    @classmethod
+    def from_dict(cls, data_description_dict):
+        """Create DataDescription from dictionary."""
+        return cls(
+            original_filename=data_description_dict.get("originalFilename"),
+            type=data_description_dict.get("type"),
+            measurement_type=data_description_dict.get("measurementType"),
+            scan_rate=data_description_dict.get("scanRate"),
+            comment=data_description_dict.get("comment"),
+            dialect=Dialect.from_dict(data_description_dict.get("dialect")),
+            field_mapping=data_description_dict.get("fieldMapping"),
+            field_units=data_description_dict.get("fieldUnits"),
+        )
 
 
 @click.group(help=__doc__.split("EXAMPLES", maxsplit=1)[0])
@@ -124,7 +154,7 @@ def convert(csv, outdir, metadata):
         ...         os.chdir(cwd)
 
     """
-    import yaml
+    # pylint: disable=too-many-locals
 
     csvpath = Path(csv)
 
@@ -133,7 +163,7 @@ def convert(csv, outdir, metadata):
     # Load metadata
     with open(metadata_file, "r", encoding="utf-8") as f:
         metadata = yaml.safe_load(f)
-    data_description = DataDescription(metadata["dataDescription"])
+    data_description = DataDescription.from_dict(metadata["dataDescription"])
     dialect = data_description.dialect
     fieldmapping = data_description.field_mapping
     field_units = data_description.field_units
