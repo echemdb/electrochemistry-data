@@ -50,6 +50,7 @@ logger = logging.getLogger("echemdb_ecdata")
 
 
 class DataDescription:
+    """Container for data description metadata from YAML configuration."""
 
     def __init__(self, data_description_dict):
         self.original_filename = data_description_dict.get("originalFilename", None)
@@ -61,7 +62,9 @@ class DataDescription:
         self.field_mapping = data_description_dict.get("fieldMapping", None)
         self.field_units = data_description_dict.get("fieldUnits", None)
 
+
 class Dialect:
+    """Container for CSV dialect information."""
 
     def __init__(self, dialect_dict):
         self.delimiters = dialect_dict.get("delimiters", None)
@@ -71,8 +74,7 @@ class Dialect:
         self.encoding = dialect_dict.get("encoding", None)
 
 
-
-@click.group(help=__doc__.split("EXAMPLES")[0])
+@click.group(help=__doc__.split("EXAMPLES", maxsplit=1)[0])
 def cli():
     r"""
     Entry point of the command line interface.
@@ -90,7 +92,10 @@ def cli():
     help="write output files to this directory",
 )
 @click.option(
-    "--metadata", type=click.Path(exists=True), default=None, help="yaml file with metadata"
+    "--metadata",
+    type=click.Path(exists=True),
+    default=None,
+    help="yaml file with metadata",
 )
 def convert(csv, outdir, metadata):
     """
@@ -102,7 +107,8 @@ def convert(csv, outdir, metadata):
         >>> import os.path
         >>> from echemdb_ecdata.test.cli import invoke, TemporaryData
         >>> with TemporaryData("../**/default.csv") as directory:
-        ...     invoke(cli, "csv", os.path.join(directory, "default.csv"), "--outdir", "test/generated/loaders/")
+        ...     invoke(cli, "csv", os.path.join(directory, "default.csv"),
+        ... "--outdir", "test/generated/loaders/")
 
     TESTS:
 
@@ -122,22 +128,30 @@ def convert(csv, outdir, metadata):
 
     csvpath = Path(csv)
 
-
     metadata_file = metadata if metadata else csvpath.with_suffix(".yaml")
 
     # Load metadata
-    metadata = yaml.safe_load(open(metadata_file, 'r', encoding='utf-8'))
+    with open(metadata_file, "r", encoding="utf-8") as f:
+        metadata = yaml.safe_load(f)
     data_description = DataDescription(metadata["dataDescription"])
     dialect = data_description.dialect
     fieldmapping = data_description.field_mapping
     field_units = data_description.field_units
-    scanRate = data_description.scan_rate["value"] * u.Unit(data_description.scan_rate["unit"])
+    scan_rate = data_description.scan_rate["value"] * u.Unit(
+        data_description.scan_rate["unit"]
+    )
 
     # clean metadata and create figure description
-    metadata.setdefault("figureDescription", {key: value for key, value in metadata["dataDescription"].items() if key not in ["fieldMapping", "fieldUnits", "dialect"]})
+    metadata.setdefault(
+        "figureDescription",
+        {
+            key: value
+            for key, value in metadata["dataDescription"].items()
+            if key not in ["fieldMapping", "fieldUnits", "dialect"]
+        },
+    )
 
     del metadata["dataDescription"]
-
 
     # These sshould include a number of exceptions
     #    if metadata:
@@ -147,7 +161,7 @@ def convert(csv, outdir, metadata):
     #     except (KeyError, AttributeError):
     #         logger.warning("No units to the fields provided in the metadata")
 
-    #construct entry
+    # construct entry
 
     raw_entry = Entry.from_csv(csv, **dialect.__dict__)
     raw_entry.metadata.from_dict({"echemdb": metadata})
@@ -155,27 +169,34 @@ def convert(csv, outdir, metadata):
     entry = mapped_entry.update_fields(field_units)
     entry.df.head()
 
-    def add_time_axis(entry, scanRate):
-        conversion_factor = (1 *u.Unit(entry.field_unit('E')) / (1* scanRate.unit)).decompose()
+    def add_time_axis(entry, scan_rate):
+        """Add time axis to entry based on scan rate."""
+        conversion_factor = (
+            1 * u.Unit(entry.field_unit("E")) / (1 * scan_rate.unit)
+        ).decompose()
         # Calculate potential differences
         df = pd.DataFrame()
-        df['diff_E'] = abs(entry.df['E'].diff())
+        df["diff_E"] = abs(entry.df["E"].diff())
 
         # Calculate time differences: dt = dE / (dE/dt) = dE / scan_rate
-        df['dt'] = df['diff_E'] / scanRate.value * conversion_factor.value # in seconds
+        df["dt"] = df["diff_E"] / scan_rate.value * conversion_factor.value  # in seconds
 
         # Calculate cumulative time starting from 0
-        df['t'] = df['dt'].cumsum().fillna(0)
+        df["t"] = df["dt"].cumsum().fillna(0)
 
         # Add time column to entry
-        new_entry = entry.add_columns(df['t'], new_fields=[{'name':'t', 'unit': str(conversion_factor.unit)}])
+        new_entry = entry.add_columns(
+            df["t"], new_fields=[{"name": "t", "unit": str(conversion_factor.unit)}]
+        )
         return new_entry
 
-    if not 't' in entry.df.columns:
-        entry = add_time_axis(entry, scanRate)
+    if "t" not in entry.df.columns:
+        entry = add_time_axis(entry, scan_rate)
 
     entry.metadata.echemdb["figureDescription"].__dict__.setdefault("fields", {})
-    entry.metadata.echemdb["figureDescription"].__dict__["fields"] = entry.mutable_resource.schema.to_dict()["fields"]
+    entry.metadata.echemdb["figureDescription"].__dict__[
+        "fields"
+    ] = entry.mutable_resource.schema.to_dict()["fields"]
 
     entry.save(outdir=outdir)
 

@@ -117,7 +117,8 @@ class TemporaryData:
             "default",
             ["csv", "default.csv"],
         ),
-        (  # "Standard" CSV for which the units to the columns are included in an additional metadata file.
+        (  # "Standard" CSV for which the units to the columns
+            #are included in an additional metadata file.
             "unit",
             ["csv", "unit.csv", "--metadata", "unit.csv.metadata"],
         ),
@@ -132,7 +133,8 @@ class TemporaryData:
                 "eclab",
             ],
         ),
-        (  # Biologic EClab file for chronoamperrometry or chronopotentiometry (using `,` as decimal separator)
+        (  # Biologic EClab file for chronoamperrometry or chronopotentiometry
+            # (using `,` as decimal separator)
             "eclab_ca",
             [
                 "csv",
