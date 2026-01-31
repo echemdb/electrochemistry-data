@@ -28,7 +28,19 @@ The code has been adapted from https://github.com/echemdb/svgdigitizer/.
 #  along with unitpackage. If not, see <https://www.gnu.org/licenses/>.
 # *********************************************************************
 
+import glob
+import json
+import os
+import os.path
+import shutil
+import tempfile
+
+import pandas
+import pandas.testing
 import pytest
+import unitpackage
+from click.testing import CliRunner
+from unitpackage.entrypoint import cli
 
 
 def invoke(command, *args):
@@ -49,8 +61,6 @@ def invoke(command, *args):
     Exception: expected error
 
     """
-    from click.testing import CliRunner
-
     invocation = CliRunner().invoke(command, args, catch_exceptions=False)
     output = invocation.output.strip()
     if output:
@@ -75,18 +85,9 @@ class TemporaryData:
         self._tmpdir = None
 
     def __enter__(self):
-        import tempfile
-
         self._tmpdir = tempfile.TemporaryDirectory()
 
         try:
-            import glob
-            import os
-            import os.path
-            import shutil
-
-            import unitpackage
-
             cwd = os.getcwd()
             os.chdir(
                 os.path.join(
@@ -118,7 +119,7 @@ class TemporaryData:
             ["csv", "default.csv"],
         ),
         (  # "Standard" CSV for which the units to the columns
-            #are included in an additional metadata file.
+            # are included in an additional metadata file.
             "unit",
             ["csv", "unit.csv", "--metadata", "unit.csv.metadata"],
         ),
@@ -165,24 +166,15 @@ def test_csv(name, args):
     This function is executed by pytest and checks that "csv" produces JSON and
     CSV files that match expected outputs.
     """
-    import os
-
     cwd = os.getcwd()
     with TemporaryData(f"{name}.*") as workdir:
         os.chdir(workdir)
         try:
-            from unitpackage.entrypoint import cli
-
             invoke(cli, *args, "--outdir", "outdir")
-
-            import json
 
             with open(f"outdir/{name}.json", encoding="ASCII") as actual:
                 with open(f"{name}.json.expected", encoding="ASCII") as expected:
                     assert json.load(actual) == json.load(expected)
-
-            import pandas
-            import pandas.testing
 
             pandas.testing.assert_frame_equal(
                 pandas.read_csv(f"outdir/{name}.csv"),

@@ -37,15 +37,13 @@ EXAMPLES::
 #  along with echemdb_ecdata. If not, see <https://www.gnu.org/licenses/>.
 # ********************************************************************
 import logging
-from pathlib import Path
 from dataclasses import dataclass
-import yaml
-import pandas as pd
+from pathlib import Path
 
 import astropy.units as u
-
 import click
-
+import pandas as pd
+import yaml
 from unitpackage.entry import Entry
 
 logger = logging.getLogger("echemdb_ecdata")
@@ -209,7 +207,9 @@ def convert(csv, outdir, metadata):
         df["diff_E"] = abs(entry.df["E"].diff())
 
         # Calculate time differences: dt = dE / (dE/dt) = dE / scan_rate
-        df["dt"] = df["diff_E"] / scan_rate.value * conversion_factor.value  # in seconds
+        df["dt"] = (
+            df["diff_E"] / scan_rate.value * conversion_factor.value
+        )  # in seconds
 
         # Calculate cumulative time starting from 0
         df["t"] = df["dt"].cumsum().fillna(0)
