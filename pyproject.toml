@@ -10,8 +10,7 @@ description = "a database for published electrochemical data inferred from SVG a
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "svgdigitizer>=0.13.0,<0.14.0",
-    "unitpackage>=0.11.2,<0.12.0",
+    "svgdigitizer>=0.14.1,<0.15.0",
 ]
 
 [project.scripts]
@@ -31,6 +30,7 @@ python-310 = ["test", "python-310"]
 python-311 = ["test", "python-311"]
 python-312 = ["test", "python-312"]
 python-313 = ["test", "python-313"]
+python-314 = ["test", "python-314"]
 dev = ["dev", "doc", "test", "lint"]
 
 [tool.pixi.dependencies]
@@ -56,6 +56,9 @@ python = "3.12.*"
 [tool.pixi.feature.python-313.dependencies]
 python = "3.13.*"
 
+[tool.pixi.feature.python-314.dependencies]
+python = "3.14.*"
+
 [tool.pixi.feature.test.dependencies]
 check-jsonschema = "*"
 pytest = "*"
@@ -64,8 +67,11 @@ pytest-doctestplus = "*"
 pytest-remotedata = "*"
 
 [tool.pixi.feature.test.tasks]
+copy-bib = "mkdir -p data/generated/bibliography && cp literature/bibliography/bibliography.bib data/generated/bibliography/bibliography.bib"
 convert = "cd data && make -j$(nproc)"
 convert-raw = "cd data && make rawdata -j$(nproc)"
+data = { depends-on = ["copy-bib", "convert-raw", "convert"] }
+clean-data = "cd data && make clean"
 # To validate the metadata against a specific version preceded the version by `tags` such as `tags/0.3.1`.
 # To validate the metadata against metadata in a specific branch use `head/branch-name`.
 validate = { args = [ { "arg" = "version", "default" = "tags/0.3.3" } ],cmd = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --no-cache $(find ./data/generated/svgdigitizer/ -type f -name '*.json')" }

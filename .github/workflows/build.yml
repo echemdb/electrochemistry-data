@@ -21,7 +21,7 @@ jobs:
         with: { pixi-version: v0.63.2 }
       - name: digitize
         shell: pixi run bash -e {0}
-        run: pixi run -e dev convert
+        run: pixi run -e dev data
       - name: validate packages
         shell: pixi run bash -e {0}
         run: pixi run -e dev validate

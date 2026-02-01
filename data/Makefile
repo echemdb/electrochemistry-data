@@ -1,7 +1,7 @@
 # ********************************************************************
 #  This file is part of echemdb.
 #
-#        Copyright (C) 2022 Albert Engstfeld
+#        Copyright (C) 2025 Albert Engstfeld
 #        Copyright (C) 2022 Johannes Hermann
 #        Copyright (C) 2022 Julian Rüth
 #        Copyright (C) 2022 Nicolas Hörmann
@@ -35,16 +35,19 @@ SVG_SOURCE_METADATA=${wildcard ${SVG_SOURCE_DIR}/**/*.yaml}
 # All the .svg files corresponding to the SVG_SOURCE_METADATA .yaml files.
 SVG_SOURCE_SVG=${patsubst %.yaml,%.svg,${SVG_SOURCES_METADATA}}
 
+# The directory with the bibliography file
+SOURCE_BIB=../literature/bibliography/bibliography.bib
+
 # The files for the digitized .csv, .json, and .bib are written to this
 # directory with the same subdirectory structure as they had in SVG_SOURCE_DIR.
 SVG_TARGET_DIR=generated/svgdigitizer
+
+TARGET_BIB_DIR = generated/bibliography
 
 # The .csv files that we are going to generate from the .yaml and .svg files.
 SVG_TARGET_CSV=${patsubst %.yaml,%.csv,${patsubst ${SVG_SOURCE_DIR}/%,${SVG_TARGET_DIR}/%,${wildcard ${SVG_SOURCE_DIR}/**/*.yaml}}}
 # The .json files that we are going to generate from the .yaml and .svg files.
 SVG_TARGET_JSON=${patsubst %.yaml,%.json,${patsubst ${SVG_SOURCE_DIR}/%,${SVG_TARGET_DIR}/%,${wildcard ${SVG_SOURCE_DIR}/**/*.yaml}}}
-# The .bib files that we are going to create, the same .bib files that were present in SVG_SOURCE_DIR.
-SVG_TARGET_BIB=${patsubst ${SVG_SOURCE_DIR}/%,${SVG_TARGET_DIR}/%,${wildcard ${SVG_SOURCE_DIR}/**/*.bib}}
 
 # The directory which we search for .yaml and .csv files for raw data conversion.
 RAW_SOURCE_DIR=../literature/rawdata
@@ -62,13 +65,11 @@ RAW_TARGET_JSON=${patsubst %.yaml,%.json,${patsubst ${RAW_SOURCE_DIR}/%,${RAW_TA
 
 # We create a data package, i.e., a .csv and a .json file, from a .yaml and a
 # .svg files by invoking the svgdigitizer.
+# We also include the bibliography data from the bibliography.bib file.
 ${SVG_TARGET_DIR}/%.csv ${SVG_TARGET_DIR}/%.json : ${SVG_SOURCE_DIR}/%.yaml ${SVG_SOURCE_DIR}/%.svg
-	${SVGDIGITIZER} cv --sampling-interval ${SAMPLING_INTERVAL} --si-units --bibliography --metadata $< ${patsubst %.yaml,%.svg,$<} --outdir=${@D} 2>&1 | awk '{ print "'$<': "$$0 }'
-
-# We create a .bib file describing a publication by copying the .bib file from SVG_SOURCE_DIR to SVG_TARGET_DIR.
-${SVG_TARGET_DIR}/%.bib: ${SVG_SOURCE_DIR}/%.bib
-	@mkdir -p ${@D}
-	${CP} $< $@
+	${SVGDIGITIZER} cv --sampling-interval ${SAMPLING_INTERVAL} --si-units \
+		--bibliography ${SOURCE_BIB} --metadata $< ${patsubst %.yaml,%.svg,$<} \
+		--outdir=${@D} 2>&1 | awk '{ print "'$<': "$$0 }'
 
 # We create a data package, i.e., a .csv and a .json file, from a .yaml and a
 # .csv files by invoking the echemdb_ecdata raw command.
@@ -77,18 +78,18 @@ ${RAW_TARGET_DIR}/%.csv ${RAW_TARGET_DIR}/%.json : ${RAW_SOURCE_DIR}/%.yaml ${RA
 	pixi run -e dev echemdb_ecdata raw ${patsubst %.yaml,%.csv,$<} --metadata $< --outdir=${@D} 2>&1 | awk '{ print "'$<': "$$0 }'
 
 # The default action when calling "make" is to digitize all the .yaml/.svg
-# pairs, convert all raw data packages, and copy over all the .bib files.
-all: ${SVG_TARGET_CSV} ${SVG_TARGET_JSON} ${SVG_TARGET_BIB} ${RAW_TARGET_CSV} ${RAW_TARGET_JSON}
+# pairs and convert all raw data packages.
+all: ${SVG_TARGET_CSV} ${SVG_TARGET_JSON} ${RAW_TARGET_CSV} ${RAW_TARGET_JSON}
 
 # Convert all raw data packages only (without SVG digitization).
 rawdata: ${RAW_TARGET_CSV} ${RAW_TARGET_JSON}
 
 # Digitize all SVG files only (without raw data conversion).
-svg: ${SVG_TARGET_CSV} ${SVG_TARGET_JSON} ${SVG_TARGET_BIB}
+svg: ${SVG_TARGET_CSV} ${SVG_TARGET_JSON}
 
 # Remove the entire generated directory to delete all the generated output.
 clean:
-	rm -rf generated/svgdigitizer generated/rawdata
+	rm -rf ${SVG_TARGET_DIR} ${RAW_TARGET_DIR} ${TARGET_BIB_DIR}
 
 
 .PHONY: all rawdata svg clean
