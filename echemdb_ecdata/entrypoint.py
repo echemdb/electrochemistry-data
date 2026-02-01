@@ -44,6 +44,7 @@ import astropy.units as u
 import click
 import pandas as pd
 import yaml
+from svgdigitizer.entrypoint import _create_bibliography
 from unitpackage.entry import Entry
 
 logger = logging.getLogger("echemdb_ecdata")
@@ -181,7 +182,39 @@ def convert(csv, outdir, metadata):
 
     del metadata["dataDescription"]
 
-    # These sshould include a number of exceptions
+    # get bibliography data
+    bibfile = "../literature/bibliography/bibliography.bib"
+
+    with open(bibfile, "rb") as bibtex_file:
+        bibliography_data, new_citation_key = _create_bibliography(
+            bibtex_file, citation_key=None, metadata=metadata
+        )
+
+    if bibliography_data:
+        metadata.setdefault("source", {})
+        metadata["source"].setdefault("bibdata", {})
+
+        if metadata["source"]["bibdata"]:
+            logger.warning(
+                "The key with name `bibliography` in the metadata will be "
+                "overwritten with the new bibliography data."
+            )
+
+        metadata["source"].update({"bibdata": bibliography_data})
+
+        metadata["source"].setdefault("citationKey", {})
+
+        if metadata["source"]["citationKey"]:
+            if new_citation_key != metadata["source"]["citationKey"]:
+                logger.warning(
+                    "Replace existing citation key in metadata with the new "
+                    "citation key '%s'.",
+                    new_citation_key,
+                )
+
+        metadata["source"].update({"citationKey": new_citation_key})
+
+    # We should include a number of exceptions
     #    if metadata:
     #     metadata = yaml.load(metadata, Loader=yaml.SafeLoader)
     #     try:
