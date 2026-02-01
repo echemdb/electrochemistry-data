@@ -1,0 +1,10 @@
+OK - 1: KOH, hanging meniscus cell, cycle 11 -
+    1711210002Cu_100_1d6-quer5-cell_03.csv
+OK - 2: KOH, flow cell
+    1708030001Cu100_UHV_C01_cycle29.csv
+3: KOH, flow cell, after window opening experiment
+   likely 1708030001Cu100_UHV_C01_cycle36.csv
+   first window opening is cycle 29
+OK - 4. NaOH, flow cell: 17080801Cu100_UHVNa_C01_cycle11.csv
+
+window opening CVs 30 to 36

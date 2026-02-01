@@ -68,56 +68,37 @@ system:
 source:
   citationKey: engstfeld_2018_polycrystalline_17743
   url: https://doi.org/10.1002/chem.201803418
+  figure: 4b
+  curve: '4'
   techniques:
   - XPS
   - STM
-figureDescription: #This section will be updated by module `svgdigitizer.electrochemistry.cv.CV`
-    originalFilename: 17080801Cu100_UHVNa_C01_cycle11.csv
-    measurementType: CV
-    type: raw
-    scanRate:
-      value: 50
-      unit: mV / s
-    comment: A description of the measurement data. # Add whatever you think is important to understand the data. This will be updated by the `svgdigitizer.electrochemistry.cv.CV` module and takes the comment from the svg file.
-    fields:
-      - name: E [V]
-        unit: V
-        type: number
-        dimension: E
-      - name: t [s]
-        unit: s
-        type: number
-        dimension: t
-      - name: I / [A cm-2]
-        unit: A cm-2
-        type: number
-        dimension: j
 dataDescription:
-  originalFilename: 17080801Cu100_UHVNa_C01_cycle11.csv
   type: raw
+  originalFilename: 1711210002Cu_100_1d6-quer5-cell_03.csv
+  measurementType: CV
   comment: A description of the measurement data. # Add whatever you think is important to understand the data. This will be updated by the `svgdigitizer.electrochemistry.cv.CV` module and takes the comment from the svg file.
+  scanRate:
+    value: 50
+    unit: mV / s
   dialect:
-    delimiter: ','
+    delimiters: ','
     decimal: '.'
     encoding: utf-8
-    header: 0
-    columnHeader: 2
-  fields:
+    headerLines: 0
+    columnHeaderLines: 2
+  fieldMapping:
+    E / V vs. RHE: E # If the header consists of multiple lines, separate by " / ".
+    j / mA/cm\+(-2): j
+    <I> / mA: I
+  fieldUnits:
     - name: E
       unit: V
       reference: RHE
-      type: number
-      dimension: E
-      original: E [V vs. RHE]
-    - name: t [s]
-      unit: s
-      type: number
-      dimension: t
     - name: j
       unit: mA cm-2
-      type: number
-      original: j [mA/cm\+(-2)]
-      dimension: j
+    - name: I
+      unit: mA
 curation:
   process:
   - role: experimentalist

@@ -6522,7 +6522,7 @@ packages:
 - pypi: ./
   name: echemdb-ecdata
   version: 0.5.1
-  sha256: 942f02e6549a6309fa1e4f522a0b033f17448a1a92ab6248da1157f2fcf87eef
+  sha256: 584c1ee4e8e4ed3b04b5a492b1c6562e685c0b8c221a4b2b6e8fbd613b3ba625
   requires_dist:
   - svgdigitizer>=0.13.0,<0.14.0
   - unitpackage>=0.11.2,<0.12.0

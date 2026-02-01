@@ -63,18 +63,18 @@ system:
       value: 298.15
     type: aqueous
   electrochemicalCell:
-    type: hanging meniscus cell attached to UHV system
+    type: flow cell attached to UHV system
     url: https://doi.org/10.1002/chem.201803418
 source:
   citationKey: engstfeld_2018_polycrystalline_17743
   url: https://doi.org/10.1002/chem.201803418
   figure: 4b
-  curve: '1'
-  originalFilename: 1711210002Cu_100_1d6-quer5-cell_03.csv
+  curve: '3'
   techniques:
   - XPS
   - STM
 dataDescription:
+  originalFilename: 17080801Cu100_UHVNa_C01_cycle11.csv
   type: raw
   measurementType: CV
   comment: A description of the measurement data. # Add whatever you think is important to understand the data. This will be updated by the `svgdigitizer.electrochemistry.cv.CV` module and takes the comment from the svg file.
@@ -89,21 +89,19 @@ dataDescription:
     columnHeaderLines: 2
   fieldMapping:
     E / V vs. RHE: E # If the header consists of multiple lines, separate by " / ".
-    j / mA cm\+(-2): j
+    j / mA/cm\+(-2): j
     <I> / mA: I
   fieldUnits:
     - name: E
       unit: V
       reference: RHE
-    - name: t
-      unit: s
     - name: j
       unit: mA cm-2
     - name: I
       unit: mA
 curation:
   process:
-  - role: curator
+  - role: experimentalist
     name: Albert Engstfeld
     orcid: https://orcid.org/0000-0002-9686-3948
     date: 2021-07-09
