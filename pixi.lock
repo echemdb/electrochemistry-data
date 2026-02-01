@@ -7232,8 +7232,9 @@ packages:
 - pypi: ./
   name: echemdb-ecdata
   version: 0.5.1
-  sha256: 057fd589a79a3e2c57e4e15aebf40d2c830c21124af8f93d2a3289e62144c4e7
+  sha256: 1161e316d3ea42c582d78a5e2368609433a7298ad7a3765b26d31a5a5bec519b
   requires_dist:
+  - pydantic>=2.0,<3.0
   - svgdigitizer>=0.14.1,<0.15.0
   requires_python: '>=3.10'
 - conda: https://conda.anaconda.org/conda-forge/noarch/exceptiongroup-1.3.1-pyhd8ed1ab_0.conda

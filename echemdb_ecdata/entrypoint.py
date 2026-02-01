@@ -37,70 +37,44 @@ EXAMPLES::
 #  along with echemdb_ecdata. If not, see <https://www.gnu.org/licenses/>.
 # ********************************************************************
 import logging
-from dataclasses import dataclass
 from pathlib import Path
 
 import astropy.units as u
 import click
 import pandas as pd
 import yaml
+from pydantic import BaseModel, ConfigDict, Field
 from svgdigitizer.entrypoint import _create_bibliography
 from unitpackage.entry import Entry
 
 logger = logging.getLogger("echemdb_ecdata")
 
 
-@dataclass
-class Dialect:
+class Dialect(BaseModel):
     """Container for CSV dialect information."""
 
-    delimiters: str = None
-    decimal: str = None
-    column_header_lines: int = None
-    header_lines: int = None
-    encoding: str = None
+    model_config = ConfigDict(populate_by_name=True)
 
-    @classmethod
-    def from_dict(cls, dialect_dict):
-        """Create Dialect from dictionary."""
-        if dialect_dict is None:
-            dialect_dict = {}
-        return cls(
-            delimiters=dialect_dict.get("delimiters"),
-            decimal=dialect_dict.get("decimal"),
-            column_header_lines=dialect_dict.get("columnHeaderLines"),
-            header_lines=dialect_dict.get("headerLines"),
-            encoding=dialect_dict.get("encoding"),
-        )
+    delimiters: str | None = None
+    decimal: str | None = None
+    column_header_lines: int | None = Field(None, alias="columnHeaderLines")
+    header_lines: int | None = Field(None, alias="headerLines")
+    encoding: str | None = None
 
 
-@dataclass
-class DataDescription:
+class DataDescription(BaseModel):
     """Container for data description metadata from YAML configuration."""
 
-    # pylint: disable=too-many-instance-attributes
-    original_filename: str = None
-    type: str = None
-    measurement_type: str = None
-    scan_rate: dict = None
-    comment: str = None
-    dialect: Dialect = None
-    field_mapping: dict = None
-    field_units: dict = None
+    model_config = ConfigDict(populate_by_name=True)
 
-    @classmethod
-    def from_dict(cls, data_description_dict):
-        """Create DataDescription from dictionary."""
-        return cls(
-            original_filename=data_description_dict.get("originalFilename"),
-            type=data_description_dict.get("type"),
-            measurement_type=data_description_dict.get("measurementType"),
-            scan_rate=data_description_dict.get("scanRate"),
-            comment=data_description_dict.get("comment"),
-            dialect=Dialect.from_dict(data_description_dict.get("dialect")),
-            field_mapping=data_description_dict.get("fieldMapping"),
-            field_units=data_description_dict.get("fieldUnits"),
-        )
+    original_filename: str | None = Field(None, alias="originalFilename")
+    type: str | None = None
+    measurement_type: str | None = Field(None, alias="measurementType")
+    scan_rate: dict | None = Field(None, alias="scanRate")
+    comment: str | None = None
+    dialect: Dialect | None = None
+    field_mapping: dict | None = Field(None, alias="fieldMapping")
+    field_units: list | None = Field(None, alias="fieldUnits")
 
 
 @click.group(help=__doc__.split("EXAMPLES", maxsplit=1)[0])
@@ -126,9 +100,7 @@ def _add_time_axis(entry, scan_rate):
     df["diff_E"] = abs(entry.df["E"].diff())
 
     # Calculate time differences: dt = dE / (dE/dt) = dE / scan_rate
-    df["dt"] = (
-        df["diff_E"] / scan_rate.value * conversion_factor.value
-    )  # in seconds
+    df["dt"] = df["diff_E"] / scan_rate.value * conversion_factor.value  # in seconds
 
     # Calculate cumulative time starting from 0
     df["t"] = df["dt"].cumsum().fillna(0)
@@ -229,8 +201,8 @@ def convert(csv, outdir, metadata, bibliography):
 
     # Load metadata
     with open(metadata_file, "r", encoding="utf-8") as f:
-        metadata = yaml.safe_load(f)
-    data_description = DataDescription.from_dict(metadata["dataDescription"])
+        metadata_dict = yaml.safe_load(f)
+    data_description = DataDescription.model_validate(metadata_dict["dataDescription"])
     dialect = data_description.dialect
     fieldmapping = data_description.field_mapping
     field_units = data_description.field_units
@@ -239,11 +211,12 @@ def convert(csv, outdir, metadata, bibliography):
     )
 
     # clean metadata and create figure description
+    metadata = metadata_dict.copy()
     metadata.setdefault(
         "figureDescription",
         {
             key: value
-            for key, value in metadata["dataDescription"].items()
+            for key, value in metadata_dict["dataDescription"].items()
             if key not in ["fieldMapping", "fieldUnits", "dialect"]
         },
     )
@@ -256,9 +229,7 @@ def convert(csv, outdir, metadata, bibliography):
     )
 
     if bibliography_data:
-        metadata = _add_bibdata_to_source(
-            metadata, bibliography_data, new_citation_key
-        )
+        metadata = _add_bibdata_to_source(metadata, bibliography_data, new_citation_key)
 
     # We should include a number of exceptions
     #    if metadata:
