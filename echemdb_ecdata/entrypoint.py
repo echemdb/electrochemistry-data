@@ -112,6 +112,73 @@ def cli():
     """
 
 
+def _add_time_axis(entry, scan_rate):
+    r"""
+    Return an entry with an added time axis based on scan rate.
+
+    This is a helper function for :func:`convert`.
+    """
+    conversion_factor = (
+        1 * u.Unit(entry.field_unit("E")) / (1 * scan_rate.unit)
+    ).decompose()
+    # Calculate potential differences
+    df = pd.DataFrame()
+    df["diff_E"] = abs(entry.df["E"].diff())
+
+    # Calculate time differences: dt = dE / (dE/dt) = dE / scan_rate
+    df["dt"] = (
+        df["diff_E"] / scan_rate.value * conversion_factor.value
+    )  # in seconds
+
+    # Calculate cumulative time starting from 0
+    df["t"] = df["dt"].cumsum().fillna(0)
+
+    # Add time column to entry
+    new_entry = entry.add_columns(
+        df["t"], new_fields=[{"name": "t", "unit": str(conversion_factor.unit)}]
+    )
+    return new_entry
+
+
+def _add_bibdata_to_source(metadata, bibliography_data, new_citation_key):
+    r"""
+    Return metadata with added bibliography data to source.
+
+    This is a helper function for :func:`convert`.
+    """
+    metadata.setdefault("source", {})
+    metadata["source"].setdefault("bibdata", {})
+
+    if metadata["source"]["bibdata"]:
+        logger.warning(
+            "The key with name `bibliography` in the metadata will be "
+            "overwritten with the new bibliography data."
+        )
+
+    metadata["source"].update({"bibdata": bibliography_data})
+
+    metadata["source"].setdefault("citationKey", {})
+
+    if metadata["source"]["citationKey"]:
+        if new_citation_key != metadata["source"]["citationKey"]:
+            logger.warning(
+                "Replace existing citation key in metadata with the new "
+                "citation key '%s'.",
+                new_citation_key,
+            )
+
+    metadata["source"].update({"citationKey": new_citation_key})
+    return metadata
+
+
+bibliography_option = click.option(
+    "--bibliography",
+    type=click.File("rb"),
+    default="../literature/bibliography/bibliography.bib",
+    help="BIB file with bibliography data to add to the datapackage.",
+)
+
+
 @click.command(name="raw")
 @click.argument("csv", type=click.Path(exists=True))
 @click.option(
@@ -126,7 +193,8 @@ def cli():
     default=None,
     help="yaml file with metadata",
 )
-def convert(csv, outdir, metadata):
+@bibliography_option
+def convert(csv, outdir, metadata, bibliography):
     """
     Convert a file containing CSV data into a datapackage.
     \f
@@ -183,36 +251,14 @@ def convert(csv, outdir, metadata):
     del metadata["dataDescription"]
 
     # get bibliography data
-    bibfile = "../literature/bibliography/bibliography.bib"
-
-    with open(bibfile, "rb") as bibtex_file:
-        bibliography_data, new_citation_key = _create_bibliography(
-            bibtex_file, citation_key=None, metadata=metadata
-        )
+    bibliography_data, new_citation_key = _create_bibliography(
+        bibliography, citation_key=None, metadata=metadata
+    )
 
     if bibliography_data:
-        metadata.setdefault("source", {})
-        metadata["source"].setdefault("bibdata", {})
-
-        if metadata["source"]["bibdata"]:
-            logger.warning(
-                "The key with name `bibliography` in the metadata will be "
-                "overwritten with the new bibliography data."
-            )
-
-        metadata["source"].update({"bibdata": bibliography_data})
-
-        metadata["source"].setdefault("citationKey", {})
-
-        if metadata["source"]["citationKey"]:
-            if new_citation_key != metadata["source"]["citationKey"]:
-                logger.warning(
-                    "Replace existing citation key in metadata with the new "
-                    "citation key '%s'.",
-                    new_citation_key,
-                )
-
-        metadata["source"].update({"citationKey": new_citation_key})
+        metadata = _add_bibdata_to_source(
+            metadata, bibliography_data, new_citation_key
+        )
 
     # We should include a number of exceptions
     #    if metadata:
@@ -230,32 +276,11 @@ def convert(csv, outdir, metadata):
     entry = mapped_entry.update_fields(field_units)
     entry.df.head()
 
-    def add_time_axis(entry, scan_rate):
-        """Add time axis to entry based on scan rate."""
-        conversion_factor = (
-            1 * u.Unit(entry.field_unit("E")) / (1 * scan_rate.unit)
-        ).decompose()
-        # Calculate potential differences
-        df = pd.DataFrame()
-        df["diff_E"] = abs(entry.df["E"].diff())
-
-        # Calculate time differences: dt = dE / (dE/dt) = dE / scan_rate
-        df["dt"] = (
-            df["diff_E"] / scan_rate.value * conversion_factor.value
-        )  # in seconds
-
-        # Calculate cumulative time starting from 0
-        df["t"] = df["dt"].cumsum().fillna(0)
-
-        # Add time column to entry
-        new_entry = entry.add_columns(
-            df["t"], new_fields=[{"name": "t", "unit": str(conversion_factor.unit)}]
-        )
-        return new_entry
-
+    # create a time axis if not present
     if "t" not in entry.df.columns:
-        entry = add_time_axis(entry, scan_rate)
+        entry = _add_time_axis(entry, scan_rate)
 
+    # update fields
     entry.metadata.echemdb["figureDescription"].__dict__.setdefault("fields", {})
     entry.metadata.echemdb["figureDescription"].__dict__[
         "fields"
