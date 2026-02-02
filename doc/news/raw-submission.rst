@@ -8,19 +8,3 @@
 **Changed:**
 
 * Changed `engstfeld_2018_polycrystalline_17743_f4b_1` from digitized to raw data.
-
-**Removed:**
-
-* Removed <news item>.
-
-**Fixed:**
-
-* Fixed <news item>.
-
-**Deprecated:**
-
-* Deprecated <news item>.
-
-**Performance:**
-
-* Improved <news item>.
