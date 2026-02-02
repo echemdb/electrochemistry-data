@@ -43,7 +43,8 @@ import astropy.units as u
 import click
 import pandas as pd
 import yaml
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, field_validator
+from pydantic.alias_generators import to_camel
 from svgdigitizer.entrypoint import _create_bibliography
 from unitpackage.entry import Entry
 
@@ -53,28 +54,37 @@ logger = logging.getLogger("echemdb_ecdata")
 class Dialect(BaseModel):
     """Container for CSV dialect information."""
 
-    model_config = ConfigDict(populate_by_name=True)
+    model_config = ConfigDict(populate_by_name=True, alias_generator=to_camel, extra="allow")
 
     delimiters: str | None = None
     decimal: str | None = None
-    column_header_lines: int | None = Field(None, alias="columnHeaderLines")
-    header_lines: int | None = Field(None, alias="headerLines")
+    column_header_lines: int | None = None
+    header_lines: int | None = None
     encoding: str | None = None
 
 
 class DataDescription(BaseModel):
     """Container for data description metadata from YAML configuration."""
 
-    model_config = ConfigDict(populate_by_name=True)
+    model_config = ConfigDict(
+        populate_by_name=True,
+        alias_generator=to_camel,
+        extra="allow",
+    )
 
-    original_filename: str | None = Field(None, alias="originalFilename")
-    type: str | None = None
-    measurement_type: str | None = Field(None, alias="measurementType")
-    scan_rate: dict | None = Field(None, alias="scanRate")
-    comment: str | None = None
-    dialect: Dialect | None = None
-    field_mapping: dict | None = Field(None, alias="fieldMapping")
-    field_units: list | None = Field(None, alias="fieldUnits")
+    # Fields that are accessed as attributes in the code
+    dialect: Dialect
+    field_mapping: dict
+    field_units: list
+    scan_rate: dict
+
+    @field_validator('dialect', mode='before')
+    @classmethod
+    def validate_dialect(cls, v):
+        """Ensure dialect dict is converted to Dialect model."""
+        if isinstance(v, dict):
+            return Dialect.model_validate(v)
+        return v
 
 
 @click.group(help=__doc__.split("EXAMPLES", maxsplit=1)[0])
@@ -241,7 +251,7 @@ def convert(csv, outdir, metadata, bibliography):
 
     # construct entry
 
-    raw_entry = Entry.from_csv(csv, **dialect.__dict__)
+    raw_entry = Entry.from_csv(csv, **dialect.model_dump(exclude_none=True, by_alias=False))
     raw_entry.metadata.from_dict({"echemdb": metadata})
     mapped_entry = raw_entry.rename_fields(fieldmapping)
     entry = mapped_entry.update_fields(field_units)
