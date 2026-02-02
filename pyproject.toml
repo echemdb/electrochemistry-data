@@ -69,9 +69,9 @@ pytest-remotedata = "*"
 
 [tool.pixi.feature.test.tasks]
 copy-bib = "mkdir -p data/generated/bibliography && cp literature/bibliography/bibliography.bib data/generated/bibliography/bibliography.bib"
-convert = "cd data && make -j$(nproc)"
+convert-svg = "cd data && make -j$(nproc)"
 convert-raw = "cd data && make rawdata -j$(nproc)"
-data = { depends-on = ["copy-bib", "convert-raw", "convert"] }
+convert = { depends-on = ["copy-bib", "convert-raw", "convert-svg"] }
 clean-data = "cd data && make clean"
 # To validate the metadata against a specific version preceded the version by `tags` such as `tags/0.3.1`.
 # To validate the metadata against metadata in a specific branch use `head/branch-name`.
