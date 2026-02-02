@@ -87,7 +87,7 @@ dataDescription:
     encoding: utf-8
     headerLines: 0
     columnHeaderLines: 2
-  fieldMapping:
+  fieldMapping: # Also map fields which should be kept unchanged.
     E / V vs. RHE: E # If the header consists of multiple lines, separate by " / ".
     j / mA/cm\+(-2): j
     <I> / mA: I

@@ -58,3 +58,9 @@ pixi run
 ```
 
 More pixi tasks can be inferred from the [pyproject.toml](pyproject.toml).
+
+test conversion of raw data
+
+```sh
+pixi run -e dev clean-data && pixi run -e dev convert-raw
+```

@@ -87,16 +87,13 @@ dataDescription:
     encoding: utf-8
     headerLines: 0
     columnHeaderLines: 2
-  fieldMapping:
+  fieldMapping: # Also map fields which should be kept unchanged.
     E / V vs. RHE: E # If the header consists of multiple lines, separate by " / ".
     j / \g(m)A/cm\+(-2): j
-    <I> / mA: I
   fieldUnits:
     - name: E
       unit: V
       reference: RHE
-    - name: I
-      unit: A
     - name: j
       unit: uA cm-2
 curation:

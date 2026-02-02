@@ -12,6 +12,7 @@ requires-python = ">=3.10"
 dependencies = [
     "pydantic>=2.0,<3.0",
     "svgdigitizer>=0.14.1,<0.15.0",
+    # "unitpackage>=0.11.2,<0.12.0"
 ]
 
 [project.scripts]

@@ -250,7 +250,9 @@ def convert(csv, outdir, metadata, bibliography):
         csv, **dialect.model_dump(exclude_none=True, by_alias=False)
     )
     raw_entry.metadata.from_dict({"echemdb": metadata})
-    mapped_entry = raw_entry.rename_fields(data_description.field_mapping)
+    ## remove unnecessary fields
+    reduced_entry = raw_entry.remove_columns(*[field for field in raw_entry.df.columns if field not in data_description.field_mapping.keys()])
+    mapped_entry = reduced_entry.rename_fields(data_description.field_mapping)
     entry = mapped_entry.update_fields(data_description.field_units)
     entry.df.head()
 
