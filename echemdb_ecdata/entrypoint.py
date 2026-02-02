@@ -1,5 +1,5 @@
 r"""
-CLI for conversion of echemdb data files.
+CLI for conversion raw data files in echemdb compatible datapackages.
 
 EXAMPLES::
 
@@ -12,7 +12,7 @@ EXAMPLES::
     Options:
       --help  Show this message and exit.
     Commands:
-      raw  Convert a file containing CSV data into a datapackage.
+      convert  Convert a file containing CSV data into a datapackage.
 
 """
 
@@ -158,12 +158,11 @@ def _add_bibdata_to_source(metadata, bibliography_data, new_citation_key):
 bibliography_option = click.option(
     "--bibliography",
     type=click.File("rb"),
-    default="../literature/bibliography/bibliography.bib",
     help="BIB file with bibliography data to add to the datapackage.",
 )
 
 
-@click.command(name="raw")
+@click.command(name="convert")
 @click.argument("csv", type=click.Path(exists=True))
 @click.option(
     "--outdir",
@@ -187,9 +186,10 @@ def convert(csv, outdir, metadata, bibliography):
 
         >>> import os.path
         >>> from echemdb_ecdata.test.cli import invoke, TemporaryData
-        >>> with TemporaryData("../**/default.csv") as directory:
-        ...     invoke(cli, "csv", os.path.join(directory, "default.csv"),
-        ... "--outdir", "test/generated/loaders/")
+        >>> with TemporaryData("**/default.*") as directory:
+        ...     invoke(cli, "convert", os.path.join(directory, "default.csv"),
+        ...     "--metadata", os.path.join(directory, "default.yaml"),
+        ...     "--outdir", "test/generated/docstring/")
 
     TESTS:
 
@@ -197,10 +197,11 @@ def convert(csv, outdir, metadata, bibliography):
 
         >>> from echemdb_ecdata.test.cli import invoke, TemporaryData
         >>> cwd = os.getcwd()
-        >>> with TemporaryData("../**/default.csv") as directory:
+        >>> with TemporaryData("**/default.*") as directory:
         ...     os.chdir(directory)
         ...     try:
-        ...         invoke(cli, "csv", "default.csv", "--outdir", "test/generated/loaders/")
+        ...         invoke(cli, "convert", "default.csv", "--outdir",
+        ...         "test/generated/docstring")
         ...     finally:
         ...         os.chdir(cwd)
 
@@ -231,18 +232,18 @@ def convert(csv, outdir, metadata, bibliography):
     del metadata["dataDescription"]
 
     # get bibliography data and add bibdata to metadata
-    bibliography_data, new_citation_key = _create_bibliography(
-        bibliography, citation_key=None, metadata=metadata
-    )
+    if bibliography:
 
-    if bibliography_data:
-        metadata = _add_bibdata_to_source(metadata, bibliography_data, new_citation_key)
+        bibliography_data, new_citation_key = _create_bibliography(
+            bibliography, citation_key=None, metadata=metadata
+        )
+        if not bibliography_data:
+            logger.warning("No bibliography key found for %s", csv)
 
-    # We should possibly include a number of exceptions
-    #     try:
-    #         fields = metadata["figure description"]["fields"]
-    #     except (KeyError, AttributeError):
-    #         logger.warning("No units to the fields provided in the metadata")
+        if bibliography_data:
+            metadata = _add_bibdata_to_source(
+                metadata, bibliography_data, new_citation_key
+            )
 
     # construct entry
     dialect = data_description.dialect
@@ -251,7 +252,13 @@ def convert(csv, outdir, metadata, bibliography):
     )
     raw_entry.metadata.from_dict({"echemdb": metadata})
     ## remove unnecessary fields
-    reduced_entry = raw_entry.remove_columns(*[field for field in raw_entry.df.columns if field not in data_description.field_mapping.keys()])
+    reduced_entry = raw_entry.remove_columns(
+        *[
+            field
+            for field in raw_entry.df.columns
+            if field not in data_description.field_mapping.keys()
+        ]
+    )
     mapped_entry = reduced_entry.rename_fields(data_description.field_mapping)
     entry = mapped_entry.update_fields(data_description.field_units)
     entry.df.head()

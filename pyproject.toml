@@ -80,6 +80,8 @@ validate = { args = [ { "arg" = "version", "default" = "tags/0.3.3" } ],cmd = "c
 validate_raw = { args = [ { "arg" = "version", "default" = "tags/0.3.3" } ],cmd = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --no-cache $(find ./data/generated/rawdata/ -type f -name '*.json')" }
 validate-yaml = { args = [ { "arg" = "version", "default" = "tags/0.3.3" } ], cmd = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --no-cache $(find ./literature/svgdigitizer/ -type f -name '*.yaml')" }
 doctest = "pytest -n auto --doctest-modules echemdb_ecdata"
+# pytest executes doctests of the cli
+pytest = "pytest -n auto echemdb_ecdata/**/*.py"
 
 [tool.pixi.feature.lint.dependencies]
 black = "*"

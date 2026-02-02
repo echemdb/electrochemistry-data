@@ -2,6 +2,9 @@
 /data/generated
 literature/**/*.png
 literature/svgdigitizer/*.csv
+test/generated/docstring/
+test/generated/raw_data/***.csv
+test/generated/raw_data/***.json
 
 # mac
 **/.DS_Store

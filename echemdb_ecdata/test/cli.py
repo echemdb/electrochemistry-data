@@ -11,7 +11,7 @@ The code has been adapted from https://github.com/echemdb/svgdigitizer/.
 # *********************************************************************
 #  This file is part of unitpackage.
 #
-#        Copyright (C) 2024-2025 Albert Engstfeld
+#        Copyright (C) 2024-2026 Albert Engstfeld
 #        Copyright (C) 2021-2024 Julian Rüth
 #
 #  unitpackage is free software: you can redistribute it and/or modify
@@ -38,9 +38,10 @@ import tempfile
 import pandas
 import pandas.testing
 import pytest
-import unitpackage
 from click.testing import CliRunner
-from unitpackage.entrypoint import cli
+
+import echemdb_ecdata
+from echemdb_ecdata.entrypoint import cli
 
 
 def invoke(command, *args):
@@ -74,8 +75,8 @@ class TemporaryData:
     EXAMPLES::
 
         >>> import os
-        >>> with TemporaryData("unit.*") as directory:
-        ...     'unit.csv' in os.listdir(directory)
+        >>> with TemporaryData("**/default.*") as directory:
+        ...     'default.csv' in os.listdir(directory)
         True
 
     """
@@ -90,9 +91,7 @@ class TemporaryData:
         try:
             cwd = os.getcwd()
             os.chdir(
-                os.path.join(
-                    os.path.dirname(unitpackage.__file__), "..", "test", "loader_data"
-                )
+                os.path.join(os.path.dirname(echemdb_ecdata.__file__), "..", "test")
             )
             try:
                 for pattern in self._patterns:
@@ -112,72 +111,70 @@ class TemporaryData:
 
 
 @pytest.mark.parametrize(
-    "name,args",
+    "name,args,use_bibliography",
     [
         (  # "Standard" CSV with a single column header line.
             "default",
-            ["csv", "default.csv"],
+            ["convert", "default.csv"],
+            False,
         ),
-        (  # "Standard" CSV for which the units to the columns
-            # are included in an additional metadata file.
-            "unit",
-            ["csv", "unit.csv", "--metadata", "unit.csv.metadata"],
+        (  # CSV with multiple header lines.
+            "multi_header_lines",
+            ["convert", "multi_header_lines.csv"],
+            False,
         ),
-        (  # Biologic EClab file for cyclic voltammetry (using `,` as decimal separator)
-            "eclab_cv",
+        (  # CVS with an empty column
+            "empty_column",
+            ["convert", "empty_column.csv"],
+            False,
+        ),
+        (  # add bibliography
+            "bibliography",
             [
-                "csv",
-                "eclab_cv.mpt",
-                "--metadata",
-                "eclab_cv.mpt.metadata",
-                "--device",
-                "eclab",
+                "convert",
+                "bibliography.csv",
             ],
-        ),
-        (  # Biologic EClab file for chronoamperrometry or chronopotentiometry
-            # (using `,` as decimal separator)
-            "eclab_ca",
-            [
-                "csv",
-                "eclab_ca.mpt",
-                "--metadata",
-                "eclab_ca.mpt.metadata",
-                "--device",
-                "eclab",
-            ],
-        ),
-        (  # Gamry Instruments Framework software file for cyclic voltammetry
-            "gamry_cv",
-            [
-                "csv",
-                "gamry_cv.DTA",
-                "--metadata",
-                "gamry_cv.DTA.metadata",
-                "--device",
-                "gamry",
-            ],
+            True,
         ),
     ],
 )
-def test_csv(name, args):
+def test_convert(name, args, use_bibliography):
     r"""
-    Test that the csv command from the command line interface works correctly.
+    Test that the convert command from the command line interface works correctly.
 
-    This function is executed by pytest and checks that "csv" produces JSON and
+    This function is executed by pytest and checks that "convert" produces JSON and
     CSV files that match expected outputs.
     """
     cwd = os.getcwd()
-    with TemporaryData(f"{name}.*") as workdir:
+    test_output_dir = os.path.join(cwd, "test", "generated", "raw_data")
+    bib_path = os.path.join(cwd, "literature", "bibliography", "bibliography.bib")
+
+    patterns = [f"raw_data/{name}.*", f"generated/raw_data/{name}.*.expected"]
+    if use_bibliography:
+        patterns.append("../literature/bibliography/bibliography.bib")
+
+    with TemporaryData(*patterns) as workdir:
         os.chdir(workdir)
         try:
-            invoke(cli, *args, "--outdir", "outdir")
+            # Build command arguments
+            temp_args = [*args, "--outdir", "generated/raw_data/"]
+            persistent_args = [*args, "--outdir", test_output_dir]
 
-            with open(f"outdir/{name}.json", encoding="ASCII") as actual:
-                with open(f"{name}.json.expected", encoding="ASCII") as expected:
+            if use_bibliography:
+                temp_args.extend(["--bibliography", "bibliography.bib"])
+                persistent_args.extend(["--bibliography", bib_path])
+
+            # Generate files in temporary directory for comparison
+            invoke(cli, *temp_args)
+            # Also generate files in the persistent test directory
+            invoke(cli, *persistent_args)
+
+            with open(f"generated/raw_data/{name}.json", encoding="utf-8") as actual:
+                with open(f"{name}.json.expected", encoding="utf-8") as expected:
                     assert json.load(actual) == json.load(expected)
 
             pandas.testing.assert_frame_equal(
-                pandas.read_csv(f"outdir/{name}.csv"),
+                pandas.read_csv(f"generated/raw_data/{name}.csv"),
                 pandas.read_csv(f"{name}.csv.expected"),
             )
         finally:
