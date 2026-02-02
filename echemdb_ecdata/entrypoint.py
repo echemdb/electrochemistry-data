@@ -54,7 +54,9 @@ logger = logging.getLogger("echemdb_ecdata")
 class Dialect(BaseModel):
     """Container for CSV dialect information."""
 
-    model_config = ConfigDict(populate_by_name=True, alias_generator=to_camel, extra="allow")
+    model_config = ConfigDict(
+        populate_by_name=True, alias_generator=to_camel, extra="allow"
+    )
 
     delimiters: str | None = None
     decimal: str | None = None
@@ -78,7 +80,7 @@ class DataDescription(BaseModel):
     field_units: list
     scan_rate: dict
 
-    @field_validator('dialect', mode='before')
+    @field_validator("dialect", mode="before")
     @classmethod
     def validate_dialect(cls, v):
         """Ensure dialect dict is converted to Dialect model."""
@@ -212,13 +214,8 @@ def convert(csv, outdir, metadata, bibliography):
     # Load metadata
     with open(metadata_file, "r", encoding="utf-8") as f:
         metadata_dict = yaml.safe_load(f)
+
     data_description = DataDescription.model_validate(metadata_dict["dataDescription"])
-    dialect = data_description.dialect
-    fieldmapping = data_description.field_mapping
-    field_units = data_description.field_units
-    scan_rate = data_description.scan_rate["value"] * u.Unit(
-        data_description.scan_rate["unit"]
-    )
 
     # clean metadata and create figure description
     metadata = metadata_dict.copy()
@@ -233,7 +230,7 @@ def convert(csv, outdir, metadata, bibliography):
 
     del metadata["dataDescription"]
 
-    # get bibliography data
+    # get bibliography data and add bibdata to metadata
     bibliography_data, new_citation_key = _create_bibliography(
         bibliography, citation_key=None, metadata=metadata
     )
@@ -241,24 +238,27 @@ def convert(csv, outdir, metadata, bibliography):
     if bibliography_data:
         metadata = _add_bibdata_to_source(metadata, bibliography_data, new_citation_key)
 
-    # We should include a number of exceptions
-    #    if metadata:
-    #     metadata = yaml.load(metadata, Loader=yaml.SafeLoader)
+    # We should possibly include a number of exceptions
     #     try:
     #         fields = metadata["figure description"]["fields"]
     #     except (KeyError, AttributeError):
     #         logger.warning("No units to the fields provided in the metadata")
 
     # construct entry
-
-    raw_entry = Entry.from_csv(csv, **dialect.model_dump(exclude_none=True, by_alias=False))
+    dialect = data_description.dialect
+    raw_entry = Entry.from_csv(
+        csv, **dialect.model_dump(exclude_none=True, by_alias=False)
+    )
     raw_entry.metadata.from_dict({"echemdb": metadata})
-    mapped_entry = raw_entry.rename_fields(fieldmapping)
-    entry = mapped_entry.update_fields(field_units)
+    mapped_entry = raw_entry.rename_fields(data_description.field_mapping)
+    entry = mapped_entry.update_fields(data_description.field_units)
     entry.df.head()
 
     # create a time axis if not present
     if "t" not in entry.df.columns:
+        scan_rate = data_description.scan_rate["value"] * u.Unit(
+            data_description.scan_rate["unit"]
+        )
         entry = _add_time_axis(entry, scan_rate)
 
     # update fields
