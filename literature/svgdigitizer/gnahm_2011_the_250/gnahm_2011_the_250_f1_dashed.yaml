@@ -1,0 +1,70 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  instrumentation:
+  - name: Heka PG 310 USB
+    type: potentiostat
+system:
+  type: electrochemical
+  electrodes:
+    - name: CE
+      function: counter electrode
+      crystallographicOrientation: poly
+      material: Pt
+      shape:
+        type: wire
+    - name: REF
+      function: reference electrode
+      material: AgCl coated Ag wire
+      shape:
+        type: wire, pseudo-reference
+    - name: WE
+      function: working electrode
+      crystallographicOrientation: '111'
+      material: Au
+      shape:
+        diameter:
+          unit: mm
+          value: 12
+        type: disk
+      source:
+        manufacturer: MaTeck
+      preparationProcedure:
+        description:
+          - stored in an oven at 960°C
+          - annealed for 5 min by inductive heating in N2
+      geometricElectrolyteContactArea:
+        value: 0.58
+        unit: cm-2
+  electrolyte:
+    components:
+    - name: BMIm-PF6
+      chemicalIdentifiers:
+        cas: 174501-64-5
+        inchi: InChI=1S/C8H15N2.F6P/c1-3-4-5-10-7-6-9(2)8-10;1-7(2,3,4,5)6/h6-8H,3-5H2,1-2H3;/q+1;-1
+        inchikey: InChIKey=IXQYBUDWDLYNMA-UHFFFAOYSA-N
+      proportion:
+        unit: volume percent
+        value: 100
+      purity:
+        refinement: Vacuum-drying at 2E-4 mbar at 80°C for 24 h.
+      type: solvent
+    temperature:
+      unit: K
+      value: 298.15
+    type: ionic liquid
+source:
+  citationKey: gnahm_2011_the_250
+  url: https://doi.org/10.1016/j.jelechem.2010.11.019
+  techniques:
+  - CV
+curation:
+  process:
+  - role: curator
+    name: Maren-Kathrin Heubach
+    orcid: https://orcid.org/0000-0002-3769-7169
+    date: 2024-12-17
+  - role: reviewer
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2025-08-23

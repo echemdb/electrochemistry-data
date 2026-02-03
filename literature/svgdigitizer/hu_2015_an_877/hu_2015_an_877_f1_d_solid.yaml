@@ -1,0 +1,87 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  instrumentation:
+  - manufacturer: CH Instruments
+    name: CHI631A
+    type: potentiostat
+system:
+  type: electrochemical
+  electrodes:
+    - name: CE
+      function: counter electrode
+      crystallographicOrientation: poly
+      material: Li
+      shape:
+        type: ring
+    - name: REF
+      function: reference electrode
+      material: Li
+      shape:
+        type: wire
+    - name: WE
+      function: working electrode
+      crystallographicOrientation: '111'
+      material: Au
+      preparationProcedure:
+         description:
+         - Electrochemical polishing and flame annealing.
+      shape:
+        type: disk
+  electrolyte:
+    components:
+    - name: EMIm-TFSI
+      chemicalIdentifiers:
+        cas: 174899-82-2
+        inchi: InChI=1S/C6H11N2.C2F6NO4S2/c1-3-8-5-4-7(2)6-8;3-1(4,5)14(10,11)9-15(12,13)2(6,7)8/h4-6H,3H2,1-2H3;/q+1;-1
+        inchikey: InChIKey=LRESCJAINPKJTO-UHFFFAOYSA-N
+      proportion:
+        unit: volume percent
+        value: 100
+      source:
+        supplier: IoLiTec
+        purity:
+            grade: '99%'
+      purity:
+        refinement: Vacuum dried at 80°C for 24 h.
+      type: solvent
+    - concentration:
+        unit: mol / l
+        value: 0.5
+      name: Li-TFSI
+      chemicalIdentifiers:
+        cas: 90076-65-6
+        inchi: InChI=InChI=1S/C2HF6NO4S2.Li/c3-1(4,5)14(10,11)9-15(12,13)2(6,7)8;/h9H;
+        inchikey: InChIKey=UGEOMRBXRFUYJH-UHFFFAOYSA-N
+      source:
+        supplier: Aldrich
+        purity:
+            grade: '99.95%'
+      type: salt
+    temperature:
+      unit: K
+      value: 298.15
+    type: ionic liquid
+  atmosphere:
+    type: glovebox
+    components:
+    - name: Ar
+      proportion:
+        value: 100
+      type: gas
+source:
+  citationKey: hu_2015_an_877
+  url: https://doi.org/10.1007/s11434-015-0746-7
+  techniques:
+  - CV
+  - STM
+curation:
+  process:
+  - role: curator
+    name: Maren-Kathrin Heubach
+    orcid: https://orcid.org/0000-0002-3769-7169
+    date: 2022-06-29
+  - role: reviewer
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2025-08-23

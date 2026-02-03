@@ -1,0 +1,68 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  instrumentation:
+  - name: Parstat 2263
+    type: potentiostat
+system:
+  type: electrochemical
+  electrodes:
+    - name: CE
+      function: counter electrode
+      crystallographicOrientation: poly
+      material: Pt
+      shape:
+        type: wire
+    - name: REF
+      function: reference electrode
+      material: Pt
+      source:
+        manufacturer: Alfa Aesar
+        purity:
+          value: 99.99
+          unit: pct
+      type: wire
+    - name: WE
+      function: working electrode
+      crystallographicOrientation: '111'
+      material: Au
+      description: 300 nm Au on mica
+      source:
+        manufacturer: Agilent
+  electrolyte:
+    components:
+    - name: EMIm-FAP
+      chemicalIdentifiers:
+        cas: 174899-82-2
+        inchi: InChI=1S/C6H11N2.C2F6NO4S2/c1-3-8-5-4-7(2)6-8;3-1(4,5)14(10,11)9-15(12,13)2(6,7)8/h4-6H,3H2,1-2H3;/q+1;-1
+        inchikey: InChIKey=LRESCJAINPKJTO-UHFFFAOYSA-N
+      proportion:
+        unit: volume percent
+        value: 100
+      type: solvent
+      source:
+        supplier: MERCK
+    temperature:
+      unit: K
+      value: 298.15
+    type: ionic liquid
+source:
+  citationKey: atkin_2014_structure_44
+  url: https://doi.org/10.1016/j.molliq.2013.08.006
+  figure: 2a
+  curve: black
+  techniques:
+  - CV
+  - EIS
+  - AFM
+  - STM
+curation:
+  process:
+  - role: curator
+    name: Jerome Mayer
+    orcid: https://orcid.org/0000-0002-7451-9994
+    date: 2022-01-10
+  - role: reviewer
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2025-08-24
