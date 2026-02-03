@@ -29,6 +29,9 @@ jobs:
       - name: doctest
         shell: pixi run bash -e {0}
         run: pixi run -e ${{ matrix.environment }} doctest
+      - name: pytest
+        shell: pixi run bash -e {0}
+        run: pixi run -e ${{ matrix.environment }} pytest
       - name: test building packages
         shell: pixi run bash -e {0}
         run: pixi run -e dev convert

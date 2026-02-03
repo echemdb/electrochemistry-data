@@ -10,8 +10,13 @@ description = "a database for published electrochemical data inferred from SVG a
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "pydantic>=2.0,<3.0",
     "svgdigitizer>=0.14.1,<0.15.0",
+    # "unitpackage>=0.11.2,<0.12.0"
 ]
+
+[project.scripts]
+echemdb_ecdata = "echemdb_ecdata.entrypoint:cli"
 
 [tool.setuptools]
 packages = [
@@ -39,6 +44,7 @@ jupytext = ">=1.16.6,<2"
 
 [tool.pixi.pypi-dependencies]
 echemdb_ecdata = { path = ".", editable = true }
+unitpackage = { git = "https://github.com/echemdb/unitpackage.git", rev = "refs/pull/127/head" }
 
 [tool.pixi.feature.python-310.dependencies]
 python = "3.10.*"
@@ -64,13 +70,18 @@ pytest-remotedata = "*"
 
 [tool.pixi.feature.test.tasks]
 copy-bib = "mkdir -p data/generated/bibliography && cp literature/bibliography/bibliography.bib data/generated/bibliography/bibliography.bib"
-convert = "cd data && make -j$(nproc)"
-data = { depends-on = ["copy-bib", "convert"] }
+convert-svg = "cd data && make -j$(nproc)"
+convert-raw = "cd data && make rawdata -j$(nproc)"
+convert = { depends-on = ["copy-bib", "convert-raw", "convert-svg"] }
+clean-data = "cd data && make clean"
 # To validate the metadata against a specific version preceded the version by `tags` such as `tags/0.3.1`.
 # To validate the metadata against metadata in a specific branch use `head/branch-name`.
-validate = { args = [ { "arg" = "version", "default" = "tags/0.3.2" } ],cmd = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --no-cache $(find ./data/generated/svgdigitizer/ -type f -name '*.json')" }
-validate-yaml = { args = [ { "arg" = "version", "default" = "tags/0.3.2" } ], cmd = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --no-cache $(find ./literature/svgdigitizer/ -type f -name '*.yaml')" }
+validate = { args = [ { "arg" = "version", "default" = "tags/0.3.3" } ],cmd = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --no-cache $(find ./data/generated/svgdigitizer/ -type f -name '*.json')" }
+validate_raw = { args = [ { "arg" = "version", "default" = "tags/0.3.3" } ],cmd = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --no-cache $(find ./data/generated/rawdata/ -type f -name '*.json')" }
+validate-yaml = { args = [ { "arg" = "version", "default" = "tags/0.3.3" } ], cmd = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --no-cache $(find ./literature/svgdigitizer/ -type f -name '*.yaml')" }
 doctest = "pytest -n auto --doctest-modules echemdb_ecdata"
+# pytest executes doctests of the cli
+pytest = "pytest -n auto echemdb_ecdata/**/*.py"
 
 [tool.pixi.feature.lint.dependencies]
 black = "*"
@@ -94,7 +105,6 @@ myst-nb = "*"
 sphinx = "*"
 sphinx-design = "*"
 sphinx_rtd_theme = "*"
-unitpackage = "*"
 
 [tool.pixi.feature.doc.tasks]
 doc = "cd doc && make html SPHINXOPTS='-W -n --keep-going'"

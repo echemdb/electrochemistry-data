@@ -1,0 +1,54 @@
+{
+    "resources": [
+        {
+            "name": "bibliography",
+            "type": "table",
+            "path": "bibliography.csv",
+            "scheme": "file",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "E",
+                        "type": "number",
+                        "unit": "V",
+                        "reference": "RHE"
+                    },
+                    {
+                        "name": "I",
+                        "type": "number",
+                        "unit": "mA"
+                    },
+                    {
+                        "name": "j",
+                        "type": "number",
+                        "unit": "mA cm-2"
+                    },
+                    {
+                        "name": "t",
+                        "type": "number",
+                        "unit": "s"
+                    }
+                ]
+            },
+            "metadata": {
+                "echemdb": {
+                    "source": {
+                        "citationKey": "engstfeld_2018_polycrystalline_17743",
+                        "bibdata": "@article{engstfeld_2018_polycrystalline_17743,\n    author = \"Engstfeld, Albert K and Maagaard, Thomas and Horch, Sebastian and Chorkendorff, Ib and Stephens, Ifan EL\",\n    title = \"Polycrystalline and single-crystal Cu electrodes: influence of experimental conditions on the electrochemical properties in alkaline media\",\n    journal = \"Chem.-Eur. J\",\n    volume = \"24\",\n    number = \"67\",\n    pages = \"17743--17755\",\n    year = \"2018\",\n    abstract = \"Single and polycrystalline Cu electrodes serve as model systems for the study of the electroreduction of CO2, CO and nitrate, or for corrosion studies; even so, there are very few reports combining electrochemical measurements with structural characterization. Herein both the electrochemical properties of polycrystalline Cu and single crystal Cu(1 0 0) electrodes in alkaline solutions (0.1 m KOH and 0.1 m NaOH) are investigated. It is demonstrated that the pre-treatment of the electrodes plays a crucial role in determining their electrochemical properties. Scanning tunneling microscopy, X-ray photoelectron spectroscopy and cyclic voltammetry are performed on Cu(1 0 0) electrodes prepared under UHV conditions; it is shown that the electrochemical properties of these atomically well-defined electrodes are distinct from electrodes prepared by other methods. Also highlighted is the significant role of residual oxygen and electrolyte convection in influencing the electrochemical properties.\"\n}\n"
+                    },
+                    "figureDescription": {
+                        "type": "raw",
+                        "measurementType": "CV",
+                        "comment": "A description of the measurement data.",
+                        "scanRate": {
+                            "value": 50,
+                            "unit": "mV / s"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
