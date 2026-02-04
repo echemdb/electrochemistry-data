@@ -56,7 +56,7 @@ system:
         unit: cm⁻²
       comment: RRDE setup, 0 rpm
 source:
-  citationKey: blizanac_2003_anion_625_f3a_black
+  citationKey: blizanac_2003_anion_625
   url: https://doi.org/10.1021/jp036483l
 curation:
   process:
