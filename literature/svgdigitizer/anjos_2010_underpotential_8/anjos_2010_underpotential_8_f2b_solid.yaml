@@ -1,0 +1,49 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2025-12-02
+source:
+  url: https://doi.org/10.1016/j.jelechem.2009.10.003
+  citationKey: anjos_2010_underpotential_8
+  techniques:
+  - CV
+  figure: 2b
+  curve: solid
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          refinement: Millipore ultrapure water
+        purity:
+          grade: ultrapure
+      - name: HClO4
+        type: acid
+        concentration:
+          value: 0.1
+          unit: mol / l
+        source:
+          supplier: Merck
+        purity:
+          grade: 69-72.0%
+    temperature:
+      value: 293
+      unit: K
+  electrodes:
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Rh
+      crystallographicOrientation: '100'
+      source:
+        supplier: MaTecK GmbH
+      preparationProcedure:
+        description:
+          - flame annealed in a hydrogen/oxygen flame.
+          - cooled in argon-hydrogen atmosphere.
+          - details see https://doi.org/10.1016/S0022-0728(79)80022-4
