@@ -1,0 +1,52 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-01-21
+source:
+  url: https://doi.org/10.2355/isijinternational.40.702
+  citationKey: hirai_2000_in_702
+  techniques:
+  - CV
+  figure: 2
+  curve: solid
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          refinement: Milli-Q
+      - name: Na2SO4
+        type: salt
+        concentration:
+          value: 0.05
+          unit: mol / l
+        source:
+          supplier: Wako
+      - name: N2 
+        type: gas
+        function: deaeration of electrolytes for 1h before experiments.
+    ph:
+      value: 6.5
+  electrodes:
+    - name: RE
+      function: reference electrode
+      material: Hg/Hg2SO4
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Fe
+      crystallographicOrientation: '110'
+      source:
+        type: Fe single crystal rod
+        purity:
+          grade: 99.9
+          unit: pct
+      preparationProcedure:
+        description:
+          - Orientation by Laue backscattering, mechanically polished and etched.
+          - details see https://doi.org/10.2355/isijinternational.40.702
