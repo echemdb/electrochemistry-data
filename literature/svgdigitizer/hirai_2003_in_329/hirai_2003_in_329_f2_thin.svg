@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="6617px"
+   version="1.1"
+   width="4959px"
+   id="svg1"
+   sodipodi:docname="hirai_2003_in_329_f2_thin.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.39443857"
+     inkscape:cx="1159.8764"
+     inkscape:cy="2951.0299"
+     inkscape:window-width="1920"
+     inkscape:window-height="1010"
+     inkscape:window-x="3449"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1" />
+  <image
+     height="6617"
+     sodipodi:insensitive="true"
+     width="4959"
+     x="0"
+     xlink:href="hirai_2003_in_329_p1.png"
+     y="0"
+     id="image1" />
+  <g
+     id="g11"
+     transform="translate(157.7406,1534.5267)"
+     inkscape:label="E1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:2"
+       x="319.00269"
+       y="2013.4805"
+       id="text5"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         x="319.00269"
+         y="2013.4805">E1: -1.5 V vs Hg/Hg2SO4</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+       d="m 597.45799,1899.0069 88.03937,98.1202"
+       id="path9" />
+  </g>
+  <g
+     id="g3"
+     transform="translate(1123.6036,1534.0283)"
+     inkscape:label="E2">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:2"
+       x="1138.9113"
+       y="2009.0001"
+       id="text6"><tspan
+         sodipodi:role="line"
+         id="tspan6"
+         x="1138.9113"
+         y="2009.0001">E2: -0.4 V vs Hg/Hg2SO4</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+       d="m 1143.0517,1993.3707 75.7177,-93.9343"
+       id="path10" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-size:42.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke:#000000;stroke-width:2"
+     x="48.217533"
+     y="2402.3462"
+     id="text8"
+     inkscape:label="scan rate"><tspan
+       sodipodi:role="line"
+       id="tspan8"
+       x="48.217533"
+       y="2402.3462"
+       style="stroke:none">scan rate: 1 mV / s </tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:42.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke:none;stroke-width:2"
+     x="48.583332"
+     y="2443.625"
+     id="text10"
+     inkscape:label="figure"><tspan
+       sodipodi:role="line"
+       id="tspan10"
+       x="48.583332"
+       y="2443.625">figure: 2</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:42.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1"
+     x="24.958332"
+     y="2503.8335"
+     id="text15"
+     inkscape:label="tags"><tspan
+       sodipodi:role="line"
+       id="tspan15"
+       x="24.958332"
+       y="2503.8335"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1">tags: BCV</tspan></text>
+  <g
+     id="g13"
+     transform="translate(219.49386,1545.0185)"
+     inkscape:label="j1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:2"
+       x="101.67587"
+       y="1842.6377"
+       id="text1"><tspan
+         id="tspan1"
+         x="101.67587"
+         y="1842.6377"
+         sodipodi:role="line"
+         style="font-size:42.6667px">j1: -15.0 A / m2</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+       d="m 429.59483,1832.7478 105.81465,54.4914"
+       id="path8" />
+  </g>
+  <g
+     id="g14"
+     transform="translate(219.45911,1690.9187)"
+     inkscape:label="j2">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:2"
+       x="187.69908"
+       y="521.82312"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         x="187.69908"
+         y="521.82312">j2: 25.0 A / m2</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+       d="m 494.85776,510.69828 40.86853,85.22198"
+       id="path7"
+       sodipodi:nodetypes="cc" />
+  </g>
+  <g
+     id="g1">
+    <text
+       xml:space="preserve"
+       style="font-size:42.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke:#000000;stroke-width:2"
+       x="103.54621"
+       y="2355.0054"
+       id="text7"
+       inkscape:label="curve"><tspan
+         sodipodi:role="line"
+         id="tspan7"
+         x="103.54621"
+         y="2355.0054"
+         style="stroke:none">curve: thin</tspan></text>
+    <path
+       style="fill:none;stroke:#d41f1f;stroke-opacity:1"
+       d="m 1392.4922,3256.4572 c -11.3468,-0.6191 -53.8402,-29.8755 -79.0091,-44.4054 -12.6348,-7.294 -41.6636,-11.2382 -116.8455,-77.8502 -17.7621,-15.7374 -52.7859,-40.6651 -83.6633,-51.6557 -63.3374,-22.5445 -162.4822,-25.5394 -199.96774,-26.3032 -0.92312,-0.019 0.48651,-32.8189 0.95072,-33.592 1.56691,-2.6095 533.56182,-1.6237 539.01942,-1.965 18.3674,-1.1485 39.0002,-0.895 57.1421,-7.1708 14.6607,-5.0715 38.3694,-12.2483 42.1056,-27.3047 17.3362,-69.8621 117.2553,-624.6585 148.9277,-623.5165 25.7261,0.9276 43.4074,385.6387 54.8248,527.4902 5.0292,62.4834 181.5532,72.674 183.0434,86.8049 1.3447,12.7515 -143.7506,18.3617 -216.0194,22.8568 -63.3799,3.9422 -128.1541,-1.2806 -190.4735,3.5854 -85.4754,6.6741 -83.3568,86.8542 -99.2703,142.519 -6.5718,22.988 -16.4457,111.8339 -40.7649,110.5072 z"
+       id="path1"
+       sodipodi:nodetypes="ssssssssssssssss" />
+  </g>
+</svg>
