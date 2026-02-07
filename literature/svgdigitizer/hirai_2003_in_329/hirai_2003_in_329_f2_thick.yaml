@@ -1,0 +1,46 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-02-02
+source:
+  url: https://doi.org/10.1016/S0378-7753(02)00545-1
+  citationKey: hirai_2003_in_329
+  techniques:
+  - CV
+  figure: '2'
+  curve: thick
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          refinement: Milli-Q
+      - name: H2SO4
+        type: acid
+        concentration:
+          value: 0.05
+          unit: mol / l
+        source:
+          supplier: Wako
+    temperature:
+      value: rt
+  electrodes:
+    - name: RE
+      function: reference electrode
+      material: Hg/Hg2SO4
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Pb
+      crystallographicOrientation: '111'
+      source:
+        supplier: MaTeck Co.
+      preparationProcedure:
+        description:
+          - Chemically polished with a mixed solution of acetic acid and hydrogen peroxide.
+          - Washed with ethanol. 
