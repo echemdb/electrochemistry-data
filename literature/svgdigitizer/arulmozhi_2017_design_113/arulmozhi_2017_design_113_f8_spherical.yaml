@@ -1,0 +1,54 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2025-02-20
+source:
+  url: https://doi.org/10.1007/s12678-017-0426-2
+  citationKey: arulmozhi_2017_design_113
+  techniques:
+  - CV
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          refinement: Milli-Q Integral Water Purification System
+        purity:
+          grade: ultrapure
+          totalIonConductivity:
+            value: 18.2
+            unit: MΩ cm
+          totalOrganicCarbon:
+            value: 110
+            unit: ppb
+      - name: H2SO4
+        type: acid
+        concentration:
+          value: 0.5
+          unit: mol / l
+        source:
+          supplier: Merck
+        purity:
+          grade: suprapur
+    temperature:
+      value: 293
+      unit: K
+  electrodes:
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Pt
+      crystallographicOrientation: poly
+      source:
+        purity:
+          value: 99.95
+          unit: pct
+      preparationProcedure:
+        description:
+          - Flame and oxygen annealled before measurement. 
+          - details see https://doi.org/10.1007/s12678-016-0331-0.
