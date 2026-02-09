@@ -2,6 +2,7 @@
 /data/generated
 literature/**/*.png
 literature/**/*.csv
+literature/svgdigitizer/**/*.json
 
 # mac
 **/.DS_Store
