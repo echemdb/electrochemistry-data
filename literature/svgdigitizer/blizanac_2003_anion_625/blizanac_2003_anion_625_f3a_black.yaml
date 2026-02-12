@@ -1,0 +1,68 @@
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: H2O
+        type: solvent
+        proportion:
+          value: 100
+          unit: volume percent
+        source:
+          refinement: triply pyrodistilled
+          purity:
+            grade: ultrapure water
+      - name: HClO4
+        type: acid
+        source:
+          supplier: Aldrich
+          purity:
+            grade: Semiconductor Grade
+        concentration:
+          value: 0.1
+          unit: mol L⁻¹
+    ph:
+      value: 1.041
+      comment: Estimated with CurTiPot on extraction from publication using a temperature of 25°C.
+    temperature:
+      value: 25
+      unit: deg_C
+    comment: The electrolyte was at room temperature.
+  electrodes:
+    - name: REF
+      function: reference electrode
+      type: Hg/Hg2Cl2-sat
+    - name: WE
+      function: working electrode
+      material: Au
+      crystallographicOrientation: '100'
+      source:
+        manufacturer: homemade
+      shape:
+        type: cylinder
+        diameter:
+          value: 0.6
+          unit: cm
+        length:
+          value: 0.4
+          unit: cm
+      preparationProcedure:
+        description:
+          - flame annealed in a propane flame
+          - cooled in an Ar atmosphere 
+          - mounted in the RRDE setup
+          - contact electrolyte under potentiostatic control at ≈0.1 V vs. SCE
+          - 0 rpm
+      geometricElectrolyteContactArea:
+        value: 0.283
+        unit: cm⁻²
+source:
+  citationKey: blizanac_2003_anion_625
+  url: https://doi.org/10.1021/jp036483l
+curation:
+  process:
+  - role: curator
+    name: Johannes M. Hermann
+    orcid: https://orcid.org/0000-0001-7119-1295
+    date: 2026-02-04
+
