@@ -52,10 +52,10 @@ system:
           - cooled in an Ar atmosphere 
           - mounted in the RRDE setup
           - contact electrolyte under potentiostatic control at ≈0.1 V vs. SCE
+          - 0 rpm
       geometricElectrolyteContactArea:
         value: 0.283
         unit: cm⁻²
-      comment: RRDE setup, 0 rpm
 source:
   citationKey: blizanac_2003_anion_625
   url: https://doi.org/10.1021/jp036483l
