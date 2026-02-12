@@ -47,10 +47,11 @@ system:
           value: 0.4
           unit: cm
       preparationProcedure:
-        - flame annealed in a propane flame
-        - cooled in an Ar atmosphere 
-        - mounted in the RRDE setup
-        - contact electrolyte under potentiostatic control at ≈0.1 V vs. SCE
+        description:
+          - flame annealed in a propane flame
+          - cooled in an Ar atmosphere 
+          - mounted in the RRDE setup
+          - contact electrolyte under potentiostatic control at ≈0.1 V vs. SCE
       geometricElectrolyteContactArea:
         value: 0.283
         unit: cm⁻²
