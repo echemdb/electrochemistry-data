@@ -146,10 +146,10 @@ def test_convert(name, args, use_bibliography):
     CSV files that match expected outputs.
     """
     cwd = os.getcwd()
-    test_output_dir = os.path.join(cwd, "test", "generated", "raw_data")
+    test_output_dir = os.path.join(cwd, "test", "generated", "source_data")
     bib_path = os.path.join(cwd, "literature", "bibliography", "bibliography.bib")
 
-    patterns = [f"raw_data/{name}.*", f"generated/raw_data/{name}.*.expected"]
+    patterns = [f"source_data/{name}.*", f"generated/source_data/{name}.*.expected"]
     if use_bibliography:
         patterns.append("../literature/bibliography/bibliography.bib")
 
@@ -157,7 +157,7 @@ def test_convert(name, args, use_bibliography):
         os.chdir(workdir)
         try:
             # Build command arguments
-            temp_args = [*args, "--outdir", "generated/raw_data/"]
+            temp_args = [*args, "--outdir", "generated/source_data/"]
             persistent_args = [*args, "--outdir", test_output_dir]
 
             if use_bibliography:
@@ -169,12 +169,12 @@ def test_convert(name, args, use_bibliography):
             # Also generate files in the persistent test directory
             invoke(cli, *persistent_args)
 
-            with open(f"generated/raw_data/{name}.json", encoding="utf-8") as actual:
+            with open(f"generated/source_data/{name}.json", encoding="utf-8") as actual:
                 with open(f"{name}.json.expected", encoding="utf-8") as expected:
                     assert json.load(actual) == json.load(expected)
 
             pandas.testing.assert_frame_equal(
-                pandas.read_csv(f"generated/raw_data/{name}.csv"),
+                pandas.read_csv(f"generated/source_data/{name}.csv"),
                 pandas.read_csv(f"{name}.csv.expected"),
             )
         finally:

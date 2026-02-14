@@ -119,7 +119,7 @@ def _add_time_axis(entry, scan_rate):
 
     # Add time column to entry
     new_entry = entry.add_columns(
-        df["t"], new_fields=[{"name": "t", "unit": str(conversion_factor.unit)}]
+        df["t"], new_fields=[{"name": "t", "type": "number", "unit": str(conversion_factor.unit)}]
     )
     return new_entry
 
