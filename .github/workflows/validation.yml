@@ -19,4 +19,4 @@ jobs:
         with: { pixi-version: v0.63.2 }
       - name: validate input yaml
         shell: pixi run bash -e {0}
-        run: pixi run -e dev validate-yaml
+        run: pixi run -e dev validate-input
