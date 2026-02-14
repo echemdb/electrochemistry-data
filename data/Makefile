@@ -72,10 +72,10 @@ ${SVG_TARGET_DIR}/%.csv ${SVG_TARGET_DIR}/%.json : ${SVG_SOURCE_DIR}/%.yaml ${SV
 		--outdir=${@D} 2>&1 | awk '{ print "'$<': "$$0 }'
 
 # We create a data package, i.e., a .csv and a .json file, from a .yaml and a
-# .csv files by invoking the echemdb_ecdata raw command.
+# .csv files by invoking the echemdb_ecdata convert command.
 ${RAW_TARGET_DIR}/%.csv ${RAW_TARGET_DIR}/%.json : ${RAW_SOURCE_DIR}/%.yaml ${RAW_SOURCE_DIR}/%.csv
 	@mkdir -p ${@D}
-	pixi run -e dev echemdb_ecdata raw ${patsubst %.yaml,%.csv,$<} --metadata $< --outdir=${@D} 2>&1 | awk '{ print "'$<': "$$0 }'
+	pixi run -e dev echemdb_ecdata convert ${patsubst %.yaml,%.csv,$<} --metadata $< --outdir=${@D} 2>&1 | awk '{ print "'$<': "$$0 }'
 
 # The default action when calling "make" is to digitize all the .yaml/.svg
 # pairs and convert all raw data packages.
