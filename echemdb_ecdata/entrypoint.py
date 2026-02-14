@@ -274,7 +274,7 @@ def convert(csv, outdir, metadata, bibliography):
     entry.metadata.echemdb["figureDescription"].__dict__.setdefault("fields", {})
     entry.metadata.echemdb["figureDescription"].__dict__[
         "fields"
-    ] = entry.mutable_resource.schema.to_dict()["fields"]
+    ] = entry.fields
 
     entry.save(outdir=outdir)
 
