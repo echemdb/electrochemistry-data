@@ -44,11 +44,11 @@ described [here](https://echemdb.github.io/svgdigitizer/workflow.html).
 ## Development
 
 If you want to work on the data and repository itself, install [pixi](https://pixi.sh)
-and get a copy of the latest unreleased version of the metadata-schema:
+and clone the repository:
 
 ```sh
 git clone https://github.com/echemdb/electrochemistry-data.git
-cd metadata-schema
+cd electrochemistry-data
 ```
 
 For possible commands run
@@ -59,8 +59,60 @@ pixi run
 
 More pixi tasks can be inferred from the [pyproject.toml](pyproject.toml).
 
-test conversion of raw data
+### Conversion
+
+The repository converts source data into standardized frictionless datapackages:
 
 ```sh
-pixi run -e dev clean-data && pixi run -e dev convert-raw
+# Convert all data (SVG digitizer + raw data)
+pixi run -e dev convert
+
+# Convert only SVG digitizer data (from literature/svgdigitizer/)
+pixi run -e dev convert-svg
+
+# Convert only raw data (from literature/source_data/)
+pixi run -e dev convert-raw
+
+# Clean generated data before converting
+pixi run -e dev clean-data
+```
+
+A typical workflow:
+
+```sh
+# Clean previous builds and convert all data
+pixi run -e dev clean-data && pixi run -e dev convert
+```
+
+Generated datapackages are written to `data/generated/svgdigitizer/` and `data/generated/source_data/`.
+
+### Validation
+
+All data (input YAML and output JSON) is validated against the [echemdb-metadata schema](https://github.com/echemdb/metadata-schema).
+
+```sh
+# Validate input YAML files before conversion
+pixi run -e dev validate-input
+
+# Validate generated JSON datapackages after conversion
+pixi run -e dev validate-generated
+```
+
+Each validation command shows verbose output listing all validated files. You can also validate specific parts:
+
+```sh
+# Individual input validation
+pixi run -e dev validate-svgdigitizer-yaml  # SVG digitizer YAML files
+pixi run -e dev validate-source-yaml        # Raw data YAML files
+
+# Individual output validation
+pixi run -e dev validate-svgdigitizer       # Generated SVG digitizer JSON
+pixi run -e dev validate-raw                # Generated raw data JSON
+```
+
+Validate against a specific schema version:
+
+```sh
+pixi run -e dev validate-input --version tags/0.3.3
+pixi run -e dev validate-generated --version head/my-branch
 ```

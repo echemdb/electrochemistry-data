@@ -114,21 +114,43 @@ dataDescription:
 
 ```bash
 # Clean previous builds
-pixi run clean-data
+pixi run -e dev clean-data
 
 # Convert SVG data (parallel processing)
-pixi run convert-svg
+pixi run -e dev convert-svg
 
 # Convert raw data
-pixi run convert-raw
+pixi run -e dev convert-raw
 
 # Full conversion
-pixi run convert
-
-# Validate against schema (v0.3.3)
-pixi run validate
-pixi run validate_raw
+pixi run -e dev convert
 ```
+
+### Validation
+
+All validation commands show verbose output listing each validated file and will fail with clear error messages if files are missing or invalid.
+
+```bash
+# Validate input YAML files (before conversion)
+pixi run -e dev validate-input  # validates both svgdigitizer and source_data YAML
+pixi run -e dev validate-svgdigitizer-yaml  # validate SVG digitizer YAML only
+pixi run -e dev validate-source-yaml  # validate raw data YAML only
+
+# Validate generated JSON files (after conversion)
+pixi run -e dev validate-generated  # validates both svgdigitizer and source_data JSON
+pixi run -e dev validate-svgdigitizer  # validate SVG digitizer JSON only
+pixi run -e dev validate-raw  # validate raw data JSON only
+
+# Use specific schema version (default: tags/0.4.0)
+pixi run -e dev validate-input --version tags/0.3.3
+pixi run -e dev validate-generated --version head/branch-name
+```
+
+Validation commands:
+- Display each file being validated with `--verbose` flag
+- Use `find | xargs` pipeline for cross-platform compatibility
+- Return non-zero exit code when validation fails or files are missing
+- Validate against echemdb-metadata-schema (configurable version)
 
 ### Development Tasks
 

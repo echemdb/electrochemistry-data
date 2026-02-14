@@ -78,7 +78,6 @@ class DataDescription(BaseModel):
     dialect: Dialect
     field_mapping: dict
     field_units: list
-    scan_rate: dict
 
     @field_validator("dialect", mode="before")
     @classmethod
@@ -220,14 +219,14 @@ def convert(csv, outdir, metadata, bibliography):
 
     # clean metadata and create figure description
     metadata = metadata_dict.copy()
-    metadata.setdefault(
-        "figureDescription",
-        {
-            key: value
-            for key, value in metadata_dict["dataDescription"].items()
-            if key not in ["fieldMapping", "fieldUnits", "dialect"]
-        },
-    )
+    # metadata.setdefault(
+    #     "figureDescription",
+    #     {
+    #         key: value
+    #         for key, value in metadata_dict["dataDescription"].items()
+    #         if key not in ["fieldMapping", "fieldUnits", "dialect"]
+    #     },
+    # )
 
     del metadata["dataDescription"]
 
@@ -265,8 +264,8 @@ def convert(csv, outdir, metadata, bibliography):
 
     # create a time axis if not present
     if "t" not in entry.df.columns:
-        scan_rate = data_description.scan_rate["value"] * u.Unit(
-            data_description.scan_rate["unit"]
+        scan_rate = metadata["figureDescription"]["scanRate"]["value"] * u.Unit(
+            metadata["figureDescription"]["scanRate"]["unit"]
         )
         entry = _add_time_axis(entry, scan_rate)
 

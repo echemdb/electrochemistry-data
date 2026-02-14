@@ -64,7 +64,8 @@ system:
     type: aqueous
   electrochemicalCell:
     type: hanging meniscus cell attached to UHV system
-    url: https://doi.org/10.1002/chem.201803418
+    source:
+      url: https://doi.org/10.1002/chem.201803418
 source:
   citationKey: engstfeld_2018_polycrystalline_17743
   url: https://doi.org/10.1002/chem.201803418
@@ -74,13 +75,14 @@ source:
   techniques:
   - XPS
   - STM
-dataDescription:
+figureDescription:
   type: raw
   measurementType: CV
   comment: A description of the measurement data. # Add whatever you think is important to understand the data. This will be updated by the `svgdigitizer.electrochemistry.cv.CV` module and takes the comment from the svg file.
   scanRate:
     value: 50
     unit: mV / s
+dataDescription:
   dialect:
     delimiters: ','
     decimal: '.'
