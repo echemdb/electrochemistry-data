@@ -50,13 +50,13 @@ SVG_TARGET_CSV=${patsubst %.yaml,%.csv,${patsubst ${SVG_SOURCE_DIR}/%,${SVG_TARG
 SVG_TARGET_JSON=${patsubst %.yaml,%.json,${patsubst ${SVG_SOURCE_DIR}/%,${SVG_TARGET_DIR}/%,${wildcard ${SVG_SOURCE_DIR}/**/*.yaml}}}
 
 # The directory which we search for .yaml and .csv files for raw data conversion.
-RAW_SOURCE_DIR=../literature/rawdata
+RAW_SOURCE_DIR=../literature/source_data
 
 # All the .yaml files in RAW_SOURCE_DIR directory and its subdirectories.
 RAW_SOURCE_METADATA=${wildcard ${RAW_SOURCE_DIR}/**/*.yaml}
 
 # The directory where we write the converted raw data files.
-RAW_TARGET_DIR=generated/rawdata
+RAW_TARGET_DIR=generated/source_data
 
 # The .csv files that we are going to generate from the raw .yaml and .csv files.
 RAW_TARGET_CSV=${patsubst %.yaml,%.csv,${patsubst ${RAW_SOURCE_DIR}/%,${RAW_TARGET_DIR}/%,${RAW_SOURCE_METADATA}}}
@@ -82,7 +82,7 @@ ${RAW_TARGET_DIR}/%.csv ${RAW_TARGET_DIR}/%.json : ${RAW_SOURCE_DIR}/%.yaml ${RA
 all: ${SVG_TARGET_CSV} ${SVG_TARGET_JSON} ${RAW_TARGET_CSV} ${RAW_TARGET_JSON}
 
 # Convert all raw data packages only (without SVG digitization).
-rawdata: ${RAW_TARGET_CSV} ${RAW_TARGET_JSON}
+source_data: ${RAW_TARGET_CSV} ${RAW_TARGET_JSON}
 
 # Digitize all SVG files only (without raw data conversion).
 svg: ${SVG_TARGET_CSV} ${SVG_TARGET_JSON}
@@ -92,4 +92,4 @@ clean:
 	rm -rf ${SVG_TARGET_DIR} ${RAW_TARGET_DIR} ${TARGET_BIB_DIR}
 
 
-.PHONY: all rawdata svg clean
+.PHONY: all source_data svg clean

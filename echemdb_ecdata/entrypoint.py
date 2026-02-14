@@ -167,7 +167,7 @@ bibliography_option = click.option(
 @click.option(
     "--outdir",
     type=click.Path(file_okay=False),
-    default="./data/generated/rawdata/",
+    default="./data/generated/source_data/",
     help="write output files to this directory",
 )
 @click.option(
