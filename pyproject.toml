@@ -89,7 +89,7 @@ isort = "*"
 pylint = "*"
 
 [tool.pixi.feature.dev.tasks]
-test = "pixi run doctest"
+test = { depends-on = ["doctest", "pytest"] }
 
 [tool.pixi.feature.lint.tasks]
 pylint = "pylint echemdb_ecdata"

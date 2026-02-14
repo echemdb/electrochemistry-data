@@ -136,8 +136,8 @@ pixi run validate_raw
 # Show all available commands
 pixi run
 
-# Test
-pixi run test
+# Run all tests (doctest + pytest)
+pixi run -e dev test
 
 # Use specific Python version
 pixi run -e python-312 test
@@ -184,9 +184,9 @@ Examples:
 
 ## Testing
 
-The last test run failed (Exit Code: 1). Check test output to see specific failures:
+Run all tests (includes doctest and pytest):
 ```bash
-pixi run test
+pixi run -e dev test
 ```
 
 Tests validate:
@@ -194,3 +194,4 @@ Tests validate:
 - Data integrity
 - Conversion processes
 - YAML metadata correctness
+- CLI functionality and output format
