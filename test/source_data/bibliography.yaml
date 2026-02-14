@@ -2,13 +2,14 @@
 # Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
 source:
   citationKey: engstfeld_2018_polycrystalline_17743
-dataDescription:
+figureDescription:
   type: raw
   measurementType: CV
   comment: A description of the measurement data. # Add whatever you think is important to understand the data. This will be updated by the `svgdigitizer.electrochemistry.cv.CV` module and takes the comment from the svg file.
   scanRate:
     value: 50
     unit: mV / s
+dataDescription:
   dialect:
     delimiters: ','
     decimal: '.'
