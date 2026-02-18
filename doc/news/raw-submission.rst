@@ -8,3 +8,4 @@
 **Changed:**
 
 * Changed `engstfeld_2018_polycrystalline_17743_f4b_1` from digitized to raw data.
+* Changed to echemdb-metadata-schema version 0.5.1.
