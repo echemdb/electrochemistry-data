@@ -42,7 +42,6 @@ def get_echemdb_database_url(version="0.5.1"):
         'https://github.com/echemdb/electrochemistry-data/releases/download/0.5.1/data-0.5.1.zip'
 
     """
-    return os.environ.get(
-        "ECHEMDB_DATABASE_URL",
-        f"https://github.com/echemdb/electrochemistry-data/releases/download/{version}/data-{version}.zip",
-    )
+    base_url = "https://github.com/echemdb/electrochemistry-data/releases/download"
+    default_url = f"{base_url}/{version}/data-{version}.zip"
+    return os.environ.get("ECHEMDB_DATABASE_URL", default_url)

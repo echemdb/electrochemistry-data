@@ -21,10 +21,10 @@ jobs:
         with: { pixi-version: v0.63.2 }
       - name: digitize
         shell: pixi run bash -e {0}
-        run: pixi run -e dev data
+        run: pixi run -e dev convert
       - name: validate packages
         shell: pixi run bash -e {0}
-        run: pixi run -e dev validate
+        run: pixi run -e dev validate-generated
       - name: upload data artifact
         uses: actions/upload-artifact@v6
         with:

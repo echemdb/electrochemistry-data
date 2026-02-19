@@ -33,8 +33,8 @@ source:
   citationKey: zei_1991_the_295
   url: https://doi.org/10.1016/0022-0728(91)85074-Y
   techniques:
-  - LEED 
-  - RHEED 
+  - LEED
+  - RHEED
   - AES
 curation:
   process:

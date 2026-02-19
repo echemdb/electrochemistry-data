@@ -1,8 +1,12 @@
 # Digitized data
 /data/generated
 literature/**/*.png
-literature/**/*.csv
+literature/svgdigitizer/*.csv
 literature/svgdigitizer/**/*.json
+test/generated/docstring/
+test/generated/source_data/***.csv
+test/generated/source_data/***.json
+
 
 # mac
 **/.DS_Store

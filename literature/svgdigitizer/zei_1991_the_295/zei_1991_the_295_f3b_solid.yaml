@@ -1,9 +1,5 @@
 # This file is part of echemdb (https://github.com/echemdb/website)
 # Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
-curator:
-  digitized: 2021-10-15
-  name: Markus Schilling
-  orcid: https://orcid.org/0000-0003-2684-3711
 experimental:
   tags:
   - BCV
@@ -37,8 +33,8 @@ source:
   citationKey: zei_1991_the_295
   url: https://doi.org/10.1016/0022-0728(91)85074-Y
   techniques:
-  - LEED 
-  - RHEED 
+  - LEED
+  - RHEED
   - AES
 curation:
   process:
