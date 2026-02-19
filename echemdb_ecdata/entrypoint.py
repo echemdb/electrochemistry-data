@@ -118,7 +118,10 @@ def _add_time_axis(entry, scan_rate):
 
     # Add time column to entry
     new_entry = entry.add_columns(
-        df["t"], new_fields=[{"name": "t", "type": "number", "unit": str(conversion_factor.unit)}]
+        df["t"],
+        new_fields=[
+            {"name": "t", "type": "number", "unit": str(conversion_factor.unit)}
+        ],
     )
     return new_entry
 
@@ -219,14 +222,6 @@ def convert(csv, outdir, metadata, bibliography):
 
     # clean metadata and create figure description
     metadata = metadata_dict.copy()
-    # metadata.setdefault(
-    #     "figureDescription",
-    #     {
-    #         key: value
-    #         for key, value in metadata_dict["dataDescription"].items()
-    #         if key not in ["fieldMapping", "fieldUnits", "dialect"]
-    #     },
-    # )
 
     del metadata["dataDescription"]
 
@@ -271,9 +266,7 @@ def convert(csv, outdir, metadata, bibliography):
 
     # update fields
     entry.metadata.echemdb["figureDescription"].__dict__.setdefault("fields", {})
-    entry.metadata.echemdb["figureDescription"].__dict__[
-        "fields"
-    ] = entry.fields
+    entry.metadata.echemdb["figureDescription"].__dict__["fields"] = entry.fields
 
     entry.save(outdir=outdir)
 
