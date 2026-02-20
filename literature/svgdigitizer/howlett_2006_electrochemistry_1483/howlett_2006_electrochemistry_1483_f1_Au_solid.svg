@@ -62,7 +62,7 @@
          sodipodi:role="line"
          id="tspan7885"
          x="1158.1256"
-         y="4645.4995">E1: -3.5 V vs Fc</tspan></text>
+         y="4645.4995">E1: -3.5 V vs Fc/Fc+</tspan></text>
   </g>
   <g
      id="g27407"
@@ -121,7 +121,7 @@
          sodipodi:role="line"
          id="tspan46816"
          x="3134.2458"
-         y="4467.8555">E2: -1.0 V vs Fc</tspan></text>
+         y="4467.8555">E2: -1.0 V vs Fc/Fc+</tspan></text>
   </g>
   <g
      id="g1">

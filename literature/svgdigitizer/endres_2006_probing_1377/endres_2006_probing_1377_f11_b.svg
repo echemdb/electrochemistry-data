@@ -94,7 +94,7 @@
          sodipodi:role="line"
          id="tspan7230"
          x="423.80319"
-         y="1494.9078">j_scale_bar: 1 mA</tspan></text>
+         y="1494.9078">I_scale_bar: 1 mA</tspan></text>
   </g>
   <text
      xml:space="preserve"
@@ -105,7 +105,7 @@
        sodipodi:role="line"
        id="tspan8134"
        x="455.4303"
-       y="702.1217">comment: j-axis offset not given. Basline estimate by curator.</tspan></text>
+       y="702.1217">comment: I-axis offset not given. Basline estimate by curator.</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:29.3333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px"
@@ -155,7 +155,7 @@
          sodipodi:role="line"
          id="tspan1544"
          x="818.08777"
-         y="1007.8504">j1: 0.0 mA</tspan></text>
+         y="1007.8504">I1: 0.0 mA</tspan></text>
   </g>
   <text
      xml:space="preserve"

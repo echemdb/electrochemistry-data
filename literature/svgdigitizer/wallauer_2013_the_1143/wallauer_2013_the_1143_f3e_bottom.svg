@@ -108,7 +108,7 @@
          sodipodi:role="line"
          id="tspan14010"
          x="1737.1346"
-         y="4022.3943">E2: 2 V vs. Fc0/Fc+</tspan></text>
+         y="4022.3943">E2: 2 V vs. Fc/Fc+</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 2898.738,3916.9856 -798.9976,105.4087"
@@ -125,7 +125,7 @@
          sodipodi:role="line"
          id="tspan9714"
          x="708.34613"
-         y="4013.9614">E1: -3 V vs. Fc0/Fc+</tspan></text>
+         y="4013.9614">E1: -3 V vs. Fc/Fc+</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 2066.5367,3918.5667 -963.9622,95.3947"
