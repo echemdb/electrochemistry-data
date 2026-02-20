@@ -113,7 +113,7 @@
          sodipodi:role="line"
          id="tspan6"
          x="874.67133"
-         y="1857.8215">E1: -2.5 V vs. Ag/Ag+</tspan></text>
+         y="1857.8215">E1: -2.5 V vs. Ag/AgTFS</tspan></text>
   </g>
   <g
      id="g7">
@@ -130,7 +130,7 @@
          sodipodi:role="line"
          id="tspan7"
          x="1866.6169"
-         y="1932.0952">E2: 0.0 V vs. Ag/Ag+</tspan></text>
+         y="1932.0952">E2: 0.0 V vs. Ag/AgTFS</tspan></text>
   </g>
   <g
      id="g9">
