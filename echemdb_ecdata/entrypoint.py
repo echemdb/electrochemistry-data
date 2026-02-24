@@ -37,16 +37,15 @@ EXAMPLES::
 #  along with echemdb_ecdata. If not, see <https://www.gnu.org/licenses/>.
 # ********************************************************************
 import logging
-from io import StringIO
 from pathlib import Path
 
 import astropy.units as u
 import click
 import pandas as pd
 import yaml
-from pybtex.database import parse_file
 from pydantic import BaseModel, ConfigDict, field_validator
 from pydantic.alias_generators import to_camel
+from svgdigitizer.entrypoint import _create_bibliography
 from unitpackage.entry import Entry
 
 logger = logging.getLogger("echemdb_ecdata")
@@ -87,44 +86,6 @@ class DataDescription(BaseModel):
         if isinstance(v, dict):
             return Dialect.model_validate(v)
         return v
-
-
-def _create_bibliography(bibliography, citation_key, metadata):
-    r"""
-    Return a bibtex string built from a BIB file and a key provided in
-    `metadata['source']['citationKey']`, or from the provided `citation_key`
-    when both requirements are met. Otherwise an empty string is returned.
-
-    This is a helper method for :func:`convert`.
-    """
-
-    if not bibliography:
-        return "", citation_key
-
-    if not citation_key:
-        metadata.setdefault("source", {})
-        metadata["source"].setdefault("citationKey", "")
-
-        citation_key = metadata["source"]["citationKey"]
-        if not citation_key:
-            logger.warning(
-                'No bibliography key found in metadata["source"]["citationKey"]'
-            )
-            del metadata["source"]["citationKey"]
-            return "", citation_key
-
-    content = bibliography.read().decode("utf-8")
-    bibdata = parse_file(StringIO(content), bib_format="bibtex")
-
-    if citation_key not in bibdata.entries:
-        logger.warning(
-            "A citation key with name %s was provided, but not found in %s.",
-            citation_key,
-            bibliography,
-        )
-        return "", citation_key
-
-    return bibdata.entries[citation_key].to_string("bibtex"), citation_key
 
 
 @click.group(help=__doc__.split("EXAMPLES", maxsplit=1)[0])
