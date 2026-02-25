@@ -20,3 +20,6 @@ jobs:
       - name: validate input yaml
         shell: pixi run bash -e {0}
         run: pixi run -e dev validate-input
+      - name: validate input filenames
+        shell: pixi run bash -e {0}
+        run: pixi run -e dev validate-identifiers

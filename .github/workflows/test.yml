@@ -38,3 +38,6 @@ jobs:
       - name: validate packages
         shell: pixi run bash -e {0}
         run: pixi run -e dev validate-generated
+      - name: validate generated identifiers
+        shell: pixi run bash -e {0}
+        run: pixi run -e dev validate-generated-identifiers
