@@ -55,7 +55,7 @@ v0.5.1
 * Added cuesta_2000_the_5684 figures "f1a_black", "f1b_black", "f3a_black", and "f3b_black".
 * Added endres_2006_probing_1377 figures "f11_a", "f11_b" and "f11_c".
 * Added friedl_2017_interface_216 figure "f1a_lightblue".
-* Added ganassin_2015_non_8349 figures "f2a_black" and "f2a_red".
+* Added ganassin_2015_non-covalent_8349 figures "f2a_black" and "f2a_red".
 * Added gnahm_2011_the_250 figure "f1_dashed" and "f1_solid".
 * Added howlett_2006_electrochemistry_1483 figures "f1_Au_dashed_negative", "f1_Au_dashed_positive", "f1_Au_solid_negative", and "f1_Au_solid_positive".
 * Added hu_2015_an_877 figures "f1_a", "f1_b", "f1_c", "f1_d_dashed", and "f1_d_solid".
