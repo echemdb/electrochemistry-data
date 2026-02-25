@@ -50,9 +50,17 @@ import glob
 import logging
 import os
 import re
+import subprocess
 from pathlib import Path
 
 import yaml
+from frictionless import Package
+from pybtex.database import BibliographyData, parse_file
+from svgdigitizer.pdf import Pdf
+from svgdigitizer.svg import SVG
+from svgdigitizer.svgfigure import SVGFigure
+from svgdigitizer.svgplot import SVGPlot
+from unitpackage.local import collect_datapackages
 
 logger = logging.getLogger("echemdb_ecdata")
 
@@ -106,7 +114,10 @@ def _read_yaml_metadata(yaml_path):
     EXAMPLES::
 
         >>> import tempfile, os
-        >>> content = "source:\\n  citationKey: test_2024_example_1\\n  figure: '1a'\\n  curve: '1'\\n"
+        >>> content = (
+        ...     "source:\\n  citationKey: test_2024_example_1"
+        ...     "\\n  figure: '1a'\\n  curve: '1'\\n"
+        ... )
         >>> with tempfile.NamedTemporaryFile(mode='w', suffix='.yaml', delete=False) as f:
         ...     _ = f.write(content.encode().decode('unicode_escape'))
         ...     name = f.name
@@ -154,7 +165,9 @@ def _read_svg_labels(svg_path):
         ...   <text x="-200" y="330">scan rate: 50 mV / s</text>
         ...   <text x="-400" y="330">figure: 2b</text>
         ... </svg>'''
-        >>> with tempfile.NamedTemporaryFile(mode='w', suffix='.svg', delete=False, encoding='utf-8') as f:
+        >>> kw = dict(mode='w', suffix='.svg',
+        ...     delete=False, encoding='utf-8')
+        >>> with tempfile.NamedTemporaryFile(**kw) as f:
         ...     _ = f.write(svg_content)
         ...     name = f.name
         >>> _read_svg_labels(name)
@@ -162,11 +175,8 @@ def _read_svg_labels(svg_path):
         >>> os.unlink(name)
 
     """
-    from svgdigitizer.svg import SVG
-    from svgdigitizer.svgfigure import SVGFigure
-    from svgdigitizer.svgplot import SVGPlot
-
-    svg = SVG(open(svg_path, encoding="utf-8"))  # noqa: SIM115
+    with open(svg_path, encoding="utf-8") as f:
+        svg = SVG(f)
     plot = SVGPlot(svg)
     figure = SVGFigure(plot)
     return figure.figure_label, figure.curve_label
@@ -240,11 +250,11 @@ def validate_svgdigitizer_input(
             continue
 
         actual_stem = yaml_path.stem
-        dir_name = yaml_path.parent.name
 
         # Read citationKey from YAML
-        meta = _read_yaml_metadata(yaml_path)
-        citation_key = meta.get("source", {}).get("citationKey", "")
+        citation_key = (
+            _read_yaml_metadata(yaml_path).get("source", {}).get("citationKey", "")
+        )
 
         if not citation_key:
             errors.append(f"MISSING KEY: No citationKey in {yaml_path}")
@@ -253,7 +263,7 @@ def validate_svgdigitizer_input(
         # Read figure/curve labels from SVG
         try:
             figure_label, curve_label = _read_svg_labels(svg_path)
-        except Exception as e:
+        except Exception as e:  # pylint: disable=broad-exception-caught
             errors.append(f"SVG ERROR: Cannot parse {svg_path}: {e}")
             continue
 
@@ -263,9 +273,7 @@ def validate_svgdigitizer_input(
             )
 
         if not curve_label:
-            errors.append(
-                f"MISSING CURVE: No curve label in SVG for {svg_path}"
-            )
+            errors.append(f"MISSING CURVE: No curve label in SVG for {svg_path}")
 
         checked += 1
 
@@ -277,9 +285,10 @@ def validate_svgdigitizer_input(
             )
 
         # Validate directory name matches citation key
-        if dir_name != citation_key:
+        if yaml_path.parent.name != citation_key:
             errors.append(
-                f"DIR MISMATCH: directory '{dir_name}' != "
+                f"DIR MISMATCH: directory "
+                f"'{yaml_path.parent.name}' != "
                 f"citationKey '{citation_key}' ({yaml_path})"
             )
 
@@ -342,7 +351,6 @@ def validate_source_data_input(
     for yaml_file in yaml_files:
         yaml_path = Path(yaml_file)
         actual_stem = yaml_path.stem
-        dir_name = yaml_path.parent.name
 
         # Read metadata from YAML
         meta = _read_yaml_metadata(yaml_path)
@@ -364,9 +372,10 @@ def validate_source_data_input(
             )
 
         # Validate directory name matches citation key
-        if dir_name != citation_key:
+        if yaml_path.parent.name != citation_key:
             errors.append(
-                f"DIR MISMATCH: directory '{dir_name}' != "
+                f"DIR MISMATCH: directory "
+                f"'{yaml_path.parent.name}' != "
                 f"citationKey '{citation_key}' ({yaml_path})"
             )
 
@@ -423,9 +432,6 @@ def validate_generated_identifiers(data_dir="data/generated/svgdigitizer"):
         >>> validate_generated_identifiers("data/generated/svgdigitizer")  # doctest: +SKIP
 
     """
-    from frictionless import Package
-    from unitpackage.local import collect_datapackages
-
     packages = collect_datapackages(data_dir)
 
     package = Package()
@@ -474,6 +480,48 @@ def validate_generated_identifiers(data_dir="data/generated/svgdigitizer"):
                 )
 
     _print_validation_summary("generated identifiers", checked, errors)
+    return errors
+
+
+def validate_bib_keys(
+    bib_path="literature/bibliography/bibliography.bib",
+):
+    r"""
+    Validate that BibTeX keys match the identifier convention.
+
+    For each entry in the bibliography, computes the expected key
+    using ``svgdigitizer.pdf.Pdf.build_identifier`` and compares
+    it to the actual key. The expected format is::
+
+        {first_author_last_name}_{year}_{first_meaningful_title_word}_{first_page}
+
+    Returns a list of error messages (empty if all valid).
+
+    EXAMPLES::
+
+        >>> validate_bib_keys()  # doctest: +SKIP
+
+    """
+    bib_data = parse_file(bib_path, bib_format="bibtex")
+
+    errors = []
+    checked = 0
+
+    for key, entry in bib_data.entries.items():
+        checked += 1
+        single = BibliographyData(entries={key: entry})
+        try:
+            expected = Pdf.build_identifier(single)
+        except KeyError as exc:
+            errors.append(
+                f"MISSING FIELD: entry '{key}' is missing " f"required field {exc}"
+            )
+            continue
+
+        if expected != key:
+            errors.append(f"KEY MISMATCH: '{key}' != " f"expected '{expected}'")
+
+    _print_validation_summary("bibliography keys", checked, errors)
     return errors
 
 
@@ -530,7 +578,9 @@ def _print_validation_summary(label, checked, errors):
     """
     for error in errors:
         print(error)
-    print(f"Validation of {label}: checked {checked} files, found {len(errors)} errors.")
+    print(
+        f"Validation of {label}: checked {checked} files, found {len(errors)} errors."
+    )
 
 
 def _lowercase_svg_labels(svg_path):
@@ -544,7 +594,9 @@ def _lowercase_svg_labels(svg_path):
 
         >>> import tempfile, os
         >>> svg = '<svg><text>figure: 1Cs</text><text>curve: Au_solid</text></svg>'
-        >>> with tempfile.NamedTemporaryFile(mode='w', suffix='.svg', delete=False, encoding='utf-8') as f:
+        >>> kw = dict(mode='w', suffix='.svg',
+        ...     delete=False, encoding='utf-8')
+        >>> with tempfile.NamedTemporaryFile(**kw) as f:
         ...     _ = f.write(svg)
         ...     name = f.name
         >>> _lowercase_svg_labels(name)
@@ -558,7 +610,7 @@ def _lowercase_svg_labels(svg_path):
 
         >>> import tempfile, os
         >>> svg = '<svg><text>figure: 1a</text><text>curve: solid</text></svg>'
-        >>> with tempfile.NamedTemporaryFile(mode='w', suffix='.svg', delete=False, encoding='utf-8') as f:
+        >>> with tempfile.NamedTemporaryFile(**kw) as f:
         ...     _ = f.write(svg)
         ...     name = f.name
         >>> _lowercase_svg_labels(name)
@@ -572,9 +624,7 @@ def _lowercase_svg_labels(svg_path):
     def _lower_label(match):
         return match.group(1) + match.group(2).lower()
 
-    new_content = re.sub(
-        r"((?:figure|curve):\s*)([^<]+)", _lower_label, content
-    )
+    new_content = re.sub(r"((?:figure|curve):\s*)([^<]+)", _lower_label, content)
 
     if new_content != content:
         with open(svg_path, "w", encoding="utf-8") as f:
@@ -594,8 +644,6 @@ def _git_mv_lowercase(file_path):
     Returns ``True`` if the file was renamed, ``False`` if already
     lowercase.
     """
-    import subprocess
-
     path = Path(file_path)
     lower_name = path.name.lower()
 
@@ -608,16 +656,21 @@ def _git_mv_lowercase(file_path):
 
     subprocess.run(
         ["git", "mv", str(path), str(tmp_path)],
-        check=True, capture_output=True,
+        check=True,
+        capture_output=True,
     )
     subprocess.run(
         ["git", "mv", str(tmp_path), str(target_path)],
-        check=True, capture_output=True,
+        check=True,
+        capture_output=True,
     )
     return True
 
 
-def lowercase_svgdigitizer_files(data_dir="literature/svgdigitizer", dry_run=False):
+def lowercase_svgdigitizer_files(  # pylint: disable=too-many-locals,too-many-branches
+    data_dir="literature/svgdigitizer",
+    dry_run=False,
+):
     r"""
     Fix uppercase in svgdigitizer SVG labels and filenames.
 
@@ -651,9 +704,7 @@ def lowercase_svgdigitizer_files(data_dir="literature/svgdigitizer", dry_run=Fal
         # Check SVG labels
         with open(svg_path, encoding="utf-8") as f:
             content = f.read()
-        svg_has_upper = bool(
-            re.search(r"(?:figure|curve):\s*[^<]*[A-Z]", content)
-        )
+        svg_has_upper = bool(re.search(r"(?:figure|curve):\s*[^<]*[A-Z]", content))
 
         if not needs_rename and not svg_has_upper:
             continue
@@ -661,12 +712,8 @@ def lowercase_svgdigitizer_files(data_dir="literature/svgdigitizer", dry_run=Fal
         if svg_has_upper:
             changes.append(f"SVG LABELS: {svg_path}")
         if needs_rename:
-            changes.append(
-                f"RENAME: {stem}.yaml -> {lower_stem}.yaml"
-            )
-            changes.append(
-                f"RENAME: {stem}.svg -> {lower_stem}.svg"
-            )
+            changes.append(f"RENAME: {stem}.yaml -> {lower_stem}.yaml")
+            changes.append(f"RENAME: {stem}.svg -> {lower_stem}.svg")
 
         if dry_run:
             continue
