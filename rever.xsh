@@ -1,7 +1,7 @@
 # ********************************************************************
 #  This file is part of electrochemistry-data.
 #
-#        Copyright (C) 2022-2024 Albert Engstfeld
+#        Copyright (C) 2022-2025 Albert Engstfeld
 #        Copyright (C) 2022      Johannes Hermann
 #        Copyright (C) 2022      Julian Rüth
 #        Copyright (C) 2022      Nicolas Hörmann
@@ -39,16 +39,26 @@ git diff --cached --exit-code
 
 $PROJECT = 'electrochemistry-data'
 
+from rever.activities.command import command
+
+command('pixi', 'pixi install --manifest-path "$PWD/pyproject.toml" -e dev')
+
+command('build', 'python -m build')
+command('twine', 'twine upload dist/echemdb_ecdata-' + $VERSION + '.tar.gz dist/echemdb_ecdata-' + $VERSION + '-py3-none-any.whl')
+
 $ACTIVITIES = [
     'version_bump',
+    'pixi',
     'changelog',
     'tag',
     'push_tag',
+    'build',
+    'twine',
     'ghrelease',
 ]
 
 $VERSION_BUMP_PATTERNS = [
-    ('setup.py', r"    version=", r'    version="$VERSION",'),
+    ('pyproject.toml', r'version =', 'version = "$VERSION"'),
     ('echemdb_ecdata/url.py', re.escape(r'def get_echemdb_database_url(version="'), r'def get_echemdb_database_url(version="$VERSION"):'),
     ('echemdb_ecdata/url.py', re.escape(r'        >>> get_echemdb_database_url(version="'), r'        >>> get_echemdb_database_url(version="$VERSION")'),
     ('echemdb_ecdata/url.py', re.escape(r"        'https://github.com/echemdb/electrochemistry-data/releases/download/"), r"        'https://github.com/echemdb/electrochemistry-data/releases/download/$VERSION/data-$VERSION.zip'")

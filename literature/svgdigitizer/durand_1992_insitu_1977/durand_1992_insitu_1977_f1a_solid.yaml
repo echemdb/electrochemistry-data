@@ -12,11 +12,11 @@ system:
       type: RHE
     - name: WE
       function: working electrode
-      crystallographic orientation: '110'
-      geometric electrolyte contact area:
+      crystallographicOrientation: '110'
+      geometricElectrolyteContactArea:
         unit: cm-2
       material: Pt
-      preparation procedure:
+      preparationProcedure:
         description:
           - Annealed in an H2-O2 flame.
   electrolyte:
@@ -52,14 +52,15 @@ system:
         value: 100
       type: gas
     ph:
-      uncertainty: 0.1
+      uncertainty:
+        value: 0.1
       value: 0.29
     temperature:
       unit: K
       value: 298.15
     type: aqueous
 source:
-  citation key: durand_1992_insitu_1977
+  citationKey: durand_1992_insitu_1977
   url: https://doi.org/10.1016/0013-4686(92)87111-C
   techniques:
   - CV

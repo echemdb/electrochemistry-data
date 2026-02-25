@@ -18,21 +18,23 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        environment: ["python-39", "python-310", "python-311", "python-312", "python-313"]
+        environment: ["python-310", "python-311", "python-312", "python-313", "python-314"]
         os: ["ubuntu-latest", "macos-latest", "windows-latest"]
     steps:
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with: { submodules: recursive }
-      - uses: prefix-dev/setup-pixi@v0.8.1
-        with:
-          pixi-version: v0.39.5
+      - uses: prefix-dev/setup-pixi@v0.9.4
+        with: { pixi-version: v0.63.2 }
       - name: doctest
         shell: pixi run bash -e {0}
         run: pixi run -e ${{ matrix.environment }} doctest
+      - name: pytest
+        shell: pixi run bash -e {0}
+        run: pixi run -e ${{ matrix.environment }} pytest
       - name: test building packages
         shell: pixi run bash -e {0}
         run: pixi run -e dev convert
       - name: validate packages
         shell: pixi run bash -e {0}
-        run: pixi run -e dev validate
+        run: pixi run -e dev validate-generated

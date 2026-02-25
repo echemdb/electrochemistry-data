@@ -16,9 +16,9 @@ system:
       type: SCE
     - name: WE
       function: working electrode
-      crystallographic orientation: poly
+      crystallographicOrientation: poly
       material: Ag
-      preparation procedure:
+      preparationProcedure:
         description:
           - Ag electrode polished mechanically with fine grade emery
             paper.
@@ -36,7 +36,7 @@ system:
       value: 298.15
     type: aqueous
 source:
-  citation key: rehim_1998_electrochemical_1103
+  citationKey: rehim_1998_electrochemical_1103
   url: https://doi.org/10.1007/PL00010123
 curation:
   process:

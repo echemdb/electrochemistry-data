@@ -16,7 +16,7 @@ system:
       type: SCE
     - name: WE
       function: working electrode
-      crystallographic orientation: '111'
+      crystallographicOrientation: '111'
       material: Au
   electrolyte:
     components:
@@ -32,7 +32,7 @@ system:
       value: 298.15
     type: aqueous
 source:
-  citation key: kerner_2002_measurement_2055
+  citationKey: kerner_2002_measurement_2055
   url: https://doi.org/10.1016/0022-0728(92)80223-Q
   techniques:
   - EIS
