@@ -75,24 +75,32 @@ convert-svg = "cd data && make -j$(nproc)"
 convert-raw = "cd data && make source_data -j$(nproc)"
 convert = { depends-on = ["copy-bib", "convert-raw", "convert-svg"] }
 clean-data = "cd data && make clean"
-# validate input and output metadata
-# To validate the metadata against a specific version preceded the version by `tags` such as `tags/0.3.1`.
-# To validate the metadata against metadata in a specific branch use `head/branch-name`.
+# Validation
+# ==========
+# Two umbrella tasks run all relevant checks:
+#   validate-input     - YAML schema, filenames/identifiers, and bib keys (for input files in literature/)
+#   validate-generated - JSON schema and identifiers (for generated files in data/generated/)
+# To validate against a specific metadata-schema version use e.g. `--version tags/0.3.3` or `--version head/branch-name`.
+#
+# Schema validation of generated JSON datapackages
 validate-svgdigitizer = { args = [ { "arg" = "version", "default" = "tags/0.5.1" } ],cmd = "bash -c \"find ./data/generated/svgdigitizer/ -type f -name '*.json' -print0 | xargs -0 check-jsonschema --verbose --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --no-cache\"" }
 validate-raw = { args = [ { "arg" = "version", "default" = "tags/0.5.1" } ],cmd = "bash -c \"find ./data/generated/source_data/ -type f -name '*.json' -print0 | xargs -0 check-jsonschema --verbose --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --no-cache\"" }
+# Schema validation of input YAML files
 validate-svgdigitizer-yaml = { args = [ { "arg" = "version", "default" = "tags/0.5.1" } ], cmd = "bash -c \"find ./literature/svgdigitizer/ -type f -name '*.yaml' -print0 | xargs -0 check-jsonschema --verbose --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --no-cache\"" }
 validate-source-yaml = { args = [ { "arg" = "version", "default" = "tags/0.5.1" } ], cmd = "bash -c \"find ./literature/source_data/ -type f -name '*.yaml' -print0 | xargs -0 check-jsonschema --verbose --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/source_data.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/source_data.json --no-cache\"" }
-validate-input = { depends-on = ["validate-svgdigitizer-yaml", "validate-source-yaml"] }
-validate-generated = { depends-on = ["validate-svgdigitizer", "validate-raw"] }
-# validate filenames and identifiers
+# Filename, identifier, and bib-key validation
 validate-identifiers = 'python -c "from echemdb_ecdata.validate import validate_identifiers; validate_identifiers()"'
 validate-svgdigitizer-filenames = 'python -c "from echemdb_ecdata.validate import validate_svgdigitizer_input; validate_svgdigitizer_input()"'
 validate-source-filenames = 'python -c "from echemdb_ecdata.validate import validate_source_data_input; validate_source_data_input()"'
 validate-generated-identifiers = 'python -c "from echemdb_ecdata.validate import validate_generated_identifiers; validate_generated_identifiers()"'
 validate-bib-keys = 'python -c "from echemdb_ecdata.validate import validate_bib_keys; validate_bib_keys()"'
+# Umbrella tasks (used in CI)
+validate-input = { depends-on = ["validate-svgdigitizer-yaml", "validate-source-yaml", "validate-identifiers", "validate-bib-keys"] }
+validate-generated = { depends-on = ["validate-svgdigitizer", "validate-raw", "validate-generated-identifiers"] }
+# Fix utilities
 fix-lowercase = 'python -c "from echemdb_ecdata.validate import lowercase_svgdigitizer_files; lowercase_svgdigitizer_files()"'
 fix-lowercase-dry-run = 'python -c "from echemdb_ecdata.validate import lowercase_svgdigitizer_files; lowercase_svgdigitizer_files(dry_run=True)"'
-# tests
+# Tests
 doctest = "pytest -n auto --doctest-modules echemdb_ecdata"
 # pytest executes doctests of the cli
 pytest = "pytest -n auto echemdb_ecdata/**/*.py"

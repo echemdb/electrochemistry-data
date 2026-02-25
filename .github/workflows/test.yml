@@ -35,9 +35,6 @@ jobs:
       - name: test building packages
         shell: pixi run bash -e {0}
         run: pixi run -e dev convert
-      - name: validate packages
+      - name: validate generated data
         shell: pixi run bash -e {0}
         run: pixi run -e dev validate-generated
-      - name: validate generated identifiers
-        shell: pixi run bash -e {0}
-        run: pixi run -e dev validate-generated-identifiers

@@ -22,12 +22,9 @@ jobs:
       - name: digitize
         shell: pixi run bash -e {0}
         run: pixi run -e dev convert
-      - name: validate packages
+      - name: validate generated data
         shell: pixi run bash -e {0}
         run: pixi run -e dev validate-generated
-      - name: validate generated identifiers
-        shell: pixi run bash -e {0}
-        run: pixi run -e dev validate-generated-identifiers
       - name: upload data artifact
         uses: actions/upload-artifact@v6
         with:

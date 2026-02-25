@@ -4,8 +4,8 @@
 
 This repository builds a database for published electrochemical data (echemdb.org). It converts data from scientific publications into standardized, machine-readable formats using the [frictionless data package](https://frictionless.io/) specification.
 
-**Current Branch**: `raw-submission` (PR #92: Approach for submission of raw data)
-**Main Dependencies**: svgdigitizer, unitpackage, pydantic
+**Current Branch**: `validate_identifiers` (PR #68: Add validation of identifiers and filenames)
+**Main Dependencies**: svgdigitizer, unitpackage, pydantic, pybtex
 
 ## Repository Structure
 
@@ -128,20 +128,35 @@ pixi run -e dev convert
 
 ### Validation
 
-All validation commands show verbose output listing each validated file and will fail with clear error messages if files are missing or invalid.
+Two umbrella tasks cover all checks and are used in CI:
 
 ```bash
-# Validate input YAML files (before conversion)
-pixi run -e dev validate-input  # validates both svgdigitizer and source_data YAML
-pixi run -e dev validate-svgdigitizer-yaml  # validate SVG digitizer YAML only
-pixi run -e dev validate-source-yaml  # validate raw data YAML only
+# Validate all input files (YAML schema + filenames/identifiers + bib keys)
+pixi run -e dev validate-input
 
-# Validate generated JSON files (after conversion)
-pixi run -e dev validate-generated  # validates both svgdigitizer and source_data JSON
-pixi run -e dev validate-svgdigitizer  # validate SVG digitizer JSON only
-pixi run -e dev validate-raw  # validate raw data JSON only
+# Validate all generated files (JSON schema + identifiers)
+pixi run -e dev validate-generated
+```
 
-# Use specific schema version (default: tags/0.4.0)
+Individual sub-tasks:
+
+```bash
+# Schema validation
+pixi run -e dev validate-svgdigitizer-yaml  # Input YAML (svgdigitizer)
+pixi run -e dev validate-source-yaml        # Input YAML (source data)
+pixi run -e dev validate-svgdigitizer       # Generated JSON (svgdigitizer)
+pixi run -e dev validate-raw                # Generated JSON (source data)
+
+# Filename and identifier validation
+pixi run -e dev validate-identifiers              # All input filenames
+pixi run -e dev validate-svgdigitizer-filenames   # SVG digitizer filenames only
+pixi run -e dev validate-source-filenames         # Source data filenames only
+pixi run -e dev validate-generated-identifiers    # Generated data identifiers
+
+# Bibliography key validation
+pixi run -e dev validate-bib-keys  # Check bib keys match expected identifiers
+
+# Use specific schema version (default: tags/0.5.1)
 pixi run -e dev validate-input --version tags/0.3.3
 pixi run -e dev validate-generated --version head/branch-name
 ```
@@ -151,6 +166,14 @@ Validation commands:
 - Use `find | xargs` pipeline for cross-platform compatibility
 - Return non-zero exit code when validation fails or files are missing
 - Validate against echemdb-metadata-schema (configurable version)
+
+### Fix Utilities
+
+```bash
+# Lowercase SVG labels and filenames (enforced for Windows compatibility)
+pixi run -e dev fix-lowercase          # Apply changes
+pixi run -e dev fix-lowercase-dry-run  # Preview only
+```
 
 ### Development Tasks
 
@@ -183,7 +206,9 @@ print(ECHEMDB_DATABASE_URL)
 
 ## Naming Conventions
 
-Files follow the pattern: `{author}_{year}_{title-keywords}_{id}_f{figure}{curve}.{ext}`
+Files follow the pattern: `{citationKey}_f{figure}_{curve}.{ext}`
+
+The `citationKey` is derived from the BibTeX entry using `svgdigitizer.pdf.Pdf.build_identifier` (author, year, slugified title keyword, starting page). All identifiers are enforced to be lowercase.
 
 Examples:
 - `engstfeld_2018_polycrystalline_17743_f4b_1.yaml` - Figure 4b, curve 1
@@ -193,8 +218,10 @@ Examples:
 
 - **Don't read all files in `literature/svgdigitizer/`** - There are 273+ entries. Sample a few to understand structure.
 - **Schema validation** is critical - all generated JSON must validate against echemdb-metadata schema
-- **Naming must match** - `citationKey` in YAML must match key in `bibliography.bib`
-- **Raw data is new** - The current PR (#92) adds support for raw experimental data submission
+- **Naming must match** - `citationKey` in YAML must match key in `bibliography.bib`, directory name, and filename prefix
+- **Bib keys are computed** - Use `svgdigitizer.pdf.Pdf.build_identifier` + `pybtex` to derive expected keys from BibTeX entries
+- **Lowercase enforced** - All identifiers, filenames, and SVG labels must be lowercase (Windows compatibility)
+- **Raw data support** - `literature/source_data/` holds raw experimental data with CSV files and YAML metadata
 - **Parallel processing** - Make commands use `-j$(nproc)` for efficiency
 
 ## Related Documentation

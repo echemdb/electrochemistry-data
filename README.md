@@ -89,25 +89,35 @@ Generated datapackages are written to `data/generated/svgdigitizer/` and `data/g
 ### Validation
 
 All data (input YAML and output JSON) is validated against the [echemdb-metadata schema](https://github.com/echemdb/metadata-schema).
+In addition, filenames, identifiers, and bibliography keys are validated for consistency.
+
+Two umbrella tasks cover all checks:
 
 ```sh
-# Validate input YAML files before conversion
+# Validate all input files (YAML schema, filenames/identifiers, bib keys)
 pixi run -e dev validate-input
 
-# Validate generated JSON datapackages after conversion
+# Validate all generated files (JSON schema, identifiers)
 pixi run -e dev validate-generated
 ```
 
-Each validation command shows verbose output listing all validated files. You can also validate specific parts:
+These are also used in the CI workflows. You can run individual sub-tasks:
 
 ```sh
-# Individual input validation
-pixi run -e dev validate-svgdigitizer-yaml  # SVG digitizer YAML files
-pixi run -e dev validate-source-yaml        # Raw data YAML files
+# Schema validation
+pixi run -e dev validate-svgdigitizer-yaml  # Input YAML (svgdigitizer)
+pixi run -e dev validate-source-yaml        # Input YAML (source data)
+pixi run -e dev validate-svgdigitizer       # Generated JSON (svgdigitizer)
+pixi run -e dev validate-raw                # Generated JSON (source data)
 
-# Individual output validation
-pixi run -e dev validate-svgdigitizer       # Generated SVG digitizer JSON
-pixi run -e dev validate-raw                # Generated raw data JSON
+# Filename and identifier validation
+pixi run -e dev validate-identifiers              # All input filenames
+pixi run -e dev validate-svgdigitizer-filenames   # SVG digitizer filenames only
+pixi run -e dev validate-source-filenames         # Source data filenames only
+pixi run -e dev validate-generated-identifiers    # Generated data identifiers
+
+# Bibliography key validation
+pixi run -e dev validate-bib-keys  # Check bib keys match expected identifiers
 ```
 
 Validate against a specific schema version:
