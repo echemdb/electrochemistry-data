@@ -85,8 +85,12 @@ validate-source-yaml = { args = [ { "arg" = "version", "default" = "tags/0.5.1" 
 validate-input = { depends-on = ["validate-svgdigitizer-yaml", "validate-source-yaml"] }
 validate-generated = { depends-on = ["validate-svgdigitizer", "validate-raw"] }
 # validate filenames and identifiers
-validate_identifiers = 'python -c "from echemdb_ecdata.validate import validate_identifiers; validate_identifiers()"'
-rename_files = 'python -c "from echemdb_ecdata.validate import validate_identifiers; validate_identifiers()"'
+validate-identifiers = 'python -c "from echemdb_ecdata.validate import validate_identifiers; validate_identifiers()"'
+validate-svgdigitizer-filenames = 'python -c "from echemdb_ecdata.validate import validate_svgdigitizer_input; validate_svgdigitizer_input()"'
+validate-source-filenames = 'python -c "from echemdb_ecdata.validate import validate_source_data_input; validate_source_data_input()"'
+validate-generated-identifiers = 'python -c "from echemdb_ecdata.validate import validate_generated_identifiers; validate_generated_identifiers()"'
+fix-lowercase = 'python -c "from echemdb_ecdata.validate import lowercase_svgdigitizer_files; lowercase_svgdigitizer_files()"'
+fix-lowercase-dry-run = 'python -c "from echemdb_ecdata.validate import lowercase_svgdigitizer_files; lowercase_svgdigitizer_files(dry_run=True)"'
 # tests
 doctest = "pytest -n auto --doctest-modules echemdb_ecdata"
 # pytest executes doctests of the cli
