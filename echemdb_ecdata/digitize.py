@@ -215,9 +215,13 @@ def _digitize_single_svg(yaml_path, svg_path, outdir, config, bibdata):
     csvname = _outfile(str(svg_path), suffix=".csv", outdir=outdir_str)
     svgfigure.df.to_csv(csvname, index=False)
 
-    _add_bib_to_metadata(svgfigure.metadata, bibdata, yaml_path.name)
+    # Capture metadata once — CV.metadata is a property that returns a fresh
+    # deep-copy on every access, so modifications must happen on the same dict
+    # that is later passed to _create_package.
+    metadata = svgfigure.metadata
+    _add_bib_to_metadata(metadata, bibdata, yaml_path.name)
 
-    package = _create_package(svgfigure.metadata, csvname, outdir_str)
+    package = _create_package(metadata, csvname, outdir_str)
     json_out = _outfile(str(svg_path), suffix=".json", outdir=outdir_str)
     with open(json_out, mode="w", encoding="utf-8") as json_file:
         _write_metadata(json_file, package.to_dict())
