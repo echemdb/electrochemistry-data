@@ -93,13 +93,16 @@ validate-identifiers = 'python -c "from echemdb_ecdata.validate import validate_
 validate-svgdigitizer-filenames = 'python -c "from echemdb_ecdata.validate import validate_svgdigitizer_input; validate_svgdigitizer_input()"'
 validate-source-filenames = 'python -c "from echemdb_ecdata.validate import validate_source_data_input; validate_source_data_input()"'
 validate-generated-identifiers = 'python -c "from echemdb_ecdata.validate import validate_generated_identifiers; validate_generated_identifiers()"'
-validate-bib-keys = 'python -c "from echemdb_ecdata.validate import validate_bib_keys; validate_bib_keys()"'
+validate-bib-keys = 'python -c "from echemdb_ecdata.bibliography import validate_bib_keys; validate_bib_keys()"'
+validate-bib-utf8 = 'python -c "from echemdb_ecdata.bibliography import validate_bib_utf8; validate_bib_utf8()"'
 # Umbrella tasks (used in CI)
-validate-input = { depends-on = ["validate-svgdigitizer-yaml", "validate-source-yaml", "validate-identifiers", "validate-bib-keys"] }
+validate-input = { depends-on = ["validate-svgdigitizer-yaml", "validate-source-yaml", "validate-identifiers", "validate-bib-keys", "validate-bib-utf8"] }
 validate-generated = { depends-on = ["validate-svgdigitizer", "validate-raw", "validate-generated-identifiers"] }
 # Fix utilities
 fix-lowercase = 'python -c "from echemdb_ecdata.validate import lowercase_svgdigitizer_files; lowercase_svgdigitizer_files()"'
 fix-lowercase-dry-run = 'python -c "from echemdb_ecdata.validate import lowercase_svgdigitizer_files; lowercase_svgdigitizer_files(dry_run=True)"'
+fix-bib-utf8 = 'python -c "from echemdb_ecdata.bibliography import fix_bib_utf8; fix_bib_utf8()"'
+fix-bib-utf8-dry-run = 'python -c "from echemdb_ecdata.bibliography import fix_bib_utf8; fix_bib_utf8(dry_run=True)"'
 # Tests
 doctest = "pytest -n auto --doctest-modules echemdb_ecdata"
 # pytest executes doctests of the cli

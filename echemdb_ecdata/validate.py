@@ -55,12 +55,16 @@ from pathlib import Path
 
 import yaml
 from frictionless import Package
-from pybtex.database import BibliographyData, parse_file
-from svgdigitizer.pdf import Pdf
 from svgdigitizer.svg import SVG
 from svgdigitizer.svgfigure import SVGFigure
 from svgdigitizer.svgplot import SVGPlot
 from unitpackage.local import collect_datapackages
+
+from echemdb_ecdata.bibliography import (
+    _print_validation_summary,
+    load_bib_keys,
+    validate_bib_keys,
+)
 
 logger = logging.getLogger("echemdb_ecdata")
 
@@ -182,31 +186,6 @@ def _read_svg_labels(svg_path):
     return figure.figure_label, figure.curve_label
 
 
-def _load_bib_keys(bib_path="literature/bibliography/bibliography.bib"):
-    r"""
-    Load all citation keys from a BibTeX file.
-
-    EXAMPLES::
-
-        >>> import tempfile, os
-        >>> with tempfile.NamedTemporaryFile(mode='w', suffix='.bib', delete=False) as f:
-        ...     _ = f.write('@article{test_2024_example_1,\\n  author={Test},\\n}\\n')
-        ...     name = f.name
-        >>> keys = _load_bib_keys(name)
-        >>> 'test_2024_example_1' in keys
-        True
-        >>> os.unlink(name)
-
-    """
-    keys = set()
-    with open(bib_path, encoding="utf-8") as f:
-        for line in f:
-            match = re.match(r"@\w+\{([^,]+)", line)
-            if match:
-                keys.add(match.group(1).strip())
-    return keys
-
-
 def validate_svgdigitizer_input(
     data_dir="literature/svgdigitizer",
     bib_path="literature/bibliography/bibliography.bib",
@@ -231,7 +210,7 @@ def validate_svgdigitizer_input(
         >>> validate_svgdigitizer_input("literature/svgdigitizer")  # doctest: +SKIP
 
     """
-    bib_keys = _load_bib_keys(bib_path) if os.path.exists(bib_path) else set()
+    bib_keys = load_bib_keys(bib_path) if os.path.exists(bib_path) else set()
 
     errors = []
     checked = 0
@@ -338,7 +317,7 @@ def validate_source_data_input(
         Validation of source data input: checked 4 files, found 0 errors.
 
     """
-    bib_keys = _load_bib_keys(bib_path) if os.path.exists(bib_path) else set()
+    bib_keys = load_bib_keys(bib_path) if os.path.exists(bib_path) else set()
 
     errors = []
     checked = 0
@@ -483,48 +462,6 @@ def validate_generated_identifiers(data_dir="data/generated/svgdigitizer"):
     return errors
 
 
-def validate_bib_keys(
-    bib_path="literature/bibliography/bibliography.bib",
-):
-    r"""
-    Validate that BibTeX keys match the identifier convention.
-
-    For each entry in the bibliography, computes the expected key
-    using ``svgdigitizer.pdf.Pdf.build_identifier`` and compares
-    it to the actual key. The expected format is::
-
-        {first_author_last_name}_{year}_{first_meaningful_title_word}_{first_page}
-
-    Returns a list of error messages (empty if all valid).
-
-    EXAMPLES::
-
-        >>> validate_bib_keys()  # doctest: +SKIP
-
-    """
-    bib_data = parse_file(bib_path, bib_format="bibtex")
-
-    errors = []
-    checked = 0
-
-    for key, entry in bib_data.entries.items():
-        checked += 1
-        single = BibliographyData(entries={key: entry})
-        try:
-            expected = Pdf.build_identifier(single)
-        except KeyError as exc:
-            errors.append(
-                f"MISSING FIELD: entry '{key}' is missing " f"required field {exc}"
-            )
-            continue
-
-        if expected != key:
-            errors.append(f"KEY MISMATCH: '{key}' != " f"expected '{expected}'")
-
-    _print_validation_summary("bibliography keys", checked, errors)
-    return errors
-
-
 def validate_identifiers():
     r"""
     Run all input validation checks (svgdigitizer + source data).
@@ -560,27 +497,6 @@ def validate_identifiers():
 
     print()
     print("All validations passed.")
-
-
-def _print_validation_summary(label, checked, errors):
-    r"""Print a summary of validation results.
-
-    EXAMPLES::
-
-        >>> _print_validation_summary("test", 5, [])
-        Validation of test: checked 5 files, found 0 errors.
-
-        >>> _print_validation_summary("test", 3, ["error1", "error2"])
-        error1
-        error2
-        Validation of test: checked 3 files, found 2 errors.
-
-    """
-    for error in errors:
-        print(error)
-    print(
-        f"Validation of {label}: checked {checked} files, found {len(errors)} errors."
-    )
 
 
 def _lowercase_svg_labels(svg_path):

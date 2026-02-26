@@ -118,6 +118,7 @@ pixi run -e dev validate-generated-identifiers    # Generated data identifiers
 
 # Bibliography key validation
 pixi run -e dev validate-bib-keys  # Check bib keys match expected identifiers
+pixi run -e dev validate-bib-utf8  # Check for LaTeX accent encodings
 ```
 
 Validate against a specific schema version:
@@ -125,4 +126,16 @@ Validate against a specific schema version:
 ```sh
 pixi run -e dev validate-input --version tags/0.3.3
 pixi run -e dev validate-generated --version head/my-branch
+```
+
+### Fix Utilities
+
+```sh
+# Lowercase SVG labels and filenames (enforced for Windows compatibility)
+pixi run -e dev fix-lowercase          # Apply changes
+pixi run -e dev fix-lowercase-dry-run  # Preview only
+
+# Convert LaTeX accent encodings to UTF-8 in bibliography.bib
+pixi run -e dev fix-bib-utf8           # Apply changes
+pixi run -e dev fix-bib-utf8-dry-run   # Preview only
 ```
