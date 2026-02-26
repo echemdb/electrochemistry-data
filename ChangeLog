@@ -4,6 +4,15 @@ electrochemistry-data Change Log
 
 .. current developments
 
+v0.7.1
+====================
+
+**Fixed:**
+
+* Fixed inclusion of bibdata in svgdigitizer entries during conversion.
+
+
+
 v0.7.0
 ====================
 
