@@ -1,0 +1,113 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  tags:
+  - BCV
+  instrumentation:
+  - name: Biologic
+    type: potentiostat
+system:
+  type: electrochemical
+  electrodes:
+    - name: CE
+      function: counter electrode
+      crystallographicOrientation: poly
+      material: Au
+      shape:
+        type: mesh
+    - name: REF
+      function: reference electrode
+      source:
+        manufacturer: homemade
+      type: RHE
+    - name: WE
+      function: working electrode
+      crystallographicOrientation: '100'
+      geometricElectrolyteContactArea:
+        unit: 1 / cm2
+      material: Cu
+      preparationProcedure:
+        description:
+          - Sputter and heating under UHV conditions.
+      shape:
+        diameter:
+          unit: mm
+          value: 4.4
+        height:
+          unit: mm
+          value: 2
+        type: head shaped
+      source:
+        manufacturer: Mateck
+  electrolyte:
+    components:
+    - name: water
+      proportion:
+        unit: volume percent
+        value: 100
+      source:
+        quality: ultrapure water
+        refinement: Millipore MilliQ
+      type: solvent
+    - concentration:
+        unit: mol / l
+        value: 0.1
+      name: KOH
+      source:
+        supplier: Merck Suprapur
+      type: base
+    ph:
+      value: 13
+    temperature:
+      unit: K
+      value: 298.15
+    type: aqueous
+  electrochemicalCell:
+    type: flow cell attached to UHV system
+    source:
+      url: https://doi.org/10.1002/chem.201803418
+source:
+  citationKey: engstfeld_2018_polycrystalline_17743
+  url: https://doi.org/10.1002/chem.201803418
+  originalFilename: 17080801Cu100_UHVNa_C01_cycle11.csv
+  figure: 4b
+  curve: '3'
+  techniques:
+  - XPS
+  - STM
+figureDescription:
+  type: raw
+  measurementType: CV
+  comment: A description of the measurement data. # Add whatever you think is important to understand the data. This will be updated by the `svgdigitizer.electrochemistry.cv.CV` module and takes the comment from the svg file.
+  scanRate:
+    value: 50
+    unit: mV / s
+dataDescription:
+  dialect:
+    delimiters: ','
+    decimal: '.'
+    encoding: utf-8
+    headerLines: 0
+    columnHeaderLines: 2
+  fieldMapping: # Also map fields which should be kept unchanged.
+    E / V vs. RHE: E # If the header consists of multiple lines, separate by " / ".
+    j / mA/cm\+(-2): j
+    <I> / mA: I
+  fieldUnits:
+    - name: E
+      unit: V
+      reference: RHE
+    - name: j
+      unit: mA cm-2
+    - name: I
+      unit: mA
+curation:
+  process:
+  - role: experimentalist
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2021-07-09
+  - role: reviewer
+    name: Albert Engstfeld
+    orcid: https://orcid.org/0000-0002-9686-3948
+    date: 2022-01-21
