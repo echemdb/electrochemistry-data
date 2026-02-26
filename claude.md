@@ -165,14 +165,14 @@ pixi run -e dev validate-generated-identifiers    # Generated data identifiers
 pixi run -e dev validate-bib-keys  # Check bib keys match expected identifiers
 pixi run -e dev validate-bib-utf8  # Check for LaTeX accent encodings
 
-# Use specific schema version (default: tags/0.5.1)
+# Use specific schema version (default: echemdb_ecdata.validate.SCHEMA_VERSION)
 pixi run -e dev validate-input --version tags/0.3.3
 pixi run -e dev validate-generated --version head/branch-name
 ```
 
 Validation commands:
 - Display each file being validated with `--verbose` flag
-- Use `find | xargs` pipeline for cross-platform compatibility
+- Use Python `pathlib.rglob()` + `subprocess` for cross-platform compatibility
 - Return non-zero exit code when validation fails or files are missing
 - Validate against echemdb-metadata-schema (configurable version)
 

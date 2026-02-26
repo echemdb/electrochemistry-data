@@ -90,11 +90,13 @@ verify-all = 'python -c "from echemdb_ecdata.digitize import verify_batch_conver
 # To validate against a specific metadata-schema version use e.g. `--version tags/0.3.3` or `--version head/branch-name`.
 #
 # Schema validation of generated JSON datapackages
-validate-svgdigitizer = { args = [ { "arg" = "version", "default" = "tags/0.5.1" } ],cmd = "bash -c \"find ./data/generated/svgdigitizer/ -type f -name '*.json' -print0 | xargs -0 check-jsonschema --verbose --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --no-cache\"" }
-validate-raw = { args = [ { "arg" = "version", "default" = "tags/0.5.1" } ],cmd = "bash -c \"find ./data/generated/source_data/ -type f -name '*.json' -print0 | xargs -0 check-jsonschema --verbose --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --no-cache\"" }
+# Default schema version is defined in echemdb_ecdata.validate.SCHEMA_VERSION.
+# Override per call: pixi run validate-svgdigitizer --version tags/0.3.3
+validate-svgdigitizer = { args = [ { "arg" = "version", "default" = "" } ], cmd = "python -c \"from echemdb_ecdata.validate import validate_schema; validate_schema('data/generated/svgdigitizer', 'echemdb_package', '{{ version }}' or None)\"" }
+validate-raw = { args = [ { "arg" = "version", "default" = "" } ], cmd = "python -c \"from echemdb_ecdata.validate import validate_schema; validate_schema('data/generated/source_data', 'echemdb_package', '{{ version }}' or None)\"" }
 # Schema validation of input YAML files
-validate-svgdigitizer-yaml = { args = [ { "arg" = "version", "default" = "tags/0.5.1" } ], cmd = "bash -c \"find ./literature/svgdigitizer/ -type f -name '*.yaml' -print0 | xargs -0 check-jsonschema --verbose --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --no-cache\"" }
-validate-source-yaml = { args = [ { "arg" = "version", "default" = "tags/0.5.1" } ], cmd = "bash -c \"find ./literature/source_data/ -type f -name '*.yaml' -print0 | xargs -0 check-jsonschema --verbose --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/source_data.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/source_data.json --no-cache\"" }
+validate-svgdigitizer-yaml = { args = [ { "arg" = "version", "default" = "" } ], cmd = "python -c \"from echemdb_ecdata.validate import validate_schema; validate_schema('literature/svgdigitizer', 'svgdigitizer', '{{ version }}' or None)\"" }
+validate-source-yaml = { args = [ { "arg" = "version", "default" = "" } ], cmd = "python -c \"from echemdb_ecdata.validate import validate_schema; validate_schema('literature/source_data', 'source_data', '{{ version }}' or None)\"" }
 # Filename, identifier, and bib-key validation
 validate-identifiers = 'python -c "from echemdb_ecdata.validate import validate_identifiers; validate_identifiers()"'
 validate-svgdigitizer-filenames = 'python -c "from echemdb_ecdata.validate import validate_svgdigitizer_input; validate_svgdigitizer_input()"'

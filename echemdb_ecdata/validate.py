@@ -67,6 +67,80 @@ from echemdb_ecdata.bibliography import (
 
 logger = logging.getLogger("echemdb_ecdata")
 
+_SCHEMA_BASE = "https://raw.githubusercontent.com/echemdb/metadata-schema/refs"
+
+#: Default metadata-schema version used for validation.
+#: Change this single value to update the version across all validation tasks.
+SCHEMA_VERSION = "tags/0.5.1"
+
+
+def validate_schema(data_dir, schema_name, version=None, verbose=True):
+    r"""
+    Validate JSON or YAML files against a metadata schema using check-jsonschema.
+
+    This is a cross-platform replacement for the ``find | xargs check-jsonschema``
+    pipeline that fails on Windows (where ``find.exe`` is a different tool).
+
+    Parameters
+    ----------
+    data_dir : str
+        Directory to search recursively for files matching the schema type.
+        For ``echemdb_package`` schema, searches for ``*.json`` files.
+        For other schemas, searches for ``*.yaml`` files.
+    schema_name : str
+        Name of the schema file (without ``.json`` extension), e.g.,
+        ``echemdb_package``, ``svgdigitizer``, or ``source_data``.
+    version : str or None
+        Schema version reference, e.g., ``tags/0.5.1`` or ``head/main``.
+        Defaults to :data:`SCHEMA_VERSION` when ``None``.
+    verbose : bool
+        If ``True``, passes ``--verbose`` to ``check-jsonschema``.
+
+    Raises
+    ------
+    FileNotFoundError
+        If no matching files are found in ``data_dir``.
+    subprocess.CalledProcessError
+        If schema validation fails.
+
+    EXAMPLES::
+
+        >>> validate_schema("data/generated/svgdigitizer", "echemdb_package")  # doctest: +SKIP
+        >>> validate_schema("literature/svgdigitizer", "svgdigitizer")  # doctest: +SKIP
+
+    """
+    if version is None:
+        version = SCHEMA_VERSION
+
+    data_path = Path(data_dir)
+    ext = "*.json" if schema_name == "echemdb_package" else "*.yaml"
+    files = sorted(data_path.rglob(ext))
+
+    if not files:
+        raise FileNotFoundError(
+            f"No {ext} files found in {data_dir}. " f"Has the data been generated?"
+        )
+
+    schema_url = f"{_SCHEMA_BASE}/{version}/schemas/{schema_name}.json"
+
+    cmd = [
+        "check-jsonschema",
+        "--schemafile",
+        schema_url,
+        "--base-uri",
+        schema_url,
+        "--no-cache",
+    ]
+    if verbose:
+        cmd.append("--verbose")
+    cmd.extend(str(f) for f in files)
+
+    print(
+        f"Validating {len(files)} {ext} file(s) in {data_dir} "
+        f"against {schema_name} ({version})..."
+    )
+    subprocess.run(cmd, check=True)
+
 
 def _build_expected_identifier(citation_key, figure, curve):
     r"""
