@@ -4,8 +4,8 @@
 
 This repository builds a database for published electrochemical data (echemdb.org). It converts data from scientific publications into standardized, machine-readable formats using the [frictionless data package](https://frictionless.io/) specification.
 
-**Current Branch**: `raw-submission` (PR #92: Approach for submission of raw data)
-**Main Dependencies**: svgdigitizer, unitpackage, pydantic
+**Current Branch**: `conversion-performance` (batch conversion for SVG and source data)
+**Main Dependencies**: svgdigitizer, unitpackage, pydantic, pybtex
 
 ## Repository Structure
 
@@ -116,41 +116,87 @@ dataDescription:
 # Clean previous builds
 pixi run -e dev clean-data
 
-# Convert SVG data (parallel processing)
+# Convert SVG data (batch, single process)
 pixi run -e dev convert-svg
 
-# Convert raw data
+# Convert raw data (batch, single process)
 pixi run -e dev convert-raw
 
 # Full conversion
 pixi run -e dev convert
+
+# Force full rebuild (ignore timestamps)
+pixi run -e dev convert-force
+
+# Verify batch output matches existing generated data
+pixi run -e dev verify-svg
+pixi run -e dev verify-raw
+pixi run -e dev verify-all
 ```
 
 ### Validation
 
-All validation commands show verbose output listing each validated file and will fail with clear error messages if files are missing or invalid.
+Two umbrella tasks cover all checks and are used in CI:
 
 ```bash
-# Validate input YAML files (before conversion)
-pixi run -e dev validate-input  # validates both svgdigitizer and source_data YAML
-pixi run -e dev validate-svgdigitizer-yaml  # validate SVG digitizer YAML only
-pixi run -e dev validate-source-yaml  # validate raw data YAML only
+# Validate all input files (YAML schema + filenames/identifiers + bib keys)
+pixi run -e dev validate-input
 
-# Validate generated JSON files (after conversion)
-pixi run -e dev validate-generated  # validates both svgdigitizer and source_data JSON
-pixi run -e dev validate-svgdigitizer  # validate SVG digitizer JSON only
-pixi run -e dev validate-raw  # validate raw data JSON only
+# Validate all generated files (JSON schema + identifiers)
+pixi run -e dev validate-generated
+```
 
-# Use specific schema version (default: tags/0.4.0)
+Individual sub-tasks:
+
+```bash
+# Schema validation
+pixi run -e dev validate-svgdigitizer-yaml  # Input YAML (svgdigitizer)
+pixi run -e dev validate-source-yaml        # Input YAML (source data)
+pixi run -e dev validate-svgdigitizer       # Generated JSON (svgdigitizer)
+pixi run -e dev validate-raw                # Generated JSON (source data)
+
+# Filename and identifier validation
+pixi run -e dev validate-identifiers              # All input filenames
+pixi run -e dev validate-svgdigitizer-filenames   # SVG digitizer filenames only
+pixi run -e dev validate-source-filenames         # Source data filenames only
+pixi run -e dev validate-generated-identifiers    # Generated data identifiers
+
+# Bibliography key and encoding validation
+pixi run -e dev validate-bib-keys  # Check bib keys match expected identifiers
+pixi run -e dev validate-bib-utf8  # Check for LaTeX accent encodings
+
+# Use specific schema version (default: echemdb_ecdata.validate.SCHEMA_VERSION)
 pixi run -e dev validate-input --version tags/0.3.3
 pixi run -e dev validate-generated --version head/branch-name
 ```
 
 Validation commands:
 - Display each file being validated with `--verbose` flag
-- Use `find | xargs` pipeline for cross-platform compatibility
+- Use Python `pathlib.rglob()` + `subprocess` for cross-platform compatibility
 - Return non-zero exit code when validation fails or files are missing
 - Validate against echemdb-metadata-schema (configurable version)
+
+### Fix Utilities
+
+```bash
+# Lowercase SVG labels and filenames (enforced for Windows compatibility)
+pixi run -e dev fix-lowercase          # Apply changes
+pixi run -e dev fix-lowercase-dry-run  # Preview only
+
+# Convert LaTeX accent encodings to UTF-8 in bibliography.bib
+pixi run -e dev fix-bib-utf8           # Apply changes
+pixi run -e dev fix-bib-utf8-dry-run   # Preview only
+
+# Auto-fix identifier mismatches (detects dir name != YAML citationKey)
+# Renames directories and files in both literature/svgdigitizer/ and data/generated/svgdigitizer/
+pixi run -e dev fix-identifiers          # Apply changes
+pixi run -e dev fix-identifiers-dry-run  # Preview only
+
+# Rename directories and files after a bib key change (manual)
+# Renames in both literature/svgdigitizer/ and data/generated/svgdigitizer/
+pixi run -e dev rename-identifiers OLD_NAME NEW_NAME
+# Or directly: bash util/rename_identifiers.sh OLD_NAME NEW_NAME
+```
 
 ### Development Tasks
 
@@ -183,7 +229,9 @@ print(ECHEMDB_DATABASE_URL)
 
 ## Naming Conventions
 
-Files follow the pattern: `{author}_{year}_{title-keywords}_{id}_f{figure}{curve}.{ext}`
+Files follow the pattern: `{citationKey}_f{figure}_{curve}.{ext}`
+
+The `citationKey` is derived from the BibTeX entry using `svgdigitizer.pdf.Pdf.build_identifier` (author, year, slugified title keyword, starting page). All identifiers are enforced to be lowercase.
 
 Examples:
 - `engstfeld_2018_polycrystalline_17743_f4b_1.yaml` - Figure 4b, curve 1
@@ -193,9 +241,11 @@ Examples:
 
 - **Don't read all files in `literature/svgdigitizer/`** - There are 273+ entries. Sample a few to understand structure.
 - **Schema validation** is critical - all generated JSON must validate against echemdb-metadata schema
-- **Naming must match** - `citationKey` in YAML must match key in `bibliography.bib`
-- **Raw data is new** - The current PR (#92) adds support for raw experimental data submission
-- **Parallel processing** - Make commands use `-j$(nproc)` for efficiency
+- **Naming must match** - `citationKey` in YAML must match key in `bibliography.bib`, directory name, and filename prefix
+- **Bib keys are computed** - Use `svgdigitizer.pdf.Pdf.build_identifier` + `pybtex` to derive expected keys from BibTeX entries
+- **Lowercase enforced** - All identifiers, filenames, and SVG labels must be lowercase (Windows compatibility)
+- **Raw data support** - `literature/source_data/` holds raw experimental data with CSV files and YAML metadata
+- **Batch conversion** - Both SVG and source data conversion run in a single Python process via `echemdb_ecdata.digitize`, avoiding per-file import overhead (~3 s/file). Full rebuild: ~30-50 s instead of ~15 min
 
 ## Related Documentation
 

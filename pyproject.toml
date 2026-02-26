@@ -11,7 +11,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "pydantic>=2.12.5,<3",
-    "svgdigitizer>=0.14.1,<0.15",
+    "svgdigitizer>=0.14.2,<0.15",
     "unitpackage>=0.12.0,<0.13"
 ]
 
@@ -69,19 +69,56 @@ pytest-doctestplus = ">=1.7.1,<2"
 pytest-remotedata = ">=0.4.1,<0.5"
 
 [tool.pixi.feature.test.tasks]
+# Copy and convert data and bibliography
 copy-bib = "mkdir -p data/generated/bibliography && cp literature/bibliography/bibliography.bib data/generated/bibliography/bibliography.bib"
-convert-svg = "cd data && make -j$(nproc)"
-convert-raw = "cd data && make source_data -j$(nproc)"
+convert-svg = "cd data && make svg"
+convert-raw = "cd data && make source_data"
+convert-svg-force = "cd data && make svg-force"
+convert-raw-force = "cd data && make source_data-force"
 convert = { depends-on = ["copy-bib", "convert-raw", "convert-svg"] }
+convert-force = { depends-on = ["copy-bib", "convert-raw-force", "convert-svg-force"] }
 clean-data = "cd data && make clean"
-# To validate the metadata against a specific version preceded the version by `tags` such as `tags/0.3.1`.
-# To validate the metadata against metadata in a specific branch use `head/branch-name`.
-validate-svgdigitizer = { args = [ { "arg" = "version", "default" = "tags/0.5.1" } ],cmd = "bash -c \"find ./data/generated/svgdigitizer/ -type f -name '*.json' -print0 | xargs -0 check-jsonschema --verbose --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --no-cache\"" }
-validate-raw = { args = [ { "arg" = "version", "default" = "tags/0.5.1" } ],cmd = "bash -c \"find ./data/generated/source_data/ -type f -name '*.json' -print0 | xargs -0 check-jsonschema --verbose --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --no-cache\"" }
-validate-svgdigitizer-yaml = { args = [ { "arg" = "version", "default" = "tags/0.5.1" } ], cmd = "bash -c \"find ./literature/svgdigitizer/ -type f -name '*.yaml' -print0 | xargs -0 check-jsonschema --verbose --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --no-cache\"" }
-validate-source-yaml = { args = [ { "arg" = "version", "default" = "tags/0.5.1" } ], cmd = "bash -c \"find ./literature/source_data/ -type f -name '*.yaml' -print0 | xargs -0 check-jsonschema --verbose --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/source_data.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/source_data.json --no-cache\"" }
-validate-input = { depends-on = ["validate-svgdigitizer-yaml", "validate-source-yaml"] }
-validate-generated = { depends-on = ["validate-svgdigitizer", "validate-raw"] }
+# Comparison: verify batch output matches existing generated data
+verify-svg = 'python -c "from echemdb_ecdata.digitize import verify_batch_conversion; verify_batch_conversion(data_type=\"svgdigitizer\")"'
+verify-raw = 'python -c "from echemdb_ecdata.digitize import verify_batch_conversion; verify_batch_conversion(data_type=\"source_data\")"'
+verify-all = 'python -c "from echemdb_ecdata.digitize import verify_batch_conversion; verify_batch_conversion(data_type=\"all\")"'
+# Validation
+# ==========
+# Two umbrella tasks run all relevant checks:
+#   validate-input     - YAML schema, filenames/identifiers, and bib keys (for input files in literature/)
+#   validate-generated - JSON schema and identifiers (for generated files in data/generated/)
+# To validate against a specific metadata-schema version use e.g. `--version tags/0.3.3` or `--version head/branch-name`.
+#
+# Schema validation of generated JSON datapackages
+# Default schema version is defined in echemdb_ecdata.validate.SCHEMA_VERSION.
+# Override per call: pixi run validate-svgdigitizer --version tags/0.3.3
+validate-svgdigitizer = { args = [ { "arg" = "version", "default" = "" } ], cmd = "python -c \"from echemdb_ecdata.validate import validate_schema; validate_schema('data/generated/svgdigitizer', 'echemdb_package', '{{ version }}' or None)\"" }
+validate-raw = { args = [ { "arg" = "version", "default" = "" } ], cmd = "python -c \"from echemdb_ecdata.validate import validate_schema; validate_schema('data/generated/source_data', 'echemdb_package', '{{ version }}' or None)\"" }
+# Schema validation of input YAML files
+validate-svgdigitizer-yaml = { args = [ { "arg" = "version", "default" = "" } ], cmd = "python -c \"from echemdb_ecdata.validate import validate_schema; validate_schema('literature/svgdigitizer', 'svgdigitizer', '{{ version }}' or None)\"" }
+validate-source-yaml = { args = [ { "arg" = "version", "default" = "" } ], cmd = "python -c \"from echemdb_ecdata.validate import validate_schema; validate_schema('literature/source_data', 'source_data', '{{ version }}' or None)\"" }
+# Filename, identifier, and bib-key validation
+validate-identifiers = 'python -c "from echemdb_ecdata.validate import validate_identifiers; validate_identifiers()"'
+validate-svgdigitizer-filenames = 'python -c "from echemdb_ecdata.validate import validate_svgdigitizer_input; validate_svgdigitizer_input()"'
+validate-source-filenames = 'python -c "from echemdb_ecdata.validate import validate_source_data_input; validate_source_data_input()"'
+validate-generated-identifiers = 'python -c "from echemdb_ecdata.validate import validate_generated_identifiers; validate_generated_identifiers()"'
+validate-bib-keys = 'python -c "from echemdb_ecdata.bibliography import validate_bib_keys; validate_bib_keys()"'
+validate-bib-utf8 = 'python -c "from echemdb_ecdata.bibliography import validate_bib_utf8; validate_bib_utf8()"'
+# Umbrella tasks (used in CI)
+validate-input = { depends-on = ["validate-svgdigitizer-yaml", "validate-source-yaml", "validate-identifiers", "validate-bib-keys", "validate-bib-utf8"] }
+validate-generated = { depends-on = ["validate-svgdigitizer", "validate-raw", "validate-generated-identifiers"] }
+# Fix utilities
+fix-lowercase = 'python -c "from echemdb_ecdata.validate import lowercase_svgdigitizer_files; lowercase_svgdigitizer_files()"'
+fix-lowercase-dry-run = 'python -c "from echemdb_ecdata.validate import lowercase_svgdigitizer_files; lowercase_svgdigitizer_files(dry_run=True)"'
+fix-bib-utf8 = 'python -c "from echemdb_ecdata.bibliography import fix_bib_utf8; fix_bib_utf8()"'
+fix-bib-utf8-dry-run = 'python -c "from echemdb_ecdata.bibliography import fix_bib_utf8; fix_bib_utf8(dry_run=True)"'
+# Auto-fix identifier mismatches (detects dir name != YAML citationKey and renames)
+fix-identifiers = 'python -c "from echemdb_ecdata.validate import fix_identifiers; fix_identifiers()"'
+fix-identifiers-dry-run = 'python -c "from echemdb_ecdata.validate import fix_identifiers; fix_identifiers(dry_run=True)"'
+# Rename identifiers (directories and files) after a bib key change
+# Usage: bash util/rename_identifiers.sh OLD_NAME NEW_NAME
+rename-identifiers = "bash util/rename_identifiers.sh"
+# Tests
 doctest = "pytest -n auto --doctest-modules echemdb_ecdata"
 # pytest executes doctests of the cli
 pytest = "pytest -n auto echemdb_ecdata/**/*.py"
@@ -115,7 +152,6 @@ doc = "cd doc && make html SPHINXOPTS='-W -n --keep-going'"
 
 [tool.pixi.feature.dev.dependencies]
 make = ">=4.4.1,<5"
-pybtex = ">=0.25.1,<0.26"
 pip = ">=26.0.1,<27"
 conda = ">=26.1.0,<27"
 jupyterlab = ">=4.5.4,<5"

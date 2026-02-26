@@ -86,28 +86,59 @@ pixi run -e dev clean-data && pixi run -e dev convert
 
 Generated datapackages are written to `data/generated/svgdigitizer/` and `data/generated/source_data/`.
 
+Both SVG digitization and raw data conversion use a batch approach that imports
+heavy dependencies once and processes all files in a single Python process.
+This avoids the ~3 s Python startup overhead per file that occurs when spawning
+a subprocess for each file, reducing full-rebuild time from ~15 min to ~30-50 s
+for 273 SVG files.
+
+Force a full rebuild (ignoring timestamps):
+
+```sh
+pixi run -e dev convert-force
+```
+
+Verify that the batch conversion produces output identical to existing generated data:
+
+```sh
+pixi run -e dev verify-svg   # SVG digitizer output
+pixi run -e dev verify-raw   # Source data output
+pixi run -e dev verify-all   # Both at once
+```
+
 ### Validation
 
 All data (input YAML and output JSON) is validated against the [echemdb-metadata schema](https://github.com/echemdb/metadata-schema).
+In addition, filenames, identifiers, and bibliography keys are validated for consistency.
+
+Two umbrella tasks cover all checks:
 
 ```sh
-# Validate input YAML files before conversion
+# Validate all input files (YAML schema, filenames/identifiers, bib keys)
 pixi run -e dev validate-input
 
-# Validate generated JSON datapackages after conversion
+# Validate all generated files (JSON schema, identifiers)
 pixi run -e dev validate-generated
 ```
 
-Each validation command shows verbose output listing all validated files. You can also validate specific parts:
+These are also used in the CI workflows. You can run individual sub-tasks:
 
 ```sh
-# Individual input validation
-pixi run -e dev validate-svgdigitizer-yaml  # SVG digitizer YAML files
-pixi run -e dev validate-source-yaml        # Raw data YAML files
+# Schema validation
+pixi run -e dev validate-svgdigitizer-yaml  # Input YAML (svgdigitizer)
+pixi run -e dev validate-source-yaml        # Input YAML (source data)
+pixi run -e dev validate-svgdigitizer       # Generated JSON (svgdigitizer)
+pixi run -e dev validate-raw                # Generated JSON (source data)
 
-# Individual output validation
-pixi run -e dev validate-svgdigitizer       # Generated SVG digitizer JSON
-pixi run -e dev validate-raw                # Generated raw data JSON
+# Filename and identifier validation
+pixi run -e dev validate-identifiers              # All input filenames
+pixi run -e dev validate-svgdigitizer-filenames   # SVG digitizer filenames only
+pixi run -e dev validate-source-filenames         # Source data filenames only
+pixi run -e dev validate-generated-identifiers    # Generated data identifiers
+
+# Bibliography key validation
+pixi run -e dev validate-bib-keys  # Check bib keys match expected identifiers
+pixi run -e dev validate-bib-utf8  # Check for LaTeX accent encodings
 ```
 
 Validate against a specific schema version:
@@ -115,4 +146,23 @@ Validate against a specific schema version:
 ```sh
 pixi run -e dev validate-input --version tags/0.3.3
 pixi run -e dev validate-generated --version head/my-branch
+```
+
+### Fix Utilities
+
+```sh
+# Lowercase SVG labels and filenames (enforced for Windows compatibility)
+pixi run -e dev fix-lowercase          # Apply changes
+pixi run -e dev fix-lowercase-dry-run  # Preview only
+
+# Convert LaTeX accent encodings to UTF-8 in bibliography.bib
+pixi run -e dev fix-bib-utf8           # Apply changes
+pixi run -e dev fix-bib-utf8-dry-run   # Preview only
+
+# Auto-fix identifier mismatches (detects dir name != YAML citationKey)
+pixi run -e dev fix-identifiers          # Apply changes
+pixi run -e dev fix-identifiers-dry-run  # Preview only
+
+# Rename directories and files after a bib key change (manual)
+pixi run -e dev rename-identifiers OLD_NAME NEW_NAME
 ```
