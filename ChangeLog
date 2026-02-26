@@ -4,6 +4,67 @@ electrochemistry-data Change Log
 
 .. current developments
 
+v0.7.0
+====================
+
+**Added:**
+
+* Added ``echemdb_ecdata.digitize`` module with batch conversion functions
+  ``digitize_svgdigitizer_data()`` and ``convert_source_data()`` that process
+  all files in a single Python process, avoiding ~3 s import overhead per file.
+* Added ``verify_batch_conversion()`` and ``compare_generated_output()`` utilities
+  to verify that batch conversion produces output identical to existing data.
+* Added pixi tasks ``convert-force``, ``convert-svg-force``, ``convert-raw-force``
+  for full rebuilds ignoring timestamps.
+* Added pixi tasks ``verify-svg``, ``verify-raw``, ``verify-all`` for output
+  verification.
+* Added validation of filenames and identifiers against YAML/SVG metadata
+  (``validate-identifiers``, ``validate-svgdigitizer-filenames``,
+  ``validate-source-filenames``, ``validate-generated-identifiers``).
+* Added validation of bibliography keys against the expected identifier
+  convention (``validate-bib-keys``).
+* Added validation that ``bibliography.bib`` uses UTF-8 instead of LaTeX
+  accent encodings (``validate-bib-utf8``).
+* Added ``fix-identifiers`` / ``fix-identifiers-dry-run`` tasks to
+  auto-detect and rename directories and files where the directory name
+  does not match the YAML ``citationKey``.
+* Added ``fix-bib-utf8`` / ``fix-bib-utf8-dry-run`` tasks to convert
+  LaTeX accent encodings (e.g., ``{\'o}``) to UTF-8 in ``bibliography.bib``.
+* Added ``fix-lowercase`` / ``fix-lowercase-dry-run`` tasks to enforce
+  lowercase SVG labels and filenames.
+* Added ``rename-identifiers`` task for manual directory/file renames
+  after a bibliography key change.
+* Added ``echemdb_ecdata.bibliography`` module for bibliography validation
+  and LaTeX-to-UTF-8 conversion utilities.
+* Added ``echemdb_ecdata.validate`` module for identifier and filename
+  validation and fix utilities.
+
+**Changed:**
+
+* Raw source-data conversion (``convert-raw``) now uses the same batch approach
+  as SVG conversion instead of spawning one subprocess per file via Make.
+
+**Removed:**
+
+* Removed ``inchikey`` from YAML metadata in ``literature/svgdigitizer/**/*.yaml``.
+
+**Fixed:**
+
+* Fixed missing bibliography metadata for raw source-data entries by passing
+  ``--bibliography`` in the Makefile conversion rule.
+* Fixed multiple entry identifiers, filenames and bibliography keys.
+* Fixed mismatched bibliography keys, YAML ``citationKey`` values, and
+  filenames across the repository.
+* Fixed LaTeX accent encodings in ``bibliography.bib`` (converted to UTF-8).
+
+**Performance:**
+
+* Full rebuild of 273 SVG files reduced from ~15 min to ~30-50 s by eliminating
+  per-file Python startup and import overhead.
+* Source-data conversion similarly improved by batch processing.
+
+
+
 v0.5.2
 ====================
 
