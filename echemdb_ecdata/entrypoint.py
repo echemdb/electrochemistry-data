@@ -164,6 +164,58 @@ bibliography_option = click.option(
 )
 
 
+def build_source_entry(csv_path, metadata, data_description):
+    r"""
+    Build a unitpackage Entry from CSV source data, metadata, and data description.
+
+    This applies field mapping, unit conversion, adds a time axis if missing,
+    and updates field metadata in the entry.
+
+    Parameters
+    ----------
+    csv_path : str or Path
+        Path to the CSV data file.
+    metadata : dict
+        Cleaned metadata dictionary (without ``dataDescription``).
+    data_description : DataDescription
+        Parsed data description from the YAML file.
+
+    Returns
+    -------
+    Entry
+        A fully processed unitpackage Entry ready to be saved.
+    """
+    dialect = data_description.dialect
+    raw_entry = Entry.from_csv(
+        str(csv_path), **dialect.model_dump(exclude_none=True, by_alias=False)
+    )
+    raw_entry.metadata.from_dict({"echemdb": metadata})
+
+    # Remove unnecessary fields
+    reduced_entry = raw_entry.remove_columns(
+        *[
+            field
+            for field in raw_entry.df.columns
+            if field not in data_description.field_mapping.keys()
+        ]
+    )
+    mapped_entry = reduced_entry.rename_fields(data_description.field_mapping)
+    entry = mapped_entry.update_fields(data_description.field_units)
+
+    # Create a time axis if not present
+    if "t" not in entry.df.columns:
+        scan_rate = metadata["figureDescription"]["scanRate"]["value"] * u.Unit(
+            metadata["figureDescription"]["scanRate"]["unit"]
+        )
+        entry = _add_time_axis(entry, scan_rate)
+
+    # Update fields in metadata
+    entry.metadata.echemdb["figureDescription"].__dict__.setdefault("fields", {})
+    entry.metadata.echemdb["figureDescription"].__dict__["fields"] = entry.fields
+
+    return entry
+
+
 @click.command(name="convert")
 @click.argument("csv", type=click.Path(exists=True))
 @click.option(
@@ -239,35 +291,8 @@ def convert(csv, outdir, metadata, bibliography):
                 metadata, bibliography_data, new_citation_key
             )
 
-    # construct entry
-    dialect = data_description.dialect
-    raw_entry = Entry.from_csv(
-        csv, **dialect.model_dump(exclude_none=True, by_alias=False)
-    )
-    raw_entry.metadata.from_dict({"echemdb": metadata})
-    ## remove unnecessary fields
-    reduced_entry = raw_entry.remove_columns(
-        *[
-            field
-            for field in raw_entry.df.columns
-            if field not in data_description.field_mapping.keys()
-        ]
-    )
-    mapped_entry = reduced_entry.rename_fields(data_description.field_mapping)
-    entry = mapped_entry.update_fields(data_description.field_units)
-    entry.df.head()
-
-    # create a time axis if not present
-    if "t" not in entry.df.columns:
-        scan_rate = metadata["figureDescription"]["scanRate"]["value"] * u.Unit(
-            metadata["figureDescription"]["scanRate"]["unit"]
-        )
-        entry = _add_time_axis(entry, scan_rate)
-
-    # update fields
-    entry.metadata.echemdb["figureDescription"].__dict__.setdefault("fields", {})
-    entry.metadata.echemdb["figureDescription"].__dict__["fields"] = entry.fields
-
+    # construct entry and save
+    entry = build_source_entry(csv, metadata, data_description)
     entry.save(outdir=outdir)
 
 

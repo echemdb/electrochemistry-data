@@ -39,35 +39,196 @@ Convert all source data files::
 # ********************************************************************
 import logging
 import os
+import tempfile
+from dataclasses import dataclass, field
+from io import StringIO
 from pathlib import Path
+
+import astropy.units as u
+import yaml
+from pybtex.database import parse_file
+from svgdigitizer.electrochemistry.cv import CV
+from svgdigitizer.entrypoint import _create_package, _outfile, _write_metadata
+from svgdigitizer.svg import SVG
+from svgdigitizer.svgplot import SVGPlot
+
+from echemdb_ecdata.entrypoint import (
+    DataDescription,
+    _add_bibdata_to_source,
+    build_source_entry,
+)
 
 logger = logging.getLogger("echemdb_ecdata.digitize")
 
+REPO_ROOT = Path(__file__).resolve().parent.parent
 
-def _needs_rebuild(yaml_path, svg_path, outdir):
+
+# ---------------------------------------------------------------------------
+# Shared helpers
+# ---------------------------------------------------------------------------
+
+
+def _load_bibliography(bibliography_path):
+    r"""Load a BibTeX bibliography file and return the parsed database, or None."""
+    if not bibliography_path.exists():
+        return None
+    with open(bibliography_path, "rb") as fh:
+        content = fh.read().decode("utf-8")
+    return parse_file(StringIO(content), bib_format="bibtex")
+
+
+def _compute_output_dir(yaml_path, source_dir, target_dir):
+    r"""Compute the output directory preserving the subdirectory structure."""
+    try:
+        rel = yaml_path.parent.relative_to(source_dir.resolve())
+    except ValueError:
+        rel = Path(yaml_path.stem)
+    return target_dir / rel
+
+
+def _add_bib_to_metadata(metadata, bibdata, yaml_name):
     r"""
-    Return whether the output files for a given YAML/SVG pair are
+    Insert bibliography data into *metadata* if the citation key is found.
+
+    Logs warnings when the key is missing or not found in the bibliography.
+    """
+    citation_key = metadata.get("source", {}).get("citationKey", "")
+
+    if not bibdata:
+        return
+
+    if not citation_key:
+        logger.warning("%s: no citationKey in metadata.", yaml_name)
+        return
+
+    if citation_key not in bibdata.entries:
+        logger.warning(
+            "%s: citation key '%s' not found in bibliography.",
+            yaml_name,
+            citation_key,
+        )
+        return
+
+    metadata.setdefault("source", {})
+    metadata["source"]["bibdata"] = bibdata.entries[citation_key].to_string("bibtex")
+    metadata["source"]["citationKey"] = citation_key
+
+
+def _print_summary(label, processed, skipped, errors, total):
+    r"""Print a summary line after batch processing."""
+    print(
+        f"Done: {processed} {label}, {skipped} up-to-date, {errors} errors "
+        f"(out of {total} total)"
+    )
+
+
+# ---------------------------------------------------------------------------
+# Timestamp-based rebuild checks
+# ---------------------------------------------------------------------------
+
+
+def _needs_rebuild(yaml_path, companion_path, outdir):
+    r"""
+    Return whether the output files for a given YAML/companion pair are
     missing or older than their sources.
 
     This replicates Make's dependency tracking logic: rebuild if any
-    output (.csv or .json) is missing or older than any input (.yaml or .svg).
+    output (.csv or .json) is missing or older than any input.
     """
     stem = Path(yaml_path).stem
-    csv_path = Path(outdir) / f"{stem}.csv"
-    json_path = Path(outdir) / f"{stem}.json"
+    csv_out = Path(outdir) / f"{stem}.csv"
+    json_out = Path(outdir) / f"{stem}.json"
 
-    # If either output is missing, rebuild
-    if not csv_path.exists() or not json_path.exists():
+    if not csv_out.exists() or not json_out.exists():
         return True
 
-    # If any source is newer than any output, rebuild
-    source_mtime = max(os.path.getmtime(yaml_path), os.path.getmtime(svg_path))
-    target_mtime = min(os.path.getmtime(csv_path), os.path.getmtime(json_path))
+    source_mtime = max(os.path.getmtime(yaml_path), os.path.getmtime(companion_path))
+    target_mtime = min(os.path.getmtime(csv_out), os.path.getmtime(json_out))
 
     return source_mtime > target_mtime
 
 
-def digitize_svgdigitizer_data(
+# ---------------------------------------------------------------------------
+# SVG digitizer – per-file processing
+# ---------------------------------------------------------------------------
+
+
+@dataclass
+class SvgDigitizerConfig:  # pylint: disable=too-many-instance-attributes
+    r"""Configuration for SVG digitizer batch conversion."""
+
+    source_dir: Path = field(
+        default_factory=lambda: REPO_ROOT / "literature" / "svgdigitizer"
+    )
+    bibliography_path: Path = field(
+        default_factory=lambda: (
+            REPO_ROOT / "literature" / "bibliography" / "bibliography.bib"
+        )
+    )
+    target_dir: Path = field(
+        default_factory=lambda: (REPO_ROOT / "data" / "generated" / "svgdigitizer")
+    )
+    sampling_interval: float = 0.001
+    si_units: bool = True
+    skewed: bool = False
+    force: bool = False
+    dry_run: bool = False
+
+
+def _compute_sampling(svg_path, config, algorithm):
+    r"""Compute the actual sampling interval from the SVG x-axis unit."""
+    with open(svg_path, "rb") as fh:
+        cv_temp = CV(
+            SVGPlot(SVG(fh), algorithm=algorithm),
+            force_si_units=config.si_units,
+        )
+        x_unit = u.Unit(
+            cv_temp.figure_schema.get_field(cv_temp.svgplot.xlabel).custom["unit"]
+        )
+        return config.sampling_interval / x_unit.to(u.V)  # pylint: disable=no-member
+
+
+def _digitize_single_svg(yaml_path, svg_path, outdir, config, bibdata):
+    r"""Digitize a single SVG/YAML pair, writing CSV and JSON output."""
+    algorithm = "mark-aligned" if config.skewed else "axis-aligned"
+
+    with open(yaml_path, "r", encoding="utf-8") as fh:
+        metadata = yaml.load(fh, Loader=yaml.SafeLoader)
+
+    actual_sampling = None
+    if config.sampling_interval is not None:
+        actual_sampling = _compute_sampling(svg_path, config, algorithm)
+
+    with open(svg_path, "rb") as fh:
+        svgfigure = CV(
+            SVGPlot(
+                SVG(fh),
+                sampling_interval=actual_sampling,
+                algorithm=algorithm,
+            ),
+            metadata=metadata,
+            force_si_units=config.si_units,
+        )
+
+    os.makedirs(outdir, exist_ok=True)
+    outdir_str = str(outdir)
+    csvname = _outfile(str(svg_path), suffix=".csv", outdir=outdir_str)
+    svgfigure.df.to_csv(csvname, index=False)
+
+    _add_bib_to_metadata(svgfigure.metadata, bibdata, yaml_path.name)
+
+    package = _create_package(svgfigure.metadata, csvname, outdir_str)
+    json_out = _outfile(str(svg_path), suffix=".json", outdir=outdir_str)
+    with open(json_out, mode="w", encoding="utf-8") as json_file:
+        _write_metadata(json_file, package.to_dict())
+
+
+# ---------------------------------------------------------------------------
+# SVG digitizer – batch entry point
+# ---------------------------------------------------------------------------
+
+
+def digitize_svgdigitizer_data(  # pylint: disable=too-many-arguments,too-many-positional-arguments
     source_dir=None,
     bibliography_path=None,
     target_dir=None,
@@ -110,58 +271,38 @@ def digitize_svgdigitizer_data(
         relative paths). This is useful for Make-driven incremental builds
         that pass only the changed files.
     """
-    # Resolve default paths relative to the repository root
-    repo_root = Path(__file__).resolve().parent.parent
+    config = SvgDigitizerConfig(
+        source_dir=(
+            Path(source_dir) if source_dir else SvgDigitizerConfig.source_dir.default
+        ),
+        bibliography_path=(
+            Path(bibliography_path)
+            if bibliography_path
+            else SvgDigitizerConfig.bibliography_path.default
+        ),
+        target_dir=(
+            Path(target_dir) if target_dir else SvgDigitizerConfig.target_dir.default
+        ),
+        sampling_interval=sampling_interval,
+        si_units=si_units,
+        skewed=skewed,
+        force=force,
+        dry_run=dry_run,
+    )
 
-    if source_dir is None:
-        source_dir = repo_root / "literature" / "svgdigitizer"
-    source_dir = Path(source_dir)
+    _run_svg_batch(config, yaml_files)
 
-    if bibliography_path is None:
-        bibliography_path = (
-            repo_root / "literature" / "bibliography" / "bibliography.bib"
-        )
-    bibliography_path = Path(bibliography_path)
 
-    if target_dir is None:
-        target_dir = repo_root / "data" / "generated" / "svgdigitizer"
-    target_dir = Path(target_dir)
-
-    # Collect YAML files to process
-    if yaml_files:
-        yaml_paths = [Path(f).resolve() for f in yaml_files]
-    else:
-        yaml_paths = sorted(source_dir.rglob("*.yaml"))
-
+def _run_svg_batch(config, yaml_files=None):
+    r"""Run the SVG digitizer batch with the given configuration."""
+    yaml_paths = _collect_yaml_paths(config.source_dir, yaml_files)
     if not yaml_paths:
         logger.info("No YAML files found to process.")
         return
 
-    # Pre-load bibliography once (shared across all files)
-    bibdata = None
-    if bibliography_path.exists():
-        from io import StringIO
+    bibdata = _load_bibliography(config.bibliography_path)
 
-        from pybtex.database import parse_file
-
-        with open(bibliography_path, "rb") as f:
-            content = f.read().decode("utf-8")
-        bibdata = parse_file(StringIO(content), bib_format="bibtex")
-
-    # Import heavy dependencies once
-    import yaml
-    from astropy import units as u
-
-    from svgdigitizer.electrochemistry.cv import CV
-    from svgdigitizer.entrypoint import _create_package, _outfile, _write_metadata
-    from svgdigitizer.svg import SVG
-    from svgdigitizer.svgplot import SVGPlot
-
-    algorithm = "mark-aligned" if skewed else "axis-aligned"
-
-    processed = 0
-    skipped = 0
-    errors = 0
+    processed, skipped, errors = 0, 0, 0
 
     for yaml_path in yaml_paths:
         yaml_path = Path(yaml_path).resolve()
@@ -171,120 +312,91 @@ def digitize_svgdigitizer_data(
             skipped += 1
             continue
 
-        # Compute output directory preserving subdirectory structure
-        try:
-            rel = yaml_path.parent.relative_to(source_dir.resolve())
-        except ValueError:
-            rel = Path(yaml_path.stem)
-        outdir = target_dir / rel
+        outdir = _compute_output_dir(yaml_path, config.source_dir, config.target_dir)
 
-        if not force and not _needs_rebuild(yaml_path, svg_path, outdir):
+        if not config.force and not _needs_rebuild(yaml_path, svg_path, outdir):
             skipped += 1
             continue
 
-        if dry_run:
-            print(f"Would digitize: {yaml_path.relative_to(source_dir.resolve())}")
+        if config.dry_run:
+            print(
+                f"Would digitize: {yaml_path.relative_to(config.source_dir.resolve())}"
+            )
             processed += 1
             continue
 
         try:
-            # Read metadata
-            with open(yaml_path, "r", encoding="utf-8") as f:
-                metadata = yaml.load(f, Loader=yaml.SafeLoader)
-
-            # Compute sampling interval in terms of x-axis unit
-            actual_sampling = None
-            if sampling_interval is not None:
-                with open(svg_path, "rb") as f:
-                    cv_temp = CV(
-                        SVGPlot(SVG(f), algorithm=algorithm),
-                        force_si_units=si_units,
-                    )
-                    actual_sampling = sampling_interval / u.Unit(
-                        cv_temp.figure_schema.get_field(
-                            cv_temp.svgplot.xlabel
-                        ).custom["unit"]
-                    ).to(u.V)
-
-            # Create CV with sampling
-            with open(svg_path, "rb") as f:
-                svgfigure = CV(
-                    SVGPlot(
-                        SVG(f),
-                        sampling_interval=actual_sampling,
-                        algorithm=algorithm,
-                    ),
-                    metadata=metadata,
-                    force_si_units=si_units,
-                )
-
-            # Write CSV
-            os.makedirs(outdir, exist_ok=True)
-            svg_str = str(svg_path)
-            csvname = _outfile(svg_str, suffix=".csv", outdir=str(outdir))
-            svgfigure.df.to_csv(csvname, index=False)
-
-            # Handle bibliography
-            fig_metadata = svgfigure.metadata
-            citation_key = fig_metadata.get("source", {}).get("citationKey", "")
-
-            if bibdata and citation_key and citation_key in bibdata.entries:
-                fig_metadata.setdefault("source", {})
-                fig_metadata["source"]["bibdata"] = bibdata.entries[
-                    citation_key
-                ].to_string("bibtex")
-                fig_metadata["source"]["citationKey"] = citation_key
-            elif bibdata and citation_key and citation_key not in bibdata.entries:
-                logger.warning(
-                    "%s: citation key '%s' not found in bibliography.",
-                    yaml_path.name,
-                    citation_key,
-                )
-            elif bibdata and not citation_key:
-                logger.warning(
-                    "%s: no citationKey in metadata.",
-                    yaml_path.name,
-                )
-
-            # Build and write JSON package
-            package = _create_package(fig_metadata, csvname, str(outdir))
-
-            json_path = _outfile(svg_str, suffix=".json", outdir=str(outdir))
-            with open(json_path, mode="w", encoding="utf-8") as json_file:
-                _write_metadata(json_file, package.to_dict())
-
+            _digitize_single_svg(yaml_path, svg_path, outdir, config, bibdata)
             processed += 1
-            print(f"Digitized: {yaml_path.relative_to(source_dir.resolve())}")
-
-        except Exception:
-            logger.exception("Error digitizing %s", yaml_path)
+            print(f"Digitized: {yaml_path.relative_to(config.source_dir.resolve())}")
+        except (OSError, ValueError, KeyError, yaml.YAMLError) as exc:
+            logger.exception("Error digitizing %s: %s", yaml_path, exc)
             errors += 1
 
-    print(
-        f"Done: {processed} digitized, {skipped} up-to-date, {errors} errors "
-        f"(out of {len(yaml_paths)} total)"
+    _print_summary("digitized", processed, skipped, errors, len(yaml_paths))
+
+
+# ---------------------------------------------------------------------------
+# Source data – per-file processing
+# ---------------------------------------------------------------------------
+
+
+@dataclass
+class SourceDataConfig:
+    r"""Configuration for source data batch conversion."""
+
+    source_dir: Path = field(
+        default_factory=lambda: REPO_ROOT / "literature" / "source_data"
     )
+    bibliography_path: Path = field(
+        default_factory=lambda: REPO_ROOT
+        / "literature"
+        / "bibliography"
+        / "bibliography.bib"
+    )
+    target_dir: Path = field(
+        default_factory=lambda: REPO_ROOT / "data" / "generated" / "source_data"
+    )
+    force: bool = False
+    dry_run: bool = False
 
 
-def _needs_rebuild_source(yaml_path, csv_path, outdir):
-    r"""
-    Return whether the output files for a given source data YAML/CSV pair
-    are missing or older than their sources.
-    """
-    stem = Path(yaml_path).stem
-    out_csv = Path(outdir) / f"{stem}.csv"
-    out_json = Path(outdir) / f"{stem}.json"
+def _convert_single_source(yaml_path, csv_path, outdir, bibdata):
+    r"""Convert a single source data YAML/CSV pair, writing output."""
+    with open(yaml_path, "r", encoding="utf-8") as fh:
+        metadata_dict = yaml.safe_load(fh)
 
-    if not out_csv.exists() or not out_json.exists():
-        return True
+    data_description = DataDescription.model_validate(metadata_dict["dataDescription"])
 
-    source_mtime = max(os.path.getmtime(yaml_path), os.path.getmtime(csv_path))
-    target_mtime = min(os.path.getmtime(out_csv), os.path.getmtime(out_json))
+    metadata = metadata_dict.copy()
+    del metadata["dataDescription"]
 
-    return source_mtime > target_mtime
+    # Add bibliography data
+    citation_key = metadata.get("source", {}).get("citationKey", "")
+    if bibdata and citation_key and citation_key in bibdata.entries:
+        bibliography_data = bibdata.entries[citation_key].to_string("bibtex")
+        metadata = _add_bibdata_to_source(metadata, bibliography_data, citation_key)
+    elif bibdata and citation_key and citation_key not in bibdata.entries:
+        logger.warning(
+            "%s: citation key '%s' not found in bibliography.",
+            yaml_path.name,
+            citation_key,
+        )
+    elif bibdata and not citation_key:
+        logger.warning("%s: no citationKey in metadata.", yaml_path.name)
+
+    entry = build_source_entry(csv_path, metadata, data_description)
+
+    os.makedirs(outdir, exist_ok=True)
+    entry.save(outdir=str(outdir))
 
 
-def convert_source_data(
+# ---------------------------------------------------------------------------
+# Source data – batch entry point
+# ---------------------------------------------------------------------------
+
+
+def convert_source_data(  # pylint: disable=too-many-arguments,too-many-positional-arguments
     source_dir=None,
     bibliography_path=None,
     target_dir=None,
@@ -316,54 +428,35 @@ def convert_source_data(
     yaml_files : list of str or None
         If provided, only process these specific YAML files.
     """
-    # Resolve default paths relative to the repository root
-    repo_root = Path(__file__).resolve().parent.parent
+    config = SourceDataConfig(
+        source_dir=(
+            Path(source_dir) if source_dir else SourceDataConfig.source_dir.default
+        ),
+        bibliography_path=(
+            Path(bibliography_path)
+            if bibliography_path
+            else SourceDataConfig.bibliography_path.default
+        ),
+        target_dir=(
+            Path(target_dir) if target_dir else SourceDataConfig.target_dir.default
+        ),
+        force=force,
+        dry_run=dry_run,
+    )
 
-    if source_dir is None:
-        source_dir = repo_root / "literature" / "source_data"
-    source_dir = Path(source_dir)
+    _run_source_batch(config, yaml_files)
 
-    if bibliography_path is None:
-        bibliography_path = (
-            repo_root / "literature" / "bibliography" / "bibliography.bib"
-        )
-    bibliography_path = Path(bibliography_path)
 
-    if target_dir is None:
-        target_dir = repo_root / "data" / "generated" / "source_data"
-    target_dir = Path(target_dir)
-
-    # Collect YAML files to process
-    if yaml_files:
-        yaml_paths = [Path(f).resolve() for f in yaml_files]
-    else:
-        yaml_paths = sorted(source_dir.rglob("*.yaml"))
-
+def _run_source_batch(config, yaml_files=None):
+    r"""Run the source data batch with the given configuration."""
+    yaml_paths = _collect_yaml_paths(config.source_dir, yaml_files)
     if not yaml_paths:
         logger.info("No YAML files found to process.")
         return
 
-    # Pre-load bibliography once
-    bibdata = None
-    if bibliography_path.exists():
-        from io import StringIO
+    bibdata = _load_bibliography(config.bibliography_path)
 
-        from pybtex.database import parse_file
-
-        with open(bibliography_path, "rb") as f:
-            content = f.read().decode("utf-8")
-        bibdata = parse_file(StringIO(content), bib_format="bibtex")
-
-    # Import heavy dependencies once
-    import astropy.units as u
-    import yaml
-    from unitpackage.entry import Entry
-
-    from echemdb_ecdata.entrypoint import DataDescription, _add_bibdata_to_source, _add_time_axis
-
-    processed = 0
-    skipped = 0
-    errors = 0
+    processed, skipped, errors = 0, 0, 0
 
     for yaml_path in yaml_paths:
         yaml_path = Path(yaml_path).resolve()
@@ -373,103 +466,97 @@ def convert_source_data(
             skipped += 1
             continue
 
-        # Compute output directory preserving subdirectory structure
-        try:
-            rel = yaml_path.parent.relative_to(source_dir.resolve())
-        except ValueError:
-            rel = Path(yaml_path.stem)
-        outdir = target_dir / rel
+        outdir = _compute_output_dir(yaml_path, config.source_dir, config.target_dir)
 
-        if not force and not _needs_rebuild_source(yaml_path, csv_path, outdir):
+        if not config.force and not _needs_rebuild(yaml_path, csv_path, outdir):
             skipped += 1
             continue
 
-        if dry_run:
-            print(f"Would convert: {yaml_path.relative_to(source_dir.resolve())}")
+        if config.dry_run:
+            print(
+                f"Would convert: {yaml_path.relative_to(config.source_dir.resolve())}"
+            )
             processed += 1
             continue
 
         try:
-            # Load metadata
-            with open(yaml_path, "r", encoding="utf-8") as f:
-                metadata_dict = yaml.safe_load(f)
-
-            data_description = DataDescription.model_validate(
-                metadata_dict["dataDescription"]
-            )
-
-            # Clean metadata (remove dataDescription as the CLI does)
-            metadata = metadata_dict.copy()
-            del metadata["dataDescription"]
-
-            # Add bibliography data
-            citation_key = metadata.get("source", {}).get("citationKey", "")
-            if bibdata and citation_key and citation_key in bibdata.entries:
-                bibliography_data = bibdata.entries[citation_key].to_string("bibtex")
-                metadata = _add_bibdata_to_source(
-                    metadata, bibliography_data, citation_key
-                )
-            elif bibdata and citation_key and citation_key not in bibdata.entries:
-                logger.warning(
-                    "%s: citation key '%s' not found in bibliography.",
-                    yaml_path.name,
-                    citation_key,
-                )
-            elif bibdata and not citation_key:
-                logger.warning(
-                    "%s: no citationKey in metadata.",
-                    yaml_path.name,
-                )
-
-            # Construct entry
-            dialect = data_description.dialect
-            raw_entry = Entry.from_csv(
-                str(csv_path),
-                **dialect.model_dump(exclude_none=True, by_alias=False),
-            )
-            raw_entry.metadata.from_dict({"echemdb": metadata})
-
-            # Remove unnecessary fields
-            reduced_entry = raw_entry.remove_columns(
-                *[
-                    field
-                    for field in raw_entry.df.columns
-                    if field not in data_description.field_mapping.keys()
-                ]
-            )
-            mapped_entry = reduced_entry.rename_fields(data_description.field_mapping)
-            entry = mapped_entry.update_fields(data_description.field_units)
-
-            # Create a time axis if not present
-            if "t" not in entry.df.columns:
-                scan_rate = metadata["figureDescription"]["scanRate"]["value"] * u.Unit(
-                    metadata["figureDescription"]["scanRate"]["unit"]
-                )
-                entry = _add_time_axis(entry, scan_rate)
-
-            # Update fields in metadata
-            entry.metadata.echemdb["figureDescription"].__dict__.setdefault(
-                "fields", {}
-            )
-            entry.metadata.echemdb["figureDescription"].__dict__["fields"] = (
-                entry.fields
-            )
-
-            # Write output
-            os.makedirs(outdir, exist_ok=True)
-            entry.save(outdir=str(outdir))
-
+            _convert_single_source(yaml_path, csv_path, outdir, bibdata)
             processed += 1
-            print(f"Converted: {yaml_path.relative_to(source_dir.resolve())}")
-
-        except Exception:
-            logger.exception("Error converting %s", yaml_path)
+            print(f"Converted: {yaml_path.relative_to(config.source_dir.resolve())}")
+        except (OSError, ValueError, KeyError, yaml.YAMLError) as exc:
+            logger.exception("Error converting %s: %s", yaml_path, exc)
             errors += 1
 
-    print(
-        f"Done: {processed} converted, {skipped} up-to-date, {errors} errors "
-        f"(out of {len(yaml_paths)} total)"
-    )
+    _print_summary("converted", processed, skipped, errors, len(yaml_paths))
+
+
+# ---------------------------------------------------------------------------
+# Shared YAML collection
+# ---------------------------------------------------------------------------
+
+
+def _collect_yaml_paths(source_dir, yaml_files=None):
+    r"""Return a list of resolved YAML paths, either from *yaml_files* or by globbing."""
+    if yaml_files:
+        return [Path(f).resolve() for f in yaml_files]
+    return sorted(source_dir.rglob("*.yaml"))
+
+
+# ---------------------------------------------------------------------------
+# Verification / comparison utilities
+# ---------------------------------------------------------------------------
+
+
+def _collect_output_files(directory):
+    r"""Collect all .csv and .json relative paths under *directory*."""
+    result = set()
+    for ext in ("*.csv", "*.json"):
+        for fpath in directory.rglob(ext):
+            result.add(fpath.relative_to(directory))
+    return result
+
+
+def _compare_file_sets(ref_files, test_files, reference_dir, test_dir):
+    r"""Compare two sets of relative file paths and return classification lists."""
+    identical, differ, missing_in_test = [], [], []
+
+    for rel_path in sorted(ref_files):
+        test_file = test_dir / rel_path
+        if not test_file.exists():
+            missing_in_test.append(str(rel_path))
+            continue
+
+        ref_content = (reference_dir / rel_path).read_bytes()
+        if ref_content == test_file.read_bytes():
+            identical.append(str(rel_path))
+        else:
+            differ.append(str(rel_path))
+
+    extra_in_test = [str(p) for p in sorted(test_files - ref_files)]
+
+    return identical, differ, missing_in_test, extra_in_test
+
+
+def _print_comparison_report(data_type, reference_dir, test_dir, ref_count, result):
+    r"""Print a human-readable comparison report."""
+    print(f"\nComparison of {data_type} output:")
+    print(f"  Reference directory: {reference_dir}")
+    print(f"  Test directory:      {test_dir}")
+    print(f"  Total reference files: {ref_count}")
+    print(f"  Identical:           {len(result['identical'])}")
+    print(f"  Differ:              {len(result['differ'])}")
+    print(f"  Missing in test:     {len(result['missing_in_test'])}")
+    print(f"  Extra in test:       {len(result['extra_in_test'])}")
+
+    for label, items in [
+        ("Files that differ", result["differ"]),
+        ("Files missing in test", result["missing_in_test"]),
+        ("Extra files in test", result["extra_in_test"]),
+    ]:
+        if items:
+            print(f"\n  {label}:")
+            for fname in items:
+                print(f"    - {fname}")
 
 
 def compare_generated_output(
@@ -501,84 +588,63 @@ def compare_generated_output(
         Summary with keys: ``identical``, ``differ``, ``missing_in_test``,
         ``extra_in_test``, ``total_reference``.
     """
-    repo_root = Path(__file__).resolve().parent.parent
-
     if reference_dir is None:
-        reference_dir = repo_root / "data" / "generated" / data_type
+        reference_dir = REPO_ROOT / "data" / "generated" / data_type
     reference_dir = Path(reference_dir)
 
     if test_dir is None:
         raise ValueError("test_dir must be provided for comparison")
     test_dir = Path(test_dir)
 
-    # Collect all .csv and .json files from reference
-    ref_files = set()
-    for ext in ("*.csv", "*.json"):
-        for f in reference_dir.rglob(ext):
-            ref_files.add(f.relative_to(reference_dir))
+    ref_files = _collect_output_files(reference_dir)
+    test_files = _collect_output_files(test_dir)
 
-    test_files = set()
-    for ext in ("*.csv", "*.json"):
-        for f in test_dir.rglob(ext):
-            test_files.add(f.relative_to(test_dir))
+    identical, differ, missing_in_test, extra_in_test = _compare_file_sets(
+        ref_files,
+        test_files,
+        reference_dir,
+        test_dir,
+    )
 
-    identical = []
-    differ = []
-    missing_in_test = []
-    extra_in_test = []
-
-    for rel_path in sorted(ref_files):
-        ref_file = reference_dir / rel_path
-        test_file = test_dir / rel_path
-
-        if not test_file.exists():
-            missing_in_test.append(str(rel_path))
-            continue
-
-        # Compare file contents
-        ref_content = ref_file.read_bytes()
-        test_content = test_file.read_bytes()
-
-        if ref_content == test_content:
-            identical.append(str(rel_path))
-        else:
-            differ.append(str(rel_path))
-
-    for rel_path in sorted(test_files - ref_files):
-        extra_in_test.append(str(rel_path))
-
-    # Print summary
-    print(f"\nComparison of {data_type} output:")
-    print(f"  Reference directory: {reference_dir}")
-    print(f"  Test directory:      {test_dir}")
-    print(f"  Total reference files: {len(ref_files)}")
-    print(f"  Identical:           {len(identical)}")
-    print(f"  Differ:              {len(differ)}")
-    print(f"  Missing in test:     {len(missing_in_test)}")
-    print(f"  Extra in test:       {len(extra_in_test)}")
-
-    if differ:
-        print("\n  Files that differ:")
-        for f in differ:
-            print(f"    - {f}")
-
-    if missing_in_test:
-        print("\n  Files missing in test:")
-        for f in missing_in_test:
-            print(f"    - {f}")
-
-    if extra_in_test:
-        print("\n  Extra files in test:")
-        for f in extra_in_test:
-            print(f"    - {f}")
-
-    return {
+    result = {
         "identical": identical,
         "differ": differ,
         "missing_in_test": missing_in_test,
         "extra_in_test": extra_in_test,
         "total_reference": len(ref_files),
     }
+
+    _print_comparison_report(data_type, reference_dir, test_dir, len(ref_files), result)
+
+    return result
+
+
+def _verify_single_type(dtype, reference_dir):
+    r"""Verify a single data type by re-generating into a temporary directory."""
+    with tempfile.TemporaryDirectory(prefix=f"echemdb_verify_{dtype}_") as tmpdir:
+        test_dir = Path(tmpdir)
+        print(f"\nVerifying {dtype} batch conversion...")
+        print(f"  Generating to: {test_dir}")
+
+        if dtype == "svgdigitizer":
+            digitize_svgdigitizer_data(target_dir=test_dir, force=True)
+        elif dtype == "source_data":
+            convert_source_data(target_dir=test_dir, force=True)
+        else:
+            raise ValueError(f"Unknown data type: {dtype}")
+
+        result = compare_generated_output(
+            reference_dir=reference_dir,
+            test_dir=test_dir,
+            data_type=dtype,
+        )
+
+        if result["differ"] or result["missing_in_test"]:
+            print(f"\n  WARNING: {dtype} output does NOT match reference!")
+        else:
+            print(f"\n  OK: {dtype} output matches reference perfectly.")
+
+        return result
 
 
 def verify_batch_conversion(data_type="svgdigitizer"):
@@ -603,44 +669,18 @@ def verify_batch_conversion(data_type="svgdigitizer"):
         Comparison result from :func:`compare_generated_output`.
         If ``data_type="all"``, returns a dict keyed by data type.
     """
-    import tempfile
-
-    repo_root = Path(__file__).resolve().parent.parent
-
     types_to_check = (
         ["svgdigitizer", "source_data"] if data_type == "all" else [data_type]
     )
     results = {}
 
     for dtype in types_to_check:
-        reference_dir = repo_root / "data" / "generated" / dtype
+        reference_dir = REPO_ROOT / "data" / "generated" / dtype
 
         if not reference_dir.exists() or not any(reference_dir.rglob("*.json")):
             print(f"\nSkipping {dtype}: no reference data found in {reference_dir}")
             continue
 
-        with tempfile.TemporaryDirectory(prefix=f"echemdb_verify_{dtype}_") as tmpdir:
-            test_dir = Path(tmpdir)
-            print(f"\nVerifying {dtype} batch conversion...")
-            print(f"  Generating to: {test_dir}")
-
-            if dtype == "svgdigitizer":
-                digitize_svgdigitizer_data(target_dir=test_dir, force=True)
-            elif dtype == "source_data":
-                convert_source_data(target_dir=test_dir, force=True)
-            else:
-                raise ValueError(f"Unknown data type: {dtype}")
-
-            result = compare_generated_output(
-                reference_dir=reference_dir,
-                test_dir=test_dir,
-                data_type=dtype,
-            )
-            results[dtype] = result
-
-            if result["differ"] or result["missing_in_test"]:
-                print(f"\n  WARNING: {dtype} output does NOT match reference!")
-            else:
-                print(f"\n  OK: {dtype} output matches reference perfectly.")
+        results[dtype] = _verify_single_type(dtype, reference_dir)
 
     return results if len(types_to_check) > 1 else results.get(types_to_check[0], {})

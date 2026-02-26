@@ -689,18 +689,21 @@ def _rename_directory(old_dir, new_dir, old_name, new_name, dry_run=False):
         # Check if file is tracked by git
         result = subprocess.run(
             ["git", "ls-files", "--error-unmatch", str(filepath)],
-            capture_output=True, check=False,
+            capture_output=True,
+            check=False,
         )
         if result.returncode == 0:
             # Two-step rename for Windows case-insensitive filesystem
             tmp = filepath.with_name(old_basename + ".tmp_rename")
             subprocess.run(
                 ["git", "mv", str(filepath), str(tmp)],
-                check=True, capture_output=True,
+                check=True,
+                capture_output=True,
             )
             subprocess.run(
                 ["git", "mv", str(tmp), str(old_path / new_basename)],
-                check=True, capture_output=True,
+                check=True,
+                capture_output=True,
             )
         else:
             os.rename(filepath, old_path / new_basename)
@@ -711,17 +714,21 @@ def _rename_directory(old_dir, new_dir, old_name, new_name, dry_run=False):
         # Check if directory has tracked files
         result = subprocess.run(
             ["git", "ls-files", str(old_path)],
-            capture_output=True, text=True, check=False,
+            capture_output=True,
+            text=True,
+            check=False,
         )
         if result.stdout.strip():
             tmp_dir = old_path.with_name(old_path.name + ".tmp_rename")
             subprocess.run(
                 ["git", "mv", str(old_path), str(tmp_dir)],
-                check=True, capture_output=True,
+                check=True,
+                capture_output=True,
             )
             subprocess.run(
                 ["git", "mv", str(tmp_dir), str(new_path)],
-                check=True, capture_output=True,
+                check=True,
+                capture_output=True,
             )
         else:
             os.rename(old_path, new_path)
@@ -791,7 +798,11 @@ def fix_identifiers(  # pylint: disable=too-many-locals,too-many-branches
         new_gen = os.path.join(generated_dir, new_name)
         if Path(old_gen).exists():
             changes = _rename_directory(
-                old_gen, new_gen, old_name, new_name, dry_run,
+                old_gen,
+                new_gen,
+                old_name,
+                new_name,
+                dry_run,
             )
             for c in changes:
                 print(c)
