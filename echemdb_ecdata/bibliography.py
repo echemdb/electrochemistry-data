@@ -47,7 +47,6 @@ import re
 from pybtex.database import BibliographyData, parse_file
 from svgdigitizer.pdf import Pdf
 
-
 # Mapping of LaTeX accent commands to their UTF-8 equivalents.
 # Covers common accent types: acute ('), grave (`), umlaut ("),
 # circumflex (^), tilde (~), and dotless i (\i).
@@ -289,6 +288,7 @@ def validate_bib_utf8(
 
     """
     errors = []
+    lineno = 0
 
     with open(bib_path, encoding="utf-8") as f:
         for lineno, line in enumerate(f, start=1):
@@ -302,7 +302,7 @@ def validate_bib_utf8(
                         f"'{_replace_accent(match)}'"
                     )
 
-    checked = lineno if "lineno" in dir() else 0
+    checked = lineno
     _print_validation_summary("bib UTF-8 encoding", checked, errors)
     return errors
 

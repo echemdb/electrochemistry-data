@@ -63,7 +63,6 @@ from unitpackage.local import collect_datapackages
 from echemdb_ecdata.bibliography import (
     _print_validation_summary,
     load_bib_keys,
-    validate_bib_keys,
 )
 
 logger = logging.getLogger("echemdb_ecdata")
