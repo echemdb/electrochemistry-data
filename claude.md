@@ -4,7 +4,7 @@
 
 This repository builds a database for published electrochemical data (echemdb.org). It converts data from scientific publications into standardized, machine-readable formats using the [frictionless data package](https://frictionless.io/) specification.
 
-**Current Branch**: `validate_identifiers` (PR #68: Add validation of identifiers and filenames)
+**Current Branch**: `conversion-performance` (batch conversion for SVG and source data)
 **Main Dependencies**: svgdigitizer, unitpackage, pydantic, pybtex
 
 ## Repository Structure
@@ -116,14 +116,22 @@ dataDescription:
 # Clean previous builds
 pixi run -e dev clean-data
 
-# Convert SVG data (parallel processing)
+# Convert SVG data (batch, single process)
 pixi run -e dev convert-svg
 
-# Convert raw data
+# Convert raw data (batch, single process)
 pixi run -e dev convert-raw
 
 # Full conversion
 pixi run -e dev convert
+
+# Force full rebuild (ignore timestamps)
+pixi run -e dev convert-force
+
+# Verify batch output matches existing generated data
+pixi run -e dev verify-svg
+pixi run -e dev verify-raw
+pixi run -e dev verify-all
 ```
 
 ### Validation
@@ -237,7 +245,7 @@ Examples:
 - **Bib keys are computed** - Use `svgdigitizer.pdf.Pdf.build_identifier` + `pybtex` to derive expected keys from BibTeX entries
 - **Lowercase enforced** - All identifiers, filenames, and SVG labels must be lowercase (Windows compatibility)
 - **Raw data support** - `literature/source_data/` holds raw experimental data with CSV files and YAML metadata
-- **Parallel processing** - Make commands use `-j$(nproc)` for efficiency
+- **Batch conversion** - Both SVG and source data conversion run in a single Python process via `echemdb_ecdata.digitize`, avoiding per-file import overhead (~3 s/file). Full rebuild: ~30-50 s instead of ~15 min
 
 ## Related Documentation
 

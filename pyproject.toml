@@ -71,10 +71,17 @@ pytest-remotedata = ">=0.4.1,<0.5"
 [tool.pixi.feature.test.tasks]
 # Copy and convert data and bibliography
 copy-bib = "mkdir -p data/generated/bibliography && cp literature/bibliography/bibliography.bib data/generated/bibliography/bibliography.bib"
-convert-svg = "cd data && make -j$(nproc)"
-convert-raw = "cd data && make source_data -j$(nproc)"
+convert-svg = "cd data && make svg"
+convert-raw = "cd data && make source_data"
+convert-svg-force = "cd data && make svg-force"
+convert-raw-force = "cd data && make source_data-force"
 convert = { depends-on = ["copy-bib", "convert-raw", "convert-svg"] }
+convert-force = { depends-on = ["copy-bib", "convert-raw-force", "convert-svg-force"] }
 clean-data = "cd data && make clean"
+# Comparison: verify batch output matches existing generated data
+verify-svg = 'python -c "from echemdb_ecdata.digitize import verify_batch_conversion; verify_batch_conversion(data_type=\"svgdigitizer\")"'
+verify-raw = 'python -c "from echemdb_ecdata.digitize import verify_batch_conversion; verify_batch_conversion(data_type=\"source_data\")"'
+verify-all = 'python -c "from echemdb_ecdata.digitize import verify_batch_conversion; verify_batch_conversion(data_type=\"all\")"'
 # Validation
 # ==========
 # Two umbrella tasks run all relevant checks:

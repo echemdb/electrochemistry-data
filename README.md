@@ -86,6 +86,26 @@ pixi run -e dev clean-data && pixi run -e dev convert
 
 Generated datapackages are written to `data/generated/svgdigitizer/` and `data/generated/source_data/`.
 
+Both SVG digitization and raw data conversion use a batch approach that imports
+heavy dependencies once and processes all files in a single Python process.
+This avoids the ~3 s Python startup overhead per file that occurs when spawning
+a subprocess for each file, reducing full-rebuild time from ~15 min to ~30-50 s
+for 273 SVG files.
+
+Force a full rebuild (ignoring timestamps):
+
+```sh
+pixi run -e dev convert-force
+```
+
+Verify that the batch conversion produces output identical to existing generated data:
+
+```sh
+pixi run -e dev verify-svg   # SVG digitizer output
+pixi run -e dev verify-raw   # Source data output
+pixi run -e dev verify-all   # Both at once
+```
+
 ### Validation
 
 All data (input YAML and output JSON) is validated against the [echemdb-metadata schema](https://github.com/echemdb/metadata-schema).
