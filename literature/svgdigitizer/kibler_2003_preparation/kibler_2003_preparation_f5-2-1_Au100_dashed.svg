@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="6600px"
+   version="1.1"
+   width="5100px"
+   id="svg2"
+   sodipodi:docname="kibler_2003_preparation_f5.2.1_Au(100)_dashed.svg"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.1767767"
+     inkscape:cx="4024.8518"
+     inkscape:cy="2836.9124"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="digitization-layer" />
+  <defs
+     id="defs1" />
+  <g
+     class="layer"
+     id="image-layer"
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="1">
+    <title
+       id="title1">image-layer</title>
+    <image
+       height="6600"
+       width="5100"
+       x="0"
+       xlink:href="kibler_2003_preparation_p17.png"
+       y="0"
+       id="image1" />
+  </g>
+  <g
+     class="layer"
+     id="digitization-layer"
+     inkscape:groupmode="layer">
+    <title
+       id="title2">digitization-layer</title>
+    <g
+       id="g503"
+       style="fill:#ff0000;stroke:#ff0000"
+       transform="translate(0.78420858,-1591.4556)">
+      <path
+         style="fill:#ff0000;stroke:#ff0000;stroke-width:0.457652px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 1686.0919,3645.2076 h 47.0118"
+         id="path284" />
+      <text
+         xml:space="preserve"
+         style="font-size:48px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:justify;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ff0000;stroke:#ff0000"
+         x="1347.9948"
+         y="3649.8164"
+         id="text448"><tspan
+           sodipodi:role="line"
+           id="tspan446"
+           x="1347.9948"
+           y="3649.8164">j1: 125 A</tspan></text>
+    </g>
+    <g
+       id="g545"
+       transform="translate(0.8643084,-47.662694)">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.457652px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 1686.0919,3645.2076 h 47.0118"
+         id="path284-5" />
+      <text
+         xml:space="preserve"
+         style="font-size:48px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:justify;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb"
+         x="1291.0469"
+         y="3657.4006"
+         id="text448-1"><tspan
+           sodipodi:role="line"
+           id="tspan446-9"
+           x="1291.0469"
+           y="3657.4006">j2: -125 A</tspan></text>
+    </g>
+    <g
+       id="g1260"
+       transform="translate(2.8694084,-45.708694)">
+      <path
+         style="fill:#ff0000;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 1731.0986,3643.2536 v 24.1995"
+         id="path547" />
+      <text
+         xml:space="preserve"
+         style="font-size:48px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:justify;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ff0000;stroke:#ff0000"
+         x="1680.7899"
+         y="3763.8547"
+         id="text551"><tspan
+           sodipodi:role="line"
+           x="1680.7899"
+           y="3763.8547"
+           id="tspan553">E1: -0.6 V</tspan></text>
+    </g>
+    <g
+       id="g1164"
+       transform="translate(2225.8864,-48.343841)">
+      <path
+         style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 1727.8436,3646.3729 v 24.1995"
+         id="path547-6" />
+      <text
+         xml:space="preserve"
+         style="font-size:48px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:justify;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb"
+         x="1721.2213"
+         y="3714.8369"
+         id="text551-0"><tspan
+           sodipodi:role="line"
+           x="1721.2213"
+           y="3714.8369"
+           id="tspan553-8">E2: 1.5 V</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:53.3333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:justify;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb"
+       x="4020.9797"
+       y="2763.4788"
+       id="text3073"><tspan
+         sodipodi:role="line"
+         id="tspan3071"
+         x="4020.9797"
+         y="2763.4788">scan rate: 10 mV / s</tspan></text>
+    <g
+       id="g571">
+      <text
+         xml:space="preserve"
+         style="font-size:48px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:justify;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb"
+         x="3339.5054"
+         y="2977.1536"
+         id="text1221"><tspan
+           sodipodi:role="line"
+           id="tspan1219"
+           x="3339.5054"
+           y="2977.1536">curve: Au(100) dashed </tspan></text>
+      <path
+         style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 1976.9037,2864.8025 0.3485,-39.9075 c 11.8819,-11.1751 24.6393,-8.855 38.6877,-10.1076 0,0 101.4783,-0.052 159.6301,-1.0456 58.1518,-0.9935 126.2336,-1.9115 189.2557,-5.2281 47.522,-2.5009 95.5157,-2.5373 142.3344,-11.0584 52.9861,-9.6435 127.3228,-31.5209 143.1177,-68.7566 15.7949,-37.2357 21.3767,-312.913 24.8437,-415.6457 3.4671,-102.7328 8.0942,-126.8361 11.8794,-16.9763 3.7852,109.8598 6.9829,425.002 9.1961,436.5953 2.2132,11.5933 -1.9166,54.6576 34.5034,53.2339 139.1913,7.873 275.3883,8.2601 412.0696,9.8581 l 0.9858,58.1629 -425.871,12.8156 c -0.571,0.571 -99.7284,0.4031 -174.9816,15.2801 -75.2532,14.877 -137.0143,47.766 -187.7973,-4.9291 -21.4061,-22.2121 -143.5655,-21.7004 -215.893,-27.1098 -40.3177,-3.0154 -105.3301,-3.4091 -121.2549,-2.9574 -21.1593,0.6002 -31.5487,5.5223 -41.0543,17.7762 z"
+         id="path470"
+         sodipodi:nodetypes="ccczaszzzzcccczsasc" />
+    </g>
+  </g>
+</svg>
