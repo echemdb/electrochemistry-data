@@ -138,4 +138,11 @@ pixi run -e dev fix-lowercase-dry-run  # Preview only
 # Convert LaTeX accent encodings to UTF-8 in bibliography.bib
 pixi run -e dev fix-bib-utf8           # Apply changes
 pixi run -e dev fix-bib-utf8-dry-run   # Preview only
+
+# Auto-fix identifier mismatches (detects dir name != YAML citationKey)
+pixi run -e dev fix-identifiers          # Apply changes
+pixi run -e dev fix-identifiers-dry-run  # Preview only
+
+# Rename directories and files after a bib key change (manual)
+pixi run -e dev rename-identifiers OLD_NAME NEW_NAME
 ```

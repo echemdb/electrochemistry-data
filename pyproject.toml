@@ -103,6 +103,12 @@ fix-lowercase = 'python -c "from echemdb_ecdata.validate import lowercase_svgdig
 fix-lowercase-dry-run = 'python -c "from echemdb_ecdata.validate import lowercase_svgdigitizer_files; lowercase_svgdigitizer_files(dry_run=True)"'
 fix-bib-utf8 = 'python -c "from echemdb_ecdata.bibliography import fix_bib_utf8; fix_bib_utf8()"'
 fix-bib-utf8-dry-run = 'python -c "from echemdb_ecdata.bibliography import fix_bib_utf8; fix_bib_utf8(dry_run=True)"'
+# Auto-fix identifier mismatches (detects dir name != YAML citationKey and renames)
+fix-identifiers = 'python -c "from echemdb_ecdata.validate import fix_identifiers; fix_identifiers()"'
+fix-identifiers-dry-run = 'python -c "from echemdb_ecdata.validate import fix_identifiers; fix_identifiers(dry_run=True)"'
+# Rename identifiers (directories and files) after a bib key change
+# Usage: bash util/rename_identifiers.sh OLD_NAME NEW_NAME
+rename-identifiers = "bash util/rename_identifiers.sh"
 # Tests
 doctest = "pytest -n auto --doctest-modules echemdb_ecdata"
 # pytest executes doctests of the cli

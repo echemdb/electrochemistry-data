@@ -178,6 +178,16 @@ pixi run -e dev fix-lowercase-dry-run  # Preview only
 # Convert LaTeX accent encodings to UTF-8 in bibliography.bib
 pixi run -e dev fix-bib-utf8           # Apply changes
 pixi run -e dev fix-bib-utf8-dry-run   # Preview only
+
+# Auto-fix identifier mismatches (detects dir name != YAML citationKey)
+# Renames directories and files in both literature/svgdigitizer/ and data/generated/svgdigitizer/
+pixi run -e dev fix-identifiers          # Apply changes
+pixi run -e dev fix-identifiers-dry-run  # Preview only
+
+# Rename directories and files after a bib key change (manual)
+# Renames in both literature/svgdigitizer/ and data/generated/svgdigitizer/
+pixi run -e dev rename-identifiers OLD_NAME NEW_NAME
+# Or directly: bash util/rename_identifiers.sh OLD_NAME NEW_NAME
 ```
 
 ### Development Tasks

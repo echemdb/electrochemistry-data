@@ -656,3 +656,148 @@ def lowercase_svgdigitizer_files(  # pylint: disable=too-many-locals,too-many-br
             print("Dry run: no changes needed.")
 
     return changes
+
+
+def _rename_directory(old_dir, new_dir, old_name, new_name, dry_run=False):
+    r"""
+    Rename a directory and all files whose names contain ``old_name``.
+
+    Tracked files are renamed with ``git mv`` (two-step for Windows
+    case-insensitive filesystem).  Untracked files are renamed with
+    plain ``os.rename``.
+
+    Returns a list of human-readable change descriptions.
+    """
+    changes = []
+    old_path = Path(old_dir)
+    new_path = Path(new_dir)
+
+    if not old_path.exists():
+        return changes
+
+    # Rename files inside the directory first
+    for filepath in sorted(old_path.iterdir()):
+        old_basename = filepath.name
+        new_basename = old_basename.replace(old_name, new_name)
+        if old_basename == new_basename:
+            continue
+
+        changes.append(f"  FILE: {old_basename} -> {new_basename}")
+        if dry_run:
+            continue
+
+        # Check if file is tracked by git
+        result = subprocess.run(
+            ["git", "ls-files", "--error-unmatch", str(filepath)],
+            capture_output=True, check=False,
+        )
+        if result.returncode == 0:
+            # Two-step rename for Windows case-insensitive filesystem
+            tmp = filepath.with_name(old_basename + ".tmp_rename")
+            subprocess.run(
+                ["git", "mv", str(filepath), str(tmp)],
+                check=True, capture_output=True,
+            )
+            subprocess.run(
+                ["git", "mv", str(tmp), str(old_path / new_basename)],
+                check=True, capture_output=True,
+            )
+        else:
+            os.rename(filepath, old_path / new_basename)
+
+    # Rename the directory itself
+    changes.append(f"  DIR:  {old_path.name}/ -> {new_path.name}/")
+    if not dry_run:
+        # Check if directory has tracked files
+        result = subprocess.run(
+            ["git", "ls-files", str(old_path)],
+            capture_output=True, text=True, check=False,
+        )
+        if result.stdout.strip():
+            tmp_dir = old_path.with_name(old_path.name + ".tmp_rename")
+            subprocess.run(
+                ["git", "mv", str(old_path), str(tmp_dir)],
+                check=True, capture_output=True,
+            )
+            subprocess.run(
+                ["git", "mv", str(tmp_dir), str(new_path)],
+                check=True, capture_output=True,
+            )
+        else:
+            os.rename(old_path, new_path)
+
+    return changes
+
+
+def fix_identifiers(  # pylint: disable=too-many-locals,too-many-branches
+    data_dir="literature/svgdigitizer",
+    generated_dir="data/generated/svgdigitizer",
+    dry_run=False,
+):
+    r"""
+    Automatically detect and fix directory/file name mismatches.
+
+    Scans all YAML files in ``data_dir``, reads each ``citationKey``,
+    and compares it to the parent directory name.  When they differ,
+    renames the directory and all contained files (in both the input
+    and generated trees) to match the ``citationKey``.
+
+    Uses ``git mv`` with a two-step rename for Windows compatibility.
+    Untracked files (e.g. PDFs) are renamed with plain ``os.rename``.
+
+    Use ``dry_run=True`` to preview changes without modifying anything.
+
+    EXAMPLES::
+
+        >>> fix_identifiers(dry_run=True)  # doctest: +SKIP
+
+    """
+    yaml_files = sorted(glob.glob(os.path.join(data_dir, "**/*.yaml"), recursive=True))
+
+    if not yaml_files:
+        raise FileNotFoundError(f"No YAML files found in {data_dir}")
+
+    # Collect unique directory-level mismatches (one per directory)
+    mismatches = {}  # old_dir_name -> new_dir_name (citationKey)
+    for yaml_file in yaml_files:
+        yaml_path = Path(yaml_file)
+        citation_key = (
+            _read_yaml_metadata(yaml_path).get("source", {}).get("citationKey", "")
+        )
+        if not citation_key:
+            continue
+        dir_name = yaml_path.parent.name
+        if dir_name != citation_key and dir_name not in mismatches:
+            mismatches[dir_name] = citation_key
+
+    if not mismatches:
+        print("No identifier mismatches found. Everything is up to date.")
+        return []
+
+    all_changes = []
+    for old_name, new_name in sorted(mismatches.items()):
+        print(f"{'[DRY RUN] ' if dry_run else ''}RENAME: {old_name} -> {new_name}")
+
+        # Rename in literature/svgdigitizer/
+        old_dir = os.path.join(data_dir, old_name)
+        new_dir = os.path.join(data_dir, new_name)
+        changes = _rename_directory(old_dir, new_dir, old_name, new_name, dry_run)
+        for c in changes:
+            print(c)
+        all_changes.extend(changes)
+
+        # Rename in data/generated/svgdigitizer/
+        old_gen = os.path.join(generated_dir, old_name)
+        new_gen = os.path.join(generated_dir, new_name)
+        if Path(old_gen).exists():
+            changes = _rename_directory(
+                old_gen, new_gen, old_name, new_name, dry_run,
+            )
+            for c in changes:
+                print(c)
+            all_changes.extend(changes)
+
+    action = "would rename" if dry_run else "renamed"
+    n = len(mismatches)
+    print(f"\n{n} director{'y' if n == 1 else 'ies'} {action}.")
+    return all_changes
