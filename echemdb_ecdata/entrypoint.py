@@ -210,8 +210,9 @@ def build_source_entry(csv_path, metadata, data_description):
         entry = _add_time_axis(entry, scan_rate)
 
     # Update fields in metadata
-    entry.metadata.echemdb["figureDescription"].__dict__.setdefault("fields", {})
-    entry.metadata.echemdb["figureDescription"].__dict__["fields"] = entry.fields
+    entry.resource.custom["metadata"]["echemdb"]["figureDescription"]["fields"] = [
+        f.to_dict() for f in entry.fields
+    ]
 
     return entry
 

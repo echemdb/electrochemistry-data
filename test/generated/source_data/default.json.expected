@@ -36,7 +36,25 @@
                         "scanRate": {
                             "value": 50,
                             "unit": "mV / s"
-                        }
+                        },
+                        "fields": [
+                            {
+                                "name": "E",
+                                "type": "number",
+                                "unit": "V",
+                                "reference": "RHE"
+                            },
+                            {
+                                "name": "j",
+                                "type": "number",
+                                "unit": "uA cm-2"
+                            },
+                            {
+                                "name": "t",
+                                "type": "number",
+                                "unit": "s"
+                            }
+                        ]
                     }
                 }
             }
