@@ -28,7 +28,7 @@ system:
           value: 12
         type: disk
       source:
-        manufacturer: MaTeck
+        manufacturer: MaTecK GmbH
       preparationProcedure:
         description:
           - stored in an oven at 960°C

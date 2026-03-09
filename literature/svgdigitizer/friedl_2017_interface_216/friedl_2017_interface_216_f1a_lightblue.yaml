@@ -26,7 +26,7 @@ system:
           value: 6
         type: disk
       source:
-        manufacturer: MaTeck
+        manufacturer: MaTecK GmbH
   electrolyte:
     components:
     - name: BMPyr-TFSI
