@@ -1,0 +1,97 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  tags:
+  - BCV
+  instrumentation:
+  - name: PotentiostatIV
+    type: potentiostat
+system:
+  type: electrochemical
+  electrodes:
+    - name: CE
+      function: counter electrode
+      crystallographicOrientation: poly
+      material: Pt
+      shape:
+        type: coil
+    - name: REF
+      function: reference electrode
+      source:
+        manufacturer: homemade
+      type: Pt-Pseudo
+    - name: WE
+      function: working electrode
+      crystallographicOrientation: '111'
+      type: highly oriented thin film
+      geometricElectrolyteContactArea:
+        unit: 0.196 / cm2
+      material: Au
+      preparationProcedure:
+        description:
+          - Flame annealing with butane flame
+  electrolyte:
+    components:
+    - name: water
+      proportion:
+        unit: volume percent
+        value: 100
+      source:
+        quality: ultrapure water
+        refinement: Millipore MilliQ
+      type: solvent
+    - concentration:
+        unit: mol / l
+        value: 0.1
+      name: H2SO4
+      source:
+        supplier: Merck
+        purity:
+          grade: suprapur
+      type: base
+    temperature:
+      unit: K
+      value: 298.15
+    type: aqueous
+  electrochemicalCell:
+    type: electrochemical microcalorimetry cell
+    source:
+      url: https://doi.org/10.1063/1.4922859
+source:
+  citationKey: schoenig_2023_entropic_5948
+  url: https://doi.org/10.1039/D2CP04680F
+  figure: '1'
+  curve:  orange
+  originalFilename: schoenig_2023_entropic_5948_f1_orange.csv
+figureDescription:
+  type: raw
+  measurementType: CV
+  scanRate:
+    value: 50
+    unit: mV / s
+dataDescription:
+  dialect:
+    delimiters: ','
+    decimal: '.'
+    encoding: utf-8
+    headerLines: 0
+    columnHeaderLines: 1
+  fieldMapping: # Also map fields which should be kept unchanged.
+    t: t
+    E: E # If the header consists of multiple lines, separate by " / ".
+    I: I
+  fieldUnits:
+    - name: E
+      unit: V
+      reference: Pt
+    - name: t
+      unit: s
+    - name: I
+      unit: A
+curation:
+  process:
+  - role: experimentalist
+    name: Marco Schoenig
+    orcid: https://orcid.org/0000-0002-4470-6705
+    date: 2026-03-10
+
