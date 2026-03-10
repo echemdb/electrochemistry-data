@@ -24,6 +24,7 @@ system:
       type: wire
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '111'
       material: Au
       preparationProcedure:

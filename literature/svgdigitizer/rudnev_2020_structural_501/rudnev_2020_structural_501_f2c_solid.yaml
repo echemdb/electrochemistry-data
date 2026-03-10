@@ -18,6 +18,7 @@ system:
       type: leakless ag/agcl-3.4m kcl edaq electrode
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '111'
       geometricElectrolyteContactArea:
         value: 0.03

@@ -54,6 +54,7 @@ system:
         type: coiled wire
     - name: WE
       function: working electrode
+      type: single crystal
       material: Pt
       crystallographicOrientation: '100'
       preparationProcedure:

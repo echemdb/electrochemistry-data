@@ -21,6 +21,7 @@ system:
       type: microreference
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '111'
       material: Au
       description: Au on mica

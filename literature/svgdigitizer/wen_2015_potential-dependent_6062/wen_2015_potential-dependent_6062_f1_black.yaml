@@ -13,6 +13,7 @@ system:
       type: Pt
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '111'
       source:
         manufacturer: Mateck
