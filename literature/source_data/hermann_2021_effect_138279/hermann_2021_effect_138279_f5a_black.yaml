@@ -37,7 +37,6 @@ system:
     ph:
       comment: "Estimated with CurTiPot (v4.4.0) using a temperature of 25 °C."
       value: 1.106
-
     temperature:
       unit: K
       value: 293.15
@@ -69,8 +68,10 @@ system:
           unit: mm
         diameter:
           value: 4
-          unit: mm
-      comment: oval shape with 4 and 3.95 mm diameter
+          unit: mm        
+      preparationProcedure:
+        description:
+          - oval shape with 4 and 3.95 mm diameter
   electrochemicalCell:
     type: beaker cell
 source:
