@@ -35,15 +35,12 @@ system:
     temperature:
       unit: K
       value: 293.15
-    temperature:
-      unit: K
-      value: 293.15
   electrodes:
     - name: RE
       function: reference electrode
       redoxSystem: Hg/Hg2SO4
       material: Hg
-      description: | 
+      description: |
         SI Analytics B3610+
           potentialDefiningConcentration:
         potassium sulfate: sat.
