@@ -10,6 +10,7 @@ system:
       type: RHE
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '0001'
       material: Ru
       preparationProcedure:
