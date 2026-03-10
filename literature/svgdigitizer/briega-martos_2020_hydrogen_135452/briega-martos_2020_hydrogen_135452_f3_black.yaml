@@ -5,8 +5,6 @@ experimental:
   - manufacturer: eDAQ
     name: EA161
     type: potentiostat
-  tags:
-  - BCV
 system:
   type: electrochemical
   electrodes:
