@@ -50,10 +50,11 @@ system:
     - name: RE
       function: reference electrode
       redoxSystem: Hg/Hg2SO4
-      potentialDefiningConcentration:
-        potassium sulfate: sat.
       material: Hg
-      description: SI Analytics B3610+
+      description: | 
+        SI Analytics B3610+
+          potentialDefiningConcentration:
+        potassium sulfate: sat.
     - name: WE
       function: working electrode
       type: single crystal
@@ -83,13 +84,13 @@ source:
   url: https://doi.org/10.1016/j.electacta.2021.138279
   figure: 5a
   curve: orange
+  originalFilename: 2017-03-06T19-11-39.000_0064_AUT84422.tsv
 experimental:
   tags:
     - FAOR
 figureDescription:
   type: raw
   measurementType: CV
-  originalFilename: 2017-03-06T19-11-39.000_0064_AUT84422.tsv
 dataDescription:
   dialect:
     delimiters: '\t'
