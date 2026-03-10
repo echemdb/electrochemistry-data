@@ -16,6 +16,17 @@ system:
         proportion:
           value: 100
           unit: volume percent
+        source:
+          refinement: Sartorius arium 611UV
+          purity:
+            grade: ultrapure water
+        purity:
+          totalIonConductivity:
+            value: 18.2
+            unit: MOhm cm
+          totalOrganicCarbon:
+            value: 3
+            unit: ppb
       - name: HClO4
         type: acid
         source:
@@ -47,8 +58,8 @@ system:
       comment: "Estimated with CurTiPot (v4.4.0) using a temperature of 25 °C."
       value: 1.069
     temperature:
-      unit: K
-      value: 293.15
+      unit: deg_C
+      value: 20
   electrodes:
     - name: RE
       function: reference electrode
@@ -106,7 +117,7 @@ dataDescription:
     Time (s): t
     WE(1).Potential (V): E
     WE(1).Current (A): I
-    Scan: scan
+    Scan: cycle
   fieldUnits:
     - name: Time (s)
       unit: s
@@ -116,4 +127,3 @@ dataDescription:
     - name: WE(1).Current (A)
       unit: A
     - name: Scan
-      unit: ""
