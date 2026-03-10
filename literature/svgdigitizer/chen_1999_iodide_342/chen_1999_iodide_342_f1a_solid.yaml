@@ -11,6 +11,7 @@ system:
       type: SCE-sat
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '111'
       material: Au
       source:
