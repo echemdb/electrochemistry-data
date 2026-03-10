@@ -83,7 +83,7 @@ dataDescription:
   fieldUnits:
     - name: E
       unit: V
-      reference: Pt
+      reference: SCE
     - name: t
       unit: s
     - name: I

@@ -20,6 +20,7 @@ system:
       source:
         manufacturer: homemade
       type: Pt-Pseudo
+      description: Potential offset to match SCE scale
     - name: WE
       function: working electrode
       crystallographicOrientation: '111'
@@ -46,7 +47,8 @@ system:
       name: KI
       source:
         supplier: Alfa Aesar
-        purity: 99.98%
+        purity:
+          value: 99.98
           grade: metals basis
       type: base
     temperature:
@@ -83,7 +85,7 @@ dataDescription:
   fieldUnits:
     - name: E
       unit: V
-      reference: Pt
+      reference: SCE
     - name: t
       unit: s
     - name: I
