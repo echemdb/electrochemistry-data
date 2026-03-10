@@ -56,7 +56,7 @@ system:
       function: reference electrode
       redoxSystem: Hg/Hg2SO4
       material: Hg
-      description: | 
+      description: |
         SI Analytics B3610+
           potentialDefiningConcentration:
         potassium sulfate: sat.
@@ -79,7 +79,7 @@ system:
           unit: mm
         diameter:
           value: 4
-          unit: mm        
+          unit: mm
       preparationProcedure:
         description:
           - oval shape with 4 and 3.95 mm diameter
@@ -97,10 +97,12 @@ experimental:
 figureDescription:
   type: raw
   measurementType: CV
-
+  scanRate:
+    value: 10
+    unit: mV / s
 dataDescription:
   dialect:
-    delimiters: '\t'
+    delimiters: "\t"
     decimal: '.'
     encoding: utf-8-sig
     headerLines: 0
@@ -111,10 +113,10 @@ dataDescription:
     WE(1).Current (A): I
     Scan: cycle
   fieldUnits:
-    - name: Time (s)
+    - name: t
       unit: s
-    - name: WE(1).Potential (V)
+    - name: E
       unit: V
       reference: MSE-sat.
-    - name: WE(1).Current (A)
+    - name: I
       unit: A
