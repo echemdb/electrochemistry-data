@@ -24,7 +24,7 @@ URL to a ZIP containing the latest echemdb electrochemistry data.
 import os
 
 
-def get_echemdb_database_url(version="0.7.4"):
+def get_echemdb_database_url(version="0.7.5"):
     """Returns a URL to an asset of a certain version of the echemdb electrochemistry-data.
 
     EXAMPLES:
@@ -33,13 +33,13 @@ def get_echemdb_database_url(version="0.7.4"):
 
         >>> from echemdb_ecdata.url import get_echemdb_database_url
         >>> get_echemdb_database_url()
-        'https://github.com/echemdb/electrochemistry-data/releases/download/0.7.4/data-0.7.4.zip'
+        'https://github.com/echemdb/electrochemistry-data/releases/download/0.7.5/data-0.7.5.zip'
 
     A URL with a specific version can be created::
 
         >>> from echemdb_ecdata.url import get_echemdb_database_url
-        >>> get_echemdb_database_url(version="0.7.4")
-        'https://github.com/echemdb/electrochemistry-data/releases/download/0.7.4/data-0.7.4.zip'
+        >>> get_echemdb_database_url(version="0.7.5")
+        'https://github.com/echemdb/electrochemistry-data/releases/download/0.7.5/data-0.7.5.zip'
 
     """
     base_url = "https://github.com/echemdb/electrochemistry-data/releases/download"
