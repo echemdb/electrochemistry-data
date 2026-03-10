@@ -14,6 +14,7 @@ system:
     - name: WE
       function: working electrode
       crystallographicOrientation: 'poly'
+      type: poly crystal
       material: Au
       shape:
         type: micro-electrode
