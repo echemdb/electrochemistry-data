@@ -1,0 +1,114 @@
+curation:
+  process:
+    - role: experimentalist
+      name: Johannes M. Hermann
+      orcid: https://orcid.org/0000-0001-7119-1295
+    - role: supervisor
+      name: Ludwig A. Kibler
+      orcid: https://orcid.org/0000-0003-1152-1445
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        proportion:
+          value: 100
+          unit: volume percent
+      - name: HClO4
+        type: acid
+        source:
+          supplier: Merck
+          grade: Suprapur
+        cas: 7601-90-3
+        concentration:
+          value: 0.1
+          unit: mol L⁻¹
+      - name: HCOOH
+        type: acid
+        source:
+          supplier: Merck
+          grade: Suprapur
+        cas: 64-18-6
+        concentration:
+          value: 0.1
+          unit: mol L⁻¹
+      - name: acetic acid
+        type: acid
+        source:
+          supplier: Merck
+          grade: Suprapur
+        cas: 64-19-7
+        concentration:
+          value: 0.1
+          unit: mol L⁻¹
+    ph:
+      comment: "Estimated with CurTiPot (v4.4.0) using a temperature of 25 °C."
+      value: 1.106
+  electrodes:
+    - name: RE
+      function: reference electrode
+      redoxSystem: Hg/Hg2SO4
+      potentialDefiningConcentration:
+        potassium sulfate: sat.
+      material: Hg
+      description: SI Analytics B3610+
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Au
+      crystallographicOrientation: "111"
+      source:
+      manufacturer: MaTecK
+      purity:
+        grade: 5N
+      geometricElectrolyteContactArea:
+        value: 0.1241
+        unit: cm⁻²
+      shape:
+        type: cylinder
+        height:
+          value: 5
+          unit: mm
+        diameter:
+          value:
+            - 4
+            - 3.95
+          unit: mm
+  electrochemicalCell:
+    type: beaker cell
+source:
+  citationKey: hermann_2021_effect_138279
+  url: https://doi.org/10.1016/j.electacta.2021.138279
+  figure: 5a
+  curve: orange
+experimental:
+  tags:
+    - FAOR
+figureDescription:
+  type: raw
+  measurementType: CV
+  originalFilename: 2017-03-06T19-11-39.000_0064_AUT84422.tsv
+dataDescription:
+  dialect:
+    delimiters: '\t'
+    decimal: '.'
+    encoding: utf-8-sig
+    headerLines: 0
+    columnHeaderLines: 1
+  fieldMapping:
+    Time (s): t
+    WE(1).Potential (V): E
+    WE(1).Current (A): I
+    Scan: scan
+  fieldUnits:
+    - name: Time (s)
+      unit: s
+    - name: WE(1).Potential (V)
+      unit: V
+      reference: MSE-sat.
+    - name: WE(1).Current (A)
+      unit: A
+    - name: Scan
+      unit: ""
