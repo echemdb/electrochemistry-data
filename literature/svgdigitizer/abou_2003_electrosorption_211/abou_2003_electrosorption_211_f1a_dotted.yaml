@@ -18,6 +18,7 @@ system:
       type: SCE
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '100'
       material: Ag
       preparationProcedure:

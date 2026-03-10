@@ -24,6 +24,7 @@ system:
       type: RHE
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '10 1 0'
       geometricElectrolyteContactArea:
         unit: 1 / cm2

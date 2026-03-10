@@ -9,7 +9,7 @@ system:
     - name: CE
       function: counter electrode
       material: Pt
-      shape: 
+      shape:
         type: wire
     - name: REF
       function: reference electrode
@@ -17,11 +17,16 @@ system:
     - name: WE
       function: working electrode
       crystallographicOrientation: poly
+      type: poly crystal
       material: Ag
       preparationProcedure:
         description:
           - Ag electrode polished mechanically with fine grade emery
             paper.
+          - rinsed with acetone and distiled water
+      geometricElectrolyteContactArea:
+        unit: cm2
+        value: 0.1256
   electrolyte:
     components:
     - concentration:

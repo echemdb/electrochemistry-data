@@ -16,6 +16,7 @@ system:
       type: Hg/HgO/0.1 M NaOH
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '110'
       material: Ag
       preparationProcedure:
