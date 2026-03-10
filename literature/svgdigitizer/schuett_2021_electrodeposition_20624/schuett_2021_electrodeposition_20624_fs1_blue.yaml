@@ -13,19 +13,20 @@ system:
       crystallographicOrientation: poly
       material: Pt
       source:
-        manufacturer: MaTeck GmbH
+        manufacturer: MaTecK GmbH
       shape:
         type: wire
     - name: REF
       function: reference electrode
       material: Zn
       source:
-        manufacturer: MaTeck GmbH
+        manufacturer: MaTecK GmbH
         purity:
           grade: '>99.99%'
       type: sheet
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '111'
       material: Au
       preparationProcedure:
@@ -37,7 +38,7 @@ system:
           value: 12
         type: disk
       source:
-        manufacturer: MaTeck GmbH
+        manufacturer: MaTecK GmbH
   electrolyte:
     components:
     - name: MPPip-TFSI

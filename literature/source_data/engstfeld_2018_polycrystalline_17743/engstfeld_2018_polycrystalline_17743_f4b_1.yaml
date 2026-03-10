@@ -23,6 +23,7 @@ system:
     - name: WE
       function: working electrode
       crystallographicOrientation: '100'
+      type: single crystal
       geometricElectrolyteContactArea:
         unit: 1 / cm2
       material: Cu

@@ -37,6 +37,7 @@ system:
       material: Pt
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '100'
       material: Pt
       source:

@@ -52,6 +52,7 @@ system:
           grade: 4N
     - name: WE
       function: working electrode
+      type: single crystal
       material: Pt
       crystallographicOrientation: '332'
       source:
