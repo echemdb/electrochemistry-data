@@ -4,14 +4,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "echemdb-ecdata"
-version = "0.5.1"
+version = "0.7.2"
 classifiers = ["License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)"]
 description = "a database for published electrochemical data inferred from SVG and raw CSV files."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "svgdigitizer>=0.14.1,<0.15.0",
+    "pydantic>=2.12.5,<3",
+    "svgdigitizer>=0.14.2,<0.15",
+    "unitpackage>=0.12.0,<0.13"
 ]
+
+[project.scripts]
+echemdb_ecdata = "echemdb_ecdata.entrypoint:cli"
 
 [tool.setuptools]
 packages = [
@@ -29,13 +34,14 @@ python-312 = ["test", "python-312"]
 python-313 = ["test", "python-313"]
 python-314 = ["test", "python-314"]
 dev = ["dev", "doc", "test", "lint"]
+release = ["release"]
 
 [tool.pixi.dependencies]
-pixi-kernel = ">=0.6.1,<0.7"
-ipykernel = ">=6.29.5,<7"
-pip = ">=25.0,<26"
-jupyterlab = ">=4.3.4,<5"
-jupytext = ">=1.16.6,<2"
+pixi-kernel = ">=0.7.1,<0.8"
+ipykernel = ">=7.2.0,<8"
+pip = ">=26.0.1,<27"
+jupyterlab = ">=4.5.4,<5"
+jupytext = ">=1.19.1,<2"
 
 [tool.pixi.pypi-dependencies]
 echemdb_ecdata = { path = ".", editable = true }
@@ -56,29 +62,75 @@ python = "3.13.*"
 python = "3.14.*"
 
 [tool.pixi.feature.test.dependencies]
-check-jsonschema = "*"
-pytest = "*"
-pytest-xdist = "*"
-pytest-doctestplus = "*"
-pytest-remotedata = "*"
+check-jsonschema = ">=0.36.2,<0.37"
+pytest = ">=9.0.2,<10"
+pytest-xdist = ">=3.8.0,<4"
+pytest-doctestplus = ">=1.7.1,<2"
+pytest-remotedata = ">=0.4.1,<0.5"
 
 [tool.pixi.feature.test.tasks]
+# Copy and convert data and bibliography
 copy-bib = "mkdir -p data/generated/bibliography && cp literature/bibliography/bibliography.bib data/generated/bibliography/bibliography.bib"
-convert = "cd data && make -j$(nproc)"
-data = { depends-on = ["copy-bib", "convert"] }
-# To validate the metadata against a specific version preceded the version by `tags` such as `tags/0.3.1`.
-# To validate the metadata against metadata in a specific branch use `head/branch-name`.
-validate = { args = [ { "arg" = "version", "default" = "tags/0.3.2" } ],cmd = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/echemdb_package.json --no-cache $(find ./data/generated/svgdigitizer/ -type f -name '*.json')" }
-validate-yaml = { args = [ { "arg" = "version", "default" = "tags/0.3.2" } ], cmd = "check-jsonschema --schemafile https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --base-uri https://raw.githubusercontent.com/echemdb/metadata-schema/refs/{{ version }}/schemas/svgdigitizer.json --no-cache $(find ./literature/svgdigitizer/ -type f -name '*.yaml')" }
+convert-svg = "cd data && make svg"
+convert-raw = "cd data && make source_data"
+convert-svg-force = "cd data && make svg-force"
+convert-raw-force = "cd data && make source_data-force"
+convert = { depends-on = ["copy-bib", "convert-raw", "convert-svg"] }
+convert-force = { depends-on = ["copy-bib", "convert-raw-force", "convert-svg-force"] }
+clean-data = "cd data && make clean"
+# Comparison: verify batch output matches existing generated data
+verify-svg = 'python -c "from echemdb_ecdata.digitize import verify_batch_conversion; verify_batch_conversion(data_type=\"svgdigitizer\")"'
+verify-raw = 'python -c "from echemdb_ecdata.digitize import verify_batch_conversion; verify_batch_conversion(data_type=\"source_data\")"'
+verify-all = 'python -c "from echemdb_ecdata.digitize import verify_batch_conversion; verify_batch_conversion(data_type=\"all\")"'
+# Validation
+# ==========
+# Two umbrella tasks run all relevant checks:
+#   validate-input     - YAML schema, filenames/identifiers, and bib keys (for input files in literature/)
+#   validate-generated - JSON schema and identifiers (for generated files in data/generated/)
+# To validate against a specific metadata-schema version use e.g. `--version tags/0.3.3` or `--version head/branch-name`.
+#
+# Schema validation of generated JSON datapackages
+# Default schema version is defined in echemdb_ecdata.validate.SCHEMA_VERSION.
+# Override per call: pixi run validate-svgdigitizer --version tags/0.3.3
+validate-svgdigitizer = { args = [ { "arg" = "version", "default" = "" } ], cmd = "python -c \"from echemdb_ecdata.validate import validate_schema; validate_schema('data/generated/svgdigitizer', 'echemdb_package', '{{ version }}' or None)\"" }
+validate-raw = { args = [ { "arg" = "version", "default" = "" } ], cmd = "python -c \"from echemdb_ecdata.validate import validate_schema; validate_schema('data/generated/source_data', 'echemdb_package', '{{ version }}' or None)\"" }
+# Schema validation of input YAML files
+validate-svgdigitizer-yaml = { args = [ { "arg" = "version", "default" = "" } ], cmd = "python -c \"from echemdb_ecdata.validate import validate_schema; validate_schema('literature/svgdigitizer', 'svgdigitizer', '{{ version }}' or None)\"" }
+validate-source-yaml = { args = [ { "arg" = "version", "default" = "" } ], cmd = "python -c \"from echemdb_ecdata.validate import validate_schema; validate_schema('literature/source_data', 'source_data', '{{ version }}' or None)\"" }
+# Filename, identifier, and bib-key validation
+validate-identifiers = 'python -c "from echemdb_ecdata.validate import validate_identifiers; validate_identifiers()"'
+validate-svgdigitizer-filenames = 'python -c "from echemdb_ecdata.validate import validate_svgdigitizer_input; validate_svgdigitizer_input()"'
+validate-source-filenames = 'python -c "from echemdb_ecdata.validate import validate_source_data_input; validate_source_data_input()"'
+validate-generated-identifiers = 'python -c "from echemdb_ecdata.validate import validate_generated_identifiers; validate_generated_identifiers()"'
+validate-bib-keys = 'python -c "from echemdb_ecdata.bibliography import validate_bib_keys; validate_bib_keys()"'
+validate-bib-utf8 = 'python -c "from echemdb_ecdata.bibliography import validate_bib_utf8; validate_bib_utf8()"'
+# Umbrella tasks (used in CI)
+validate-input = { depends-on = ["validate-svgdigitizer-yaml", "validate-source-yaml", "validate-identifiers", "validate-bib-keys", "validate-bib-utf8"] }
+validate-generated = { depends-on = ["validate-svgdigitizer", "validate-raw", "validate-generated-identifiers"] }
+# Fix utilities
+fix-lowercase = 'python -c "from echemdb_ecdata.validate import lowercase_svgdigitizer_files; lowercase_svgdigitizer_files()"'
+fix-lowercase-dry-run = 'python -c "from echemdb_ecdata.validate import lowercase_svgdigitizer_files; lowercase_svgdigitizer_files(dry_run=True)"'
+fix-bib-utf8 = 'python -c "from echemdb_ecdata.bibliography import fix_bib_utf8; fix_bib_utf8()"'
+fix-bib-utf8-dry-run = 'python -c "from echemdb_ecdata.bibliography import fix_bib_utf8; fix_bib_utf8(dry_run=True)"'
+# Auto-fix identifier mismatches (detects dir name != YAML citationKey and renames)
+fix-identifiers = 'python -c "from echemdb_ecdata.validate import fix_identifiers; fix_identifiers()"'
+fix-identifiers-dry-run = 'python -c "from echemdb_ecdata.validate import fix_identifiers; fix_identifiers(dry_run=True)"'
+# Rename identifiers (directories and files) after a bib key change
+# Usage: bash util/rename_identifiers.sh OLD_NAME NEW_NAME
+rename-identifiers = "bash util/rename_identifiers.sh"
+# Tests
 doctest = "pytest -n auto --doctest-modules echemdb_ecdata"
+# pytest executes doctests of the cli
+pytest = "pytest -n auto echemdb_ecdata/**/*.py"
+
 
 [tool.pixi.feature.lint.dependencies]
-black = "*"
-isort = "*"
-pylint = "*"
+black = ">=26.1.0,<27"
+isort = ">=7.0.0,<8"
+pylint = ">=4.0.4,<5"
 
 [tool.pixi.feature.dev.tasks]
-test = "pixi run doctest"
+test = { depends-on = ["doctest", "pytest"] }
 
 [tool.pixi.feature.lint.tasks]
 pylint = "pylint echemdb_ecdata"
@@ -87,21 +139,36 @@ isort = "isort --profile black echemdb_ecdata"
 lint = { depends-on = ["pylint", "black", "isort"] }
 
 [tool.pixi.feature.doc.dependencies]
-jupytext = "*"
-linkchecker = "*"
-myst-parser = "*"
-myst-nb = "*"
-sphinx = "*"
-sphinx-design = "*"
-sphinx_rtd_theme = "*"
-unitpackage = "*"
+jupytext = ">=1.19.1,<2"
+linkchecker = ">=10.6.0,<11"
+myst-parser = ">=5.0.0,<6"
+myst-nb = ">=1.3.0,<2"
+sphinx = ">=8.2.3,<9"
+sphinx-design = ">=0.7.0,<0.8"
+sphinx_rtd_theme = ">=3.1.0,<4"
 
 [tool.pixi.feature.doc.tasks]
 doc = "cd doc && make html SPHINXOPTS='-W -n --keep-going'"
 
 [tool.pixi.feature.dev.dependencies]
-make = "*"
-pybtex = "*"
-pip = "*"
-conda = "*"
-jupyterlab = "*"
+make = ">=4.4.1,<5"
+pip = ">=26.0.1,<27"
+conda = ">=26.1.0,<27"
+jupyterlab = ">=4.5.4,<5"
+
+[tool.pixi.target.win-64.dependencies]
+m2-bash = ">=5.2.37.2,<6"
+
+[tool.pixi.feature.release.tasks]
+# To create a new release, run `pixi run rever X.Y.Z`
+rever = { args = [ { "arg" = "version", "default" = "--help" } ],cmd = "rever {{ version }}" }
+
+[tool.pixi.feature.release.dependencies]
+twine = ">=6.2.0,<7"
+rever = ">=0.5.1,<0.6"
+make = ">=4.4.1,<5"
+setuptools = ">=80.10.2,<81"
+python = "*"
+
+[tool.pixi.feature.release.pypi-dependencies]
+build = ">=1.4.0, <2"

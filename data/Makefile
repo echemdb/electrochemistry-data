@@ -20,49 +20,74 @@
 #  along with echemdb. If not, see <https://www.gnu.org/licenses/>.
 # ********************************************************************
 
-SVGDIGITIZER=svgdigitizer
-CP=cp
-
 # The sampling interval at which we interpolate in volts.
 SAMPLING_INTERVAL=.001
 
 # The directory which we search for .yaml and .svg files to digitize.
-SOURCE_DIR=../literature/svgdigitizer
-
-# All the .yaml files in SOURCE_DIR directory and its subdirectories.
-SOURCE_METADATA=${wildcard ${SOURCE_DIR}/**/*.yaml}
-
-# All the .svg files corresponding to the SOURCE_METADATA .yaml files.
-SOURCE_SVG=${patsubst %.yaml,%.svg,${SOURCES_METADATA}}
+SVG_SOURCE_DIR=../literature/svgdigitizer
 
 # The directory with the bibliography file
 SOURCE_BIB=../literature/bibliography/bibliography.bib
 
 # The files for the digitized .csv, .json, and .bib are written to this
-# directory with the same subdirectory structure as they had in SOURCE_DIR.
-TARGET_DIR=generated/svgdigitizer
+# directory with the same subdirectory structure as they had in SVG_SOURCE_DIR.
+SVG_TARGET_DIR=generated/svgdigitizer
 
 TARGET_BIB_DIR = generated/bibliography
 
-# The .csv files that we are going to generate from the .yaml and .svg files.
-TARGET_CSV=${patsubst %.yaml,%.csv,${patsubst ${SOURCE_DIR}/%,${TARGET_DIR}/%,${wildcard ${SOURCE_DIR}/**/*.yaml}}}
-# The .json files that we are going to generate from the .yaml and .svg files.
-TARGET_JSON=${patsubst %.yaml,%.json,${patsubst ${SOURCE_DIR}/%,${TARGET_DIR}/%,${wildcard ${SOURCE_DIR}/**/*.yaml}}}
+# The directory which we search for .yaml and .csv files for raw data conversion.
+RAW_SOURCE_DIR=../literature/source_data
+
+# The directory where we write the converted raw data files.
+RAW_TARGET_DIR=generated/source_data
+
+# We create data packages, i.e., .csv and .json files, from .yaml and .svg
+# files by invoking the svgdigitizer via a batch Python function.
+# This processes all files in a single Python process, avoiding the ~3s import
+# overhead per file that occurs when calling `svgdigitizer cv` as a subprocess.
+# The function has built-in timestamp checking (like Make's dependency tracking)
+# to only rebuild files whose sources have changed.
+svg:
+	python -c "from echemdb_ecdata.digitize import digitize_svgdigitizer_data; digitize_svgdigitizer_data( \
+		source_dir='${SVG_SOURCE_DIR}', \
+		bibliography_path='${SOURCE_BIB}', \
+		target_dir='${SVG_TARGET_DIR}', \
+		sampling_interval=${SAMPLING_INTERVAL})"
+
+# Force rebuild all SVG files regardless of timestamps.
+svg-force:
+	python -c "from echemdb_ecdata.digitize import digitize_svgdigitizer_data; digitize_svgdigitizer_data( \
+		source_dir='${SVG_SOURCE_DIR}', \
+		bibliography_path='${SOURCE_BIB}', \
+		target_dir='${SVG_TARGET_DIR}', \
+		sampling_interval=${SAMPLING_INTERVAL}, \
+		force=True)"
 
 # We create a data package, i.e., a .csv and a .json file, from a .yaml and a
-# .svg files by invoking the svgdigitizer.
-# We also include the bibliography data from the bibliography.bib file.
-${TARGET_DIR}/%.csv ${TARGET_DIR}/%.json : ${SOURCE_DIR}/%.yaml ${SOURCE_DIR}/%.svg
-	${SVGDIGITIZER} cv --sampling-interval ${SAMPLING_INTERVAL} --si-units \
-		--bibliography ${SOURCE_BIB} --metadata $< ${patsubst %.yaml,%.svg,$<} \
-		--outdir=${@D} 2>&1 | awk '{ print "'$<': "$$0 }'
+# .csv files by invoking the batch Python conversion function.
+# This processes all files in a single Python process, avoiding the ~3s import
+# overhead per file that occurs when calling `echemdb_ecdata convert` as a subprocess.
+source_data:
+	python -c "from echemdb_ecdata.digitize import convert_source_data; convert_source_data( \
+		source_dir='${RAW_SOURCE_DIR}', \
+		bibliography_path='${SOURCE_BIB}', \
+		target_dir='${RAW_TARGET_DIR}')"
+
+# Force rebuild all source data files regardless of timestamps.
+source_data-force:
+	python -c "from echemdb_ecdata.digitize import convert_source_data; convert_source_data( \
+		source_dir='${RAW_SOURCE_DIR}', \
+		bibliography_path='${SOURCE_BIB}', \
+		target_dir='${RAW_TARGET_DIR}', \
+		force=True)"
 
 # The default action when calling "make" is to digitize all the .yaml/.svg
-all: ${TARGET_CSV} ${TARGET_JSON}
+# pairs and convert all raw data packages.
+all: svg source_data
 
-# Remove the entire TARGET_DIR to delete all the generated output.
+# Remove the entire generated directory to delete all the generated output.
 clean:
-	rm -rf ${TARGET_DIR} ${TARGET_BIB_DIR}
+	rm -rf ${SVG_TARGET_DIR} ${RAW_TARGET_DIR} ${TARGET_BIB_DIR}
 
 
-.PHONY: all clean
+.PHONY: all source_data source_data-force svg svg-force clean
