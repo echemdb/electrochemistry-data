@@ -16,33 +16,36 @@ system:
       - name: HClO4
         type: acid
         source:
-          supplier: Merck
-          grade: Suprapur
-        cas: 7601-90-3
+          supplier: Merck Suprapur
+        chemicalIdentifiers:
+          cas: 7601-90-3
         concentration:
           value: 0.1
           unit: mol L⁻¹
       - name: glycolic acid
         type: acid
         source:
-          supplier: Sigma-Aldrich
-          grade: BioXtra
-        cas: 79-14-1
+          supplier: Sigma-Aldrich BioXtra
+        chemicalIdentifiers:
+          cas: 79-14-1
         concentration:
           value: 0.1
           unit: mol L⁻¹
       - name: HCOOH
         type: acid
         source:
-          supplier: Merck
-          grade: Suprapur
-        cas: 64-18-6
+          supplier: Merck Suprapur
+        chemicalIdentifiers:
+          cas:  64-18-6
         concentration:
           value: 0.1
           unit: mol L⁻¹
     ph:
       comment: "Estimated with CurTiPot (v4.4.0) using a temperature of 25 °C."
       value: 1.105
+    temperature:
+      unit: K
+      value: 293.15
   electrodes:
     - name: RE
       function: reference electrode
@@ -58,7 +61,7 @@ system:
       material: Au
       crystallographicOrientation: "111"
       source:
-      manufacturer: MaTecK
+        supplier: MaTecK
       purity:
         grade: 5N
       geometricElectrolyteContactArea:
@@ -70,10 +73,11 @@ system:
           value: 5
           unit: mm
         diameter:
-          value:
-            - 4
-            - 3.95
+          value: 4
           unit: mm
+      preparationProcedure:
+        description:
+          - oval shape with 4 and 3.95 mm diameter
   electrochemicalCell:
     type: beaker cell
 source:
