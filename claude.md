@@ -247,6 +247,26 @@ Examples:
 - **Raw data support** - `literature/source_data/` holds raw experimental data with CSV files and YAML metadata
 - **Batch conversion** - Both SVG and source data conversion run in a single Python process via `echemdb_ecdata.digitize`, avoiding per-file import overhead (~3 s/file). Full rebuild: ~30-50 s instead of ~15 min
 
+## Agent Workflow Notes (Tagging)
+
+- **Source of truth for svgdigitizer tags**: tags are stored in `literature/svgdigitizer/**/*.svg` as a text field `tags: ...` (comma-separated).
+- **Do not rely on YAML tags for svgdigitizer**: `experimental.tags` is intentionally removed from `literature/svgdigitizer/**/*.yaml`.
+- **Why digest files are generated during curation**: to review proposed tag updates before bulk edits and to document the inference rationale in a reproducible way.
+- **Do not commit internal digest artifacts** unless explicitly requested.
+
+Tag inference rules used for SVG curation:
+- Start from baseline `BCV` when no explicit reactant oxidation tag applies.
+- Add `SHA` when electrolyte components include specific halide additives (e.g., `KCl`, `NaBr`, `KI`, `CsI`; but not oxyanions like `HClO4`/`KClO4`).
+- Add reactant tags based on component names: `FAOR` (formic acid/formate), `COOR` (CO), `MOR` (methanol).
+- Keep reaction-focused tags (e.g., `HER`, `OER`, `ORR`) only when explicitly justified by the entry context.
+
+Practical reproducible workflow (no tables in repo docs):
+- Parse `literature/svgdigitizer/**/*.yaml` to read electrolyte component names and electrolyte type (aqueous vs ionic liquid).
+- Detect whether an SVG already has a `tags:` text node.
+- For missing tag nodes, infer tags from components and inject `tags: ...` before `</svg>`.
+- For existing tag nodes, update tag text in place and keep comma-separated format.
+- Run `pixi run -e dev validate-input` after bulk edits.
+
 ## Related Documentation
 
 - [svgdigitizer workflow](https://echemdb.github.io/svgdigitizer/workflow.html) - Data extraction process
