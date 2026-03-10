@@ -55,7 +55,7 @@ system:
       material: Au
       crystallographicOrientation: "111"
       source:
-        supplier: MaTecK
+        supplier: MaTecK GmbH
       purity:
         grade: 5N
       geometricElectrolyteContactArea:

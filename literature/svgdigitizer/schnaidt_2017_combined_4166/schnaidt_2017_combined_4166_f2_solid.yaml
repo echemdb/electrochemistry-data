@@ -33,7 +33,7 @@ system:
           value: 10
         type: hat shaped
       source:
-        manufacturer: MaTecK
+        manufacturer: MaTecK GmbH
   electrolyte:
     components:
     - name: H2O

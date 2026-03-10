@@ -48,7 +48,7 @@ system:
       material: Pt
       crystallographicOrientation: '111'
       source:
-        manufacturer: MaTecK
+        manufacturer: MaTecK GmbH
       shape:
         type: cylinder
         height:
