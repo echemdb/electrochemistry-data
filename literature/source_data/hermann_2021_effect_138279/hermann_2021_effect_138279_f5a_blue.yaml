@@ -112,4 +112,3 @@ dataDescription:
       reference: MSE-sat.
     - name: WE(1).Current (A)
       unit: A
-    - name: Scan
