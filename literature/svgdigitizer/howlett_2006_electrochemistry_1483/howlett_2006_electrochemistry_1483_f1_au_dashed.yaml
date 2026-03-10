@@ -20,6 +20,7 @@ system:
       type: AgTfO/PMP-TFSI
     - name: WE
       function: working electrode
+      type: poly crystal
       crystallographicOrientation: poly
       geometricElectrolyteContactArea:
         unit: cm-2

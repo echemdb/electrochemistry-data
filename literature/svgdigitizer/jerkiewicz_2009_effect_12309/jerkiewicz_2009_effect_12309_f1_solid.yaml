@@ -65,6 +65,7 @@ system:
       crystallographicOrientation: poly
     - name: WE
       function: working electrode
+      type: single crystal
       material: Pt
       shape:
         diameter:

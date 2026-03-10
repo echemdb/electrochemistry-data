@@ -44,6 +44,7 @@ system:
       material: Pt
     - name: WE
       function: working electrode
+      type: single crystal
       material: Au
       crystallographicOrientation: '111'
       source:

@@ -46,6 +46,7 @@ system:
       type: RHE
     - name: WE
       function: working electrode
+      type: single crystal
       material: Pt
       crystallographicOrientation: '10,9,9'
       preparationProcedure:
