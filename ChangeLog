@@ -4,6 +4,19 @@ electrochemistry-data Change Log
 
 .. current developments
 
+v0.7.6
+====================
+
+**Added:**
+
+* Added tag `SHA` (specific halide adsorption) to all entries containing electrolytes with halides.
+
+**Fixed:**
+
+* Fixed numerous tags across YAML and SVG files.
+
+
+
 v0.7.5
 ====================
 
