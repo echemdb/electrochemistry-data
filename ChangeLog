@@ -4,6 +4,15 @@ electrochemistry-data Change Log
 
 .. current developments
 
+v0.7.7
+====================
+
+**Fixed:**
+
+* Fixed missing `SHA` tag for entries containing electrolytes with halides.
+
+
+
 v0.7.6
 ====================
 
