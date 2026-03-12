@@ -23,7 +23,7 @@ system:
       type: poly crystal
       crystallographicOrientation: poly
       geometricElectrolyteContactArea:
-        unit: cm-2
+        unit: cm2
         value: 1
       material: Au
   electrolyte:

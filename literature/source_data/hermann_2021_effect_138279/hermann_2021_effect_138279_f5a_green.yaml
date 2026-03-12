@@ -80,7 +80,7 @@ system:
         grade: 5N
       geometricElectrolyteContactArea:
         value: 0.1241
-        unit: cm⁻²
+        unit: cm²
       shape:
         type: cylinder
         height:

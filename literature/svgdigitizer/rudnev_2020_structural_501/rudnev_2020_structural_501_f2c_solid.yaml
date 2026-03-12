@@ -22,7 +22,7 @@ system:
       crystallographicOrientation: '111'
       geometricElectrolyteContactArea:
         value: 0.03
-        unit: cm-2
+        unit: cm2
       material: Au
       preparationProcedure:
         description:

@@ -55,7 +55,7 @@ system:
           unit: mm
           value: 12
       geometricElectrolyteContactArea:
-        unit: cm-2
+        unit: cm2
       preparationProcedure:
         description:
           - Annealed in a hydrogen flame for 6 min.
