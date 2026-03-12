@@ -57,7 +57,7 @@ system:
       crystallographicOrientation: '111'
       geometricElectrolyteContactArea:
         value: 0.3
-        unit: cm-2
+        unit: cm2
     - name: CE  # Counter electrode
     - name: REF  # Reference electrode
   electrolyte:

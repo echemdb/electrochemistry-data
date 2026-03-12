@@ -22,7 +22,7 @@ system:
       crystallographicOrientation: '111'
       material: Au
       geometricElectrolyteContactArea:
-        unit: cm-2
+        unit: cm2
         value: 0.3
       description: Au on mica
       source:

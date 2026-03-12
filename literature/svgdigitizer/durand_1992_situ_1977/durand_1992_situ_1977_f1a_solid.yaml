@@ -15,7 +15,7 @@ system:
       type: single crystal
       crystallographicOrientation: '110'
       geometricElectrolyteContactArea:
-        unit: cm-2
+        unit: cm2
       material: Pt
       preparationProcedure:
         description:

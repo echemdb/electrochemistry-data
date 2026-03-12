@@ -36,7 +36,7 @@ system:
           - annealed for 5 min by inductive heating in N2
       geometricElectrolyteContactArea:
         value: 0.58
-        unit: cm-2
+        unit: cm2
   electrolyte:
     components:
     - name: BMIm-PF6

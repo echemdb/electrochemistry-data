@@ -71,7 +71,7 @@ system:
         grade: 5N
       geometricElectrolyteContactArea:
         value: 0.1241
-        unit: cm⁻²
+        unit: cm²
       shape:
         type: cylinder
         height:
@@ -97,7 +97,9 @@ experimental:
 figureDescription:
   type: raw
   measurementType: CV
-
+  scanRate:
+    value: 10
+    unit: mV s⁻¹
 dataDescription:
   dialect:
     delimiters: '\t'
@@ -111,10 +113,10 @@ dataDescription:
     WE(1).Current (A): I
     Scan: cycle
   fieldUnits:
-    - name: Time (s)
+    - name: t
       unit: s
-    - name: WE(1).Potential (V)
+    - name: E
       unit: V
       reference: MSE-sat.
-    - name: WE(1).Current (A)
+    - name: I
       unit: A
