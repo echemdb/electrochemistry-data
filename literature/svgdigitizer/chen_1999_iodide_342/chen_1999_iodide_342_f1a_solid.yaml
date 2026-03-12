@@ -28,6 +28,9 @@ system:
         value: 0.1
       name: KClO4
       type: salt
+      chemicalIdentifiers:
+        cas: 7778-74-7
+        smiles: '[K+].[ClO4-]'
       # purification: Purified by calcination, recrystallization, and drying.
       source:
         supplier: Fisher
@@ -38,6 +41,9 @@ system:
         value: 1
       name: KOH
       type: salt
+      chemicalIdentifiers:
+        cas: 1310-58-3
+        smiles: '[K+].[OH-]'
       comment: Estimated the concentration necessary to adjust pH.
       source:
         supplier: Merck
@@ -45,6 +51,9 @@ system:
           grade: Suprapure
     - name: H2O
       type: solvent
+      chemicalIdentifiers:
+        cas: 7732-18-5
+        smiles: O
       proportion:
         value: 100
         unit: volume percent
@@ -66,6 +75,9 @@ system:
           value: 99.99
           unit: percent
       type: salt
+      chemicalIdentifiers:
+        cas: 7681-11-0
+        smiles: '[K+].[I-]'
     ph:
       value: 11
     temperature:

@@ -25,13 +25,22 @@ system:
         value: 0.1
       name: KBr
       type: salt
+      chemicalIdentifiers:
+        cas: 7758-02-3
+        smiles: '[K+].[Br-]'
     - name: water
       type: solvent
+      chemicalIdentifiers:
+        cas: 7732-18-5
+        smiles: O
     - concentration:
         unit: mol / l
         value: 0.05
       name: KOH
       type: base
+      chemicalIdentifiers:
+        cas: 1310-58-3
+        smiles: '[K+].[OH-]'
     ph:
       value: 12.5
     temperature:

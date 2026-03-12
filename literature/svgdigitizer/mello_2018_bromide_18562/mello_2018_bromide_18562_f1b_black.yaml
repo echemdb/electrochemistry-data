@@ -23,10 +23,16 @@ system:
     components:
     - name: HClO4
       type: acid
+      chemicalIdentifiers:
+        cas: 7601-90-3
+        smiles: Cl(=O)(=O)(=O)O
     - name: water
       type: solvent
     - name: KClO4
       type: salt
+      chemicalIdentifiers:
+        cas: 7778-74-7
+        smiles: '[K+].[ClO4-]'
     ph:
       value: 2.2
     temperature:

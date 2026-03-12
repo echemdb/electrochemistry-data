@@ -25,8 +25,14 @@ system:
         value: 0.05
       name: NaClO4
       type: acid
+      chemicalIdentifiers:
+        cas: 7601-89-0
+        smiles: '[Na+].[ClO4-]'
     - name: water
       type: solvent
+      chemicalIdentifiers:
+        cas: 7732-18-5
+        smiles: O
     temperature:
       unit: K
       value: 293

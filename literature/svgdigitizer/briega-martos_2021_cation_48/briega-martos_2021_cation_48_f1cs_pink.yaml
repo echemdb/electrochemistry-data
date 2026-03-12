@@ -45,12 +45,18 @@ system:
       source:
         quality: ultrapure water
       type: solvent
+      chemicalIdentifiers:
+        cas: 7732-18-5
+        smiles: O
     - concentration:
         unit: mol / l
       name: HClO4
       source:
         supplier: Merck
       type: acid
+      chemicalIdentifiers:
+        cas: 7601-90-3
+        smiles: Cl(=O)(=O)(=O)O
     ph:
       value: 2.9
     temperature:

@@ -35,18 +35,30 @@ system:
         value: 1
       name: HClO4
       type: acid
+      chemicalIdentifiers:
+        cas: 7601-90-3
+        smiles: Cl(=O)(=O)(=O)O
     - name: water
       type: solvent
+      chemicalIdentifiers:
+        cas: 7732-18-5
+        smiles: O
     - concentration:
         unit: mol / l
         value: 0.1
       name: KClO4
       type: salt
+      chemicalIdentifiers:
+        cas: 7778-74-7
+        smiles: '[K+].[ClO4-]'
     - concentration:
         unit: mmol / l
         value: 5
       name: KCl
       type: salt
+      chemicalIdentifiers:
+        cas: 7447-40-7
+        smiles: '[K+].[Cl-]'
     ph:
       value: 3
     temperature:

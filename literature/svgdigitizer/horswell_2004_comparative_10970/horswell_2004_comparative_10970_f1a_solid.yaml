@@ -32,11 +32,17 @@ system:
       type: salt
     - name: water
       type: solvent
+      chemicalIdentifiers:
+        cas: 7732-18-5
+        smiles: O
     - concentration:
         unit: mol / l
         value: 0.01
       name: NaOH
       type: base
+      chemicalIdentifiers:
+        cas: 1310-73-2
+        smiles: '[Na+].[OH-]'
     temperature:
       unit: K
       value: 298.15

@@ -16,12 +16,18 @@ system:
     components:
     - name: water
       type: solvent
+      chemicalIdentifiers:
+        cas: 7732-18-5
+        smiles: O
       source:
         refinement: Millipore-Super Q
       purity:
         grade: ultrapure
     - name: H2SO4
       type: acid
+      chemicalIdentifiers:
+        cas: 7664-93-9
+        smiles: OS(=O)(=O)O
       concentration:
         value: 0.5
         unit: mol / l

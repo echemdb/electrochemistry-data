@@ -13,6 +13,9 @@ system:
     components:
       - name: water
         type: solvent
+        chemicalIdentifiers:
+          cas: 7732-18-5
+          smiles: O
         proportion:
           value: 100
           unit: volume percent
@@ -32,7 +35,8 @@ system:
         source:
           supplier: Merck Suprapur
         chemicalIdentifiers:
-          cas:  7664-93-9
+          cas: 7664-93-9
+          smiles: Cl(=O)(=O)(=O)O
         concentration:
           value: 0.1
           unit: mol L⁻¹
@@ -41,7 +45,8 @@ system:
         source:
           supplier: Merck Suprapur
         chemicalIdentifiers:
-          cas:  7664-38-2
+          cas: 7664-38-2
+          smiles: OP(=O)(O)O
         concentration:
           value: 0.1
           unit: mol L⁻¹
@@ -50,7 +55,8 @@ system:
         source:
           supplier: Merck Suprapur
         chemicalIdentifiers:
-          cas:  64-18-6
+          cas: 64-18-6
+          smiles: OC(=O)C
         concentration:
           value: 0.1
           unit: mol L⁻¹

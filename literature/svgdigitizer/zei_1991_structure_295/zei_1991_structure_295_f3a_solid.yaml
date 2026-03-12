@@ -21,11 +21,17 @@ system:
         value: 0.01
       name: NaCl
       type: salt
+      chemicalIdentifiers:
+        cas: 7647-14-5
+        smiles: '[Na+].[Cl-]'
     - name: water
       proportion:
         unit: volume percent
         value: 100
       type: solvent
+      chemicalIdentifiers:
+        cas: 7732-18-5
+        smiles: O
     temperature:
       unit: K
       value: 298.15

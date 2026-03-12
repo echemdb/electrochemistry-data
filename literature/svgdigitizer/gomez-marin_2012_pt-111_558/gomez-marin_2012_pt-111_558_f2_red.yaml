@@ -31,8 +31,14 @@ system:
         value: 0.1
       name: HClO4
       type: acid
+      chemicalIdentifiers:
+        cas: 7601-90-3
+        smiles: Cl(=O)(=O)(=O)O
     - name: water
       type: solvent
+      chemicalIdentifiers:
+        cas: 7732-18-5
+        smiles: O
     temperature:
       unit: K
       value: 298.15

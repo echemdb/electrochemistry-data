@@ -23,15 +23,24 @@ system:
     components:
     - name: Na2HPO4
       type: acid
+      chemicalIdentifiers:
+        cas: 7558-79-4
+        smiles: '[Na+].[Na+].[O-]P(=O)(O)[O-]'
     - name: water
       type: solvent
     - name: NaH2PO4
       type: acid
+      chemicalIdentifiers:
+        cas: 7558-80-7
+        smiles: '[Na+].[O-]P(=O)(O)O'
     - concentration:
         unit: mol / l
         value: 0.01
       name: KBr
       type: salt
+      chemicalIdentifiers:
+        cas: 7758-02-3
+        smiles: '[K+].[Br-]'
     ph:
       value: 4.5
     temperature:

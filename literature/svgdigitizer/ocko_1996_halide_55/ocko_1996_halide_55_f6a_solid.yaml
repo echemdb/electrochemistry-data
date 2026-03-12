@@ -21,8 +21,14 @@ system:
         value: 0.05
       name: NaBr
       type: salt
+      chemicalIdentifiers:
+        cas: 7647-15-6
+        smiles: '[Na+].[Br-]'
     - name: water
       type: solvent
+      chemicalIdentifiers:
+        cas: 7732-18-5
+        smiles: O
     temperature:
       unit: K
       value: 298.15
