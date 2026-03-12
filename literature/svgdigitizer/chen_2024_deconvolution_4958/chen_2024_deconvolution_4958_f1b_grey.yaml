@@ -8,8 +8,6 @@ experimental:
   - manufacturer: Biologic
     name: VSP-300
     type: potentiostat
-  tags:
-  - BCV
 system:
   type: electrochemical
   electrodes:

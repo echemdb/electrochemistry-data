@@ -96,9 +96,12 @@ experimental:
 figureDescription:
   type: raw
   measurementType: CV
+  scanRate:
+    value: 10
+    unit: mV / s
 dataDescription:
   dialect:
-    delimiters: '\t'
+    delimiters: "\t"
     decimal: '.'
     encoding: utf-8-sig
     headerLines: 0
