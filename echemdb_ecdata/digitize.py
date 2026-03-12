@@ -39,6 +39,7 @@ Convert all source data files::
 # ********************************************************************
 import logging
 import os
+import sys
 import tempfile
 from dataclasses import dataclass, field
 from io import StringIO
@@ -338,6 +339,8 @@ def _run_svg_batch(config, yaml_files=None):
             errors += 1
 
     _print_summary("digitized", processed, skipped, errors, len(yaml_paths))
+    if errors:
+        sys.exit(1)
 
 
 # ---------------------------------------------------------------------------
@@ -492,6 +495,8 @@ def _run_source_batch(config, yaml_files=None):
             errors += 1
 
     _print_summary("converted", processed, skipped, errors, len(yaml_paths))
+    if errors:
+        sys.exit(1)
 
 
 # ---------------------------------------------------------------------------

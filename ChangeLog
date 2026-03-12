@@ -4,6 +4,47 @@ electrochemistry-data Change Log
 
 .. current developments
 
+v0.7.7
+====================
+
+**Fixed:**
+
+* Fixed missing `SHA` tag for entries containing electrolytes with halides.
+
+
+
+v0.7.6
+====================
+
+**Added:**
+
+* Added tag `SHA` (specific halide adsorption) to all entries containing electrolytes with halides.
+
+**Fixed:**
+
+* Fixed numerous tags across YAML and SVG files.
+
+
+
+v0.7.5
+====================
+
+**Removed:**
+
+* Removed url from bibliography of `hermannn_2021_effect_138279`.
+
+
+
+v0.7.4
+====================
+
+**Fixed:**
+
+* Fixed source file dialects.
+* Fixed raising sys.exit(1) when conversion fails, to not build the database.
+
+
+
 v0.7.3
 ====================
 
