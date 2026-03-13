@@ -30,8 +30,14 @@ system:
         value: 0.05
       name: KClO4
       type: salt
+      chemicalIdentifiers:
+        cas: 7778-74-7
+        smiles: '[K+].[ClO4-]'
     - name: water
       type: solvent
+      chemicalIdentifiers:
+        cas: 7732-18-5
+        smiles: O
     temperature:
       unit: K
       value: 293

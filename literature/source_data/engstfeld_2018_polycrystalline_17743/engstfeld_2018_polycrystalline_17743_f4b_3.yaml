@@ -50,6 +50,9 @@ system:
         quality: ultrapure water
         refinement: Millipore MilliQ
       type: solvent
+      chemicalIdentifiers:
+        cas: 7732-18-5
+        smiles: O
     - concentration:
         unit: mol / l
         value: 0.1
@@ -57,6 +60,9 @@ system:
       source:
         supplier: Merck Suprapur
       type: base
+      chemicalIdentifiers:
+        cas: 1310-58-3
+        smiles: '[K+].[OH-]'
     ph:
       value: 13
     temperature:
