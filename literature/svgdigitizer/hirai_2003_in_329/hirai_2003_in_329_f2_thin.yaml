@@ -9,8 +9,6 @@ source:
   citationKey: hirai_2003_in_329
   techniques:
   - CV
-  figure: '2'
-  curve: thin
 system:
   type: electrochemical
   electrolyte:
