@@ -1,0 +1,52 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-01-21
+source:
+  url: https://doi.org/10.1016/j.susc.2003.12.059
+  citationKey: foelske_2002_initial_10
+  techniques:
+  - CV
+experimental:
+  tags: 
+    - BCV
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        purity:
+          grade: ultrapure
+          totalIonConductivity:
+            value: 18
+            unit: MΩ cm
+      - name: NaOH
+        type: base
+        concentration:
+          value: 0.1
+          unit: mol / l
+        source:
+          supplier: Gen-Apex
+        purity:
+          grade: ultrapure
+    ph:
+      value: 13
+  electrodes:
+    - name: RE
+      function: reference electrode
+      material: Pt
+    - name: CE
+      function: counter electrode
+      material: Pt
+    - name: WE
+      function: working electrode
+      type: polycrystalline
+      material: Co
+      crystallographicOrientation: poly
+      geometricElectrolyteContactArea:
+        value: 0.16
+        unit: cm²
