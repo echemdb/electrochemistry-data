@@ -1,0 +1,76 @@
+experimental:
+  tags: 
+    - BCV
+  instrumentation:
+    - type: potentiostat
+      manufacturer: Metrohm
+      name: Autolab PGSTAT302N
+    - type: voltage function generator
+      manufacturer: Agilent
+      name: 33220A
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: H2O
+        type: solvent
+        source:
+          refinement: Barnstead UV Pure system
+        purity:
+          grade: ultrapure
+          totalIonConductivity:
+            value: 18.3
+            unit: MΩ cm
+      - name: H2SO4
+        type: acid
+        source:
+          supplier: Fisher Scientific
+        purity:
+          value: 98
+          unit: pct
+        concentration:
+          value: 0.1
+          unit: mol / l
+    temperature:
+      value: 25
+      unit: degC
+      uncertainty:
+        value: 1
+        unit: degC
+  electrodes:
+    - name: RE
+      function: reference electrode
+      type: Ag/AgCl
+    - name: CE
+      function: counter electrode
+      material: Pt wire
+      source:
+        manufacturer: Alfa Aesar  
+      purity:
+        value: 99.9
+        unit: pct
+    - name: WE
+      function: working electrode
+      material: Pt
+      crystallographicOrientation: POSC
+      source:
+        manufacturer: Alfa Aesar
+      shape:
+        type: sphere
+      purity:
+        value: 99.99
+        unit: pct
+      preparationProcedure:
+        description:
+          - POSC prepared by melting the tip of the wire using a hydrogen flame.
+          - Annealed in a methane flame continously for 24 to 48 h.
+source:
+  citationKey: feng_2017_new_1003
+  url: https://doi.org/10.1134/S1023193517090051
+curation:
+  process:
+  - role: curator
+    name: Valerie Link
+    orcid: https://orcid.org/0009-0004-3341-1452
+    date: 2025-02-21
