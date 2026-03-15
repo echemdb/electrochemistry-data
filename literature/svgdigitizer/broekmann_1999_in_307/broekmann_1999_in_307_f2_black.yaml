@@ -1,0 +1,52 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-02-08
+source:
+  url: https://doi.org/10.1016/S0022-0728(99)00048-0
+  citationKey: broekmann_1999_in_307
+  techniques:
+  - CV
+experimental:
+  tags: 
+    - BCV
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          refinement: Milli-Q purification system
+        purity:
+          grade: high purity
+          totalIonConductivity:
+            value: 18
+            unit: MΩ cm
+      - name: H2SO4
+        type: acid
+        concentration:
+          value: 5
+          unit: mM
+        purity:
+          grade: reagent grade
+    comment: Electorlyte was purges with argon several hours before experiment. 
+  electrodes:
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Cu
+      crystallographicOrientation: '111'
+      preparationProcedure:
+        description:
+          - Made out of single crystal rod.
+          - Oriented with Laue backscattering.
+          - Polished mechanically with diamond paste with different grain sizes down to 25 μm.
+          - Electropolished to remove copper oxide (details see https://doi.org/10.1016/S0022-0728(99)00463-5).
+          - Polishing of the bead to achieve the desired surface orientation.
+          - Inductive annealed for 6h at 900 °C in 5N argon.
+          - 15 min inductive annealing before each measurement.
+          - details see https://doi.org/10.1016/j.electacta.2006.11.048.
