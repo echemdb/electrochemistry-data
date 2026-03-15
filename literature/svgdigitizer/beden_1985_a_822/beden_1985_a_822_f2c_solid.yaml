@@ -1,0 +1,65 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-02-02
+source:
+  url: https://doi.org/10.1016/0039-6028(85)90985-9
+  citationKey: beden_1985_a_822
+  techniques:
+  - CV
+experimental:
+  tags: 
+  - BCV
+  instrumentation:
+    - type: potentiostat
+      name: PGS 77 
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        purity:
+          grade: triply distilled
+      - name: NaOH
+        type: base
+        concentration:
+          value: 0.1
+          unit: mol / l
+        source:
+          supplier: Merck
+        purity:
+          grade: suprapur
+    temperature:
+      value: 25
+      unit: degC
+      uncertainty:
+        value: 0.1
+        unit: degC
+  electrodes:
+    - name: RE
+      function: reference electrode
+      type: mercury / mercury oxide
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Ni
+      shape:
+        type: cylinder
+        diameter:
+          value: 4
+          unit: mm
+        height:
+          value: 4
+          unit: mm
+      geometricElectrolyteContactArea:
+        value: 12.56
+        unit: mm2
+      crystallographicOrientation: '111'
+      preparationProcedure:
+        description:
+          - Oriented surface polished with fine aluminum down to 0.05 µm.
+          - Rinsed with ultrapure water and transfered protected by a water droplet.
