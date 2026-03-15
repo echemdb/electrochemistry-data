@@ -1,0 +1,50 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-01-11
+source:
+  url: https://doi.org/10.1016/S0022-0728(97)00208-8
+  citationKey: ando_1997_in_277
+  techniques:
+  - CV
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          refinement: Millipore water
+        purity:
+          totalIonConductivity:
+            value: 18
+            unit: MΩ cm
+      - name: Na2SO4
+        type: salt
+        concentration:
+          value: 0.05
+          unit: mol / l
+        source:
+          supplier: Merck
+        purity:
+          grade: ultrahigh purity
+      - name: N2
+        type: gas
+    ph:
+      value: 3
+  electrodes:
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Co
+      purity:
+        grade: 5N
+      crystallographicOrientation: '0001'
+      source:
+        supplier: Mateck
+      preparationProcedure:
+        description:
+          - Surfaces of crystals were polished and metallographically finished with diamond paste.
