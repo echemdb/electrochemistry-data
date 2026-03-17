@@ -1,0 +1,46 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-01-05
+source:
+  url: https://doi.org/10.1021/jp9533382
+  citationKey: markovic_1996_oxygen_6715
+  techniques:
+  - CV
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          refinement: Millipore ultrapure water
+        purity:
+          grade: ultrapure
+      - name: KOH
+        type: base
+        concentration:
+          value: 0.1
+          unit: mol / l
+        source:
+          supplier: J. T. Baker Reagent
+    temperature:
+      value: 298
+      unit: K
+  electrodes:
+    - name: WE
+      function: working electrode
+      type: RRDE
+      material: Pt
+      crystallographicOrientation: '111'
+      geometricElectrolyteContactArea:
+        value: 0.283
+        unit: cm2
+      preparationProcedure:
+        description:
+          - flame annealed.
+          - cooled in hydrogen atmosphere.
+          - details see  https://doi.org/10.1021/j100011a001
