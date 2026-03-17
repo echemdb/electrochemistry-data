@@ -1,0 +1,28 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+figureDescription:
+  type: raw
+  measurementType: CV
+  comment: A description of the measurement data. # Add whatever you think is important to understand the data. This will be updated by the `svgdigitizer.electrochemistry.cv.CV` module and takes the comment from the svg file.
+  scanRate:
+    value: 50
+    unit: mV / s
+dataDescription:
+  dialect:
+    delimiters: ','
+    decimal: '.'
+    encoding: utf-8
+    headerLines: 0
+    columnHeaderLines: 2
+  fieldMapping: # Also map fields which should be kept unchanged.
+    E / V vs. RHE: E # If the header consists of multiple lines, separate by " / ".
+    j / mA cm\+(-2): j
+    <I> / mA: I
+  fieldUnits:
+    - name: E
+      unit: V
+      reference: RHE
+    - name: j
+      unit: mA cm-2
+    - name: I
+      unit: mA

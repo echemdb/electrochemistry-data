@@ -43,6 +43,7 @@ system:
       material: (not given)
     - name: WE
       function: working electrode
+      type: single crystal
       material: Au
       crystallographicOrientation: '111'
       source:
@@ -50,7 +51,7 @@ system:
       shape:
         type: bead shaped
       geometricElectrolyteContactArea:
-        unit: cm-2
+        unit: cm2
       preparationProcedure:
         description:
           - Annealed in a hydrogen flame for 1 min.

@@ -41,10 +41,11 @@ system:
       material: Pt
     - name: WE
       function: working electrode
+      type: single crystal
       material: Pt
       crystallographicOrientation: '100'
       source:
-        manufacturer: MaTecK
+        manufacturer: MaTecK GmbH
       shape:
         type: cylinder
         diameter:

@@ -17,6 +17,6 @@ jobs:
         with: { submodules: recursive }
       - uses: prefix-dev/setup-pixi@v0.9.4
         with: { pixi-version: v0.63.2 }
-      - name: validate input yaml
+      - name: validate input
         shell: pixi run bash -e {0}
-        run: pixi run -e dev validate-yaml
+        run: pixi run -e dev validate-input

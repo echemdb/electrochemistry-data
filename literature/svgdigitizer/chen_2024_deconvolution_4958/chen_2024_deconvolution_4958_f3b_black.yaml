@@ -8,8 +8,6 @@ experimental:
   - manufacturer: Biologic
     name: VSP-300
     type: potentiostat
-  tags:
-  - BCV
 system:
   type: electrochemical
   electrodes:
@@ -24,6 +22,7 @@ system:
       type: RHE
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '100'
       geometricElectrolyteContactArea:
         unit: 1 / cm2

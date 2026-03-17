@@ -21,12 +21,12 @@ jobs:
         with: { pixi-version: v0.63.2 }
       - name: digitize
         shell: pixi run bash -e {0}
-        run: pixi run -e dev data
-      - name: validate packages
+        run: pixi run -e dev convert
+      - name: validate generated data
         shell: pixi run bash -e {0}
-        run: pixi run -e dev validate
+        run: pixi run -e dev validate-generated
       - name: upload data artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: data-${{ github.event.pull_request.number }}
           path: |
