@@ -1,0 +1,75 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-02-08
+source:
+  url:  https://doi.org/10.1021/acs.jpclett.9b03728
+  citationKey: tiwari_2020_fingerprint_1450
+  techniques:
+  - CV
+experimental:
+  tags: 
+  - BCV
+  instrumentation:
+    - name: potentiostat
+      supplier: BioLogic
+      model: SP200
+  setup: conventional EC setup
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          supplier: Merck Millipore
+        purity:
+          totalIonConductivity:
+            value: 18.2
+            unit: MΩ cm
+      - name: KOH
+        type: base
+        concentration:
+          value: 0.1
+          unit: M
+        source:
+          supplier: Merck
+        purity:
+          grade: suprapure
+          value: 99.995
+    comment: Measurement was done under Ar atmosphere.
+  electrodes:
+    - name: CE
+      function: counter electrode
+      type: wire
+      material: Pt
+    - name: RE
+      function: reference electrode
+      type: reversible hydrogen electrode
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Cu
+      crystallographicOrientation: '111'
+      source:
+        supplier: MaTeck
+        purity:
+          value: 99.9999
+          unit: pct
+      shape:
+        diameter:
+          value: 6
+          unit: mm
+        height:
+          value: 3
+          unit: mm
+      preparationProcedure:
+        description:
+          - details see https://doi.org/10.1021/acsenergylett.9b01064.
+electrochemicalCell: 
+  type: volumetric flask
+  material: PFA
+  supplier: Corning Life Sciences
