@@ -23,13 +23,22 @@ system:
         value: 0.1
       name: KClO4
       type: acid
+      chemicalIdentifiers:
+        cas: 7778-74-7
+        smiles: '[K+].[ClO4-]'
     - name: water
       type: solvent
+      chemicalIdentifiers:
+        cas: 7732-18-5
+        smiles: O
     - concentration:
         unit: mmol / l
         value: 0.1
       name: KI
       type: salt
+      chemicalIdentifiers:
+        cas: 7681-11-0
+        smiles: '[K+].[I-]'
     temperature:
       unit: K
       value: 298.15

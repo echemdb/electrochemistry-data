@@ -20,10 +20,16 @@ system:
     components:
     - name: NaOH
       type: base
+      chemicalIdentifiers:
+        cas: 1310-73-2
+        smiles: '[Na+].[OH-]'
     - name: water
       type: solvent
     - name: KClO4
       type: salt
+      chemicalIdentifiers:
+        cas: 7778-74-7
+        smiles: '[K+].[ClO4-]'
     ph:
       value: 9.1
     temperature:

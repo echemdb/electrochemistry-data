@@ -48,6 +48,8 @@ from pydantic.alias_generators import to_camel
 from svgdigitizer.entrypoint import _create_bibliography
 from unitpackage.entry import Entry
 
+from echemdb_ecdata.validate import ECHEMDB_SCHEMA_VERSION
+
 logger = logging.getLogger("echemdb_ecdata")
 
 
@@ -58,7 +60,7 @@ class Dialect(BaseModel):
         populate_by_name=True, alias_generator=to_camel, extra="allow"
     )
 
-    delimiters: str | None = None
+    delimiter: str | None = None
     decimal: str | None = None
     column_header_lines: int | None = None
     header_lines: int | None = None
@@ -277,6 +279,8 @@ def convert(csv, outdir, metadata, bibliography):
     metadata = metadata_dict.copy()
 
     del metadata["dataDescription"]
+
+    metadata["echemdbSchemaVersion"] = ECHEMDB_SCHEMA_VERSION
 
     # get bibliography data and add bibdata to metadata
     if bibliography:

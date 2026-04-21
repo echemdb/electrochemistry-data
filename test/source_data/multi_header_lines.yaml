@@ -9,7 +9,7 @@ figureDescription:
     unit: mV / s
 dataDescription:
   dialect:
-    delimiters: ','
+    delimiter: ','
     decimal: '.'
     encoding: utf-8
     headerLines: 0

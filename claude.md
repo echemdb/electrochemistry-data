@@ -94,7 +94,7 @@ dataDescription:
     value: 50
     unit: mV / s
   dialect:  # CSV parsing information
-    delimiters: ','
+    delimiter: ','
     decimal: '.'
     encoding: utf-8
     headerLines: 0

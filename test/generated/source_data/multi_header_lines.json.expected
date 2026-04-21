@@ -65,7 +65,8 @@
                                 "unit": "s"
                             }
                         ]
-                    }
+                    },
+                    "echemdbSchemaVersion": "0.7.1"
                 }
             }
         }

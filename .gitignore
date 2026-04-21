@@ -154,3 +154,6 @@ rever/
 
 # pixi environments
 .pixi
+
+# Review files
+REVIEW.md

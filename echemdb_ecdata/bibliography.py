@@ -352,6 +352,45 @@ def fix_bib_utf8(
     return changes
 
 
+def normalize_bib(
+    bib_path="literature/bibliography/bibliography.bib",
+    dry_run=False,
+):
+    r"""
+    Normalize the formatting of a BibTeX file.
+
+    Loads the BibTeX file with pybtex and re-saves it to produce
+    consistent formatting (indentation, field delimiters, spacing).
+
+    Use ``dry_run=True`` to preview whether changes would be made.
+
+    Returns ``True`` if changes were made (or would be made), ``False`` otherwise.
+
+    EXAMPLES::
+
+        >>> normalize_bib(dry_run=True)  # doctest: +SKIP
+
+    """
+    with open(bib_path, encoding="utf-8") as f:
+        original = f.read()
+
+    bib_data = parse_file(bib_path, bib_format="bibtex")
+    normalized = bib_data.to_string("bibtex")
+
+    if normalized == original:
+        print("Bibliography formatting is already normalized.")
+        return False
+
+    if dry_run:
+        print("Dry run: bibliography formatting would be normalized.")
+        return True
+
+    with open(bib_path, "w", encoding="utf-8") as f:
+        f.write(normalized)
+    print("Bibliography formatting normalized.")
+    return True
+
+
 def _print_validation_summary(label, checked, errors):
     r"""Print a summary of validation results.
 

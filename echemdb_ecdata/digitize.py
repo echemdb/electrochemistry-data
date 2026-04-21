@@ -58,6 +58,7 @@ from echemdb_ecdata.entrypoint import (
     _add_bibdata_to_source,
     build_source_entry,
 )
+from echemdb_ecdata.validate import ECHEMDB_SCHEMA_VERSION
 
 logger = logging.getLogger("echemdb_ecdata.digitize")
 
@@ -221,6 +222,7 @@ def _digitize_single_svg(yaml_path, svg_path, outdir, config, bibdata):
     # that is later passed to _create_package.
     metadata = svgfigure.metadata
     _add_bib_to_metadata(metadata, bibdata, yaml_path.name)
+    metadata["echemdbSchemaVersion"] = ECHEMDB_SCHEMA_VERSION
 
     package = _create_package(metadata, csvname, outdir_str)
     json_out = _outfile(str(svg_path), suffix=".json", outdir=outdir_str)
@@ -377,6 +379,8 @@ def _convert_single_source(yaml_path, csv_path, outdir, bibdata):
 
     metadata = metadata_dict.copy()
     del metadata["dataDescription"]
+
+    metadata["echemdbSchemaVersion"] = ECHEMDB_SCHEMA_VERSION
 
     # Add bibliography data
     citation_key = metadata.get("source", {}).get("citationKey", "")
