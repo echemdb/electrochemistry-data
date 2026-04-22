@@ -1,8 +1,5 @@
 # This file is part of echemdb (https://github.com/echemdb/website)
 # Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
-experimental:
-  tags:
-  - BCV
 system:
   type: electrochemical
   electrodes:
@@ -11,6 +8,7 @@ system:
       type: Ag/AgCl
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '100'
       material: Ag
       preparationProcedure:
@@ -24,13 +22,22 @@ system:
         value: 0.1
       name: KBr
       type: salt
+      chemicalIdentifiers:
+        cas: 7758-02-3
+        smiles: '[K+].[Br-]'
     - name: water
       type: solvent
+      chemicalIdentifiers:
+        cas: 7732-18-5
+        smiles: O
     - concentration:
         unit: mol / l
         value: 0.05
       name: KOH
       type: base
+      chemicalIdentifiers:
+        cas: 1310-58-3
+        smiles: '[K+].[OH-]'
     ph:
       value: 12.5
     temperature:

@@ -1,8 +1,5 @@
 # This file is part of echemdb (https://github.com/echemdb/website)
 # Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
-experimental:
-  tags:
-  - BCV
 system:
   type: electrochemical
   electrodes:
@@ -16,21 +13,31 @@ system:
       type: RHE
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '111'
       material: Pt
   electrolyte:
     components:
     - name: NaOH
       type: base
+      chemicalIdentifiers:
+        cas: 1310-73-2
+        smiles: '[Na+].[OH-]'
     - name: water
       type: solvent
     - name: KClO4
       type: salt
+      chemicalIdentifiers:
+        cas: 7778-74-7
+        smiles: '[K+].[ClO4-]'
     - concentration:
         unit: mol / l
         value: 0.01
       name: KBr
       type: salt
+      chemicalIdentifiers:
+        cas: 7758-02-3
+        smiles: '[K+].[Br-]'
     ph:
       value: 9.1
     temperature:

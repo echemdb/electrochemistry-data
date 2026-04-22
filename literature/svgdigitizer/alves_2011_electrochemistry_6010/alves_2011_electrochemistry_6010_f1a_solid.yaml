@@ -10,6 +10,7 @@ system:
       type: RHE
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '0001'
       material: Ru
       preparationProcedure:
@@ -22,7 +23,7 @@ system:
           value: 2
         type: hat shaped
       source:
-        manufacturer: MaTecK
+        manufacturer: MaTecK GmbH
   electrolyte:
     components:
     - name: H2O
@@ -33,6 +34,9 @@ system:
         quality: ultrapure water
         refinement: Millipore MilliQ
       type: solvent
+      chemicalIdentifiers:
+        cas: 7732-18-5
+        smiles: O
     - concentration:
         unit: mol / l
         value: 0.1
@@ -40,6 +44,9 @@ system:
       source:
         supplier: Merck Suprapur
       type: acid
+      chemicalIdentifiers:
+        cas: 7601-90-3
+        smiles: Cl(=O)(=O)(=O)O
     ph:
       value: 1
     temperature:

@@ -8,8 +8,6 @@ experimental:
   - manufacturer: Biologic
     name: VSP-300
     type: potentiostat
-  tags:
-  - BCV
 system:
   type: electrochemical
   electrodes:
@@ -24,6 +22,7 @@ system:
       type: RHE
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '10 1 0'
       geometricElectrolyteContactArea:
         unit: 1 / cm2
@@ -45,12 +44,18 @@ system:
       source:
         quality: ultrapure water
       type: solvent
+      chemicalIdentifiers:
+        cas: 7732-18-5
+        smiles: O
     - concentration:
         unit: 0.1 mol / l
       name: HClO4
       source:
         supplier: Merck
       type: acid
+      chemicalIdentifiers:
+        cas: 7601-90-3
+        smiles: Cl(=O)(=O)(=O)O
 source:
   citationKey: chen_2024_deconvolution_4958
   url: https://doi.org/10.1021/acs.jpclett.4c01056

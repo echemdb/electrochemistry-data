@@ -5,7 +5,7 @@
    width="5063px"
    id="svg2"
    sodipodi:docname="tiwari_2020_fingerprint_1450_f1_bluebottom.svg"
-   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -20,15 +20,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.22965073"
-     inkscape:cx="3237.5252"
-     inkscape:cy="709.7735"
-     inkscape:window-width="1728"
-     inkscape:window-height="1010"
-     inkscape:window-x="-6"
-     inkscape:window-y="-6"
+     inkscape:zoom="0.32477518"
+     inkscape:cx="2644.9066"
+     inkscape:cy="1316.2952"
+     inkscape:window-width="2880"
+     inkscape:window-height="1694"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g5" />
+     inkscape:current-layer="g14" />
   <defs
      id="defs1" />
   <g
@@ -100,7 +100,7 @@
            sodipodi:role="line"
            id="tspan2"
            x="187.69908"
-           y="521.82312">j2: 1.0 A / m2</tspan></text>
+           y="521.82312">j2: 0.1 mA / cm2</tspan></text>
       <path
          style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2.19273;stroke-opacity:1"
          d="m 495.16181,510.82767 76.81582,54.50038"
@@ -121,7 +121,7 @@
            x="101.67587"
            y="1842.6377"
            sodipodi:role="line"
-           style="font-size:42.6667px">j1: -1.0 A / m2</tspan></text>
+           style="font-size:42.6667px">j1: -0.1 mA / cm2</tspan></text>
       <path
          style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
          d="m 429.59483,1832.7478 105.81465,54.4914"
