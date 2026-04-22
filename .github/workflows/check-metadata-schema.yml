@@ -1,0 +1,60 @@
+name: Check metadata-schema version
+
+on:
+  schedule:
+    - cron: '0 8 * * 1'  # Every Monday at 08:00 UTC
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get latest metadata-schema release
+        id: latest
+        run: |
+          VERSION=$(curl -sSf https://api.github.com/repos/echemdb/metadata-schema/releases/latest \
+            | jq -r '.tag_name')
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Get current SCHEMA_VERSION from validate.py
+        id: current
+        run: |
+          VERSION=$(grep -oP 'SCHEMA_VERSION\s*=\s*"tags/\K[^"]+' echemdb_ecdata/validate.py)
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Open PR if versions differ
+        if: steps.latest.outputs.version != steps.current.outputs.version
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LATEST: ${{ steps.latest.outputs.version }}
+          CURRENT: ${{ steps.current.outputs.version }}
+        run: |
+          BRANCH="update-metadata-schema-${LATEST}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git checkout -b "$BRANCH"
+
+          sed -i "s|SCHEMA_VERSION = \"tags/${CURRENT}\"|SCHEMA_VERSION = \"tags/${LATEST}\"|" \
+            echemdb_ecdata/validate.py
+
+          git add echemdb_ecdata/validate.py
+          git commit -m "Update metadata-schema from ${CURRENT} to ${LATEST}"
+          git push origin "$BRANCH"
+
+          gh pr create \
+            --title "Update metadata-schema to ${LATEST}" \
+            --body "A new release of [echemdb/metadata-schema](https://github.com/echemdb/metadata-schema/releases/tag/${LATEST}) is available.
+
+          This PR updates \`SCHEMA_VERSION\` in \`echemdb_ecdata/validate.py\` from \`${CURRENT}\` to \`${LATEST}\`.
+
+          Please review the [release notes](https://github.com/echemdb/metadata-schema/releases/tag/${LATEST}) and verify that the schema changes are compatible before merging." \
+            --head "$BRANCH" \
+            --base main
