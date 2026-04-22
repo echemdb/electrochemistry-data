@@ -113,6 +113,10 @@ The report has two sections:
 
 **Section 1 — Actionable Issues** (numbered, each with decision boxes):
 
+When multiple files have the same root cause, group them into one batch issue with an explicit file list (instead of one issue per file). This allows one reviewer decision for the whole batch.
+
+Filename parsing note: when extracting figure labels from `{citationKey}_f{figure}_{curve}`, do not split on the first `_f` occurrence because citation keys can contain `_f` (e.g., `fingerprint`). Parse from the right-most `_f{figure}_` token.
+
 Each issue follows this format:
 ```markdown
 ## {N}. {title} ({severity})

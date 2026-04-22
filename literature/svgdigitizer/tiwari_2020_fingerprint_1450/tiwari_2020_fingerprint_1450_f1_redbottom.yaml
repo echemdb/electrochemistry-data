@@ -17,7 +17,6 @@ experimental:
     - name: potentiostat
       supplier: BioLogic
       model: SP200
-  setup: UHV-EC
 system:
   type: electrochemical
   electrolyte:
@@ -42,6 +41,13 @@ system:
           grade: suprapure
           value: 99.995
     comment: Measurement was done under Ar atmosphere.
+  electrochemicalCell:
+    type: hanging meniscus cell
+    cellDescription: Hanging meniscus cell for UHV-EC transfer measurements; cell body material is Kel-F as documented by related manuscript context.
+    components:
+      - name: cell body
+        part: vessel
+        description: Kel-F hanging meniscus cell body.
   electrodes:
     - name: CE
       function: counter electrode
@@ -68,9 +74,4 @@ system:
           value: 3
           unit: mm
       preparationProcedure:
-        description:
-          - details see https://doi.org/10.1021/acsenergylett.9b01064.
-electrochemicalCell: 
-  type: volumetric flask
-  material: PFA
-  supplier: Corning Life Sciences
+        url: https://doi.org/10.1021/acsenergylett.9b01064
