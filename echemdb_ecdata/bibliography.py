@@ -43,6 +43,7 @@ Check for and convert LaTeX accent encodings to UTF-8::
 # ********************************************************************
 
 import re
+from re import Match
 
 from pybtex.database import BibliographyData, parse_file
 from svgdigitizer.pdf import Pdf
@@ -113,7 +114,7 @@ LATEX_TO_UTF8 = {
 _LATEX_ACCENT_PATTERN = re.compile(r"\{(\\['\"`~^c])(\\i|[a-zA-Z])\}")
 
 
-def _replace_accent(match):
+def _replace_accent(match: Match[str]) -> str:
     r"""
     Replace a single LaTeX accent match with its UTF-8 equivalent.
 
