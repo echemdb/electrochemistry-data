@@ -34,7 +34,7 @@ system:
         type: base
         concentration:
           value: 0.1
-          unit: M
+          unit: mol / l
         source:
           supplier: Merck
         purity:
