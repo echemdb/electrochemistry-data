@@ -4,6 +4,67 @@ electrochemistry-data Change Log
 
 .. current developments
 
+v0.8.3
+====================
+
+**Removed:**
+
+* Removed braces in the bibliography that define certain types of formatting.
+
+
+
+v0.8.2
+====================
+
+**Fixed:**
+
+* Fixed unit representation for molar concentrations from `M` to `mol / l` for `astropy`` compatibility.
+
+
+
+v0.8.1
+====================
+
+**Fixed:**
+
+* Fixed all journal names in the bibliography to use full long names instead of abbreviations.
+
+
+
+v0.8.0
+====================
+
+**Added:**
+
+* Added Au(100) and Au(110) in 0.1 M H2SO4 from kibler_2003_preparation_1.
+* Added three digitized cyclic voltammograms from Pajkossy et al. (2007) for Ir(100): figure 1a in 0.1 M HClO4 and figure 3a/3b in 0.1 M KClO4 at pH 4 and pH 10.
+* Added schema version to generated data packages.
+* Added figure data from Wan et al., 1999 (Ir(111), Figures 1a, 1b, and 2).
+* Added figure 1a from Ando et al., 1997: cyclic voltammogram of Co(0001) in 0.05 M Na2SO4 (pH 3).
+* Added figures 1a, b and 2a and b from Anjos et al., 2010.
+* Added method and pixi command to harmonize the bibliography entries in the bib file.
+* Added figure 8 (spherical/poly Pt cyclic voltammetry) from Arulmozhi et al., 2018.
+* Added figures 2a, 2b, and 2c from Beden et al., 1985, showing cyclic voltammograms of Ni(100), Ni(110), and Ni(111) single crystals in 0.1M NaOH.
+* Added Figure 3a from Blizanac 2004.
+* Added figures 1 and 2 from Broekmann et al., 1999, showing cyclic voltammograms of Cu(111) in 10 mM HCl and 5 mM H2SO4.
+* Added figures 8 (upper left panel) and 9 from Feng et al., 2017 — cyclic voltammetry of a facetted Pt single crystal microsphere in 0.1 M H2SO4 at 10 V/s.
+* Added figures 1 and 2a from Foelske et al., 2004 (Surface Science 554, 10–24): cyclic voltammetry of polycrystalline and Co(0001) in 0.1 M NaOH.
+* Added figures 2a, 2b, 2c, 6a, 6b, 6c from Hara et al., 2007, showing cyclic voltammograms of Pd(111), Pd(100), and Pd(110) single crystal electrodes in 0.1 M H2SO4 and 0.1 M HClO4.
+* Added hirai_2000_in_702.
+* Added Claude Code review template.
+* Added figure 2 from Hirai et al., 2003 — cyclic voltammograms of Pb(100) and Pb(111) in 50 mM H2SO4.
+* Added figures 3a, 4a, and 8a from Pajkossy, Kibler, and Kolb (2005), voltammetry and impedance measurements of Ir(111) electrodes in aqueous solutions (KClO4, NaF, HCl).
+* Added ``validate-new-input`` task to validate only added or modified entries in ``literature/`` compared to a base branch, both locally and in CI.
+* Added SMILES chemical identifier for most entries.
+* Added figure 1 cyclic voltammograms from Tiwari et al., 2020 for Cu(100), Cu(111), and Cu(110) single crystals in 0.1 M KOH, including conventional PTFE-cell and UHV-EC hanging-meniscus-cell measurements.
+
+**Changed:**
+
+* Updated metadata schema version from 0.6.0 to 0.7.1 and renamed ``dialect.delimiters`` to ``dialect.delimiter`` in source data YAML files.
+* Changed unitpackage version requirement to ``>=0.13.1,<0.14`.
+
+
+
 v0.7.7
 ====================
 

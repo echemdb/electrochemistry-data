@@ -451,7 +451,9 @@ def _check_svg(report, svg_file, svg_meta, yaml_data):
 
 def _extract_figure_from_filename(stem):
     """Extract figure identifier from filename stem (e.g., 'hirai_2000_in_702_f2_solid' -> '2')."""
-    match = re.search(r"_f(\w+)_", stem)
+    # Match the *last* "_f<figure>_" token to avoid false matches in words like
+    # "fingerprint" that also contain "_f".
+    match = re.search(r".*_f([^_]+)_.+", stem)
     if match:
         return match.group(1)
     return None
