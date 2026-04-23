@@ -75,7 +75,7 @@ _SCHEMA_BASE = "https://raw.githubusercontent.com/echemdb/metadata-schema/refs"
 
 #: Default metadata-schema version used for validation.
 #: Change this single value to update the version across all validation tasks.
-SCHEMA_VERSION = "tags/0.7.1"
+SCHEMA_VERSION = "tags/0.8.0"
 #: Clean version string for embedding in generated data packages.
 ECHEMDB_SCHEMA_VERSION = SCHEMA_VERSION.removeprefix("tags/")
 
