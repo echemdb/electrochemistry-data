@@ -4,6 +4,15 @@ electrochemistry-data Change Log
 
 .. current developments
 
+v0.8.2
+====================
+
+**Fixed:**
+
+* Fixed unit representation for molar concentrations from `M` to `mol / l` for `astropy`` compatibility.
+
+
+
 v0.8.1
 ====================
 
