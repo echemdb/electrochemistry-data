@@ -8153,8 +8153,8 @@ packages:
   timestamp: 1766092633160
 - pypi: ./
   name: echemdb-ecdata
-  version: 0.8.0
-  sha256: b8a255c68f4e0c12d272ef3bb3d708a3861be59af9014963bda48fc1300c26de
+  version: 0.8.1
+  sha256: 186eb2e4c1e1e72dcf511619aedfc12d90f84447fcbcae9f3769f710f1e6386f
   requires_dist:
   - pydantic>=2.12.5,<3
   - svgdigitizer>=0.14.2,<0.15

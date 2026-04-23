@@ -4,6 +4,15 @@ electrochemistry-data Change Log
 
 .. current developments
 
+v0.8.1
+====================
+
+**Fixed:**
+
+* Fixed all journal names in the bibliography to use full long names instead of abbreviations.
+
+
+
 v0.8.0
 ====================
 
