@@ -106,6 +106,7 @@ validate-bib-keys = 'python -c "from echemdb_ecdata.bibliography import validate
 validate-bib-utf8 = 'python -c "from echemdb_ecdata.bibliography import validate_bib_utf8; validate_bib_utf8()"'
 # Umbrella tasks (used in CI)
 validate-input = { depends-on = ["validate-svgdigitizer-yaml", "validate-source-yaml", "validate-identifiers", "validate-bib-keys", "validate-bib-utf8"] }
+validate-new-input = { args = [ { "arg" = "base_ref", "default" = "origin/main" } ], cmd = "python -c \"from echemdb_ecdata.validate import validate_new_input; validate_new_input('{{ base_ref }}')\"" }
 validate-generated = { depends-on = ["validate-svgdigitizer", "validate-raw", "validate-generated-identifiers"] }
 # Fix utilities
 fix-lowercase = 'python -c "from echemdb_ecdata.validate import lowercase_svgdigitizer_files; lowercase_svgdigitizer_files()"'
