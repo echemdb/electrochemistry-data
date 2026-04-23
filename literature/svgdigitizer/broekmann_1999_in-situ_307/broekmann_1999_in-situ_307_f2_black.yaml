@@ -30,7 +30,7 @@ system:
         type: acid
         concentration:
           value: 10
-          unit: mM
+          unit: mmol / l
         purity:
           grade: reagent grade
     comment: Electrolyte was purged with argon several hours before use. Residual oxygen in the argon was reduced by a dual stage gas purification system.
