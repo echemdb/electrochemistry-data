@@ -246,3 +246,4 @@ create it based on `doc/news/TEMPLATE.rst`.
 3. **Missing tags**: Every SVG must have a `tags:` text node
 4. **Uppercase in filenames**: All identifiers must be lowercase (Windows compatibility)
 5. **Missing counter electrode**: The PR checklist expects WE, RE, and optionally CE
+6. **Journal name in bib entry**: The `journal` field must use the full long journal name (e.g., `"Journal of Electroanalytical Chemistry"`, not `"J. Electroanal. Chem."`). Abbreviated names are not allowed. If the new bib entry uses an abbreviation, expand it to the full name manually.
