@@ -87,7 +87,7 @@
          sodipodi:role="line"
          id="tspan5"
          x="319.00269"
-         y="2013.4805">E1: -2000 mV vs Hg/Hg2SO4</tspan></text>
+         y="2013.4805">E1: -2000 mV vs MSE-sat</tspan></text>
     <path
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
        d="m 597.45799,1899.0069 88.03937,98.1202"
@@ -106,7 +106,7 @@
          sodipodi:role="line"
          id="tspan6"
          x="1138.9113"
-         y="2009.0001">E2: -500 mV vs Hg/Hg2SO4</tspan></text>
+         y="2009.0001">E2: -500 mV vs MSE-sat</tspan></text>
     <path
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
        d="m 1143.0517,1993.3707 75.7177,-93.9343"
