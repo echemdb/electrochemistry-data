@@ -1,0 +1,57 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-02-11
+source:
+  url: https://doi.org/10.1021/jp0041757
+  citationKey: wang_2001_in_2809
+  techniques:
+  - CV
+experimental:
+  tags: 
+  - BCV
+  instrumentation:
+    - name: potentiostat
+      supplier: BioLogic
+      model: SP200
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          supplier: Millipore Inc
+        purity:
+          grade: Miili-Q UV-Plus
+      - name: HClO4
+        type: acid
+        concentration:
+          value: 1
+          unit: M
+        source:
+          supplier: Fisher
+    ph:
+      value: 0
+    comment: Measurement was done with a hanging meniscus configuration.
+  electrodes:
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Ru
+      crystallographicOrientation: '0001'
+      source:
+        supplier: Metal Crystals and Oxide, Cambridge, England
+      shape:
+        diameter:
+          value: 9
+          unit: mm
+      preparationProcedure:
+        description:
+          - Preparation was perfomed in UHV.
+          - Sputtering at rt with 1 keV Ar ions, followed by five cycles of oxygen desorption/adsorption. 
+          - Flash annealed in UHV at 1400 degC. 
+          - details see ?.
