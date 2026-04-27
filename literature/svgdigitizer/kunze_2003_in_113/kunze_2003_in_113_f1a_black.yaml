@@ -1,0 +1,65 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-04-04
+source:
+  url: https://doi.org/10.1016/S0022-0728(03)00115-3
+  citationKey: kunze_2003_in_113
+  techniques:
+  - CV
+experimental:
+  tags: 
+  - BCV
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          supplier: Millipore
+        purity:
+          totalIonConductivity:
+            value: 18
+            unit: MOhm cm
+      - name: NaOH
+        type: base
+        concentration:
+          value: 0.1
+          unit: M
+        source:
+          supplier: Gen-Apex
+        purity:
+          grade: ultra pure
+  electrodes:
+    - name: CE
+      function: counter electrode
+      material: Pt
+    - name: RE
+      function: reference electrode
+      material: Pt
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Cu
+      crystallographicOrientation: '001'
+      geometricElectrolyteContactArea: 
+        value: 0.16
+        unit: cm2
+      preparationProcedure:
+        description:
+          - crystals were oriented with X-ray Laue diffraction.
+          - mechanically polished with diamond spray. 
+          - electropolished in phosphoric acid at constant voltage.
+          - subsequently annealed at 1000K for 16h in 6N hydrogen at normal pressure.
+          - details see https://doi.org/10.1016/S0022-0728(03)00115-3.
+electrochemicalCell:
+  type: electrochemical STM cell
+  components:
+    - name: plastic
+      part: cell
+      type: PCTFE plastic
+  cleaningProcedure: 2:1 mixture of concentrated H2SO4 and H2O2, then in concentrated HNO3 and then rinsed thoroughly with millipore water
