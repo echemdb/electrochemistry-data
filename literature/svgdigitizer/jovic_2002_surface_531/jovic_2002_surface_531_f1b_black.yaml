@@ -1,0 +1,83 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-04-04
+source:
+  url: http://dx.doi.org/10.2298/JSC0207531J
+  citationKey: jovic_2002_surface_531
+  techniques:
+  - CV
+experimental:
+  tags: 
+  - BCV
+  instrumentation:
+    - name: programmer
+      supplier: PAR
+      model: M-175
+    - name: potentiostat
+      supplier: PAR
+      model: M-173
+    - name: X-Y recorder
+      supplier: Houston Instrument
+      model: 2000R
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          supplier: Barnstead
+        purity:
+          grade: supra pure
+      - name: NaOH
+        type: base
+        concentration:
+          value: 0.1
+          unit: M
+        source:
+          supplier: Fischer
+      - name: N2
+        type: gas
+        purity:
+          value: 99.999
+          unit: pct
+    temperature:
+      value: 25
+      unit: degC
+      uncertainty:
+        value: 1
+        unit: degC
+  electrodes:
+    - name: CE
+      function: counter electrode
+      type: sheet
+      material: Pt
+    - name: RE
+      function: reference electrode
+      type: Hg/HgO
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Cu
+      crystallographicOrientation: '100'
+      source:
+        purity:
+          value: 99.999
+          unit: pct
+      shape:
+        diameter:
+          value: 2.54
+          unit: mm
+      geometricElectrolyteContactArea: 
+        value: 5.05
+        unit: cm2
+      preparationProcedure:
+        description:
+          - mechanically polished on fine grade emery papers. 
+          - electrochemically polished in a phosphoric acid solution at constant voltage.
+          - thoroughly washed with pure water, cleanded in H2SO4 and washed again with pure water.
+          - details see http://dx.doi.org/10.2298/JSC0207531J.
