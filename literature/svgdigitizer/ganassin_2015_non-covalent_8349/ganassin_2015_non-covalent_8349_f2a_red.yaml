@@ -20,10 +20,10 @@ system:
           refinement: Millipore Super Q
         purity:
           grade: ultrapure
-      - name: HClO4
+      - name: H2SO4
         type: acid
         concentration:
-          value: 0.1
+          value: 0.05
           unit: mol / l
         source:
           supplier: Merck
