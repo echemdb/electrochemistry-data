@@ -4,7 +4,7 @@
    height="7009"
    version="1.1"
    id="svg2"
-   sodipodi:docname="cuesta_2000_the_5684_f3b_black.svg"
+   sodipodi:docname="cuesta_2000_adsorption_5684_f3b_black.svg"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -30,7 +30,7 @@
      inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
-     inkscape:current-layer="digitization-layer" />
+     inkscape:current-layer="svg_2" />
   <g
      class="layer"
      id="image-layer">
@@ -41,7 +41,7 @@
        id="svg_1"
        width="4959"
        x="0"
-       xlink:href="cuesta_2000_the_5684_p1.png"
+       xlink:href="cuesta_2000_adsorption_5684_p1.png"
        y="0" />
   </g>
   <g
@@ -94,14 +94,14 @@
       <text
          fill="#ff00ff"
          font-family="Serif"
-         font-size="54"
+         font-size="54px"
          id="svg_18"
          stroke="#ff00ff"
          stroke-width="0"
          text-anchor="middle"
-         x="2910.19"
+         x="2910.1899"
          xml:space="preserve"
-         y="4896.76">j2: 6 µA cm⁻²</text>
+         y="4896.7598">j2: 10 µA cm⁻²</text>
     </g>
     <g
        id="svg_3">
