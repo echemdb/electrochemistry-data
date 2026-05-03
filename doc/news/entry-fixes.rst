@@ -16,6 +16,7 @@
 * Fixed mixed up electrolytes in figure 2a of ganassin_2015_non-covalent_8349.
 * Fixed several reference electrode acronyms in the database.
 * Fixed minor bibliography issues.
+* Fixed traces in pajkossy_1996_impedance_209.
 
 **Deprecated:**
 
