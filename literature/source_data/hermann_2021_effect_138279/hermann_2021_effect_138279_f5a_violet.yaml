@@ -129,6 +129,6 @@ dataDescription:
       unit: s
     - name: E
       unit: V
-      reference: MSE-sat.
+      reference: MSE-sat
     - name: I
       unit: A
