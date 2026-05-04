@@ -32,7 +32,7 @@ system:
   electrodes:
     - name: RE
       function: reference electrode
-      material: Hg/Hg2SO4
+      redoxSystem: Hg/Hg2SO4
     - name: WE
       function: working electrode
       type: Fe single crystal rod

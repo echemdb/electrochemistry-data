@@ -1,0 +1,51 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-01-07
+source:
+  url: https://doi.org/10.1021/jp991112j
+  citationKey: wan_1999_situ_6978
+  techniques:
+  - CV
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          refinement: Milli-Q
+        purity:
+          grade: ultrapure
+      - name: HClO4
+        type: acid
+        concentration:
+          value: 0.1
+          unit: mol / l
+        source:
+          supplier: Cica-Merck
+        purity:
+          grade: ultrapure
+  electrodes:
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Ir
+      crystallographicOrientation: '111'
+      shape:
+        type: Ir wire
+        diameter:
+          value: 0.8
+          unit: mm
+      purity:
+        value: 99.999 
+        unit: pct
+      preparationProcedure:
+        description:
+          - Made out of a molten ball formed at the end of a Ir wire in a hydrogen-oxygen flame. 
+          - Mechanical polishing of the '111' surface.
+          - For an ordered and clean surface a flame-annealing-quenching technique was used. 
+          - The detailed procedure is described in the source publication.

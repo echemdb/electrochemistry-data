@@ -65,7 +65,8 @@ This performs the following checks automatically:
 - Required sections present: `curation`, `source`, `system`
 - Source URL is a valid DOI
 - Electrolyte has `type` and `components`
-- Working electrode and reference electrode defined
+- Working electrode defined
+- Reference electrode metadata is only required when explicitly stated in the manuscript (or clearly attributable to the exact experiment); do not infer solely from plotted axis conversion labels
 - Curator has ORCID
 
 #### PDF Cross-Validation
@@ -101,6 +102,7 @@ Key checks to perform by reading the PDF experimental section:
    that its omission is acceptable. Add as VERIFY item.
 5. **Preparation procedure**: Verify the description matches the paper. Check
    that comments are complete sentences ending with a period.
+6. **Reference electrode policy**: If the figure axis is transformed (e.g., plotted vs RHE) but the manuscript does not explicitly define a reference electrode for that experiment, do not force a REF addition; raise as VERIFY/comment only.
 
 ### Step 5: Generate REVIEW.md Report
 
@@ -110,6 +112,10 @@ This file is listed in `.gitignore` and must not be committed.
 The report has two sections:
 
 **Section 1 — Actionable Issues** (numbered, each with decision boxes):
+
+When multiple files have the same root cause, group them into one batch issue with an explicit file list (instead of one issue per file). This allows one reviewer decision for the whole batch.
+
+Filename parsing note: when extracting figure labels from `{citationKey}_f{figure}_{curve}`, do not split on the first `_f` occurrence because citation keys can contain `_f` (e.g., `fingerprint`). Parse from the right-most `_f{figure}_` token.
 
 Each issue follows this format:
 ```markdown
@@ -240,3 +246,4 @@ create it based on `doc/news/TEMPLATE.rst`.
 3. **Missing tags**: Every SVG must have a `tags:` text node
 4. **Uppercase in filenames**: All identifiers must be lowercase (Windows compatibility)
 5. **Missing counter electrode**: The PR checklist expects WE, RE, and optionally CE
+6. **Journal name in bib entry**: The `journal` field must use the full long journal name (e.g., `"Journal of Electroanalytical Chemistry"`, not `"J. Electroanal. Chem."`). Abbreviated names are not allowed. If the new bib entry uses an abbreviation, expand it to the full name manually.

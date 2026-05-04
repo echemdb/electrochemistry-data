@@ -1,0 +1,71 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-01-07
+source:
+  url: https://doi.org/10.1016/j.electacta.2006.11.048
+  citationKey: hara_2007_preparation_5733
+  techniques:
+  - CV
+experimental:
+  tags:
+  - BCV
+  instrumentation:
+    - name: potentiostat
+      supplier: Autolab
+      model: PGSTAT 30
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          refinement: Milli-Q water
+        purity:
+          totalOrganicCarbon:
+            value: 3
+            unit: ppb
+          totalIonConductivity:
+            value: 18.2
+            unit: MΩ cm
+      - name: HClO4
+        type: acid
+        concentration:
+          value: 0.1
+          unit: mol / l
+        source:
+          supplier: Merck
+        purity:
+          grade: suprapure
+    comment: All electrolytes were deaerated with argon prior to and during each experiment.
+  electrodes:
+    - name: CE
+      function: counter electrode
+      shape:
+        type: spiral
+      material: Pt
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Pd
+      crystallographicOrientation: '100'
+      source:
+        supplier: Goodfellow
+        purity:
+          value: 99.999
+          unit: pct
+      preparationProcedure:
+        description:
+          - Pd wire etched in aqua regia, rinsed with Milli-Q water and dried.
+          - Forming of liquid bead by using an electron beam in a vacuum chamber.
+          - Polishing of the bead to achieve the desired surface orientation.
+          - Inductive annealed for 6h at 900 °C in 5N argon.
+          - 15 min inductive annealing before each measurement.
+          - details see https://doi.org/10.1016/j.electacta.2006.11.048.
+  electrochemicalCell:
+    type: three compartment glass cell
+    cleaningProcedure: In a mixture of 1:1 hot H2SO4 and HNO3, followed by rinsing cycles with Milli-Q water.

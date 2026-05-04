@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="6615px"
+   version="1.1"
+   width="4961px"
+   id="svg1"
+   sodipodi:docname="pajkossy_2007_voltammetry_113_f3b_solid.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.46318971"
+     inkscape:cx="3763.037"
+     inkscape:cy="4480.8854"
+     inkscape:window-width="2880"
+     inkscape:window-height="1694"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g13" />
+  <defs
+     id="defs1" />
+  <image
+     height="6615"
+     sodipodi:insensitive="true"
+     width="4961"
+     x="0"
+     xlink:href="pajkossy_2005_voltammetry_113_p2.png"
+     y="0"
+     id="image1" />
+  <g
+     id="g14"
+     transform="translate(2498.8448,3237.2227)"
+     inkscape:label="j2">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:2"
+       x="229.81119"
+       y="705.38873"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         x="229.81119"
+         y="705.38873">j2: 150 uA / cm2</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+       d="m 536.96987,692.10429 40.86853,85.22198"
+       id="path7"
+       sodipodi:nodetypes="cc" />
+  </g>
+  <g
+     id="g13"
+     transform="translate(2541.4807,3581.3575)"
+     inkscape:label="j1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:2"
+       x="101.67587"
+       y="1842.6377"
+       id="text1"><tspan
+         id="tspan1"
+         x="101.67587"
+         y="1842.6377"
+         sodipodi:role="line"
+         style="font-size:42.6667px">j1: -50 uA / cm2</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+       d="m 429.59483,1832.7478 105.81465,54.4914"
+       id="path8" />
+  </g>
+  <g
+     id="g11"
+     transform="translate(2480.4799,3572.037)"
+     inkscape:label="E1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:2"
+       x="319.00269"
+       y="2013.4805"
+       id="text5"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         x="319.00269"
+         y="2013.4805">E1: 0.0 V vs RHE</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+       d="m 597.45799,1899.0069 88.03937,98.1202"
+       id="path9" />
+  </g>
+  <g
+     id="g3"
+     transform="translate(3308.7382,3700.667)"
+     inkscape:label="E2">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:2"
+       x="1142.7289"
+       y="1879.9631"
+       id="text6"><tspan
+         sodipodi:role="line"
+         id="tspan6"
+         x="1142.7289"
+         y="1879.9631">E2: 1.0 V vs RHE</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+       d="m 1146.8694,1864.3338 75.7177,-93.9343"
+       id="path10" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-size:42.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke:#000000;stroke-width:2"
+     x="4536.4702"
+     y="4279.3101"
+     id="text8"
+     inkscape:label="scan rate"><tspan
+       sodipodi:role="line"
+       id="tspan8"
+       x="4536.4702"
+       y="4279.3101"
+       style="stroke:none">scan rate: 10 mV / s </tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:42.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke:none;stroke-width:2"
+     x="4624.6387"
+     y="4351.6782"
+     id="text10"
+     inkscape:label="figure"><tspan
+       sodipodi:role="line"
+       id="tspan10"
+       x="4624.6387"
+       y="4351.6782">figure: 3b</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:42.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1"
+     x="4612.5264"
+     y="4415.8838"
+     id="text15"
+     inkscape:label="tags"><tspan
+       sodipodi:role="line"
+       id="tspan15"
+       x="4612.5264"
+       y="4415.8838"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1">tags: BCV</tspan></text>
+  <g
+     id="g1">
+    <path
+       style="fill:none;stroke:#e82a2a"
+       d="m 4301.1106,5097.7629 c -141.8194,-0.4119 -185.0356,44.2871 -227.587,42.3056 -38.448,-1.7904 -94.6311,-14.1117 -191.2051,-16.3581 -48.9491,-1.1386 -71.5997,19.6962 -80.9604,18.8908 -11.3804,-0.9792 -22.5802,-12.9061 -52.3543,-11.6043 -40.4408,1.7681 -58.7308,-9.3571 -89.0564,-7.8262 -34.0901,1.721 -81.1269,3.4181 -117.1227,119.8213 -14.3683,46.4641 -27.8067,172.7061 -41.8295,173.525 -13.04,0.7615 -16.512,-139.8356 -21.8593,-183.2402 -0.5787,-4.6977 -3.3246,-73.4464 -31.3046,-82.0398 -9.5775,-2.9415 -27.3164,28.7779 -44.7981,27.5265 -15.133,-1.0833 -45.6369,-34.8767 -103.8991,-32.654 -9.74,0.3716 -64.7906,5.575 -94.7236,16.2113 -37.56,13.3464 -60.4603,88.4567 -62.3858,85.3436 -1.392,-2.2504 -10.527,-192.5245 63.4653,-185.4838 43.3515,4.1251 92.2735,12.9508 138.712,12.9536 167.0872,0.01 161.0955,-15.4898 185.6691,-15.6523 23.2548,-0.1538 51.0793,13.4324 68.5465,11.3344 64.1855,-7.7094 128.192,1.9044 192.4157,3.2385 139.677,2.9015 166.4778,-96.5532 183.2402,-94.9935 15.2716,1.421 24.5429,31.9816 31.9913,60.8699 8.0608,31.2634 24.7055,47.7477 86.7506,47.6169 41.2246,-0.087 57.7968,-9.5786 86.8974,-10.2549 20.5328,-0.4772 40.9933,3.5012 61.5299,3.2384 140.0564,-1.7925 213.7836,-26.037 215.8942,-22.1292 22.8513,42.3095 -92.5333,41.7183 -141.4107,39.4007"
+       id="path1"
+       sodipodi:nodetypes="cssssssssssssssssssssssssc" />
+    <text
+       xml:space="preserve"
+       style="font-size:42.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke:#000000;stroke-width:2"
+       x="196.8125"
+       y="895.41669"
+       id="text7"
+       inkscape:label="curve"
+       transform="translate(4414.0001,3301.521)"><tspan
+         sodipodi:role="line"
+         id="tspan7"
+         x="196.8125"
+         y="895.41669"
+         style="stroke:none">curve: solid</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,58 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-02-04
+source:
+  url: https://doi.org/10.1016/j.jelechem.2006.04.016
+  citationKey: pajkossy_2007_voltammetry_113
+  techniques:
+  - CV
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          refinement: Milli-Q
+      - name: KClO4
+        type: salt
+        concentration:
+          value: 0.1
+          unit: mol / l
+        purity:
+          grade: suprapur
+      - name: N2
+        type: gas
+        purity:
+          grade: 5N
+    ph:
+      value: 4
+    temperature:
+      value: 20
+      unit: degC
+      uncertainty:
+        value: 1.0
+        unit: degC
+    comment: details see https://doi.org/10.1016/0022-0728(96)04700-6
+  electrodes:
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Ir
+      source:
+        supplier: MaTecK GmbH
+      crystallographicOrientation: '100'
+      shape:
+        diameter:
+          value: 4.0
+          unit: mm
+      preparationProcedure:
+        description:
+        - High temperature annealing at about 1900°C in a nitrogen-hydrogen atmosphere for 1 min.
+        - Cool down in the gas stream for 2 min.
+        - Transferred to the electrochemical cell under protecting gas stream.
+        - Hanging meniscus configuration.
