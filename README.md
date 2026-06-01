@@ -166,3 +166,16 @@ pixi run -e dev fix-identifiers-dry-run  # Preview only
 # Rename directories and files after a bib key change (manual)
 pixi run -e dev rename-identifiers OLD_NAME NEW_NAME
 ```
+
+## License
+
+This repository uses two licenses:
+
+| Scope | License |
+|---|---|
+| Source code (`echemdb_ecdata/`, tooling, workflows) | [GPL-3.0](LICENSE) |
+| Data (`literature/`, `data/generated/`) | [CC-BY-4.0](literature/LICENSE) |
+
+The data files — all content under `literature/` and the generated output packages under `data/generated/` — are licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). You are free to share and adapt the data for any purpose, provided appropriate credit is given.
+
+The tooling and source code are licensed under the [GNU General Public License v3.0 (GPL-3.0)](https://www.gnu.org/licenses/gpl-3.0.html).
