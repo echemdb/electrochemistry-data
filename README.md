@@ -169,13 +169,26 @@ pixi run -e dev rename-identifiers OLD_NAME NEW_NAME
 
 ## License
 
-This repository uses two licenses:
+You can redistribute and/or modify the contents of this repository under the
+terms of the GNU General Public License (GPL) as published by the Free Software
+Foundation; either version 3.0 of the License, or (at your option) any later
+version (GPL-3.0-or-later). See https://www.gnu.org/licenses.
 
-| Scope | License |
-|---|---|
-| Source code (`echemdb_ecdata/`, tooling, workflows) | [GPL-3.0](LICENSE) |
-| Data (`literature/`, `data/generated/`) | [CC-BY-4.0](literature/LICENSE) |
+The data and generated data, i.e., the contents of
+[`literature/`](./literature) and the contents of the generated data archive
+that is published with each release, are also available under either of the
+following two licenses, at your option:
 
-The data files — all content under `literature/` and the generated output packages under `data/generated/` — are licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). You are free to share and adapt the data for any purpose, provided appropriate credit is given.
+* The [Creative Commons Attribution 4.0 International
+  License](https://creativecommons.org/licenses/by/4.0/) (CC-BY-4.0)
+* The [Open Data Commons Attribution
+  License](https://opendatacommons.org/licenses/by/) (ODC-By-1.0)
 
-The tooling and source code are licensed under the [GNU General Public License v3.0 (GPL-3.0)](https://www.gnu.org/licenses/gpl-3.0.html).
+While you should consult the above licenses for all the technical details, the
+above roughly translates to the following in practice:
+
+* You may use any of the raw and processed data you find here as long as you
+  give credit.
+* If you want to incorporate any source code you find here into your published
+  product or project it must itself be released under the GPL version 3 or
+  later.
