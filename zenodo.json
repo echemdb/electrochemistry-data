@@ -28,6 +28,132 @@
             { "scheme": "orcid", "identifier": "0000-0002-3930-9107" }
           ]
         }
+      },
+      {
+        "person_or_org": {
+          "family_name": "Hermann",
+          "given_name": "Johannes M.",
+          "name": "Hermann, Johannes M.",
+          "type": "personal",
+          "identifiers": [
+            { "scheme": "orcid", "identifier": "0000-0001-7119-1295" }
+          ]
+        },
+        "affiliations": [
+          { "id": "032000t02", "name": "Ulm University" }
+        ]
+      },
+      {
+        "person_or_org": {
+          "family_name": "Heubach",
+          "given_name": "Maren-Kathrin",
+          "name": "Heubach, Maren-Kathrin",
+          "type": "personal",
+          "identifiers": [
+            { "scheme": "orcid", "identifier": "0000-0002-3769-7169" }
+          ]
+        },
+        "affiliations": [
+          { "id": "032000t02", "name": "Ulm University" }
+        ]
+      },
+      {
+        "person_or_org": {
+          "family_name": "Link",
+          "given_name": "Valerie",
+          "name": "Link, Valerie",
+          "type": "personal",
+          "identifiers": [
+            { "scheme": "orcid", "identifier": "0009-0004-3341-1452" }
+          ]
+        },
+        "affiliations": [
+          { "id": "032000t02", "name": "Ulm University" }
+        ]
+      },
+      {
+        "person_or_org": {
+          "family_name": "Schmider",
+          "given_name": "Tobias",
+          "name": "Schmider, Tobias",
+          "type": "personal",
+          "identifiers": [
+            { "scheme": "orcid", "identifier": "0000-0002-2911-2925" }
+          ]
+        },
+        "affiliations": [
+          { "id": "032000t02", "name": "Ulm University" }
+        ]
+      },
+      {
+        "person_or_org": {
+          "family_name": "Wölfel",
+          "given_name": "Nadine",
+          "name": "Wölfel, Nadine",
+          "type": "personal",
+          "identifiers": [
+            { "scheme": "orcid", "identifier": "0009-0008-1149-1534" }
+          ]
+        },
+        "affiliations": [
+          { "id": "032000t02", "name": "Ulm University" }
+        ]
+      },
+      {
+        "person_or_org": {
+          "family_name": "Schilling",
+          "given_name": "Markus A.",
+          "name": "Schilling, Markus A.",
+          "type": "personal",
+          "identifiers": [
+            { "scheme": "orcid", "identifier": "0000-0003-2684-3711" }
+          ]
+        },
+        "affiliations": [
+          { "name": "Technical University of Munich", "id": "https://ror.org/02kkvpp62" }
+        ]
+      },
+      {
+        "person_or_org": {
+          "family_name": "Mayer",
+          "given_name": "Jerome",
+          "name": "Mayer, Jerome",
+          "type": "personal",
+          "identifiers": [
+            { "scheme": "orcid", "identifier": "0000-0002-7451-9994" }
+          ]
+        },
+        "affiliations": [
+          { "id": "032000t02", "name": "Ulm University" }
+        ]
+      },
+      {
+        "person_or_org": {
+          "family_name": "Schönig",
+          "given_name": "Marco",
+          "name": "Schönig, Marco",
+          "type": "personal",
+          "identifiers": [
+            { "scheme": "orcid", "identifier": "0000-0002-4470-6705" }
+          ]
+        },
+        "affiliations": [
+          { "name": "Leiden University", "id": "https://ror.org/027bh9e22" }
+        ]
+      },
+      {
+        "person_or_org": {
+          "family_name": "Hörmann",
+          "given_name": "Nicolas G.",
+          "name": "Hörmann, Nicolas G.",
+          "type": "personal",
+          "identifiers": [
+            { "scheme": "orcid", "identifier": "0000-0001-6944-5575" }
+          ]
+        },
+        "affiliations": [
+          { "name": "Fritz-Haber-Institut der Max-Planck-Gesellschaft", "id": "https://ror.org/03k9qs827" }
+        ]
       }
     ],
     "publisher": "Zenodo",
