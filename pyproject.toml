@@ -21,6 +21,7 @@ echemdb_ecdata = "echemdb_ecdata.entrypoint:cli"
 [tool.setuptools]
 packages = [
     "echemdb_ecdata",
+    "echemdb_ecdata.zenodo",
 ]
 
 [tool.pixi.workspace]
@@ -42,6 +43,7 @@ ipykernel = ">=7.2.0,<8"
 pip = ">=26.0.1,<27"
 jupyterlab = ">=4.5.4,<5"
 jupytext = ">=1.19.1,<2"
+requests = ">=2.32,<3"
 
 [tool.pixi.pypi-dependencies]
 echemdb_ecdata = { path = ".", editable = true }
@@ -165,6 +167,12 @@ m2-bash = ">=5.2.37.2,<6"
 [tool.pixi.feature.release.tasks]
 # To create a new release, run `pixi run rever X.Y.Z`
 rever = { args = [ { "arg" = "version", "default" = "--help" } ],cmd = "rever {{ version }}" }
+# Publish a new version of the echemdb data to Zenodo. Defaults to the
+# sandbox so that the workflow can be exercised without affecting the real
+# record. Pass `--production` or set ZENODO_PRODUCTION=1 to publish to
+# https://zenodo.org. Metadata is loaded from `zenodo.json` at the repo
+# root; override on the command line if needed.
+zenodo-publish = "python -m echemdb_ecdata.zenodo.zenodo publish --metadata zenodo.json"
 
 [tool.pixi.feature.release.dependencies]
 twine = ">=6.2.0,<7"

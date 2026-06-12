@@ -51,45 +51,12 @@ jobs:
 
       - name: Publish to Zenodo
         if: startsWith(github.ref, 'refs/tags/')
+        shell: bash -e {0}
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
           ZENODO_RECORD_ID: ${{ secrets.ZENODO_RECORD_ID }}
         run: |
-          # Create a new draft version of the existing Zenodo record
-          DRAFT_ID=$(curl -sf -X POST \
-            "https://zenodo.org/api/records/${ZENODO_RECORD_ID}/versions" \
-            -H "Authorization: Bearer ${ZENODO_TOKEN}" | jq -r '.id')
-
-          # Update metadata: set version to the current tag, keep CC-BY-4.0 license
-          curl -sf -X PUT \
-            "https://zenodo.org/api/records/${DRAFT_ID}/draft" \
-            -H "Authorization: Bearer ${ZENODO_TOKEN}" \
-            -H "Content-Type: application/json" \
-            -d "{\"metadata\": {\"version\": \"${{ github.ref_name }}\", \"license\": {\"id\": \"cc-by-4.0\"}}}"
-
-          # Delete files carried over from the previous version
-          FILE_KEYS=$(curl -sf \
-            "https://zenodo.org/api/records/${DRAFT_ID}/draft/files" \
-            -H "Authorization: Bearer ${ZENODO_TOKEN}" | jq -r '.entries[].key')
-          for KEY in $FILE_KEYS; do
-            curl -sf -X DELETE \
-              "https://zenodo.org/api/records/${DRAFT_ID}/draft/files/${KEY}" \
-              -H "Authorization: Bearer ${ZENODO_TOKEN}"
-          done
-
-          # Upload the data zip
-          curl -sf -X PUT \
-            "https://zenodo.org/api/records/${DRAFT_ID}/draft/files/data-${{ github.ref_name }}.zip/content" \
-            -H "Authorization: Bearer ${ZENODO_TOKEN}" \
-            -H "Content-Type: application/octet-stream" \
-            --data-binary "@data-${{ github.ref_name }}.zip"
-
-          # Commit the uploaded file
-          curl -sf -X POST \
-            "https://zenodo.org/api/records/${DRAFT_ID}/draft/files/data-${{ github.ref_name }}.zip/commit" \
-            -H "Authorization: Bearer ${ZENODO_TOKEN}"
-
-          # Publish the new version
-          curl -sf -X POST \
-            "https://zenodo.org/api/records/${DRAFT_ID}/draft/actions/publish" \
-            -H "Authorization: Bearer ${ZENODO_TOKEN}"
+          pixi run -e release zenodo-publish \
+            --production \
+            --version "${{ github.ref_name }}" \
+            --file "data-${{ github.ref_name }}.zip"
