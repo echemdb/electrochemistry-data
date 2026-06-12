@@ -18,7 +18,7 @@ jobs:
         with:
           fetch-depth: 0  # full history needed for git diff against origin/main
       - uses: prefix-dev/setup-pixi@v0.9.6
-        with: { pixi-version: v0.67.1 }
+        with: { pixi-version: v0.69.0 }
       - name: validate new entries
         shell: pixi run bash -e {0}
         run: pixi run -e dev validate-new-input -- --base_ref origin/${{ github.base_ref }}
