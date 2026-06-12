@@ -179,11 +179,24 @@ def publish_new_version(
     Create a new draft version of ``record_id`` on Zenodo, replace its files
     with ``file_path``, update its metadata and publish it.
 
-    If ``metadata_file`` is given, its contents are used as the metadata base
-    (the file may either be a Zenodo deposition metadata document wrapped in
-    ``{"metadata": {...}}`` or the bare metadata object itself, in either the
-    legacy Zenodo or the new InvenioRDM shape). Otherwise the metadata of the
-    currently latest published version of ``record_id`` is used.
+    Metadata source:
+
+    - If ``metadata_file`` is given (the normal case — the ``zenodo-publish``
+      pixi task always passes ``--metadata zenodo.json``), its contents are
+      used as the metadata base. The file may either be a Zenodo deposition
+      metadata document wrapped in ``{"metadata": {...}}`` or the bare
+      metadata object itself, in either the legacy Zenodo or the new
+      InvenioRDM shape. This makes ``zenodo.json`` the source of truth for
+      title, creators, description, license, etc. across all releases.
+    - Otherwise (fallback), the metadata of the currently latest published
+      version of ``record_id`` is fetched from Zenodo and reused.
+
+    In both cases, ``version``, ``publication_date`` and (if not already set)
+    ``publisher`` and ``rights``/``license`` are overridden on top of the
+    base metadata before the draft is published.
+
+    See the InvenioRDM metadata schema for the accepted fields:
+    https://inveniordm.docs.cern.ch/reference/metadata/
 
     Returns the published deposition resource as returned by Zenodo.
     """
