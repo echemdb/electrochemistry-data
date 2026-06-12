@@ -54,7 +54,8 @@
           ]
         },
         "affiliations": [
-          { "id": "032000t02", "name": "Ulm University" }
+          { "id": "032000t02", "name": "Ulm University" },
+          { "name": "Queen's University" }
         ]
       },
       {
@@ -110,7 +111,7 @@
           ]
         },
         "affiliations": [
-          { "name": "Technical University of Munich", "id": "https://ror.org/02kkvpp62" }
+          { "name": "Technical University of Munich", "id": "02kkvpp62" }
         ]
       },
       {
@@ -138,7 +139,7 @@
           ]
         },
         "affiliations": [
-          { "name": "Leiden University", "id": "https://ror.org/027bh9e22" }
+          { "name": "Leiden University", "id": "027bh9e22" }
         ]
       },
       {
@@ -152,7 +153,7 @@
           ]
         },
         "affiliations": [
-          { "name": "Fritz-Haber-Institut der Max-Planck-Gesellschaft", "id": "https://ror.org/03k9qs827" }
+          { "name": "Fritz-Haber-Institut der Max-Planck-Gesellschaft", "id": "03k9qs827" }
         ]
       }
     ],
