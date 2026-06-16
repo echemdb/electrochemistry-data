@@ -67,6 +67,8 @@ from unitpackage.local import collect_datapackages
 from echemdb_ecdata.bibliography import (
     _print_validation_summary,
     load_bib_keys,
+    validate_bib_keys,
+    validate_bib_utf8,
 )
 
 logger = logging.getLogger("echemdb_ecdata")
@@ -78,7 +80,6 @@ _SCHEMA_BASE = "https://raw.githubusercontent.com/echemdb/metadata-schema/refs"
 SCHEMA_VERSION = "tags/0.7.1"
 #: Clean version string for embedding in generated data packages.
 ECHEMDB_SCHEMA_VERSION = SCHEMA_VERSION.removeprefix("tags/")
-
 
 
 def validate_schema(data_dir, schema_name, version=None, verbose=True):
@@ -630,8 +631,6 @@ def validate_new_input(base_ref="origin/main"):
         print(f"\nValidating {data_dir} ...")
         validate_schema(data_dir, "source_data")
         validate_source_data_input(data_dir)
-
-    from echemdb_ecdata.bibliography import validate_bib_keys, validate_bib_utf8
 
     print("\nValidating bibliography...")
     validate_bib_keys()
