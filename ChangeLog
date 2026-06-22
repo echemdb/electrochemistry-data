@@ -4,6 +4,33 @@ electrochemistry-data Change Log
 
 .. current developments
 
+v0.9.0
+====================
+
+**Added:**
+
+* Added licenses CC-BY-4.0 and ODC-BY-1.0 for the dataset specifically.
+* Added a workflow for publishing the dataset on Zenodo.
+
+
+
+v0.8.4
+====================
+
+**Added:**
+
+* Added raw cyclic voltammetry data (figure 1, KCl curve) from Schönig & Schuster, 2023.
+
+**Fixed:**
+
+* Fixed erroneous y-axis limits in figure 3b of cuesta_2000_adsorption_5684.
+* Fixed mixed up electrolytes in figure 2a of ganassin_2015_non-covalent_8349.
+* Fixed several reference electrode acronyms in the database.
+* Fixed minor bibliography issues.
+* Fixed traces in pajkossy_1996_impedance_209.
+
+
+
 v0.8.3
 ====================
 

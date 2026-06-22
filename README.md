@@ -166,3 +166,29 @@ pixi run -e dev fix-identifiers-dry-run  # Preview only
 # Rename directories and files after a bib key change (manual)
 pixi run -e dev rename-identifiers OLD_NAME NEW_NAME
 ```
+
+## License
+
+You can redistribute and/or modify the contents of this repository under the
+terms of the GNU General Public License (GPL) as published by the Free Software
+Foundation; either version 3.0 of the License, or (at your option) any later
+version (GPL-3.0-or-later). See https://www.gnu.org/licenses.
+
+The data and generated data, i.e., the contents of
+[`literature/`](./literature) and the contents of the generated data archive
+that is published with each release, are also available under either of the
+following two licenses, at your option:
+
+* The [Creative Commons Attribution 4.0 International
+  License](https://creativecommons.org/licenses/by/4.0/) (CC-BY-4.0)
+* The [Open Data Commons Attribution
+  License](https://opendatacommons.org/licenses/by/) (ODC-By-1.0)
+
+While you should consult the above licenses for all the technical details, the
+above roughly translates to the following in practice:
+
+* You may use any of the raw and processed data you find here as long as you
+  give credit.
+* If you want to incorporate any source code you find here into your published
+  product or project it must itself be released under the GPL version 3 or
+  later.

@@ -32,10 +32,10 @@ system:
   electrodes:
     - name: RE
       function: reference electrode
-      material: Hg/Hg2SO4
+      redoxSystem: Hg/Hg2SO4
     - name: WE
       function: working electrode
-      type: Fe single crystal rod
+      type: single crystal
       material: Fe
       crystallographicOrientation: '110'
       source:
@@ -45,5 +45,6 @@ system:
          unit: pct
       preparationProcedure:
         description:
+          - Created from a single crystalline rod.
           - Orientation by Laue backscattering, mechanically polished and etched.
           - details see https://doi.org/10.2355/isijinternational.40.702
