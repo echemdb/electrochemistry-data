@@ -62,6 +62,7 @@ $VERSION_BUMP_PATTERNS = [
     ('echemdb_ecdata/url.py', re.escape(r'def get_echemdb_database_url(version="'), r'def get_echemdb_database_url(version="$VERSION"):'),
     ('echemdb_ecdata/url.py', re.escape(r'        >>> get_echemdb_database_url(version="'), r'        >>> get_echemdb_database_url(version="$VERSION")'),
     ('echemdb_ecdata/url.py', re.escape(r"        'https://github.com/echemdb/electrochemistry-data/releases/download/"), r"        'https://github.com/echemdb/electrochemistry-data/releases/download/$VERSION/data-$VERSION.zip'"),
+    ('README.md', re.escape(r'* **GitHub release (latest):** [data-'), r'* **GitHub release (latest):** [data-$VERSION.zip](https://github.com/echemdb/electrochemistry-data/releases/download/$VERSION/data-$VERSION.zip)'),
 ]
 
 $CHANGELOG_FILENAME = 'ChangeLog'

@@ -1,5 +1,12 @@
 # Electrochemistry-data
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Code_License-GPL_3.0_or_later-blue.svg" alt="Code License: GPL 3.0 or later">
+  <a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://img.shields.io/badge/Data_License-CC--BY--4.0-blue.svg" alt="Data License: CC-BY-4.0"></a>
+  <a href="https://opendatacommons.org/licenses/by/"><img src="https://img.shields.io/badge/Data_License-ODC--By--1.0-blue.svg" alt="Data License: ODC-By-1.0"></a>
+  <a href="https://doi.org/10.5281/zenodo.20723429"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.20723429.svg" alt="DOI"></a>
+</p>
+
 This repository contains data used for the creation of entries on [echemdb.org](https://wwww.echemdb.org/cv).
 The data consist of frictionless based [`unitpackages`](https://echemdb.github.io/unitpackage/),
 which were creared from SVG, YAML and bibtex (BIB) using [`svgdigitizer`](https://echemdb.github.io/svgdigitizer/).
@@ -7,9 +14,14 @@ All input YAML files and output DataPackages are validated against the [echemdb-
 
 ## Accessing Data
 
-### Direct Download (Release Section)
+### Direct Download
 
-The data can be downloaded as a ZIP from the [release section](https://github.com/echemdb/electrochemistry-data/releases).
+The generated data archive can be downloaded directly as a ZIP:
+
+* **GitHub release (latest):** [data-0.9.0.zip](https://github.com/echemdb/electrochemistry-data/releases/download/0.9.0/data-0.9.0.zip)
+* **Zenodo (archived, citable):** download the ZIP from the *Files* section of the [Zenodo record](https://doi.org/10.5281/zenodo.20723429), which always resolves to the latest version.
+
+All releases are also listed in the [release section](https://github.com/echemdb/electrochemistry-data/releases).
 
 ### Unitpackage API
 

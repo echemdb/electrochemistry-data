@@ -5,6 +5,10 @@
   ``zenodo-publish``. Markdown is rendered to HTML at publish time, so the
   description no longer has to be maintained as an escaped JSON string in
   ``zenodo.json``.
+* Added CC-BY-4.0 and ODC-By-1.0 data-license badges to the README.
+* Added a direct download link to the latest release ZIP and a note on
+  downloading the archive from Zenodo to the README "Accessing Data" section.
+  The release link's version is bumped automatically via ``rever.xsh``.
 
 **Fixed:**
 
