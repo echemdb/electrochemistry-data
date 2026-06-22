@@ -52,9 +52,10 @@ system:
       material: Pt
     - name: RE
       function: reference electrode
-      type: Ag/AgCl
+      type: Ag/AgCl-3M
       source:
-        supplier: Argenthal
+        supplier: Ingold
+        model: Argenthal
     - name: WE
       function: working electrode
       type: single crystal
@@ -71,7 +72,7 @@ system:
           unit: mm
       preparationProcedure:
         description:
-          - electrode surfaces were ground with carborundum paper and polished with diamond paste. 
-          - cleaned carefully after each process. 
-          - surfaces were electropolished. 
-          - details see https://doi.org/10.1016/S0022-0728(79)80245-4 and https://doi.org/10.1016/S0022-0728(80)80075-1.
+          - Electrode surfaces were ground with carborundum paper and polished with diamond paste.
+          - Cleaned carefully after each process.
+          - Electropolished at 0 °C in a solution of 2 parts methanol and 1 part HNO3 (65%), following Kötz and Lewerenz.
+          - Details see https://doi.org/10.1016/S0022-0728(79)80245-4 and https://doi.org/10.1016/S0022-0728(80)80075-1.

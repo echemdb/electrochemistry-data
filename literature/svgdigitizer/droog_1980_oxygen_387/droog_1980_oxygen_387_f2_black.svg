@@ -65,7 +65,7 @@
            sodipodi:role="line"
            id="tspan5"
            x="319.00269"
-           y="2013.4805">E1: -0.8 V vs Ag/AgCl</tspan></text>
+           y="2013.4805">E1: -0.8 V vs Ag/AgCl-3M</tspan></text>
       <path
          style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
          d="m 597.45799,1899.0069 88.03937,98.1202"
@@ -85,7 +85,7 @@
            sodipodi:role="line"
            id="tspan6"
            x="1138.9113"
-           y="2009.0001">E2: -0.6 V vs Ag/AgCl</tspan></text>
+           y="2009.0001">E2: -0.6 V vs Ag/AgCl-3M</tspan></text>
       <path
          style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
          d="m 1143.0517,1993.3707 75.7177,-93.9343"
@@ -108,7 +108,7 @@
            x="101.67587"
            y="1842.6377"
            sodipodi:role="line"
-           style="font-size:42.6667px">I1: -0.00001 A</tspan></text>
+           style="font-size:42.6667px">I1: -10 uA</tspan></text>
       <path
          style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
          d="m 429.59483,1832.7478 105.81465,54.4914"
@@ -128,7 +128,7 @@
            sodipodi:role="line"
            id="tspan2"
            x="187.69908"
-           y="521.82312">I2: 0.00001 A</tspan></text>
+           y="521.82312">I2: 10 uA</tspan></text>
       <path
          style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2.19273;stroke-opacity:1"
          d="m 495.16181,510.82767 76.81582,54.50038"
