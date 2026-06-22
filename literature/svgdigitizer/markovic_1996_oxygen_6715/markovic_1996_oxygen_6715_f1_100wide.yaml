@@ -16,8 +16,6 @@ system:
     components:
       - name: water
         type: solvent
-        source:
-          refinement: Millipore ultrapure water
         purity:
           grade: ultrapure
       - name: KOH
@@ -43,4 +41,4 @@ system:
         description:
           - flame annealed.
           - cooled in hydrogen atmosphere.
-          - details see  https://doi.org/10.1021/j100011a001
+        url: https://doi.org/10.1021/j100011a001
