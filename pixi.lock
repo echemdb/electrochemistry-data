@@ -16108,7 +16108,7 @@ packages:
   name: echemdb-ecdata
   requires_dist:
   - pydantic>=2.12.5,<3
-  - svgdigitizer>=0.14.3,<0.15
+  - svgdigitizer>=0.14.4,<0.15
   - unitpackage>=0.13.1,<0.14
   requires_python: '>=3.10'
 - pypi: https://files.pythonhosted.org/packages/01/aa/62f082da2c91fac1c234bc9ee0066257ce83f0604abd72e4c9d5991f2d84/pydantic_core-2.46.4-cp310-cp310-win_amd64.whl
