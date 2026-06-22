@@ -41,7 +41,7 @@ system:
         value: 100
       source:
         quality: ultrapure water
-        refinement: Millipore MilliQ
+        refinement: Millipore Milli-Q
       type: solvent
       chemicalIdentifiers:
         cas: 7732-18-5

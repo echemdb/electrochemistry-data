@@ -25,6 +25,10 @@ Validate input filenames for source data against the YAML metadata::
 
     >>> validate_source_data_input("literature/source_data")  # doctest: +SKIP
 
+Validate only newly added entries compared to a base branch::
+
+    >>> validate_new_input(base_ref="origin/main")  # doctest: +SKIP
+
 """
 
 # ********************************************************************
@@ -63,6 +67,8 @@ from unitpackage.local import collect_datapackages
 from echemdb_ecdata.bibliography import (
     _print_validation_summary,
     load_bib_keys,
+    validate_bib_keys,
+    validate_bib_utf8,
 )
 
 logger = logging.getLogger("echemdb_ecdata")
@@ -74,7 +80,6 @@ _SCHEMA_BASE = "https://raw.githubusercontent.com/echemdb/metadata-schema/refs"
 SCHEMA_VERSION = "tags/0.7.1"
 #: Clean version string for embedding in generated data packages.
 ECHEMDB_SCHEMA_VERSION = SCHEMA_VERSION.removeprefix("tags/")
-
 
 
 def validate_schema(data_dir, schema_name, version=None, verbose=True):
@@ -573,6 +578,63 @@ def validate_identifiers():
 
     print()
     print("All validations passed.")
+
+
+def validate_new_input(base_ref="origin/main"):
+    r"""
+    Validate added or modified entries in ``literature/`` compared to a base branch.
+
+    Uses ``git diff`` to find directories added or modified in the current branch relative
+    to ``base_ref``, then runs schema and filename validation on those directories only.
+
+    Also validates the bibliography (cross-cutting, cannot be scoped to changed entries).
+
+    Parameters
+    ----------
+    base_ref : str
+        The git reference to compare against, e.g., ``origin/main``.
+
+    EXAMPLES::
+
+        >>> validate_new_input(base_ref="origin/main")  # doctest: +SKIP
+
+    """
+    result = subprocess.run(
+        ["git", "diff", "--name-only", "--diff-filter=AM", f"{base_ref}...HEAD"],
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    changed_files = result.stdout.splitlines()
+
+    def _changed_dirs(prefix):
+        dirs = set()
+        for f in changed_files:
+            parts = Path(f).parts
+            if len(parts) >= 3 and f.startswith(prefix):
+                dirs.add(str(Path(parts[0]) / parts[1] / parts[2]))
+        return sorted(dirs)
+
+    svg_dirs = _changed_dirs("literature/svgdigitizer/")
+    src_dirs = _changed_dirs("literature/source_data/")
+
+    if not svg_dirs and not src_dirs:
+        print("No changed literature entries found.")
+        return
+
+    for data_dir in svg_dirs:
+        print(f"\nValidating {data_dir} ...")
+        validate_schema(data_dir, "svgdigitizer")
+        validate_svgdigitizer_input(data_dir)
+
+    for data_dir in src_dirs:
+        print(f"\nValidating {data_dir} ...")
+        validate_schema(data_dir, "source_data")
+        validate_source_data_input(data_dir)
+
+    print("\nValidating bibliography...")
+    validate_bib_keys()
+    validate_bib_utf8()
 
 
 def _lowercase_svg_labels(svg_path):
