@@ -1,8 +1,5 @@
 # This file is part of echemdb (https://github.com/echemdb/website)
 # Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
-experimental:
-  tags:
-  - BCV
 system:
   type: electrochemical
   electrodes:
@@ -11,6 +8,7 @@ system:
       type: SCE-sat
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '111'
       material: Au
       source:
@@ -27,6 +25,9 @@ system:
         value: 0.1
       name: KClO4
       type: salt
+      chemicalIdentifiers:
+        cas: 7778-74-7
+        smiles: '[K+].[ClO4-]'
       # purification: Purified by calcination, recrystallization, and drying.
       source:
         supplier: Fisher
@@ -37,6 +38,9 @@ system:
         value: 1
       name: KOH
       type: salt
+      chemicalIdentifiers:
+        cas: 1310-58-3
+        smiles: '[K+].[OH-]'
       comment: Estimated the concentration necessary to adjust pH.
       source:
         supplier: Merck
@@ -44,6 +48,9 @@ system:
           grade: Suprapure
     - name: H2O
       type: solvent
+      chemicalIdentifiers:
+        cas: 7732-18-5
+        smiles: O
       proportion:
         value: 100
         unit: volume percent
@@ -65,6 +72,9 @@ system:
           value: 99.99
           unit: percent
       type: salt
+      chemicalIdentifiers:
+        cas: 7681-11-0
+        smiles: '[K+].[I-]'
     ph:
       value: 11
     temperature:

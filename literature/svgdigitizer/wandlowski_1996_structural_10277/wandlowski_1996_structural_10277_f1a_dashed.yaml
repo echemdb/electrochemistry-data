@@ -1,8 +1,5 @@
 # This file is part of echemdb (https://github.com/echemdb/website)
 # Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
-experimental:
-  tags:
-  - BCV
 system:
   type: electrochemical
   electrodes:
@@ -11,6 +8,7 @@ system:
       type: SCE
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '100'
       material: Au
       preparationProcedure:
@@ -24,8 +22,14 @@ system:
         value: 0.05
       name: NaClO4
       type: acid
+      chemicalIdentifiers:
+        cas: 7601-89-0
+        smiles: '[Na+].[ClO4-]'
     - name: water
       type: solvent
+      chemicalIdentifiers:
+        cas: 7732-18-5
+        smiles: O
     temperature:
       unit: K
       value: 293

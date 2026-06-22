@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="6600px"
+   version="1.1"
+   width="5100px"
+   id="svg3"
+   sodipodi:docname="blizanac_2003_anion_625_f3a_black.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.25"
+     inkscape:cx="2908"
+     inkscape:cy="1034"
+     inkscape:window-width="2880"
+     inkscape:window-height="1694"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="digitization-layer" />
+  <defs
+     id="defs1" />
+  <g
+     class="layer"
+     id="image-layer"
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="1">
+    <title
+       id="title1">image-layer</title>
+    <image
+       height="6600"
+       width="5100"
+       x="0"
+       xlink:href="blizanac_2004_anion_625_p4.png"
+       y="0"
+       id="image1" />
+  </g>
+  <g
+     class="layer"
+     id="digitization-layer"
+     inkscape:groupmode="layer">
+    <title
+       id="title2">digitization-layer</title>
+    <title
+       id="title3">digitization-layer</title>
+    <text
+       fill="#ff0000"
+       font-family="FreeSans"
+       font-size="192px"
+       font-style="normal"
+       font-weight="normal"
+       id="text5"
+       stroke-width="0.93"
+       text-anchor="start"
+       x="788.72375"
+       xml:space="preserve"
+       y="2186.4119">    <tspan
+   id="tspan5"
+   x="788.72375"
+   y="2186.4119">scan rate: 50 mV / s</tspan>  </text>
+    <g
+       id="g1">
+      <text
+         fill="#ff0000"
+         font-family="FreeSans"
+         font-size="192px"
+         font-style="normal"
+         font-weight="normal"
+         id="text1"
+         stroke-width="0.93"
+         text-anchor="start"
+         x="-1493.96"
+         xml:space="preserve"
+         y="535.09393">     <tspan
+   id="tspan1"
+   x="-1493.96"
+   y="535.09393">j2: 15 µA cm⁻²</tspan>   </text>
+      <path
+         d="m 72.56,455.87395 585.94,-50.32"
+         fill="#ff0000"
+         id="path7"
+         stroke="#ff0000"
+         stroke-width="10.07" />
+    </g>
+    <g
+       id="g12"
+       transform="translate(4460,-931.46237)">
+      <text
+         fill="#ff0000"
+         font-family="FreeSans"
+         font-size="192px"
+         font-style="normal"
+         font-weight="normal"
+         id="text2"
+         stroke-width="0.93"
+         text-anchor="start"
+         x="-6137.1201"
+         xml:space="preserve"
+         y="2883.8401">     <tspan
+   id="tspan2"
+   x="-6137.1201"
+   y="2883.8401">j1: -15 µA cm⁻²</tspan>   </text>
+      <path
+         d="m -4443.63,2848.88 641.58,-49.84"
+         fill="#ff0000"
+         id="path8"
+         stroke="#ff0000"
+         stroke-width="10.07" />
+    </g>
+    <g
+       id="g13"
+       transform="translate(4477.75,276.25)">
+      <text
+         fill="#ff0000"
+         font-family="FreeSans"
+         font-size="192px"
+         font-style="normal"
+         font-weight="normal"
+         id="text3"
+         stroke-width="0.93"
+         text-anchor="start"
+         x="-4342.9902"
+         xml:space="preserve"
+         y="3630.77">     <tspan
+   id="tspan3"
+   x="-4342.9902"
+   y="3630.77">E1: -0.2 V vs RHE</tspan>   </text>
+      <path
+         d="m -3863.02,3414.01 94.84,-581.58"
+         fill="#ff0000"
+         id="path9"
+         stroke="#ff0000"
+         stroke-width="10.07" />
+    </g>
+    <g
+       id="g14"
+       transform="translate(3108.25,275)">
+      <text
+         fill="#ff0000"
+         font-family="FreeSans"
+         font-size="192px"
+         font-style="normal"
+         font-weight="normal"
+         id="text4"
+         stroke-width="0.93"
+         text-anchor="start"
+         x="-1021.88"
+         xml:space="preserve"
+         y="3715.9299">     <tspan
+   id="tspan4"
+   x="-1021.88"
+   y="3715.9299">E2: 1.4 V vs RHE</tspan>   </text>
+      <path
+         d="m -673.51,3468.2 7.74,-634.81"
+         fill="#ff0000"
+         id="path10"
+         stroke="#ff0000"
+         stroke-width="10.07" />
+    </g>
+    <g
+       id="g15"
+       transform="translate(3880.602,-181.01934)">
+      <text
+         fill="#ff0000"
+         font-family="FreeSans"
+         font-size="192px"
+         font-style="normal"
+         font-weight="normal"
+         id="text6"
+         stroke-width="0.93"
+         text-anchor="start"
+         x="-3398.53"
+         xml:space="preserve"
+         y="944.46002">     <tspan
+   id="tspan6"
+   x="-3398.53"
+   y="944.46002">curve: black</tspan>   </text>
+      <path
+         d="m -2960.9854,1413.6623 c 0,0 -2.2349,-70.1427 -0.479,-159.2555 162.8921,-28.5925 189.1338,-24.6126 269.152,-33.3648 93.8472,-10.2648 128.06,-17.9235 156.7433,-27.8697 29.3111,-10.1638 52.5382,-22.5174 98.4775,-23.6785 131.258,-3.3176 105.4088,-3.5541 233.4929,11.0215 56.2937,6.4061 75.8145,5.9962 86.1442,5.4534 43.5546,-2.2889 49.0937,-63.7591 60.9821,-64.0567 11.8868,-0.2974 -4.1618,69.0718 56.347,71.5689 76.8329,3.1709 118.4203,-12.2522 196.0783,-102.729 74.9755,-87.3517 149.2145,-135.4395 149.2145,-135.4395 l -2.339,674.4412 c 0,0 -39.8413,-9.5759 -109.5979,-79.3426 -22.4131,-22.4164 -69.4026,-94.9546 -134.8644,-93.1062 -76.597,2.1629 -111.0458,-25.7251 -190.7037,-28.036 -95.2706,-2.764 -174.833,24.0227 -314.0705,44.1192 -26.8969,3.8821 -101.844,-1.5347 -177.0018,-26.676 -31.909,-10.674 -110.3647,1.6947 -249.5232,-24.2863 -78.7967,-14.7115 -128.0523,-8.7634 -128.0523,-8.7634 z"
+         fill="none"
+         id="path11"
+         marker-mid="url(#Square)"
+         stroke="#ff0000"
+         stroke-width="10.07"
+         sodipodi:nodetypes="ccssssssssccssssssc"
+         style="stroke-width:4.17;stroke-dasharray:none" />
+    </g>
+    <text
+       fill="#ff0000"
+       font-family="FreeSans"
+       font-size="192px"
+       font-style="normal"
+       font-weight="normal"
+       id="text5-4"
+       stroke-width="0.93"
+       text-anchor="start"
+       x="3425"
+       xml:space="preserve"
+       y="466.87494">figure: 3a</text>
+    <text
+       fill="#ff0000"
+       font-family="FreeSans"
+       font-size="192px"
+       font-style="normal"
+       font-weight="normal"
+       id="text5-4-4"
+       stroke-width="0.93"
+       text-anchor="start"
+       x="3474.625"
+       xml:space="preserve"
+       y="717.8125">tags: BCV</text>
+  </g>
+</svg>

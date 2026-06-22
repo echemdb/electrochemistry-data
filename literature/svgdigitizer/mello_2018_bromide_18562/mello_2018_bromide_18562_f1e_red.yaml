@@ -1,8 +1,5 @@
 # This file is part of echemdb (https://github.com/echemdb/website)
 # Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
-experimental:
-  tags:
-  - BCV
 system:
   type: electrochemical
   electrodes:
@@ -16,21 +13,31 @@ system:
       type: RHE
     - name: WE
       function: working electrode
+      type: single crystal
       crystallographicOrientation: '111'
       material: Pt
   electrolyte:
     components:
     - name: Na2HPO4
       type: acid
+      chemicalIdentifiers:
+        cas: 7558-79-4
+        smiles: '[Na+].[Na+].[O-]P(=O)(O)[O-]'
     - name: water
       type: solvent
     - name: NaH2PO4
       type: acid
+      chemicalIdentifiers:
+        cas: 7558-80-7
+        smiles: '[Na+].[O-]P(=O)(O)O'
     - concentration:
         unit: mol / l
         value: 0.01
       name: KBr
       type: salt
+      chemicalIdentifiers:
+        cas: 7758-02-3
+        smiles: '[K+].[Br-]'
     ph:
       value: 5.4
     temperature:
