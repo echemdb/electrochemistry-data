@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pixi run *)",
+      "Edit(/.claude/skills/review-literature-pr/**)",
+      "Edit(/.claude/skills/review-source-data-pr/**)"
+    ]
+  }
+}
