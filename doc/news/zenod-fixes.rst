@@ -9,6 +9,9 @@
 * Added a direct download link to the latest release ZIP and a note on
   downloading the archive from Zenodo to the README "Accessing Data" section.
   The release link's version is bumped automatically via ``rever.xsh``.
+* Added documentation to the README that data can also be submitted directly as
+  raw CSV files (under ``literature/source_data/``), in addition to data
+  digitized from publications with ``svgdigitizer``.
 
 **Fixed:**
 
