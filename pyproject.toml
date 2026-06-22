@@ -173,13 +173,14 @@ rever = { args = [ { "arg" = "version", "default" = "--help" } ],cmd = "rever {{
 # record. Pass `--production` or set ZENODO_PRODUCTION=1 to publish to
 # https://zenodo.org. Metadata is loaded from `zenodo.json` at the repo
 # root; override on the command line if needed.
-zenodo-publish = "python -m echemdb_ecdata.zenodo.zenodo publish --metadata zenodo.json"
+zenodo-publish = "python -m echemdb_ecdata.zenodo.zenodo publish --metadata zenodo.json --description zenodo-description.md"
 
 [tool.pixi.feature.release.dependencies]
 twine = ">=6.2.0,<7"
 rever = ">=0.5.1,<0.6"
 make = ">=4.4.1,<5"
 setuptools = ">=80.10.2,<81"
+markdown = ">=3.7,<4"
 python = "*"
 
 [tool.pixi.feature.release.pypi-dependencies]
