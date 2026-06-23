@@ -1,7 +1,6 @@
 {
   "metadata": {
     "title": "echemdb electrochemistry data",
-    "description": "<p>A database of published electrochemical data extracted from scientific publications, distributed as <a href=\"https://frictionlessdata.io/\">frictionless data packages</a>. See <a href=\"https://www.echemdb.org\">echemdb.org</a> for details.</p>",
     "resource_type": { "id": "dataset" },
     "creators": [
       {
