@@ -284,6 +284,12 @@ Rules:
 - **Start each bullet with its section's verb** - `Added ...`, `Changed ...`,
   `Fixed ...`, `Removed ...`, `Deprecated ...`, `Improved ...` (Performance).
 
+## Skills / Copilot Prompts
+
+- **Single source of truth**: review skills are defined once in `.github/prompts/*.prompt.md` (shared with GitHub Copilot).
+- **`.claude/skills/*/SKILL.md` are thin stubs** that point to those prompt files — edit the prompt file, never the stub. Editing a stub silently forks the two copies.
+- **Settings split**: `.claude/settings.json` is shared (commit it); per-user permissions go in `.claude/settings.local.json` (gitignored). Claude Code auto-adds new approvals to `settings.json`, so review `git diff .claude/settings.json` before committing.
+
 ## Related Documentation
 
 - [svgdigitizer workflow](https://echemdb.github.io/svgdigitizer/workflow.html) - Data extraction process

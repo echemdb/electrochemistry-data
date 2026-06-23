@@ -58,6 +58,11 @@ This performs the following checks automatically:
 - Has `curve` text label (short, unambiguous)
 - Has `scan rate` text label
 - All axis labels present (E1, E2, j1, j2)
+  - **Scale-bar exception:** some figures encode the current axis with a scale bar
+    instead of two calibrated points. In that case the SVG carries a baseline label
+    (`I1`/`j1`, e.g. `I1: 0 uA`) plus a scale-bar label (`I_scale_bar`/`j_scale_bar`,
+    e.g. `I_scale_bar: 10 uA`). When this pair is present, the "missing j2"/"missing j1"
+    automated suggestion is a **false positive** — do not flag it as an issue.
 - Reference electrode in SVG axes matches YAML
 
 #### YAML Checks
@@ -66,7 +71,7 @@ This performs the following checks automatically:
 - Source URL is a valid DOI
 - Electrolyte has `type` and `components`
 - Working electrode defined
-- Reference electrode metadata is only required when explicitly stated in the manuscript (or clearly attributable to the exact experiment); do not infer solely from plotted axis conversion labels
+- Reference electrode metadata is only required when explicitly stated in the manuscript (or clearly attributable to the exact experiment); do not infer solely from plotted axis conversion labels. **Wording matters:** a phrase like *"all potentials are given against the RHE"* describes the potential *scale*, not necessarily the physical reference electrode used (potentials may have been converted from e.g. Ag/AgCl). Do **not** add a `REF` electrode to the YAML on the basis of such scale wording alone.
 - Curator has ORCID
 
 #### PDF Cross-Validation
@@ -113,7 +118,9 @@ The report has two sections:
 
 **Section 1 — Actionable Issues** (numbered, each with decision boxes):
 
-When multiple files have the same root cause, group them into one batch issue with an explicit file list (instead of one issue per file). This allows one reviewer decision for the whole batch.
+When multiple files have the same root cause, group them into one batch issue with an explicit file list (instead of one issue per file). This allows one reviewer decision for the whole batch. **Always do this** — reviewers have asked not to see the same finding repeated per file; emit one issue that lists every affected filename. This applies to the per-file checks emitted by the automated review module too: collapse identical SVG/YAML suggestions across curves into a single grouped issue.
+
+When proposing an action, phrase the issue so it is answerable with accept/reject (give a concrete proposed fix), rather than an open "please confirm" that the reviewer cannot resolve with a checkbox.
 
 Filename parsing note: when extracting figure labels from `{citationKey}_f{figure}_{curve}`, do not split on the first `_f` occurrence because citation keys can contain `_f` (e.g., `fingerprint`). Parse from the right-most `_f{figure}_` token.
 
