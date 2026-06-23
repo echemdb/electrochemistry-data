@@ -8,19 +8,19 @@
 </p>
 
 This repository hosts a dataset for interfacial electrochemistry data,
-currently focusing on cyclic voltammograms of single crystal electrodes
+focusing on cyclic voltammograms of well-defined single crystal electrodes
 recorded in aqueous and non-aqueous electrolytes. It consists of published
 data that is either retraced from source PDFs or provided by the authors, and
 can be browsed on [echemdb.org/cv](https://www.echemdb.org/cv).
 
-![alt text](doc/figures/echemdb_overview.png)
+![Cyclic voltammograms of select transition metal electrodes.](doc/figures/echemdb_overview.png)
 
-The data is provided as frictionless [`unitpackages`](https://echemdb.github.io/unitpackage/)
+The data is provided as frictionless-based [`unitpackages`](https://echemdb.github.io/unitpackage/)
 and originates from two kinds of input:
 
 * **Digitized data** retraced from figures in publications, stored as SVG and
   YAML files and converted with [`svgdigitizer`](https://echemdb.github.io/svgdigitizer/).
-* **Directly submitted data** provided by authors as raw CSV files together with
+* **Directly submitted data** provided by authors as CSV files together with
   YAML metadata.
 
 In both cases a BibTeX (BIB) reference ties the data to its publication, and all

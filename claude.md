@@ -269,8 +269,8 @@ Practical reproducible workflow (no tables in repo docs):
 
 ## News Files (Changelog Fragments)
 
-Every PR **must** add a news file under `doc/news/`. These fragments are
-assembled into the `ChangeLog` at release time by `rever` (see `rever.xsh`).
+Each PR **must** add a separate news file under `doc/news/`. These fragments are
+handled automatically at release time.
 
 Rules:
 
