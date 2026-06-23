@@ -203,6 +203,32 @@ pixi run -e dev fix-identifiers-dry-run  # Preview only
 pixi run -e dev rename-identifiers OLD_NAME NEW_NAME
 ```
 
+## Reviewing Submissions (Curators)
+
+New literature and source-data pull requests can be reviewed with the help of an
+AI assistant. Both assistants run the same checks (input validation, the review
+module, and PDF cross-checks against the cited paper) and produce a review report.
+
+- **GitHub Copilot** — invoked as slash commands:
+  - `/review-source-data-pr <folder-name>`
+  - `/review-literature-pr <folder-name>`
+- **Claude Code** — the equivalent skills:
+  - `review-source-data-pr <folder-name>`
+  - `review-literature-pr <folder-name>`
+
+Here `<folder-name>` is the entry directory (e.g. `droog_1980_oxygen_387`). The
+review generates a `REVIEW.md` in the repository root (the parent directory of the
+entries). This file is **git-ignored** and must not be committed: the reviewer marks
+each finding as accept / reject / comment and adds notes directly in it, and the
+assistant then applies the accepted fixes.
+
+For recurring issues indicate by `(add to context)` in the comment, that these aspects should be considered in future reviews.
+This will update the review skills.
+
+The canonical, shared instructions for both assistants live in
+[`.github/prompts/`](.github/prompts/) (the Claude skills under
+[`.claude/skills/`](.claude/skills/) delegate to the same prompt files).
+
 ## License
 
 You can redistribute and/or modify the contents of this repository under the
