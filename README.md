@@ -1,15 +1,43 @@
 # Electrochemistry-data
 
-This repository contains data used for the creation of entries on [echemdb.org](https://wwww.echemdb.org/cv).
-The data consist of frictionless based [`unitpackages`](https://echemdb.github.io/unitpackage/),
-which were creared from SVG, YAML and bibtex (BIB) using [`svgdigitizer`](https://echemdb.github.io/svgdigitizer/).
-All input YAML files and output DataPackages are validated against the [echemdb-metadata schema](https://github.com/echemdb/metadata-schema).
+<p align="center">
+  <img src="https://img.shields.io/badge/Code_License-GPL_3.0_or_later-blue.svg" alt="Code License: GPL 3.0 or later">
+  <a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://img.shields.io/badge/Data_License-CC--BY--4.0-blue.svg" alt="Data License: CC-BY-4.0"></a>
+  <a href="https://opendatacommons.org/licenses/by/"><img src="https://img.shields.io/badge/Data_License-ODC--By--1.0-blue.svg" alt="Data License: ODC-By-1.0"></a>
+  <a href="https://doi.org/10.5281/zenodo.20723429"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.20723429.svg" alt="DOI"></a>
+</p>
+
+This repository hosts a dataset for interfacial electrochemistry data,
+focusing on cyclic voltammograms of well-defined single crystal electrodes
+recorded in aqueous and non-aqueous electrolytes. It consists of published
+data that is either retraced from source PDFs or provided by the authors, and
+can be browsed on [echemdb.org/cv](https://www.echemdb.org/cv).
+
+![Cyclic voltammograms of select transition metal electrodes.](doc/figures/echemdb_overview.png)
+
+The data is provided as frictionless-based [`unitpackages`](https://echemdb.github.io/unitpackage/)
+and originates from two kinds of input:
+
+* **Digitized data** retraced from figures in publications, stored as SVG and
+  YAML files and converted with [`svgdigitizer`](https://echemdb.github.io/svgdigitizer/).
+* **Directly submitted data** provided by authors as CSV files together with
+  YAML metadata.
+
+In both cases a BibTeX (BIB) reference ties the data to its publication, and all
+input YAML files and output Data Packages are validated against the [echemdb-metadata schema](https://github.com/echemdb/metadata-schema).
+The dataset is generated automatically on each release from the input files in
+this repository and is maintained by the [echemdb](https://github.com/echemdb) community.
 
 ## Accessing Data
 
-### Direct Download (Release Section)
+### Direct Download
 
-The data can be downloaded as a ZIP from the [release section](https://github.com/echemdb/electrochemistry-data/releases).
+The generated data archive can be downloaded directly as a ZIP:
+
+* **GitHub release (latest):** [data-0.9.0.zip](https://github.com/echemdb/electrochemistry-data/releases/download/0.9.0/data-0.9.0.zip)
+* **Zenodo (archived, citable):** download the ZIP from the *Files* section of the [Zenodo record](https://doi.org/10.5281/zenodo.20723429), which always resolves to the latest version.
+
+All releases are also listed in the [release section](https://github.com/echemdb/electrochemistry-data/releases).
 
 ### Unitpackage API
 
@@ -38,8 +66,16 @@ ECHEMDB_DATABASE_URL
 
 ## Contributing
 
-The preparation and of the files and the extraction of the data from a PDF source is
-described [here](https://echemdb.github.io/svgdigitizer/workflow.html).
+You can contribute data in two ways:
+
+* **Digitize data from a publication.** The preparation of the files and the
+  extraction of the data from a PDF source is described in the
+  [svgdigitizer workflow](https://echemdb.github.io/svgdigitizer/workflow.html). The resulting
+  SVG and YAML files go into [`literature/svgdigitizer/`](./literature/svgdigitizer).
+* **Submit your own raw data directly.** Add your measurement as a CSV file
+  together with a YAML metadata file under
+  [`literature/source_data/`](./literature/source_data); no digitization is
+  required.
 
 ## Development
 

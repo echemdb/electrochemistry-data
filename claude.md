@@ -267,6 +267,23 @@ Practical reproducible workflow (no tables in repo docs):
 - For existing tag nodes, update tag text in place and keep comma-separated format.
 - Run `pixi run -e dev validate-input` after bulk edits.
 
+## News Files (Changelog Fragments)
+
+Each PR **must** add a separate news file under `doc/news/`. These fragments are
+handled automatically at release time.
+
+Rules:
+
+- **Always required** - never finish a change without adding/updating its news file.
+- **Name it after the current PR** - use the PR branch name, e.g. a branch
+  `markovic_1996_oxygen_6715` gets `doc/news/markovic_1996_oxygen_6715.rst`.
+  One news file per PR; keep appending to it as the PR grows.
+- **Follow `doc/news/TEMPLATE.rst`** - the sections are `**Added:**`,
+  `**Changed:**`, `**Deprecated:**`, `**Removed:**`, `**Fixed:**`,
+  `**Performance:**`. Drop sections that do not apply.
+- **Start each bullet with its section's verb** - `Added ...`, `Changed ...`,
+  `Fixed ...`, `Removed ...`, `Deprecated ...`, `Improved ...` (Performance).
+
 ## Skills / Copilot Prompts
 
 - **Single source of truth**: review skills are defined once in `.github/prompts/*.prompt.md` (shared with GitHub Copilot).

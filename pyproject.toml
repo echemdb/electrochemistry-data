@@ -77,8 +77,9 @@ convert-svg = "cd data && make svg"
 convert-raw = "cd data && make source_data"
 convert-svg-force = "cd data && make svg-force"
 convert-raw-force = "cd data && make source_data-force"
-convert = { depends-on = ["copy-bib", "convert-raw", "convert-svg"] }
-convert-force = { depends-on = ["copy-bib", "convert-raw-force", "convert-svg-force"] }
+copy-licenses = "cd data && make licenses"
+convert = { depends-on = ["copy-bib", "convert-raw", "convert-svg", "copy-licenses"] }
+convert-force = { depends-on = ["copy-bib", "convert-raw-force", "convert-svg-force", "copy-licenses"] }
 clean-data = "cd data && make clean"
 # Comparison: verify batch output matches existing generated data
 verify-svg = 'python -c "from echemdb_ecdata.digitize import verify_batch_conversion; verify_batch_conversion(data_type=\"svgdigitizer\")"'
@@ -172,13 +173,14 @@ rever = { args = [ { "arg" = "version", "default" = "--help" } ],cmd = "rever {{
 # record. Pass `--production` or set ZENODO_PRODUCTION=1 to publish to
 # https://zenodo.org. Metadata is loaded from `zenodo.json` at the repo
 # root; override on the command line if needed.
-zenodo-publish = "python -m echemdb_ecdata.zenodo.zenodo publish --metadata zenodo.json"
+zenodo-publish = "python -m echemdb_ecdata.zenodo.zenodo publish --metadata zenodo.json --description zenodo-description.md"
 
 [tool.pixi.feature.release.dependencies]
 twine = ">=6.2.0,<7"
 rever = ">=0.5.1,<0.6"
 make = ">=4.4.1,<5"
 setuptools = ">=80.10.2,<81"
+markdown = ">=3.7,<4"
 python = "*"
 
 [tool.pixi.feature.release.pypi-dependencies]
