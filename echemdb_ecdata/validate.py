@@ -141,13 +141,64 @@ def validate_schema(data_dir, schema_name, version=None, verbose=True):
     ]
     if verbose:
         cmd.append("--verbose")
-    cmd.extend(str(f) for f in files)
+
+    file_args = [str(f) for f in files]
 
     print(
         f"Validating {len(files)} {ext} file(s) in {data_dir} "
         f"against {schema_name} ({version})..."
     )
-    subprocess.run(cmd, check=True)
+
+    # Pass the files in batches so the command line stays within the Windows
+    # CreateProcess limit (32767 chars); a single invocation with all paths
+    # raises ``[WinError 206] The filename or extension is too long``. Each batch
+    # still reports the offending file via check-jsonschema's own output.
+    batches = _chunk_args_by_length(cmd, file_args)
+    failed = False
+    for i, batch in enumerate(batches, start=1):
+        if len(batches) > 1:
+            print(f"  batch {i}/{len(batches)} ({len(batch)} files)...")
+        result = subprocess.run(cmd + batch, check=False)
+        if result.returncode != 0:
+            failed = True
+    if failed:
+        raise subprocess.CalledProcessError(1, cmd)
+
+
+def _chunk_args_by_length(base_cmd, args, max_len=28000):
+    r"""
+    Split ``args`` into batches so that each ``base_cmd + batch`` command line
+    stays within ``max_len`` characters.
+
+    This keeps subprocess invocations under the Windows ``CreateProcess`` command
+    line limit (32767 characters). ``max_len`` leaves headroom for the resolved
+    executable path and per-argument quoting/separators. Each batch holds at
+    least one argument, even if that single argument exceeds ``max_len``.
+
+    EXAMPLES::
+
+        >>> _chunk_args_by_length(["cmd"], ["aaaa", "bbbb", "cccc"], max_len=20)
+        [['aaaa', 'bbbb'], ['cccc']]
+
+        >>> _chunk_args_by_length(["cmd"], ["a", "b", "c"])
+        [['a', 'b', 'c']]
+
+    """
+    base_len = sum(len(c) + 3 for c in base_cmd)
+    batches = []
+    current = []
+    current_len = base_len
+    for arg in args:
+        arg_len = len(arg) + 3
+        if current and current_len + arg_len > max_len:
+            batches.append(current)
+            current = []
+            current_len = base_len
+        current.append(arg)
+        current_len += arg_len
+    if current:
+        batches.append(current)
+    return batches
 
 
 def _build_expected_identifier(citation_key, figure, curve):
