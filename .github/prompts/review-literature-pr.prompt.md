@@ -91,6 +91,10 @@ This performs the following checks automatically:
   (e.g. `preparationProcedure.description`, electrolyte/system comments) is a sentence: start it with a
   capital letter and end it with a period. These free-text fields are not machine-parsed, so unit
   symbols such as `°C` may be written directly.
+- **DOIs/URLs belong in a `url` key, not in a `description` sentence.** If a `description:` list item is
+  just a pointer to the source (e.g. `details see http://dx.doi.org/...`), drop that item and put the
+  link in a sibling `url:` key instead (e.g. `preparationProcedure.url`). Propose this move whenever a
+  DOI or URL appears inside a description.
 
 #### PDF Cross-Validation
 The review module downloads the paper via DOI and extracts text to verify:
@@ -235,6 +239,11 @@ for confirmation**, then:
    ```
    The PR number is available from the repository context attachment (e.g., PR #107).
    Include the full REVIEW.md content with the reviewer's decisions marked.
+
+   **Do not reproduce verbatim sentences from the PDF in the GitHub-posted report.** The local
+   REVIEW.md may keep `**Evidence from PDF:**` quotes to aid the reviewer, but when building the
+   comment that is posted to GitHub, omit the quoted paper text — paraphrase the finding or cite the
+   section/figure instead (avoids republishing copyrighted manuscript text in a public comment).
 
 **Important:** Always ask the reviewer before committing, pushing, or posting.
 
