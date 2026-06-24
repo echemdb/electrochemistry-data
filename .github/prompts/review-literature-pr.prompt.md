@@ -175,9 +175,12 @@ Severity levels:
 **Section 2 — Automated Checks Summary** (checklist of all passing/failing checks).
 
 **Section 3 — Curator Notes** (free-form): An optional `## Curator Notes` section at the
-end of the report where the curator can leave general observations, context, open questions,
-or remarks not covered by the structured issues above. The section is pre-populated with a
-blockquote placeholder by `write_review_report` and should be filled in manually if needed.
+end of the report. **This section is reserved for the curator (the human reviewer).** Do
+**not** put your own observations, leftover suggestions, or findings here — those belong in
+the numbered issues above (each with its decision box) or in the `**Reviewer notes:**` line
+of an existing issue. The section is pre-populated with a blockquote placeholder by
+`write_review_report`; leave it as a short `> _(reserved for the curator)_` placeholder for
+the curator to fill in.
 
 Generate the report using:
 ```python
