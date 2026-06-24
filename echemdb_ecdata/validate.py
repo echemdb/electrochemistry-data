@@ -580,6 +580,55 @@ def validate_identifiers():
     print("All validations passed.")
 
 
+def validate_citation_keys_in_bib(
+    bib_path="literature/bibliography/bibliography.bib",
+):
+    r"""
+    Validate that every ``citationKey`` referenced by a literature entry
+    exists in the bibliography.
+
+    This is a cross-cutting check that scans *all* svgdigitizer and source_data
+    YAML files, regardless of which entries changed. It catches the case where a
+    bibliography entry is removed or renamed while a still-present (but unchanged)
+    data entry keeps referencing it — a mismatch that a changed-entries-only
+    validation (see :func:`validate_new_input`) would miss.
+
+    Returns a list of error messages (empty if all valid).
+
+    EXAMPLES::
+
+        >>> errors = validate_citation_keys_in_bib()  # doctest: +ELLIPSIS
+        Validation of citation keys in bibliography: checked ... files, found ... errors.
+
+    """
+    bib_keys = load_bib_keys(bib_path) if os.path.exists(bib_path) else set()
+
+    errors = []
+    checked = 0
+
+    patterns = [
+        "literature/svgdigitizer/**/*.yaml",
+        "literature/source_data/**/*.yaml",
+    ]
+    yaml_files = sorted(f for p in patterns for f in glob.glob(p, recursive=True))
+
+    for yaml_file in yaml_files:
+        yaml_path = Path(yaml_file)
+        meta = _read_yaml_metadata(yaml_path)
+        citation_key = meta.get("source", {}).get("citationKey", "")
+        if not citation_key:
+            continue
+        checked += 1
+        if bib_keys and citation_key not in bib_keys:
+            errors.append(
+                f"BIB MISMATCH: citationKey '{citation_key}' "
+                f"not found in bibliography ({yaml_path})"
+            )
+
+    _print_validation_summary("citation keys in bibliography", checked, errors)
+    return errors
+
+
 def validate_new_input(base_ref="origin/main"):
     r"""
     Validate added or modified entries in ``literature/`` compared to a base branch.
@@ -587,7 +636,10 @@ def validate_new_input(base_ref="origin/main"):
     Uses ``git diff`` to find directories added or modified in the current branch relative
     to ``base_ref``, then runs schema and filename validation on those directories only.
 
-    Also validates the bibliography (cross-cutting, cannot be scoped to changed entries).
+    Also validates the bibliography (cross-cutting, cannot be scoped to changed entries),
+    including a full scan that every ``citationKey`` referenced by *any* svgdigitizer or
+    source_data entry resolves to a bibliography entry (see
+    :func:`validate_citation_keys_in_bib`).
 
     Parameters
     ----------
@@ -635,6 +687,17 @@ def validate_new_input(base_ref="origin/main"):
     print("\nValidating bibliography...")
     validate_bib_keys()
     validate_bib_utf8()
+
+    # Cross-cutting: every citationKey referenced by *any* entry (not only the
+    # changed ones) must resolve to a bibliography entry. This catches a bib
+    # entry that was removed/renamed while an unchanged data entry still uses it.
+    print("\nValidating citation-key references across all entries...")
+    ref_errors = validate_citation_keys_in_bib()
+    if ref_errors:
+        raise ValueError(
+            f"Validation failed with {len(ref_errors)} citation-key "
+            f"reference error(s). See output above for details."
+        )
 
 
 def _lowercase_svg_labels(svg_path):
