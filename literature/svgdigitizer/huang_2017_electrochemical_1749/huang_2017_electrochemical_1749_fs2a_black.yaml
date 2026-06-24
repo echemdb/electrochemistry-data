@@ -1,0 +1,63 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-04-17
+source:
+  url: https://doi.org/10.1021/acscatal.6b03147
+  citationKey: huang_2017_electrochemical_1749
+  techniques:
+  - CV
+experimental:
+  tags: 
+  - BCV
+  instrumentation:
+    - name: potentiostat
+      manufacturer: Gamry Instruments
+      model: Reference 600
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+      - name: KOH
+        type: base
+        concentration:
+          value: 0.1
+          unit: M
+        source:
+          supplier: Alfa Aesar
+        purity:
+          value: 99.98
+          unit: pct
+      - name: N2
+        type: gas 
+    temperature:
+      value: 298
+      unit: K
+  electrodes:
+    - name: CE
+      function: counter electrode
+      material: Pt
+      source:
+        supplier: ALS Japan
+    - name: RE
+      function: reference electrode
+      material: Hg/HgO
+      source:
+        supplier: CHI instruments
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Cu
+      crystallographicOrientation: '100'
+      geometricElectrolyteContactArea:
+        value: 0.385
+        unit: cm2
+      preparationProcedure:
+        description:
+          - Mechanically and electrochemically polished, diluted acid rinsing.
+        url: https://doi.org/10.1021/acscatal.6b03147
