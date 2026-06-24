@@ -150,6 +150,18 @@
          style="stroke:none">scan rate: 10 mV / s </tspan></text>
     <text
        xml:space="preserve"
+       style="font-size:42.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke:#000000;stroke-width:2"
+       x="394.0625"
+       y="1264.3048"
+       id="text9"
+       inkscape:label="cycle"><tspan
+         sodipodi:role="line"
+         id="tspan9"
+         x="394.0625"
+         y="1264.3048"
+         style="stroke:none">cycle: 1</tspan></text>
+    <text
+       xml:space="preserve"
        style="font-size:42.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke:none;stroke-width:2"
        x="490.69141"
        y="1388.5497"
