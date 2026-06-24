@@ -31,8 +31,7 @@ system:
         type: solvent
         source:
           supplier: Barnstead
-        purity:
-          grade: supra pure
+          quality: EASY pure UV
       - name: NaOH
         type: base
         concentration:
@@ -40,6 +39,8 @@ system:
           unit: M
         source:
           supplier: Fischer
+          purity:
+            grade: supra pure
       - name: N2
         type: gas
         purity:
@@ -58,26 +59,24 @@ system:
       material: Pt
     - name: RE
       function: reference electrode
-      type: Hg/HgO
+      type: Hg/HgO-0.1M-NaOH
     - name: WE
       function: working electrode
       type: single crystal
       material: Cu
       crystallographicOrientation: '111'
       source:
-        purity:
-          value: 99.999
-          unit: pct
+        supplier: Monocrystals Company
       shape:
         diameter:
           value: 2.54
-          unit: mm
-      geometricElectrolyteContactArea: 
+          unit: cm
+      geometricElectrolyteContactArea:
         value: 5.05
         unit: cm2
       preparationProcedure:
         description:
-          - mechanically polished on fine grade emery papers. 
-          - electrochemically polished in a phosphoric acid solution at constant voltage.
-          - thoroughly washed with pure water, cleanded in H2SO4 and washed again with pure water.
-          - details see http://dx.doi.org/10.2298/JSC0207531J.
+          - Mechanically polished on fine grade emery papers.
+          - Electrochemically polished in a phosphoric acid solution at constant voltage.
+          - Thoroughly washed with pure water, cleaned in H2SO4 and washed again with pure water.
+        url: http://dx.doi.org/10.2298/JSC0207531J
