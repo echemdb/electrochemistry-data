@@ -141,6 +141,32 @@ def _normalize_metadata(metadata):
     return normalized
 
 
+def _render_description(description_file: Path) -> str:
+    r"""
+    Read ``description_file`` and return it as the HTML string that Zenodo
+    expects for ``metadata.description``.
+
+    Markdown files (``.md``/``.markdown``) are rendered to HTML; ``.html``
+    and ``.txt`` files are used verbatim. Keeping the long description in a
+    separate Markdown file is far more convenient to edit than a single
+    escaped JSON string in ``zenodo.json``.
+    """
+    description_file = Path(description_file)
+    if not description_file.is_file():
+        raise click.ClickException(f"Description file not found: {description_file}")
+    text = description_file.read_text(encoding="utf-8")
+    if description_file.suffix.lower() in (".md", ".markdown"):
+        try:
+            import markdown  # pylint: disable=import-outside-toplevel
+        except ImportError as exc:
+            raise click.ClickException(
+                "Rendering a Markdown description requires the 'markdown' "
+                "package, which is not installed in this environment."
+            ) from exc
+        return markdown.markdown(text)
+    return text
+
+
 def _check(response: requests.Response, action: str) -> dict:
     r"""
     Raise a descriptive error if ``response`` indicates failure, otherwise
@@ -172,6 +198,7 @@ def publish_new_version(
     production: bool = False,
     license_id: str = "cc-by-4.0",
     metadata_file: Path | None = None,
+    description_file: Path | None = None,
     publisher: str = "Zenodo",
     debug: bool = False,
 ) -> dict:
@@ -243,6 +270,14 @@ def publish_new_version(
             "latest version retrieval",
         )
         base_metadata = dict(latest.get("metadata") or {})
+
+    # A separate description file (typically Markdown) takes precedence over
+    # any ``description`` carried in the metadata source, so the long, richly
+    # formatted text can be edited in ``zenodo-description.md`` instead of as
+    # an escaped JSON string.
+    if description_file is not None:
+        base_metadata["description"] = _render_description(description_file)
+
     if debug:
         click.echo(
             "Latest published metadata:\n"
@@ -440,6 +475,16 @@ def cli():
     "the currently latest published version of the record is used.",
 )
 @click.option(
+    "--description",
+    "description_file",
+    type=click.Path(exists=True, dir_okay=False, path_type=Path),
+    default=None,
+    help="Path to a description file (Markdown is rendered to HTML; .html/"
+    ".txt is used verbatim). If given, its contents override the "
+    "`description` from the metadata source. Lets the description be edited "
+    "in e.g. `zenodo-description.md` instead of an escaped JSON string.",
+)
+@click.option(
     "--publisher",
     default="Zenodo",
     show_default=True,
@@ -464,6 +509,7 @@ def publish(
     production,
     license_id,
     metadata_file,
+    description_file,
     publisher,
     debug,
 ):
@@ -478,6 +524,7 @@ def publish(
         production=production,
         license_id=license_id,
         metadata_file=metadata_file,
+        description_file=description_file,
         publisher=publisher,
         debug=debug,
     )

@@ -1,0 +1,53 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-04-14
+source:
+  url: https://doi.org/10.1002/ange.201706463
+  citationKey: le_2017_role_13099
+  techniques:
+  - CV
+experimental:
+  instrumentation:
+    - manufacturer: Metrohm Autolab
+      name: PGSTAT12
+      type: potentiostat
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        chemicalIdentifiers:
+          cas: 7732-18-5
+          smiles: O
+        source:
+          refinement: Elga PureUltra
+        purity:
+          grade: ultrapure
+      - name: NaOH
+        type: base
+        concentration:
+          value: 0.1
+          unit: M
+      - name: Ar
+        type: gas
+  electrodes:
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Cu
+      crystallographicOrientation: '100'
+      preparationProcedure:
+        description:
+          - Electropolished in 66% orthophosphoric acid at +2 V.
+          - Rinsed with ultra-pure water.
+    - name: CE
+      function: counter electrode
+      material: Au
+    - name: REF
+      function: reference electrode
+      type: Hg/HgO

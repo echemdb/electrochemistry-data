@@ -1,0 +1,82 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-04-04
+source:
+  url: http://dx.doi.org/10.2298/JSC0207531J
+  citationKey: jovic_2002_surface_531
+  techniques:
+  - CV
+experimental:
+  tags: 
+  - BCV
+  instrumentation:
+    - name: programmer
+      supplier: PAR
+      model: M-175
+    - name: potentiostat
+      supplier: PAR
+      model: M-173
+    - name: X-Y recorder
+      supplier: Houston Instrument
+      model: 2000R
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          supplier: Barnstead
+          quality: EASY pure UV
+      - name: NaOH
+        type: base
+        concentration:
+          value: 0.1
+          unit: M
+        source:
+          supplier: Fischer
+          purity:
+            grade: supra pure
+      - name: N2
+        type: gas
+        purity:
+          value: 99.999
+          unit: pct
+    temperature:
+      value: 25
+      unit: degC
+      uncertainty:
+        value: 1
+        unit: degC
+  electrodes:
+    - name: CE
+      function: counter electrode
+      type: sheet
+      material: Pt
+    - name: RE
+      function: reference electrode
+      type: Hg/HgO-0.1M-NaOH
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Cu
+      crystallographicOrientation: '100'
+      source:
+        supplier: Monocrystals Company
+      shape:
+        diameter:
+          value: 2.54
+          unit: cm
+      geometricElectrolyteContactArea:
+        value: 5.05
+        unit: cm2
+      preparationProcedure:
+        description:
+          - Mechanically polished on fine grade emery papers.
+          - Electrochemically polished in a phosphoric acid solution at constant voltage.
+          - Thoroughly washed with pure water, cleaned in H2SO4 and washed again with pure water.
+        url: http://dx.doi.org/10.2298/JSC0207531J

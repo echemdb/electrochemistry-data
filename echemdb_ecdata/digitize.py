@@ -345,6 +345,62 @@ def _run_svg_batch(config, yaml_files=None):
         sys.exit(1)
 
 
+def digitize_folder(folder, force=True, validate=True):
+    r"""Digitize (and optionally validate) a single svgdigitizer paper folder.
+
+    Convenience wrapper for quick local checks: converts only the SVG/YAML
+    pairs in *folder* instead of all ~300 entries, then validates the generated
+    datapackage against the ``echemdb_package`` schema. This mirrors the CI
+    ``convert`` + ``validate-generated`` steps but scoped to one entry, so it
+    runs in seconds. ``validate-input`` cannot catch generated-schema errors
+    (its input schema allows extra top-level keys), so this is the fast way to
+    reproduce that CI stage locally.
+
+    Parameters
+    ----------
+    folder : str or Path
+        Either a path to the paper folder (e.g.
+        ``literature/svgdigitizer/schouten_2013_electrochemical_6``) or just the
+        paper directory name, which is resolved under ``literature/svgdigitizer``.
+    force : bool
+        Rebuild regardless of timestamps. Default: True.
+    validate : bool
+        Validate the generated JSON against ``echemdb_package``. Default: True.
+    """
+    source_dir = REPO_ROOT / "literature" / "svgdigitizer"
+    target_dir = REPO_ROOT / "data" / "generated" / "svgdigitizer"
+
+    folder_path = Path(folder)
+    if not folder_path.exists():
+        folder_path = source_dir / folder
+    folder_path = folder_path.resolve()
+    if not folder_path.is_dir():
+        raise SystemExit(f"Not a directory: {folder_path}")
+
+    yaml_files = sorted(folder_path.glob("*.yaml"))
+    if not yaml_files:
+        raise SystemExit(f"No YAML files found in {folder_path}")
+
+    digitize_svgdigitizer_data(
+        source_dir=source_dir,
+        bibliography_path=REPO_ROOT
+        / "literature"
+        / "bibliography"
+        / "bibliography.bib",
+        target_dir=target_dir,
+        yaml_files=[str(p) for p in yaml_files],
+        force=force,
+    )
+
+    if validate:
+        # Imported here to avoid a circular import at module load time.
+        from echemdb_ecdata.validate import (  # pylint: disable=import-outside-toplevel
+            validate_schema,
+        )
+
+        validate_schema(str(target_dir / folder_path.name), "echemdb_package")
+
+
 # ---------------------------------------------------------------------------
 # Source data – per-file processing
 # ---------------------------------------------------------------------------

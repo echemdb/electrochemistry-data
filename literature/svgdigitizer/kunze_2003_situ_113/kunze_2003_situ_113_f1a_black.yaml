@@ -1,0 +1,52 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-04-04
+source:
+  url: https://doi.org/10.1016/S0022-0728(03)00115-3
+  citationKey: kunze_2003_situ_113
+  techniques:
+  - CV
+experimental:
+  tags: 
+  - BCV
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          supplier: Millipore
+        purity:
+          totalIonConductivity:
+            value: 18
+            unit: MOhm cm
+      - name: NaOH
+        type: base
+        concentration:
+          value: 0.1
+          unit: M
+        source:
+          supplier: Gen-Apex
+        purity:
+          grade: ultra pure
+  electrodes:
+    - name: CE
+      function: counter electrode
+      material: Pt
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Cu
+      crystallographicOrientation: '001'
+      preparationProcedure:
+        description:
+          - Crystals were oriented with X-ray Laue diffraction.
+          - Mechanically polished with diamond spray to a final 0.25 µm grading.
+          - Electropolished in 60% ortho-phosphoric acid for 5 min at 1.80 V.
+          - Subsequently annealed at 1000 K for 16 h in 6N hydrogen at normal pressure.
+        url: https://doi.org/10.1016/S0022-0728(03)00115-3
