@@ -1,0 +1,53 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-02-11
+source:
+  url: https://doi.org/10.1021/jp0041757
+  citationKey: wang_2001_situ_2809
+  techniques:
+  - CV
+experimental:
+  tags: 
+  - BCV
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          supplier: Millipore Inc
+        purity:
+          grade: Milli-Q UV-Plus
+      - name: HClO4
+        type: acid
+        concentration:
+          value: 1
+          unit: M
+        source:
+          supplier: Fisher
+    ph:
+      value: 0
+    comment: Measurement was done with a hanging meniscus configuration.
+  electrodes:
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Ru
+      crystallographicOrientation: '0001'
+      source:
+        supplier: Metal Crystals and Oxides, Cambridge, England
+      shape:
+        diameter:
+          value: 9
+          unit: mm
+      preparationProcedure:
+        description:
+          - Preparation was performed in UHV.
+          - Sputtering at room temperature with 1 keV Ar ions, followed by five cycles of oxygen adsorption/desorption.
+          - Flash annealed in UHV at 1400 °C.
+        url: https://doi.org/10.1016/0039-6028(75)90409-4
