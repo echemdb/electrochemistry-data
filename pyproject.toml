@@ -80,6 +80,9 @@ convert-raw-force = "cd data && make source_data-force"
 copy-licenses = "cd data && make licenses"
 convert = { depends-on = ["copy-bib", "convert-raw", "convert-svg", "copy-licenses"] }
 convert-force = { depends-on = ["copy-bib", "convert-raw-force", "convert-svg-force", "copy-licenses"] }
+# Convert + validate a single svgdigitizer paper folder (quick local check).
+# Usage: pixi run -e dev convert-svg-one literature/svgdigitizer/<paper>  (or just <paper>)
+convert-svg-one = { args = [ { "arg" = "folder" } ], cmd = "python -c \"from echemdb_ecdata.digitize import digitize_folder; digitize_folder('{{ folder }}')\"" }
 clean-data = "cd data && make clean"
 # Comparison: verify batch output matches existing generated data
 verify-svg = 'python -c "from echemdb_ecdata.digitize import verify_batch_conversion; verify_batch_conversion(data_type=\"svgdigitizer\")"'

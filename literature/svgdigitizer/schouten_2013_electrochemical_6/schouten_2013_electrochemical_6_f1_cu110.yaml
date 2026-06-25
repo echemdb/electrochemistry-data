@@ -1,0 +1,74 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-04-14
+source:
+  url: https://doi.org/10.1016/j.jelechem.2013.03.018
+  citationKey: schouten_2013_electrochemical_6
+  techniques:
+  - CV
+experimental:
+  tags: 
+  - BCV
+  instrumentation:
+    - type: potentiostat
+      manufacturer: Ivium
+      name: A06075
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+        source:
+          supplier: Millipore MilliQ gradient A10 system
+        purity:
+          totalIonConductivity:
+            value: 18.2
+            unit: MOhm cm
+      - name: NaOH
+        type: base
+        concentration:
+          value: 0.1
+          unit: M
+        source:
+          supplier: Sigma–Aldrich TraceSelect
+        purity:
+          grade: high purity
+      - name: Argon
+        type: gas
+        source:
+          supplier: Air Products
+        purity:
+          value: 5.0
+    ph:
+      value: 13
+    temperature:
+      value: 298
+      unit: K
+  electrodes:
+    - name: CE
+      function: counter electrode
+      material: Au
+    - name: RE
+      function: reference electrode
+      material: RHE
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Cu
+      crystallographicOrientation: '110'
+      preparationProcedure:
+        url: https://doi.org/10.1016/j.jelechem.2013.03.018
+        description:
+          - Bead-type electrodes that were cut and polished with an accuracy down to 0.5°.
+          - Electropolished in 66% H3PO4 at 3 V versus a Cu counter electrode for 10 s, then rinsed with water before each experiment.
+  electrochemicalCell:
+    type: three-electrode cell
+    components:
+      - name: glass
+        part: cell
+    cleaningProcedure: Boiled in ultra clean water.
