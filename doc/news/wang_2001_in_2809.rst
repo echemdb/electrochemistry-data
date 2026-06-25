@@ -1,5 +1,0 @@
-**Added:**
-
-* Added digitized data and bibliography entry for ``wang_2001_in_2809``.
-  Figures 2a, 2b, and 2c: cyclic voltammograms of a Ru(0001) single-crystal
-  working electrode recorded in 1 M HClO4 (hanging meniscus configuration).

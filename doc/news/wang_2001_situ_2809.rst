@@ -1,0 +1,6 @@
+**Added:**
+
+* Added digitized data and bibliography entry for ``wang_2001_situ_2809``.
+  Figure 2: cyclic voltammograms of a Ru(0001) single-crystal working electrode
+  (hanging meniscus, 10 mV/s) in 1 M HClO4 (2a), 0.1 M HClO4 (2b), and an
+  alkaline pH 14 solution (2c, solid and dashed sweeps).

@@ -6,16 +6,12 @@ curation:
       date: 2026-02-11
 source:
   url: https://doi.org/10.1021/jp0041757
-  citationKey: wang_2001_in_2809
+  citationKey: wang_2001_situ_2809
   techniques:
   - CV
 experimental:
   tags: 
   - BCV
-  instrumentation:
-    - name: potentiostat
-      supplier: BioLogic
-      model: SP200
 system:
   type: electrochemical
   electrolyte:
@@ -26,16 +22,16 @@ system:
         source:
           supplier: Millipore Inc
         purity:
-          grade: Miili-Q UV-Plus
-      - name: NaOH
-        type: base
+          grade: Milli-Q UV-Plus
+      - name: HClO4
+        type: acid
         concentration:
           value: 1
           unit: M
         source:
           supplier: Fisher
     ph:
-      value: 14
+      value: 0
     comment: Measurement was done with a hanging meniscus configuration.
   electrodes:
     - name: WE
@@ -44,14 +40,14 @@ system:
       material: Ru
       crystallographicOrientation: '0001'
       source:
-        supplier: Metal Crystals and Oxide, Cambridge, England
+        supplier: Metal Crystals and Oxides, Cambridge, England
       shape:
         diameter:
           value: 9
           unit: mm
       preparationProcedure:
         description:
-          - Preparation was perfomed in UHV.
-          - Sputtering at rt with 1 keV Ar ions, followed by five cycles of oxygen desorption/adsorption. 
-          - Flash annealed in UHV at 1400 degC. 
-          - details see ?.
+          - Preparation was performed in UHV.
+          - Sputtering at room temperature with 1 keV Ar ions, followed by five cycles of oxygen adsorption/desorption.
+          - Flash annealed in UHV at 1400 °C.
+        url: https://doi.org/10.1016/0039-6028(75)90409-4
