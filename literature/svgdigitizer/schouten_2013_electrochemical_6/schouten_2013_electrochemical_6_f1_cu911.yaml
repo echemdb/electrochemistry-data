@@ -6,7 +6,7 @@ curation:
       date: 2026-04-14
 source:
   url: https://doi.org/10.1016/j.jelechem.2013.03.018
-  citationKey: schouten_2013_the_6
+  citationKey: schouten_2013_electrochemical_6
   techniques:
   - CV
 experimental:
@@ -35,7 +35,7 @@ system:
           value: 0.1
           unit: M
         source:
-          supplier: Sigma Aldrich TraceSelect
+          supplier: Sigma–Aldrich TraceSelect
         purity:
           grade: high purity
       - name: Argon
@@ -61,17 +61,14 @@ system:
       type: single crystal
       material: Cu
       crystallographicOrientation: '911'
-      geometricElectrolyteContactArea: 
-        value: 0.16
-        unit: cm2
       preparationProcedure:
+        url: https://doi.org/10.1016/j.jelechem.2013.03.018
         description:
-          - beat type electrodes who were cut and polished with an accuracy down to 0.5°.
-          - electropolished in phosphoric acid at constant voltage and rinsed with water before each experiment.
-          - details see https://doi.org/10.1016/j.jelechem.2013.03.018.
+          - Bead-type electrodes that were cut and polished with an accuracy down to 0.5°.
+          - Electropolished in 66% H3PO4 at 3 V versus a Cu counter electrode for 10 s, then rinsed with water before each experiment.
 electrochemicalCell:
   type: three-electrode cell
   components:
     - name: glass
       part: cell
-  cleaningProcedure: boiled in ultra clean water.
+  cleaningProcedure: Boiled in ultra clean water.
