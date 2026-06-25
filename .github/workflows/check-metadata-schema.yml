@@ -13,7 +13,12 @@ jobs:
       pull-requests: write
 
     steps:
-      - uses: actions/checkout@v4
+      # Use a PAT (METADATA_SCHEMA_PAT) when available so the resulting PR
+      # triggers the normal CI workflows; fall back to GITHUB_TOKEN otherwise.
+      # Note: PRs created with GITHUB_TOKEN do NOT trigger other workflows.
+      - uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.METADATA_SCHEMA_PAT || secrets.GITHUB_TOKEN }}
 
       - name: Get latest metadata-schema release
         id: latest
@@ -31,11 +36,23 @@ jobs:
       - name: Open PR if versions differ
         if: steps.latest.outputs.version != steps.current.outputs.version
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.METADATA_SCHEMA_PAT || secrets.GITHUB_TOKEN }}
           LATEST: ${{ steps.latest.outputs.version }}
           CURRENT: ${{ steps.current.outputs.version }}
         run: |
           BRANCH="update-metadata-schema-${LATEST}"
+
+          # Skip if an update PR for this version is already open, or the
+          # branch already exists on the remote. This keeps the scheduled
+          # run idempotent instead of failing every week until it is merged.
+          if [ -n "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
+            echo "An open PR for $BRANCH already exists; nothing to do."
+            exit 0
+          fi
+          if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null 2>&1; then
+            echo "Branch $BRANCH already exists on the remote; nothing to do."
+            exit 0
+          fi
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
