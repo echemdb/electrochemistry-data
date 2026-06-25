@@ -8,10 +8,13 @@ on:
       - opened
       - synchronize
       - reopened
-    paths:
-      - "echemdb_ecdata/**"
-      - "pyproject.toml"
-      - ".github/workflows/test.yml"
+    # Run on any change except pure data or documentation PRs (those are
+    # covered by build.yml / quick-data-check.yml).
+    paths-ignore:
+      - "literature/**"
+      - "data/**"
+      - "doc/**"
+      - "**/*.md"
 
 concurrency:
   group: test-${{ github.ref }}
