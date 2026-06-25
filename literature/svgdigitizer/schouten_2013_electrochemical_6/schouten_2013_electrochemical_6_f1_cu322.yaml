@@ -66,9 +66,9 @@ system:
         description:
           - Bead-type electrodes that were cut and polished with an accuracy down to 0.5°.
           - Electropolished in 66% H3PO4 at 3 V versus a Cu counter electrode for 10 s, then rinsed with water before each experiment.
-electrochemicalCell:
-  type: three-electrode cell
-  components:
-    - name: glass
-      part: cell
-  cleaningProcedure: Boiled in ultra clean water.
+  electrochemicalCell:
+    type: three-electrode cell
+    components:
+      - name: glass
+        part: cell
+    cleaningProcedure: Boiled in ultra clean water.
