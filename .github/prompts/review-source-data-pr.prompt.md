@@ -163,8 +163,11 @@ Items that require the curator's direct knowledge of the data:
 
 **Section 4 — Curator Notes** (free-form):
 
-An optional section where the curator can leave general observations, context,
-open questions, or remarks not covered by the structured issues above.
+An optional section at the end of the report. **This section is reserved for the curator
+(the human reviewer).** Do **not** put your own observations, leftover suggestions, or
+findings here — those belong in the numbered issues above (each with its decision box) or in
+the `**Reviewer notes:**` line of an existing issue. Leave it as a short
+`> _(reserved for the curator)_` placeholder for the curator to fill in.
 
 ### Step 7: Review Decisions and Apply Fixes
 

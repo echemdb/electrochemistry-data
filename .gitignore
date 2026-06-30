@@ -2,7 +2,7 @@
 /data/generated
 literature/**/*.png
 !literature/literature_overview.csv
-literature/svgdigitizer/*.csv
+literature/svgdigitizer/**/*.csv
 literature/svgdigitizer/**/*.json
 test/generated/docstring/
 test/generated/source_data/***.csv
@@ -157,3 +157,6 @@ rever/
 
 # Review files
 REVIEW.md
+
+# Claude Code local (per-user) settings
+.claude/settings.local.json

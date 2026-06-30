@@ -58,7 +58,18 @@ This performs the following checks automatically:
 - Has `curve` text label (short, unambiguous)
 - Has `scan rate` text label
 - All axis labels present (E1, E2, j1, j2)
+  - **Scale-bar exception:** some figures encode the current axis with a scale bar
+    instead of two calibrated points. In that case the SVG carries a baseline label
+    (`I1`/`j1`, e.g. `I1: 0 uA`) plus a scale-bar label (`I_scale_bar`/`j_scale_bar`,
+    e.g. `I_scale_bar: 10 uA`). When this pair is present, the "missing j2"/"missing j1"
+    automated suggestion is a **false positive** — do not flag it as an issue.
 - Reference electrode in SVG axes matches YAML
+- **Axis values and units must match the plot.** The numeric values and units written in the
+  SVG axis labels (E1/E2 and I1/I2 or j1/j2) must be the same values and units shown on the
+  original figure axes. For example, if the figure's current axis reads `I/µA` with ticks at
+  −20 … +30, the SVG labels should be `I1: -20 uA` / `I2: 30 uA` — not the dimensionally-equal
+  `-0.00002 A` / `0.00003 A`. Flag any label that silently rescales the plotted values/units
+  and propose the plot-matching form.
 
 #### YAML Checks
 - `citationKey` matches directory name
@@ -66,8 +77,24 @@ This performs the following checks automatically:
 - Source URL is a valid DOI
 - Electrolyte has `type` and `components`
 - Working electrode defined
-- Reference electrode metadata is only required when explicitly stated in the manuscript (or clearly attributable to the exact experiment); do not infer solely from plotted axis conversion labels
+- Reference electrode metadata is only required when explicitly stated in the manuscript (or clearly attributable to the exact experiment); do not infer solely from plotted axis conversion labels. **Wording matters:** a phrase like *"all potentials are given against the RHE"* describes the potential *scale*, not necessarily the physical reference electrode used (potentials may have been converted from e.g. Ag/AgCl). Do **not** add a `REF` electrode to the YAML on the basis of such scale wording alone.
 - Curator has ORCID
+- **Reference electrode notation:** Prefer the unitpackage reference-electrode naming
+  (e.g. `Ag/AgCl-3M`, `Ag/AgCl-sat`, `Ag/AgCl-1M`, `Hg/HgO-1M-NaOH`), see
+  https://github.com/echemdb/unitpackage/blob/main/unitpackage/electrochemistry/reference_electrode.py.
+  Include the molarity when the paper states it (KCl 3 M → `Ag/AgCl-3M`); when the molarity is not
+  given for an Ag/AgCl electrode, leave the generic `Ag/AgCl`. If the paper reports a specific
+  potential (e.g. 207 mV vs NHE) for an electrode not yet in the unitpackage database, open an issue
+  on unitpackage to add that entry. **Use the same notation in both places:** the YAML `RE` `type`
+  and the SVG potential-axis labels (`E1`/`E2`, e.g. `E1: -0.8 V vs Ag/AgCl-3M`) must agree.
+- **`description:` list items are capitalized full sentences.** Each entry in a `description:` list
+  (e.g. `preparationProcedure.description`, electrolyte/system comments) is a sentence: start it with a
+  capital letter and end it with a period. These free-text fields are not machine-parsed, so unit
+  symbols such as `°C` may be written directly.
+- **DOIs/URLs belong in a `url` key, not in a `description` sentence.** If a `description:` list item is
+  just a pointer to the source (e.g. `details see http://dx.doi.org/...`), drop that item and put the
+  link in a sibling `url:` key instead (e.g. `preparationProcedure.url`). Propose this move whenever a
+  DOI or URL appears inside a description.
 
 #### PDF Cross-Validation
 The review module downloads the paper via DOI and extracts text to verify:
@@ -113,7 +140,9 @@ The report has two sections:
 
 **Section 1 — Actionable Issues** (numbered, each with decision boxes):
 
-When multiple files have the same root cause, group them into one batch issue with an explicit file list (instead of one issue per file). This allows one reviewer decision for the whole batch.
+When multiple files have the same root cause, group them into one batch issue with an explicit file list (instead of one issue per file). This allows one reviewer decision for the whole batch. **Always do this** — reviewers have asked not to see the same finding repeated per file; emit one issue that lists every affected filename. This applies to the per-file checks emitted by the automated review module too: collapse identical SVG/YAML suggestions across curves into a single grouped issue.
+
+When proposing an action, phrase the issue so it is answerable with accept/reject (give a concrete proposed fix), rather than an open "please confirm" that the reviewer cannot resolve with a checkbox.
 
 Filename parsing note: when extracting figure labels from `{citationKey}_f{figure}_{curve}`, do not split on the first `_f` occurrence because citation keys can contain `_f` (e.g., `fingerprint`). Parse from the right-most `_f{figure}_` token.
 
@@ -146,9 +175,12 @@ Severity levels:
 **Section 2 — Automated Checks Summary** (checklist of all passing/failing checks).
 
 **Section 3 — Curator Notes** (free-form): An optional `## Curator Notes` section at the
-end of the report where the curator can leave general observations, context, open questions,
-or remarks not covered by the structured issues above. The section is pre-populated with a
-blockquote placeholder by `write_review_report` and should be filled in manually if needed.
+end of the report. **This section is reserved for the curator (the human reviewer).** Do
+**not** put your own observations, leftover suggestions, or findings here — those belong in
+the numbered issues above (each with its decision box) or in the `**Reviewer notes:**` line
+of an existing issue. The section is pre-populated with a blockquote placeholder by
+`write_review_report`; leave it as a short `> _(reserved for the curator)_` placeholder for
+the curator to fill in.
 
 Generate the report using:
 ```python
@@ -210,6 +242,11 @@ for confirmation**, then:
    ```
    The PR number is available from the repository context attachment (e.g., PR #107).
    Include the full REVIEW.md content with the reviewer's decisions marked.
+
+   **Do not reproduce verbatim sentences from the PDF in the GitHub-posted report.** The local
+   REVIEW.md may keep `**Evidence from PDF:**` quotes to aid the reviewer, but when building the
+   comment that is posted to GitHub, omit the quoted paper text — paraphrase the finding or cite the
+   section/figure instead (avoids republishing copyrighted manuscript text in a public comment).
 
 **Important:** Always ask the reviewer before committing, pushing, or posting.
 

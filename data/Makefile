@@ -48,11 +48,15 @@ LICENSE_TARGETS = ${TARGET_DIR}/LICENSE.md ${TARGET_DIR}/LICENSE-GPL-3.0-or-late
 
 # The default action when calling "make" is to digitize all the .yaml/.svg
 # pairs and convert all raw data packages.
-all: svg source_data ${LICENSE_TARGETS}
+all: svg source_data licenses
 
-# Ensures that the output directories exist
+# Copy all licensing information into the generated data archive.
+licenses: ${LICENSE_TARGETS}
+
+# Ensures that the output directories exist. We use Python instead of `mkdir`
+# so the recipe also works on Windows where Make cannot exec Unix utilities.
 ${TARGET_DIR}:
-	mkdir -p "$@"
+	python -c "import os, sys; os.makedirs(sys.argv[1], exist_ok=True)" "$@"
 
 # We create data packages, i.e., .csv and .json files, from .yaml and .svg
 # files by invoking the svgdigitizer via a batch Python function.
@@ -101,11 +105,13 @@ ${TARGET_DIR}/LICENSE-CC-BY-4.0: ../LICENSE-CC-BY-4.0
 ${TARGET_DIR}/LICENSE-ODC-By-1.0: ../LICENSE-ODC-By-1.0
 
 
+# We use Python instead of `cp` so the recipe also works on Windows where Make
+# cannot exec Unix utilities.
 ${LICENSE_TARGETS}: | ${TARGET_DIR}
-	cp $< $@
+	python -c "import shutil, sys; shutil.copy(sys.argv[1], sys.argv[2])" "$<" "$@"
 
 # Remove the entire generated directory to delete all the generated output.
 clean:
 	rm -rf ${TARGET_DIR}
 
-.PHONY: all source_data source_data-force svg svg-force clean
+.PHONY: all source_data source_data-force svg svg-force licenses clean

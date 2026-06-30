@@ -1,0 +1,78 @@
+curation:
+  process:
+    - role: curator
+      name: Valerie Link
+      orcid: https://orcid.org/0009-0004-3341-1452
+      date: 2026-04-04
+source:
+  url: https://doi.org/10.1016/S0022-0728(80)80421-9
+  citationKey: droog_1980_oxygen_387
+  techniques:
+  - CV
+experimental:
+  tags: 
+  - BCV
+  instrumentation:
+    - name: potentiostat
+      supplier: Wenking
+      model: LB 75L
+    - name: voltage scan generator
+      supplier: Wenking
+      model: VSG 72
+    - name: XY recorder
+      supplier: Kipp
+      model: BD 30
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+      - name: NaOH
+        type: base
+        concentration:
+          value: 1
+          unit: mol / l
+        source:
+          supplier: Baker
+        purity:
+          grade: analytical reagent
+    temperature:
+      value: 22
+      unit: degC
+    comment: measurements were performed in an argon atmosphere.
+  electrodes:
+    - name: CE
+      function: counter electrode
+      type: platinum plate
+      geometricElectrolyteContactArea:
+        value: 20
+        unit: cm2
+      material: Pt
+    - name: RE
+      function: reference electrode
+      type: Ag/AgCl-3M
+      source:
+        supplier: Ingold
+        model: Argenthal
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Cu
+      crystallographicOrientation: '111'
+      source:
+        supplier: Material Research Corporation
+        purity:
+          value: 99.999
+          unit: pct
+      shape:
+        diameter:
+          value: 6.4
+          unit: mm
+      preparationProcedure:
+        description:
+          - Electrode surfaces were ground with carborundum paper and polished with diamond paste.
+          - Cleaned carefully after each process.
+          - Electropolished at 0 °C in a solution of 2 parts methanol and 1 part HNO3 (65%), following Kötz and Lewerenz.
+          - Details see https://doi.org/10.1016/S0022-0728(79)80245-4 and https://doi.org/10.1016/S0022-0728(80)80075-1.
