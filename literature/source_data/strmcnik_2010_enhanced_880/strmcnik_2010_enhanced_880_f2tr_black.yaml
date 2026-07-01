@@ -10,10 +10,6 @@ system:
     components:
       - name: water
         type: solvent
-        source:
-          refinement: Millipore ultrapure water
-        purity:
-          grade: ultrapure
       - name: KOH
         type: base
         concentration:
@@ -21,6 +17,15 @@ system:
           unit: mol / l
         source:
           supplier: Sigma Aldrich
+      - name: Ar
+        type: gas
+        proportion:
+          value: 100
+          unit: volume percent
+        source:
+          supplier: Airgas
+        purity:
+          grade: 5N5
     temperature:
       value: 293.15
       unit: K
@@ -32,15 +37,17 @@ system:
       crystallographicOrientation: '111'
       preparationProcedure:
         description:
-          - inductively heated in a 3% hydrogen atmosphere at 1100 K.
-          - cooled in that hydrogen atmosphere.
-          - passivated with a droplet of MilliQ water.
+          - Inductively heated in a mixed 3% hydrogen / argon atmosphere at 1100 K for 10 min.
+          - Cooled slowly in that atmosphere.
+          - Covered with a droplet of MilliQ water.
+  electrochemicalCell:
+    type: standard three-compartment electrochemical cell
 source:
   citationKey: strmcnik_2010_enhanced_880
   url: https://doi.org/10.1038/nchem.771
   figure: '2tr'
   curve: black
-  originalFilename: strmcnik_2010_enhanced_880_fig2tr_black.csv
+  originalFilename: strmcnik_2010_enhanced_880_f2tr_black.csv
 figureDescription:
   type: raw
   measurementType: CV
