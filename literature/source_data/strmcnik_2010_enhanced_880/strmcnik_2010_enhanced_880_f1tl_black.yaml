@@ -76,4 +76,8 @@ curation:
     name: Dusan Strmcnik
     orcid: https://orcid.org/0000-0002-3021-2771
     date: 2009-01-01
+  - role: curator
+    name: Miha Hotko
+    orcid: https://orcid.org/0009-0002-2217-7782
+    date: 2026-07-01
 
