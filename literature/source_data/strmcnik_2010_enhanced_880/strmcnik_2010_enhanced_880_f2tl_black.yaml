@@ -1,0 +1,83 @@
+# This file is part of echemdb (https://github.com/echemdb/website)
+# Details on the meta data structure can be found on https://github.com/echemdb/metadata-schema
+experimental:
+  tags:
+  - BCV
+system:
+  type: electrochemical
+  electrolyte:
+    type: aqueous
+    components:
+      - name: water
+        type: solvent
+      - name: HClO4
+        type: acid
+        concentration:
+          value: 0.1
+          unit: mol / l
+        source:
+          supplier: EMD
+      - name: Ar
+        type: gas
+        proportion:
+          value: 100
+          unit: volume percent
+        source:
+          supplier: Airgas
+        purity:
+          grade: 5N5
+    temperature:
+      value: 293.15
+      unit: K
+  electrodes:
+    - name: WE
+      function: working electrode
+      type: single crystal
+      material: Pt
+      crystallographicOrientation: '111'
+      preparationProcedure:
+        description:
+          - Inductively heated in a mixed 3% hydrogen / argon atmosphere at 1100 K for 10 min.
+          - Cooled slowly in that atmosphere.
+          - Covered with a droplet of MilliQ water.
+  electrochemicalCell:
+    type: standard three-compartment electrochemical cell
+source:
+  citationKey: strmcnik_2010_enhanced_880
+  url: https://doi.org/10.1038/nchem.771
+  figure: '2tl'
+  curve: black
+  originalFilename: strmcnik_2010_enhanced_880_f2tl_black.csv
+figureDescription:
+  type: raw
+  measurementType: CV
+  scanRate:
+    value: 50
+    unit: mV / s
+dataDescription:
+  dialect:
+    delimiter: ','
+    decimal: '.'
+    encoding: utf-8
+    headerLines: 0
+    columnHeaderLines: 1
+  fieldMapping: # Also map fields which should be kept unchanged.
+    E / V: E # If the header consists of multiple lines, separate by " / ".
+    j / uA cm-2: j
+  fieldUnits:
+    - name: E
+      unit: V
+      reference: RHE
+    - name: j
+      unit: uA cm-2
+curation:
+  process:
+  - role: experimentalist
+    name: Dusan Strmcnik
+    orcid: https://orcid.org/0000-0002-3021-2771
+    date: 2009-01-01
+  - role: curator
+    name: Miha Hotko
+    orcid: https://orcid.org/0009-0002-2217-7782
+    date: 2026-07-01
+
