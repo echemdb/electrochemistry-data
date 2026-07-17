@@ -34,7 +34,7 @@ this repository and is maintained by the [echemdb](https://github.com/echemdb) c
 
 The generated data archive can be downloaded directly as a ZIP:
 
-* **GitHub release (latest):** [data-0.9.1.zip](https://github.com/echemdb/electrochemistry-data/releases/download/0.9.1/data-0.9.1.zip)
+* **GitHub release (latest):** [data-0.9.2.zip](https://github.com/echemdb/electrochemistry-data/releases/download/0.9.2/data-0.9.2.zip)
 * **Zenodo (archived, citable):** download the ZIP from the *Files* section of the [Zenodo record](https://doi.org/10.5281/zenodo.20723429), which always resolves to the latest version.
 
 All releases are also listed in the [release section](https://github.com/echemdb/electrochemistry-data/releases).
