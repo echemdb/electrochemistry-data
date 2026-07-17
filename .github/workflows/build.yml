@@ -9,11 +9,11 @@ on:
       - opened
       - synchronize
       - reopened
-    paths:
-      - "literature/**"
-      - "echemdb_ecdata/**"
-      - "pyproject.toml"
-      - ".github/workflows/build.yml"
+    # Run on data changes AND any non-doc change (code, config, util,
+    # workflows). Only pure-documentation PRs are skipped.
+    paths-ignore:
+      - "doc/**"
+      - "**/*.md"
 
 jobs:
   github-release:
