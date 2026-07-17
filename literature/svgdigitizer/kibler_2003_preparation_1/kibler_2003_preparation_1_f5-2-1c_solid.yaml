@@ -19,7 +19,7 @@ system:
             grade: ultrapure
         concentration:
           value: 0.1
-          unit: mol L⁻¹
+          unit: mol / l
     ph:
       value: 1.041
       comment: Estimated with CurTiPot on extraction from publication using a temperature of 25°C.

@@ -21,7 +21,7 @@ system:
   electrolyte:
     components:
       - concentration:
-          unit: mol l⁻¹
+          unit: mol / l
           value: 0.1
         name: KClO4
         type: salt
@@ -34,7 +34,7 @@ system:
           purity:
             grade: ACS Certified
       - concentration:
-          unit: mmol l⁻¹
+          unit: mmol / l
           value: 1
         name: KOH
         type: salt
@@ -63,14 +63,14 @@ system:
             value: 18.3
             unit: MOhm cm
       - concentration:
-          unit: mmol l⁻¹
+          unit: mmol / l
           value: 1
         name: KI
         source:
           supplier: Aldrich
           purity:
             value: 99.99
-            unit: percent
+            unit: pct
         type: salt
         chemicalIdentifiers:
           cas: 7681-11-0

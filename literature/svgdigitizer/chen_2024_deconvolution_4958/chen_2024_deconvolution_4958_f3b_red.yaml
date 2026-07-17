@@ -48,7 +48,8 @@ system:
         cas: 7732-18-5
         smiles: O
     - concentration:
-        unit: 0.1 mol / l
+        value: 0.1
+        unit: mol / l
       name: HClO4
       source:
         supplier: Merck

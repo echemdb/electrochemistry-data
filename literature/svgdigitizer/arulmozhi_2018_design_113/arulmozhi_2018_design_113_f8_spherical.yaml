@@ -22,7 +22,7 @@ system:
           grade: ultrapure
           totalIonConductivity:
             value: 18.2
-            unit: MΩ cm
+            unit: MOhm cm
           totalOrganicCarbon:
             value: 10
             unit: ppb

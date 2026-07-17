@@ -276,6 +276,31 @@ def validate_bib_keys(
 
         >>> validate_bib_keys()  # doctest: +SKIP
 
+    Entries with UTF-8 characters outside latin-1 (e.g. ``ć`` in author
+    names or an em dash in the title) are validated without crashing
+    (regression test for
+    https://github.com/echemdb/svgdigitizer/issues/300)::
+
+        >>> import tempfile, os
+        >>> bib = (
+        ...     '@article{jovic_1996_morphology_1,\n'
+        ...     '  author = {Jović, B. M. and Adžić, R. R.},\n'
+        ...     '  title = {Morphology of things — a study},\n'
+        ...     '  year = {1996},\n'
+        ...     '  pages = {1--10},\n'
+        ...     '  journal = {J. Electroanal. Chem.},\n'
+        ...     '}\n'
+        ... )
+        >>> with tempfile.NamedTemporaryFile(
+        ...     mode='w', suffix='.bib', delete=False, encoding='utf-8'
+        ... ) as f:
+        ...     _ = f.write(bib)
+        ...     name = f.name
+        >>> validate_bib_keys(name)
+        Validation of bibliography keys: checked 1 files, found 0 errors.
+        []
+        >>> os.unlink(name)
+
     """
     # Hotfix for https://github.com/echemdb/svgdigitizer/issues/300:
     # escape non-latin-1 characters as LaTeX sequences so that

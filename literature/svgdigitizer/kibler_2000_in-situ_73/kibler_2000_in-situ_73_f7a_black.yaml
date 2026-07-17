@@ -24,7 +24,7 @@ system:
             grade: suprapur
         concentration:
           value: 0.1
-          unit: mol L-1
+          unit: mol / l
     ph:
       value: 1.041
       comment: Estimated with CurTiPot on extraction from publication using a temperature of 25°C.

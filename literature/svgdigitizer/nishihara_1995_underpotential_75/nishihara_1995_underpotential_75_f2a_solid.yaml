@@ -33,7 +33,7 @@ system:
       source:
         purity:
           value: 99.9995
-          unit: percent
+          unit: pct
   electrodes:
     - name: REF
       function: reference electrode

@@ -28,7 +28,7 @@ system:
         purity:
           totalIonConductivity:
             value: 18.2
-            unit: MΩ cm
+            unit: MOhm cm
       - name: KOH
         type: base
         concentration:

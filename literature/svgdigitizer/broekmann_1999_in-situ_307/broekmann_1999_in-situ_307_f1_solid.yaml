@@ -25,7 +25,7 @@ system:
           grade: high purity
           totalIonConductivity:
             value: 18
-            unit: MΩ cm
+            unit: MOhm cm
       - name: H2SO4
         type: acid
         concentration:

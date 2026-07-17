@@ -27,7 +27,7 @@ system:
         type: base
         concentration:
           value: 1
-          unit: M
+          unit: mol / l
     ph:
       value: 14
     comment: Measurement was done with a hanging meniscus configuration.

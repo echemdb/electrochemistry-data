@@ -50,8 +50,8 @@ experimental:
   operationParameters:
     temperature:
       value: 20
-      unit: degC
+      unit: deg_C
       uncertainty:
         value: 1.0
-        unit: degC
+        unit: deg_C
 echemdbSchemaVersion: 0.8.2

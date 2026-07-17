@@ -58,6 +58,7 @@ import subprocess
 from pathlib import Path
 
 import yaml
+from astropy import units as astropy_units
 from frictionless import Package
 from svgdigitizer.svg import SVG
 from svgdigitizer.svgfigure import SVGFigure
@@ -717,6 +718,65 @@ def validate_citation_keys_in_bib(
     return errors
 
 
+#: Units that are established in the electrochemistry community but have no
+#: astropy-parseable representation yet. They are tolerated by
+#: :func:`validate_units` until a general solution is found, see
+#: https://github.com/echemdb/electrochemistry-data/issues/176
+KNOWN_UNPARSEABLE_UNITS = {"ppm", "ppb", "volume percent"}
+
+
+def validate_units(literature_dir="literature"):
+    r"""
+    Validate that every ``unit`` in the YAML metadata below ``literature_dir``
+    is parseable by astropy.
+
+    Tools consuming the data, such as the website generator or unitpackage's
+    ``quantity``, parse units with astropy. Unsupported units only fail once
+    such a tool touches the field, long after the data was merged, so we catch
+    them here at validation time instead.
+
+    Units listed in :data:`KNOWN_UNPARSEABLE_UNITS` are tolerated.
+    Returns a list of error messages.
+
+    EXAMPLES::
+
+        >>> validate_units()  # doctest: +SKIP
+        Validation of units: checked 716 files, found 0 errors.
+        []
+
+    """
+    checked = 0
+    errors = []
+
+    def _units(obj):
+        if isinstance(obj, dict):
+            for key, value in obj.items():
+                if key == "unit" and not isinstance(value, (dict, list)):
+                    yield value
+                else:
+                    yield from _units(value)
+        elif isinstance(obj, list):
+            for item in obj:
+                yield from _units(item)
+
+    for yaml_file in sorted(glob.glob(f"{literature_dir}/**/*.yaml", recursive=True)):
+        checked += 1
+        with open(yaml_file, encoding="utf-8") as f:
+            metadata = yaml.safe_load(f)
+        for unit in _units(metadata):
+            if str(unit) in KNOWN_UNPARSEABLE_UNITS:
+                continue
+            try:
+                astropy_units.Unit(str(unit))
+            except ValueError:
+                errors.append(
+                    f"UNIT: {unit!r} is not parseable by astropy ({yaml_file})"
+                )
+
+    _print_validation_summary("units", checked, errors)
+    return errors
+
+
 def validate_new_input(base_ref="origin/main"):
     r"""
     Validate added or modified entries in ``literature/`` compared to a base branch.
@@ -781,8 +841,16 @@ def validate_new_input(base_ref="origin/main"):
     # entry that was removed/renamed while an unchanged data entry still uses it.
     print("\nValidating citation-key references across all entries...")
     ref_errors = validate_citation_keys_in_bib()
-    if ref_errors:
+
+    # Cross-cutting: every unit in *any* entry must be parseable by astropy
+    # (except for the known exceptions in KNOWN_UNPARSEABLE_UNITS).
+    print("\nValidating units across all entries...")
+    unit_errors = validate_units()
+
+    errors = ref_errors + unit_errors
+    if errors:
         raise ValueError(
-            f"Validation failed with {len(ref_errors)} citation-key "
-            f"reference error(s). See output above for details."
+            f"Validation failed with {len(ref_errors)} citation-key reference "
+            f"error(s) and {len(unit_errors)} unit error(s). "
+            f"See output above for details."
         )
