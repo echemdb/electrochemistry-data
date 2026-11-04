@@ -21,15 +21,12 @@ system:
       function: working electrode
       type: single crystal
       crystallographicOrientation: '776'
-      geometricElectrolyteContactArea:
-        unit: 1 / cm2
       material: Pt
       shape:
         diameter:
           unit: mm
           value: 2
-        height:
-          unit: mm
+          comment: Approximate value, reported as 'ca. 2 mm in diameter'.
         type: bead
       preparationProcedure:
          description:
