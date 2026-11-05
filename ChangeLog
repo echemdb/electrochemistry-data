@@ -4,6 +4,116 @@ electrochemistry-data Change Log
 
 .. current developments
 
+v0.9.2
+====================
+
+**Added:**
+
+* Added a regression doctest for ``validate_bib_keys`` covering bibliography entries with UTF-8 characters outside latin-1 (e.g. ``Jović``), guarding the hotfix for `svgdigitizer#300 <https://github.com/echemdb/svgdigitizer/issues/300>`_.
+
+**Fixed:**
+
+* Fixed several inconsistent unit names.
+
+
+
+v0.9.1
+====================
+
+**Added:**
+
+* Added a scheduled GitHub Actions workflow (``check-metadata-schema.yml``)
+  that checks weekly for new ``echemdb/metadata-schema`` releases and opens a
+  pull request bumping ``SCHEMA_VERSION`` in ``echemdb_ecdata/validate.py``
+  when a newer version is available. The run is idempotent (it skips when an
+  update branch or PR already exists) and uses an optional
+  ``METADATA_SCHEMA_PAT`` secret so the generated PR triggers CI, falling back
+  to ``GITHUB_TOKEN`` when the secret is not configured.
+* Added figures 1-3 from Droog and Schlenter, 1980 (oxygen electrosorption on Cu(111), Cu(110), Cu(100) single crystals in 1 mol/l NaOH).
+* Added supporting-information figure S2 (A, B, C) from Huang et al., 2017 (cyclic voltammograms of Cu(100), Cu(111), Cu(110) single crystals in N2-purged 0.1 M KOH).
+* Added digitized data and bibliography entry for ``jovic_2002_surface_531``.
+  Figures 1a (Cu(111)) and 1b (Cu(100)): cyclic voltammograms recorded in
+  0.1 M NaOH at a sweep rate of 100 mV/s, with potentials referenced vs SHE
+  (Hg/HgO-0.1M-NaOH reference electrode).
+* Added digitized data and bibliography entry for ``kunze_2003_situ_113``.
+  Figures 1a and 1b: cyclic voltammograms of a Cu(001) single crystal
+  recorded in 0.1 M NaOH at a sweep rate of 20 mV/s, with potentials
+  referenced vs SHE.
+* Added digitized data and bibliography entry for ``le_2017_role_13099``.
+  Figure S5a: cyclic voltammogram of a Cu(100) single crystal recorded in
+  0.1 M NaOH.
+* Added figure 1 (base cyclic voltammograms of Pt(111), Pt(100), Pt(110) in
+  0.1 M KOH) from Markovic et al., 1996.
+* Added PR review skills, which can be used by both Claude and Copilot using for digitized data `review-literature-pr <foldername>` or for source data `review-source-data-pr <foldername>`
+* Added digitized data for schouten_2013_electrochemical_6 (Schouten et al., 2013):
+  blank cyclic voltammograms of five Cu single crystals (Cu(111), Cu(100),
+  Cu(110), Cu(322), Cu(911)) in 0.1 M NaOH from figure 1.
+* Added a ``convert-svg-one`` pixi task to convert and validate a single
+  svgdigitizer paper folder, for quick local checks without rebuilding all
+  entries. Usage: ``pixi run -e dev convert-svg-one <paper>``.
+* Added raw CV data (CNad-free Pt(111)) for figures 1a, 2a and 2c from
+  Strmcnik et al., Nature Chemistry 2, 880 (2010).
+* Added ``mdstools`` (the tooling shipped with the
+  `metadata-schema repository <https://github.com/echemdb/metadata-schema>`_,
+  pinned to the release matching ``echemdb_ecdata.validate.SCHEMA_VERSION``)
+  as a dev-environment dependency.
+* Added ``migrate-metadata`` and ``migrate-metadata-dry-run`` tasks
+  (``echemdb_ecdata.migrate``) that upgrade the input YAML metadata in
+  ``literature/`` across breaking metadata-schema releases using the
+  migration engine of the metadata-schema repository. Rewritten files are
+  stamped with ``echemdbSchemaVersion``.
+* Added digitized data and bibliography entry for ``wang_2001_situ_2809``.
+  Figure 2: cyclic voltammograms of a Ru(0001) single-crystal working electrode
+  (hanging meniscus, 10 mV/s) in 1 M HClO4 (2a), 0.1 M HClO4 (2b), and an
+  alkaline pH 14 solution (2c, solid and dashed sweeps).
+* Added support for authoring the Zenodo release description in a separate
+  Markdown file (``zenodo-description.md``) via the ``--description`` option of
+  ``zenodo-publish``. Markdown is rendered to HTML at publish time, so the
+  description no longer has to be maintained as an escaped JSON string in
+  ``zenodo.json``.
+* Added CC-BY-4.0 and ODC-By-1.0 data-license badges to the README.
+* Added a direct download link to the latest release ZIP and a note on
+  downloading the archive from Zenodo to the README "Accessing Data" section.
+  The release link's version is bumped automatically via ``rever.xsh``.
+* Added documentation to the README that data can also be submitted directly as
+  raw CSV files (under ``literature/source_data/``), in addition to data
+  digitized from publications with ``svgdigitizer``.
+
+**Changed:**
+
+* Changed lower bound of svgdigitizer to 0.14.4.
+* Changed lower bound of `svgdigitizer` to v0.14.5.
+* Changed metadata-schema version (``mdstools`` git tag and ``SCHEMA_VERSION``) from 0.8.2 to 0.8.3 and flipped the ``click`` pin from ``<8.2`` to ``>=8.2`` (required by ``linkml`` 1.11.1, on which ``mdstools`` 0.8.3 depends).
+* Changed the metadata-schema version to 0.8.2 and migrated all input YAML
+  files accordingly: ``system.electrolyte.temperature`` moved to
+  ``experimental.operationParameters.temperature``.
+* Changed schema validation to use the validation tools of the
+  metadata-schema repository (``mdstools``) instead of ``check-jsonschema``:
+  the JSON Schema is fetched once per run and all files are validated
+  in-process, now also including the instrument-reference check for
+  ``experimental.operationParameters`` control blocks.
+* Changed the ``--version`` argument of the validation tasks to take a plain
+  metadata-schema release tag (e.g. ``0.8.0``) or branch name (e.g. ``main``)
+  instead of ``tags/X.Y.Z`` / ``head/branch-name``.
+* Changed the ``data/Makefile`` license and directory-creation recipes to use
+  Python instead of the ``cp``/``mkdir`` Unix utilities so they also work on
+  Windows.
+
+**Removed:**
+
+* Removed the ``check-jsonschema`` dependency.
+
+**Fixed:**
+
+* Fixed ``.gitignore`` so generated CSVs in ``literature/svgdigitizer`` subfolders are ignored (previously only matched files directly in ``literature/svgdigitizer/``).
+* Fixed ``validate-bib-keys`` crashing with ``UnicodeEncodeError`` on bibliography entries containing UTF-8 characters outside latin-1 (e.g. ``Jović``, ``Adžić``), by escaping such characters as LaTeX sequences before passing them to ``svgdigitizer.pdf.Pdf.build_identifier`` (hotfix for `svgdigitizer#300 <https://github.com/echemdb/svgdigitizer/issues/300>`_).
+* Fixed the generated data archive (and thus the release zip and Zenodo upload)
+  not containing the license files. The ``convert`` task now copies
+  ``LICENSE.md``, ``LICENSE-GPL-3.0-or-later``, ``LICENSE-CC-BY-4.0`` and
+  ``LICENSE-ODC-By-1.0`` into ``data/generated``.
+
+
+
 v0.9.0
 ====================
 

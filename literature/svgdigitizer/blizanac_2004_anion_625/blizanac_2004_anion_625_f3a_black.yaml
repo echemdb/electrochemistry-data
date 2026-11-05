@@ -20,7 +20,7 @@ system:
             grade: Semiconductor Grade
         concentration:
           value: 0.1
-          unit: mol L⁻¹
+          unit: mol / l
       - name: Ar
         type: gas
         source:
@@ -58,7 +58,7 @@ system:
           - electrode was not rotated (0 rpm) during measurement
       geometricElectrolyteContactArea:
         value: 0.283
-        unit: cm²
+        unit: cm2
 source:
   citationKey: blizanac_2004_anion_625
   url: https://doi.org/10.1021/jp036483l

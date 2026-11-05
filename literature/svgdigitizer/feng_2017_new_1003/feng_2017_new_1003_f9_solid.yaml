@@ -11,10 +11,10 @@ experimental:
   operationParameters:
     temperature:
       value: 25
-      unit: degC
+      unit: deg_C
       uncertainty:
         value: 1
-        unit: degC
+        unit: deg_C
 system:
   type: electrochemical
   electrolyte:
@@ -28,7 +28,7 @@ system:
           grade: ultrapure
           totalIonConductivity:
             value: 18.3
-            unit: MΩ cm
+            unit: MOhm cm
       - name: H2SO4
         type: acid
         source:

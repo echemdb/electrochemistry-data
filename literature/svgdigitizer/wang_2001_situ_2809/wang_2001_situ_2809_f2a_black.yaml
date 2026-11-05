@@ -27,7 +27,7 @@ system:
         type: acid
         concentration:
           value: 1
-          unit: M
+          unit: mol / l
         source:
           supplier: Fisher
     ph:

@@ -84,7 +84,7 @@ system:
       crystallographicOrientation: '111'
       geometricElectrolyteContactArea:
         value: 4.31
-        unit: mm-2
+        unit: 1 / mm2
       preparationProcedure:
         description:
           - Annealing the Pt(111) electrode in a H2/O2 flame. Cooling in Ar/H2 (2:1) gas atmosphere. Protecting the Pt(111) surface with droplet of high purity water.

@@ -106,7 +106,7 @@ dataDescription:
       unit: V
       reference: RHE
     - name: j
-      unit: mA cm-2
+      unit: mA / cm2
     - name: I
       unit: mA
 curation:

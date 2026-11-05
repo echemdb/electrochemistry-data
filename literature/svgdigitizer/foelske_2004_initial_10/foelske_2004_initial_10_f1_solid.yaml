@@ -25,7 +25,7 @@ system:
           grade: ultrapure
           totalIonConductivity:
             value: 18
-            unit: MΩ cm
+            unit: MOhm cm
       - name: NaOH
         type: base
         concentration:
@@ -52,4 +52,4 @@ system:
       crystallographicOrientation: poly
       geometricElectrolyteContactArea:
         value: 0.16
-        unit: cm²
+        unit: cm2

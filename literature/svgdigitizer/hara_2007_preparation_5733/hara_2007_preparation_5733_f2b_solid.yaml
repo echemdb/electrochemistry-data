@@ -31,7 +31,7 @@ system:
             unit: ppb
           totalIonConductivity:
             value: 18.2
-            unit: MΩ cm
+            unit: MOhm cm
       - name: H2SO4
         type: acid
         concentration:

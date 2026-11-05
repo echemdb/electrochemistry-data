@@ -70,7 +70,7 @@
                             }
                         ]
                     },
-                    "echemdbSchemaVersion": "0.8.2"
+                    "echemdbSchemaVersion": "0.8.3"
                 }
             }
         }

@@ -25,7 +25,7 @@ experimental:
   operationParameters:
     temperature:
       value: 22
-      unit: degC
+      unit: deg_C
 system:
   type: electrochemical
   electrolyte:

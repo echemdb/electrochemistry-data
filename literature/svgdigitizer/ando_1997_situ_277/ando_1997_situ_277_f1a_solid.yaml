@@ -25,7 +25,7 @@ system:
         purity:
           totalIonConductivity:
             value: 18
-            unit: MΩ cm
+            unit: MOhm cm
       - name: Na2SO4
         type: salt
         concentration:

@@ -70,7 +70,7 @@ dataDescription:
       unit: V
       reference: RHE
     - name: j
-      unit: uA cm-2
+      unit: uA / cm2
 curation:
   process:
     - role: experimentalist

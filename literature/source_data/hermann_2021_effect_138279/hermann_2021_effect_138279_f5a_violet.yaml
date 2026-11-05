@@ -36,7 +36,7 @@ system:
           smiles: Cl(=O)(=O)(=O)O
         concentration:
           value: 0.1
-          unit: mol L⁻¹
+          unit: mol / l
       - name: glycolic acid
         type: acid
         source:
@@ -46,7 +46,7 @@ system:
           smiles: OCC(=O)O
         concentration:
           value: 0.1
-          unit: mol L⁻¹
+          unit: mol / l
       - name: HCOOH
         type: acid
         source:
@@ -56,7 +56,7 @@ system:
           smiles: OC(=O)C
         concentration:
           value: 0.1
-          unit: mol L⁻¹
+          unit: mol / l
     ph:
       comment: "Estimated with CurTiPot (v4.4.0) using a temperature of 25 °C."
       value: 1.105
@@ -80,7 +80,7 @@ system:
         grade: 5N
       geometricElectrolyteContactArea:
         value: 0.1241
-        unit: cm²
+        unit: cm2
       shape:
         type: cylinder
         height:
