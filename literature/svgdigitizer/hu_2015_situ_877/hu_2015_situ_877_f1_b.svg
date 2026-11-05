@@ -153,7 +153,7 @@
        sodipodi:role="line"
        id="tspan1"
        x="2507.2734"
-       y="5982.9961">comment: j-axis offset not given. Basline estimate by curator.</tspan></text>
+       y="5982.9961">comment: The zero-current baseline (j-axis offset) is not given in the figure and was estimated by the curator.</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"

@@ -179,5 +179,5 @@
        sodipodi:role="line"
        id="tspan835"
        x="-4466.0713"
-       y="228.63217">comment: Hg/HgO ref. is 0.165 V vs the normal hydrogen electrode (NHE ~ SHE). The scan rate is not mentioned in the publication, but can be calculated from the integrated charge provided in the publication, resulting in 50 mV / s.</tspan></text>
+       y="228.63217">comment: The scan rate is not given in the publication. It was calculated by the curator from the reported charge as 50 mV / s.</tspan></text>
 </svg>

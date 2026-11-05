@@ -165,7 +165,7 @@
        sodipodi:role="line"
        x="-684.36719"
        y="101.96875"
-       id="tspan3407">comment: A baseline for zero current was not available and hence was chosen by the curator. The actual data has more noise than the digitized data.</tspan></text>
+       id="tspan3407">comment: The zero-current baseline (j-axis offset) is not given in the figure and was estimated by the curator. The original curve is noisier than the digitized curve.</tspan></text>
   <g
      id="g852">
     <text

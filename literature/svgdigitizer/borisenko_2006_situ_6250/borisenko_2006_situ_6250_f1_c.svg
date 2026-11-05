@@ -65,7 +65,7 @@
        sodipodi:role="line"
        id="tspan8538"
        x="-1567.9358"
-       y="1791.0765">comment: Baseline of the y-axis was not given and therby it was selected by the curator. The original data is very noisy. </tspan></text>
+       y="1791.0765">comment: The zero-current baseline (j-axis offset) is not given in the figure and was estimated by the curator. The original curve is very noisy.</tspan></text>
   <g
      id="g9345">
     <text
