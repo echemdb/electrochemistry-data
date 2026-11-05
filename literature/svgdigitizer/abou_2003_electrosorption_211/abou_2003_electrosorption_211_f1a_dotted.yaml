@@ -23,6 +23,13 @@ system:
           - Electrode etched with a cyanide solution.
           - Rinsed with Milli-Q water.
           - Annealed in an H2 flame for 30 s.
+      shape:
+        diameter:
+          value: 4
+          unit: mm
+        height:
+          value: 4
+          unit: mm
   electrolyte:
     components:
       - concentration:

@@ -29,6 +29,7 @@ system:
         diameter:
           unit: mm
           value: 6
+          comment: A radius of 3 mm is given in Fig. 1a and b.
         type: disk
       source:
         manufacturer: MaTecK GmbH

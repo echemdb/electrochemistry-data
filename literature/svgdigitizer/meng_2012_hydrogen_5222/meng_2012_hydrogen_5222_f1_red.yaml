@@ -18,6 +18,10 @@ system:
       material: Au
       shape:
         type: micro-electrode
+        diameter:
+          value: 0.01
+          unit: mm
+          comment: Nominal diameter of the Au micro-wire used to fabricate the micro-electrode. The electrode radius was calibrated with ferrocene, but the calibrated value is not reported.
       source:
         manufacturer: homemade
   electrolyte:

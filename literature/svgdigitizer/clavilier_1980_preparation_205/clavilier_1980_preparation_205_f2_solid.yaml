@@ -42,4 +42,9 @@ system:
       preparationProcedure:
         description:
           - Annealing and protecting the electrode surface with a droplet of ultra-pure water.
+      shape:
+        diameter:
+          value: 3
+          unit: mm
+          comment: Approximate diameter of the single-crystal bead.
 

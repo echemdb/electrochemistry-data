@@ -28,10 +28,14 @@ system:
       type: wire
     - name: WE
       function: working electrode
-      type: single crystal
+      type: highly oriented thin film
       crystallographicOrientation: '111'
       material: Au
-      description: 300 nm Au on mica
+      geometricElectrolyteContactArea:
+        value: 0.38
+        unit: cm2
+        comment: 'effectiveElectrodeSurfaceArea: area of the Au film exposed to the electrolyte, defined by the O-ring of the electrochemical cell.'
+      description: 300 nm thick Au(111) film on mica.
       source:
         manufacturer: Agilent
   electrolyte:
