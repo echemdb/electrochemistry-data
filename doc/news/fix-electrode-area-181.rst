@@ -1,6 +1,6 @@
 **Added:**
 
-* Added the working electrode area reported in the publication to ``atkin_2011_situ_6849`` (``0.3 cm2``), ``atkin_2014_structure_44`` (``0.38 cm2``), ``borisenko_2006_situ_6250``, ``borisenko_2012_situ_1736``, ``gasparotto_2009_situ_11140`` (``0.3 cm2``) and ``jovic_1999_cyclic_247`` (``0.316 cm2``). Areas defined by an O-ring are marked with ``effectiveElectrodeSurfaceArea`` in the quantity comment.
+* Added the working electrode area reported in the publication to ``atkin_2011_situ_6849``, ``atkin_2014_structure_44``, ``borisenko_2006_situ_6250``, ``borisenko_2012_situ_1736``, ``gasparotto_2009_situ_11140`` (``0.3 cm2``) and ``jovic_1999_cyclic_247`` (``0.316 cm2``). Areas defined by an O-ring are marked with ``effectiveElectrodeSurfaceArea`` in the quantity comment.
 * Added the working electrode area of ``alves_2011_electrochemistry_6010`` (``0.283 cm2``), calculated from the 6 mm O-ring of the flow cell.
 * Added electrode diameters reported in the publications to ``abe_2019_electro-oxidation_315``, ``abou_2003_electrosorption_211``, ``clavilier_1980_preparation_205``, ``ganassin_2015_non-covalent_8349``, ``meng_2012_hydrogen_5222``, ``wandlowski_1996_structural_10277`` and ``wang_1996_ordered_6672``.
 * Added comments on the origin of the electrode area or diameter to ``friedl_2017_interface_216``, ``hermann_2021_effect_138279``, ``schonig_2023_entropic_5948`` and ``tiwari_2020_fingerprint_1450``.
