@@ -12,7 +12,9 @@ and ask. We are happy to help.
 knowledge of electrochemistry and careful reading of publications, but **no
 programming**: you extract the experimental details from a publication into a YAML
 file and verify that they are correct. Basic familiarity with Git and GitHub helps; if
-you are new to it, ask in an issue and we will guide you.
+you are new to it, ask in an issue and we will guide you. If you prefer to send your
+data without Git, or want to discuss a contribution first, contact a maintainer via
+the [contribute page on echemdb.org](https://www.echemdb.org/contribute/).
 → [Part I: Data contributions](#part-i-data-contributions)
 
 **Technical contributions** improve the conversion and validation tools, the CI, or the
@@ -285,9 +287,6 @@ To test with a specific Python version, use e.g. `pixi run -e python-312 test`.
 Public functions should have docstrings with examples that serve as doctests. Do not
 disable pylint checks; refactor instead.
 
-By contributing code, you agree that it is licensed under the
-[GPL-3.0-or-later](LICENSE).
-
 ---
 
 ## Submitting a pull request
@@ -354,5 +353,7 @@ git push -u <user> <branch>
    [Zenodo](https://doi.org/10.5281/zenodo.20723429), and appears on
    [echemdb.org](https://www.echemdb.org/cv).
 
-Data and metadata in `literature/` are available under
-[CC-BY-4.0](LICENSE-CC-BY-4.0) and [ODC-By-1.0](LICENSE-ODC-By-1.0).
+## License
+
+Your contributions are published under the licenses of this repository, see
+[License](README.md#license) in the README.
