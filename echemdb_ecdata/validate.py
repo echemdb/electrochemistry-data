@@ -54,12 +54,14 @@ import glob
 import json
 import logging
 import os
+import re
 import subprocess
 from pathlib import Path
 
 import yaml
 from astropy import units as astropy_units
 from frictionless import Package
+from pybtex.database import parse_file
 from svgdigitizer.svg import SVG
 from svgdigitizer.svgfigure import SVGFigure
 from svgdigitizer.svgplot import SVGPlot
@@ -718,6 +720,134 @@ def validate_citation_keys_in_bib(
     return errors
 
 
+_DOI_URL_PATTERN = re.compile(r"^https?://(dx\.)?doi\.org/(?P<doi>10\..+)$", re.I)
+
+
+def _doi_from_url(url):
+    r"""
+    Return the bare DOI contained in a ``https://doi.org/`` URL, or ``None``
+    if the URL does not resolve via doi.org.
+
+    EXAMPLES::
+
+        >>> _doi_from_url("https://doi.org/10.1149/2.0081815jes")
+        '10.1149/2.0081815jes'
+
+        >>> _doi_from_url("http://dx.doi.org/10.1039/B006464P")
+        '10.1039/B006464P'
+
+        >>> _doi_from_url("https://www.osti.gov/biblio/537264") is None
+        True
+
+    """
+    match = _DOI_URL_PATTERN.match(url or "")
+    return match.group("doi") if match else None
+
+
+def validate_bib_dois(
+    bib_path="literature/bibliography/bibliography.bib",
+    literature_dir="literature",
+):
+    r"""
+    Validate that the ``doi`` of each bibliography entry agrees with the
+    ``source.url`` of the literature entries citing it.
+
+    For every svgdigitizer and source_data YAML file:
+
+    - if ``source.url`` is a ``https://doi.org/`` URL, the cited BibTeX entry
+      must contain that DOI in its ``doi`` field (compared case-insensitively,
+      since DOIs are case-insensitive);
+    - if ``source.url`` is not a DOI URL, the BibTeX entry must not contain a
+      ``doi`` (otherwise ``source.url`` should point to that DOI).
+
+    Additionally, every ``doi`` field must hold a bare DOI such as
+    ``10.1149/2.0081815jes``, not a URL.
+
+    Citation keys missing from the bibliography are reported by
+    :func:`validate_citation_keys_in_bib` and are skipped here.
+
+    Returns a list of error messages (empty if all valid).
+
+    EXAMPLES::
+
+        >>> import tempfile
+        >>> tmp = Path(tempfile.mkdtemp())
+        >>> _ = (tmp / "refs.bib").write_text(
+        ...     '@article{a_2020_x_1, title = {A}, doi = {10.1000/ABC}}\n'
+        ...     '@article{b_2020_x_1, title = {B}}\n'
+        ...     '@article{c_2020_x_1, title = {C}, doi = {https://doi.org/10.1000/c}}\n',
+        ...     encoding="utf-8")
+        >>> entries = {
+        ...     "a": ("a_2020_x_1", "https://doi.org/10.1000/abc"),
+        ...     "b": ("b_2020_x_1", "https://doi.org/10.1000/b"),
+        ...     "c": ("c_2020_x_1", "https://doi.org/10.1000/c"),
+        ...     "d": ("a_2020_x_1", "https://example.com/a.pdf"),
+        ... }
+        >>> for name, (key, url) in entries.items():
+        ...     path = tmp / "svgdigitizer" / name / f"{name}.yaml"
+        ...     path.parent.mkdir(parents=True)
+        ...     _ = path.write_text(
+        ...         f"source:\n  citationKey: {key}\n  url: {url}\n", encoding="utf-8")
+        >>> errors = validate_bib_dois(tmp / "refs.bib", tmp)  # doctest: +ELLIPSIS
+        DOI FORMAT: entry 'c_2020_x_1' has doi 'https://doi.org/10.1000/c', ...
+        MISSING DOI: entry 'b_2020_x_1' has no doi, expected '10.1000/b' ...
+        DOI MISMATCH: entry 'a_2020_x_1' has doi '10.1000/ABC' but ...d.yaml ...
+        Validation of bibliography DOIs: checked 4 files, found 3 errors.
+
+    """
+    bib_data = parse_file(str(bib_path), bib_format="bibtex")
+
+    errors = []
+    for key, entry in bib_data.entries.items():
+        doi = entry.fields.get("doi")
+        if doi is not None and _doi_from_url(doi) is not None:
+            errors.append(
+                f"DOI FORMAT: entry '{key}' has doi '{doi}', "
+                f"expected a bare DOI such as '{_doi_from_url(doi)}'"
+            )
+
+    yaml_files = sorted(
+        f
+        for subdir in ("svgdigitizer", "source_data")
+        for f in glob.glob(
+            os.path.join(literature_dir, subdir, "**", "*.yaml"), recursive=True
+        )
+    )
+
+    checked = 0
+    for yaml_file in yaml_files:
+        source = (_read_yaml_metadata(yaml_file) or {}).get("source", {})
+        citation_key = source.get("citationKey")
+        if citation_key not in bib_data.entries:
+            continue
+        checked += 1
+
+        url = source.get("url", "")
+        expected = _doi_from_url(url)
+        doi = bib_data.entries[citation_key].fields.get("doi")
+        bare_doi = _doi_from_url(doi) or doi
+
+        if expected is None:
+            if doi is not None:
+                errors.append(
+                    f"DOI MISMATCH: entry '{citation_key}' has doi '{doi}' "
+                    f"but source.url of {yaml_file} is '{url}'"
+                )
+        elif doi is None:
+            errors.append(
+                f"MISSING DOI: entry '{citation_key}' has no doi, expected "
+                f"'{expected}' from source.url of {yaml_file}"
+            )
+        elif bare_doi.casefold() != expected.casefold():
+            errors.append(
+                f"DOI MISMATCH: entry '{citation_key}' has doi '{doi}' "
+                f"but source.url of {yaml_file} is '{url}'"
+            )
+
+    _print_validation_summary("bibliography DOIs", checked, errors)
+    return errors
+
+
 #: Units that are established in the electrochemistry community but have no
 #: astropy-parseable representation yet. They are tolerated by
 #: :func:`validate_units` until a general solution is found, see
@@ -842,15 +972,21 @@ def validate_new_input(base_ref="origin/main"):
     print("\nValidating citation-key references across all entries...")
     ref_errors = validate_citation_keys_in_bib()
 
+    # Cross-cutting: the DOI in each bibliography entry must agree with the
+    # source.url of every entry citing it.
+    print("\nValidating bibliography DOIs against source URLs...")
+    doi_errors = validate_bib_dois()
+
     # Cross-cutting: every unit in *any* entry must be parseable by astropy
     # (except for the known exceptions in KNOWN_UNPARSEABLE_UNITS).
     print("\nValidating units across all entries...")
     unit_errors = validate_units()
 
-    errors = ref_errors + unit_errors
+    errors = ref_errors + doi_errors + unit_errors
     if errors:
         raise ValueError(
             f"Validation failed with {len(ref_errors)} citation-key reference "
-            f"error(s) and {len(unit_errors)} unit error(s). "
+            f"error(s), {len(doi_errors)} DOI error(s) and "
+            f"{len(unit_errors)} unit error(s). "
             f"See output above for details."
         )

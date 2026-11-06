@@ -178,6 +178,7 @@ pixi run -e dev validate-generated-identifiers    # Generated data identifiers
 # Bibliography key validation
 pixi run -e dev validate-bib-keys  # Check bib keys match expected identifiers
 pixi run -e dev validate-bib-utf8  # Check for LaTeX accent encodings
+pixi run -e dev validate-bib-dois  # Check bib DOIs match source.url of the YAMLs
 ```
 
 Validate against a specific schema version:

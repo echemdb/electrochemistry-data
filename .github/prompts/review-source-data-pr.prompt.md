@@ -41,6 +41,7 @@ Verify manually:
 - Each CSV file has a matching YAML file
 - Filenames start with the directory name (= citation key)
 - The `citationKey` in the YAML matches an entry in `literature/bibliography/bibliography.bib`
+- The bib entry has a bare `doi` (no `https://doi.org/` prefix) matching `source.url` in the YAML; sources without a DOI have no `doi` field (`validate-bib-dois`)
 
 ### Step 4: YAML Structure Checks
 
@@ -239,3 +240,4 @@ create it based on `doc/news/TEMPLATE.rst`.
 4. **Wrong `reference` in `fieldUnits`**: Should reflect the actual RE used during measurement, not the axis label in the published figure
 5. **Missing `columnHeaderLines`**: Must match the actual number of header rows in the CSV
 6. **Unit mismatch in `geometricElectrolyteContactArea`**: Value and unit should be separate fields, not combined (e.g., `value: 0.196`, `unit: cm2`)
+7. **MISSING DOI / DOI MISMATCH**: The bib entry lacks the DOI or it differs from `source.url`. Add `doi = "<DOI>"` (bare DOI, taken from `source.url`) to the bib entry.
