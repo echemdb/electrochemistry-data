@@ -1,28 +1,42 @@
 # Contributing to electrochemistry-data
 
 Thank you for helping us build an open collection of interfacial electrochemistry data!
-Contributions of all kinds are welcome: new data from publications, your own measured
-data, corrections of existing entries, and improvements of the tooling.
 
 If you are unsure about anything, open an
 [issue](https://github.com/echemdb/electrochemistry-data/issues) or a draft pull request
 and ask. We are happy to help.
 
-## Ways to contribute
+## Two kinds of contributions
 
-| You want to … | Go to |
-| --- | --- |
-| add data traced from a figure in a publication | [Route A: digitized figure](#route-a-digitized-figure) |
-| add the data behind a figure that you measured yourself (CSV) | [Route B: source data](#route-b-source-data) |
-| report an error in an existing entry | [Reporting errors](#reporting-errors-in-existing-entries) |
-| ask a question or propose a feature | [open an issue](https://github.com/echemdb/electrochemistry-data/issues/new/choose) |
-| propose a change to the metadata structure | [metadata-schema](https://github.com/echemdb/metadata-schema/blob/main/CONTRIBUTING.md) |
+**Data contributions** add new data, or check and correct existing entries. They need
+knowledge of electrochemistry and careful reading of publications, but **no
+programming**: you extract the experimental details from a publication into a YAML
+file and verify that they are correct. Basic familiarity with Git and GitHub helps; if
+you are new to it, ask in an issue and we will guide you.
+→ [Part I: Data contributions](#part-i-data-contributions)
 
-## Setup
+**Technical contributions** improve the conversion and validation tools, the CI, or the
+review assistants. They need a development background (Python, Git, pixi).
+→ [Part II: Technical contributions](#part-ii-technical-contributions)
 
-Install [pixi](https://pixi.sh). We do not use `pip install` into the environment;
-all dependencies are declared in `pyproject.toml`, and the `dev` environment is set
-up automatically on first use.
+Both kinds end with a pull request, see
+[Submitting a pull request](#submitting-a-pull-request).
+
+| You want to … | Kind | Go to |
+| --- | --- | --- |
+| add data traced from a figure in a publication | data | [Route A: digitized figure](#route-a-digitized-figure) |
+| add the data behind a figure that you measured yourself (CSV) | data | [Route B: source data](#route-b-source-data) |
+| check existing entries against their publications | data | [Checking existing entries](#checking-and-correcting-existing-entries) |
+| report an error in an existing entry | data | [open an issue](https://github.com/echemdb/electrochemistry-data/issues/new/choose) |
+| fix a bug or improve the conversion and validation tools | technical | [Part II](#part-ii-technical-contributions) |
+| propose new metadata fields or a change of the metadata structure | schema | [metadata-schema](https://github.com/echemdb/metadata-schema/blob/main/CONTRIBUTING.md) |
+| ask a question or propose a feature | any | [open an issue](https://github.com/echemdb/electrochemistry-data/issues/new/choose) |
+
+## Getting started
+
+Install [pixi](https://pixi.sh). It provides all tools in the right versions; the
+`dev` environment is set up automatically the first time you run a task. Do not
+`pip install` into the environment; all dependencies are declared in `pyproject.toml`.
 
 All contributions go through a **fork** and a **pull request** to
 `echemdb/electrochemistry-data`.
@@ -42,16 +56,31 @@ All contributions go through a **fork** and a **pull request** to
 
    ```sh
    git fetch origin
-   git checkout -b <identifier> --no-track origin/main
+   git checkout -b <branch-name> --no-track origin/main
    ```
 
    Do not work on `main`, and do not reuse an old branch for a new change.
 
-3. **Keep each branch minimal: one publication per branch and pull request.**
-   Fixes of unrelated entries, bibliography clean-ups or tooling changes go into
-   separate pull requests. Small pull requests are reviewed and merged much faster.
+3. **Keep each branch minimal.** One concern per branch and pull request: one
+   publication, one fix, or one feature. Fixes of unrelated entries, bibliography
+   clean-ups and tooling changes go into separate pull requests. Small pull requests
+   are reviewed and merged much faster.
 
-## Identifiers and file names
+---
+
+## Part I: Data contributions
+
+Adding a publication takes these steps:
+
+1. [Determine the identifier](#identifiers-and-file-names) of the publication.
+2. [Add the publication to the bibliography](#adding-the-publication-to-the-bibliography).
+3. Add the data, either as a [digitized figure](#route-a-digitized-figure) (SVG + YAML)
+   or as [source data](#route-b-source-data) (CSV + YAML).
+4. Fill in [the metadata](#what-to-put-in-the-metadata) from the publication.
+5. [Check](#checking-your-data) the files locally.
+6. [Submit a pull request](#submitting-a-pull-request).
+
+### Identifiers and file names
 
 Every publication gets an identifier that is used as the BibTeX key, the directory
 name, the `source.citationKey` in the YAML files, and the prefix of all file names:
@@ -79,7 +108,7 @@ in the supporting information (e.g. `_sf2b_`). The figure label must match the a
 **Everything is lowercase**: identifiers, file names and SVG labels
 (`pixi run -e dev fix-lowercase` fixes this for you).
 
-## Adding the publication to the bibliography
+### Adding the publication to the bibliography
 
 All references live in a single file,
 [`literature/bibliography/bibliography.bib`](literature/bibliography/bibliography.bib).
@@ -95,7 +124,7 @@ All references live in a single file,
    pixi run -e dev fix-bib-utf8     # LaTeX accents such as {\"u} → ü
    ```
 
-## Route A: digitized figure
+### Route A: digitized figure
 
 Data traced from a figure goes into
 `literature/svgdigitizer/<identifier>/`. The preparation of the SVG files is
@@ -136,7 +165,7 @@ Unlike in that workflow, the BibTeX entry goes into the shared
    This creates the CSV and JSON for your folder and validates them. Plot the CSV
    and compare it with the figure in the PDF.
 
-## Route B: source data
+### Route B: source data
 
 If you have the data behind a published figure, e.g. from your own measurements, you
 can submit it directly as CSV without digitizing. The data goes into
@@ -160,7 +189,7 @@ can submit it directly as CSV without digitizing. The data goes into
    pixi run -e dev convert-raw
    ```
 
-## What to put in the metadata
+### What to put in the metadata
 
 - **Only information stated in the publication** (including its supporting
   information and the publications it cites for the procedure). Do not guess, and do
@@ -180,36 +209,90 @@ can submit it directly as CSV without digitizing. The data goes into
 - Add yourself as `curator` in `curation.process` with your name, ORCID and the
   date.
 
-## Checks
+### Checking your data
 
 Run the checks **locally** before you push. CI runs them as well, but it is a safety
 net, not the first test run.
 
 ```sh
 pixi run -e dev validate-new-input   # schema, file names and bib keys of the entries you changed
-pixi run -e dev validate-input       # the same for all entries
 pixi run check-news                  # news entries are well-formed
 ```
 
-If you changed Python code in `echemdb_ecdata/`, also run
-
-```sh
-pixi run -e dev test
-pixi run -e dev lint
-```
-
-Helpful fixes:
+Helpful fixes (each has a `-dry-run` variant that only shows what would change):
 
 ```sh
 pixi run -e dev fix-lowercase           # lowercase SVG labels and file names
 pixi run -e dev fix-identifiers         # rename folders/files whose name differs from the citationKey
 pixi run -e dev rename-identifiers OLD NEW
-pixi run -e dev migrate-metadata        # upgrade YAML files after a breaking schema release
 ```
 
-Each of the fix tasks has a `-dry-run` variant that only shows what would change.
+### Checking and correcting existing entries
 
-## News entry
+Checking existing entries against their publications is just as valuable as adding
+new ones, and needs nothing but the publication and the YAML files. Typical findings
+are wrong units or reference electrodes, a missing scaling factor, electrode or
+electrolyte details that are stated in the publication but missing in the metadata,
+or values that are not stated in the publication at all.
+
+If you find an error, either
+
+- [open an issue](https://github.com/echemdb/electrochemistry-data/issues/new/choose)
+  with the identifier, the figure and curve, what is wrong, and where the correct
+  information is stated in the publication, or
+- open a pull request that fixes only this entry, with a news entry under
+  `**Fixed:**`.
+
+---
+
+## Part II: Technical contributions
+
+### What lives where
+
+| Path | Content |
+| --- | --- |
+| [`echemdb_ecdata/`](echemdb_ecdata) | Python package: batch conversion, validation, bibliography and fix utilities |
+| [`pyproject.toml`](pyproject.toml) | dependencies and all pixi tasks (`pixi run` lists them) |
+| [`data/`](data) | Makefile for the conversion into `data/generated/` (not committed) |
+| [`.github/workflows/`](.github/workflows) | CI: tests, validation of input and generated data, news check |
+| [`.github/prompts/`](.github/prompts) | instructions of the AI review assistants (the Claude skills in `.claude/skills/` only point to them; edit the prompt files) |
+| [`util/`](util) | shell helpers |
+
+The metadata itself is defined in
+[metadata-schema](https://github.com/echemdb/metadata-schema). Its validation tools
+(`mdstools`) are a dependency of this repository; keep the `mdstools` tag in
+`pyproject.toml` in sync with `SCHEMA_VERSION` in
+[`echemdb_ecdata/validate.py`](echemdb_ecdata/validate.py). After a breaking schema
+release, `pixi run -e dev migrate-metadata` upgrades the YAML files in `literature/`.
+
+### Checks
+
+```sh
+pixi run -e dev test       # doctests and pytest
+pixi run -e dev lint       # pylint, black, isort
+pixi run check-news        # news entries are well-formed
+```
+
+If you change the conversion or validation, also run it on the full data:
+
+```sh
+pixi run -e dev convert-force && pixi run -e dev verify-all   # output identical to before?
+pixi run -e dev validate-input && pixi run -e dev validate-generated
+```
+
+To test with a specific Python version, use e.g. `pixi run -e python-312 test`.
+
+Public functions should have docstrings with examples that serve as doctests. Do not
+disable pylint checks; refactor instead.
+
+By contributing code, you agree that it is licensed under the
+[GPL-3.0-or-later](LICENSE).
+
+---
+
+## Submitting a pull request
+
+### News entry
 
 Every pull request adds `doc/news/<branch-name>.rst`. These files are merged into the
 [`ChangeLog`](ChangeLog) when a release is made. Copy
@@ -242,7 +325,7 @@ Example:
 * Added cyclic voltammograms of Pt(111), Pt(100) and Pt(110) in 0.1 M KOH from ``markovic_1996_oxygen_6715``.
 ```
 
-## Opening the pull request
+### Opening the pull request
 
 Push to your fork and open a pull request against `echemdb/electrochemistry-data:main`:
 
@@ -253,42 +336,23 @@ git push -u <user> <branch>
 - Name pull requests that add data `Add <identifier>`.
 - Fill in the pull request template.
 - If `origin/main` moves during the review, `git fetch origin` and merge or rebase.
-  Do not resolve conflicts in `data/generated/` by hand; regenerate the files instead.
 
-## What happens after you submit
+### What happens after you submit
 
-1. **CI** validates the changed entries (schema, file names, bibliography) and the news
-   entry. Fix any failures; the logs tell you which file and which field.
-2. **Review.** A curator compares your files with the publication: identifiers, units,
-   scaling factors, traced curves and metadata. The review may be assisted by an AI
-   assistant that cross-checks the YAML against the PDF; all of its findings are
-   checked by a curator. Reviewers may ask questions or push small fixes to your
-   branch.
+1. **CI** checks the pull request. For data: the changed entries (schema, file names,
+   bibliography); for code: tests and the conversion of all data. The news entry is
+   checked in both cases. Fix any failures; the logs tell you which file and which
+   field.
+2. **Review.** For data, a curator compares your files with the publication:
+   identifiers, units, scaling factors, traced curves and metadata. The review may be
+   assisted by an AI assistant that cross-checks the YAML against the PDF; all of its
+   findings are checked by a curator. Reviewers may ask questions or push small fixes
+   to your branch.
 3. **Merge.** Once approved, the pull request is merged into `main`.
 4. **Release.** With the next release, the data is converted, published as a
    [GitHub release](https://github.com/echemdb/electrochemistry-data/releases) and on
    [Zenodo](https://doi.org/10.5281/zenodo.20723429), and appears on
    [echemdb.org](https://www.echemdb.org/cv).
 
-## Reporting errors in existing entries
-
-If you find an error in an existing entry (wrong units, a mistraced curve, missing or
-wrong metadata), either
-
-- [open an issue](https://github.com/echemdb/electrochemistry-data/issues/new/choose)
-  with the identifier, the figure and curve, what is wrong, and where the correct
-  information is stated in the publication, or
-- open a pull request that fixes only this entry, with a news entry under
-  `**Fixed:**`.
-
-## Contributing code
-
-The conversion and validation tools live in [`echemdb_ecdata/`](echemdb_ecdata). See the
-"Development" section in the [README](README.md) for the available pixi tasks. Public
-functions should have docstrings with examples that serve as doctests. We use pylint,
-black and isort (`pixi run -e dev lint`); please do not disable pylint checks, refactor
-instead.
-
-By contributing code, you agree that it is licensed under the
-[GPL-3.0-or-later](LICENSE). Data and metadata in `literature/` are available under
+Data and metadata in `literature/` are available under
 [CC-BY-4.0](LICENSE-CC-BY-4.0) and [ODC-By-1.0](LICENSE-ODC-By-1.0).

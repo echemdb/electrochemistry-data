@@ -19,3 +19,8 @@ See CONTRIBUTING.md for the full guide. -->
 - [ ] YAML: only information stated in the publication; comments are complete sentences ending with a period.
 - [ ] The data converts (`convert-svg-one <identifier>` or `convert-raw`) and matches the figure.
 - [ ] No PDF is committed.
+
+**Code changes only** (delete otherwise):
+
+- [ ] `pixi run -e dev test` and `pixi run -e dev lint` pass locally.
+- [ ] Changes to the conversion or validation: `convert-force`, `verify-all`, `validate-input` and `validate-generated` pass.
