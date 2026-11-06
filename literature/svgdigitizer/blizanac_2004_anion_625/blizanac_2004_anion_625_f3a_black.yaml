@@ -43,9 +43,6 @@ system:
         manufacturer: homemade
       shape:
         type: cylinder
-        diameter:
-          value: 0.6
-          unit: cm
         length:
           value: 0.4
           unit: cm

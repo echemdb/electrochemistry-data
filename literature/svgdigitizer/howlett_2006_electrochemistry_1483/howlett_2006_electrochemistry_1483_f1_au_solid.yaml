@@ -26,10 +26,8 @@ system:
       function: working electrode
       type: poly crystal
       crystallographicOrientation: poly
-      geometricElectrolyteContactArea:
-        unit: cm2
-        value: 1
       material: Au
+      description: The electrode area was determined from ferrocene voltammetry (Randles-Sevcik equation), but no value is reported.
   electrolyte:
     components:
       - name: PMPyr-TFSI
