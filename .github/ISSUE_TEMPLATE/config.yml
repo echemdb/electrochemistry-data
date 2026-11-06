@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Metadata schema
+    url: https://github.com/echemdb/metadata-schema/issues
+    about: Propose new fields or changes to the metadata structure.
+  - name: svgdigitizer
+    url: https://github.com/echemdb/svgdigitizer/issues
+    about: Report problems with digitizing SVG files.

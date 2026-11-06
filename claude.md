@@ -295,6 +295,11 @@ Rules:
   `**Performance:**`. Drop sections that do not apply.
 - **Start each bullet with its section's verb** - `Added ...`, `Changed ...`,
   `Fixed ...`, `Removed ...`, `Deprecated ...`, `Improved ...` (Performance).
+- **Run `pixi run check-news`** - enforces these rules (also in CI, which additionally
+  requires every PR to add or change a news file). Full rules: "News entry" in
+  `CONTRIBUTING.md`.
+- **Exception** - changes that do not belong in the ChangeLog (CI, doc typos) use a
+  branch named `silent-fix-<topic>`; CI then skips the "news file added" check.
 
 ## Skills / Copilot Prompts
 

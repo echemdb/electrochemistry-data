@@ -1,0 +1,43 @@
+name: Error in an existing entry
+description: Report wrong data or metadata of an entry on echemdb.org or in this repository.
+title: "Error in <identifier>"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping us improve the data! You can also fix the entry yourself
+        in a pull request, see [CONTRIBUTING.md](https://github.com/echemdb/electrochemistry-data/blob/main/CONTRIBUTING.md#reporting-errors-in-existing-entries).
+  - type: input
+    id: identifier
+    attributes:
+      label: Entry
+      description: The identifier of the entry, and the figure and curve if the error concerns a single curve.
+      placeholder: markovic_1996_oxygen_6715, figure 1, curve 111
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is wrong?
+      multiple: true
+      options:
+        - Traced curve (shape, axis calibration, scaling factor)
+        - Units or reference electrode
+        - Metadata (electrode, electrolyte, conditions, …)
+        - Bibliography (title, authors, DOI, …)
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What is wrong and what should it be instead?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Source of the correct information
+      description: Where is the correct information stated in the publication (page, section, figure caption, supporting information)?

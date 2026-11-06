@@ -68,14 +68,17 @@ ECHEMDB_DATABASE_URL
 
 You can contribute data in two ways:
 
-* **Digitize data from a publication.** The preparation of the files and the
-  extraction of the data from a PDF source is described in the
-  [svgdigitizer workflow](https://echemdb.github.io/svgdigitizer/workflow.html). The resulting
-  SVG and YAML files go into [`literature/svgdigitizer/`](./literature/svgdigitizer).
+* **Digitize data from a publication.** Trace the curves of a figure with
+  [`svgdigitizer`](https://echemdb.github.io/svgdigitizer/workflow.html) and add
+  the SVG and YAML files to [`literature/svgdigitizer/`](./literature/svgdigitizer).
 * **Submit your own raw data directly.** Add your measurement as a CSV file
   together with a YAML metadata file under
   [`literature/source_data/`](./literature/source_data); no digitization is
   required.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for a step-by-step guide, including naming
+conventions, the expected metadata, local checks, and how to report errors in
+existing entries.
 
 ## Development
 

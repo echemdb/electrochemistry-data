@@ -1,34 +1,26 @@
+## What and why
 
-- [ ] Added a news file.
+<!-- What does this PR add or change, and why? For new data: which publication and which figures.
+Link the related issue, e.g. "Closes #123". If it builds on an unmerged PR, add "Depends on #123".
+See CONTRIBUTING.md for the full guide. -->
 
-# Literature Addition Checklist <!-- (delete section if not applicable) -->
+## Checklist
 
-For contributors and reviewers alike.
+- [ ] The branch starts from a recent `origin/main` and contains only this change (one publication per PR).
+- [ ] Added `doc/news/<branch-name>.rst` ([News entry](https://github.com/echemdb/electrochemistry-data/blob/main/CONTRIBUTING.md#news-entry)).
+- [ ] `pixi run -e dev validate-new-input` and `pixi run check-news` pass locally.
 
-- [ ] Name PR `Add literature_identifier`
+**New or changed data only** (delete otherwise), see [CONTRIBUTING.md](https://github.com/echemdb/electrochemistry-data/blob/main/CONTRIBUTING.md):
 
-**Filename**
+- [ ] PR is named `Add <identifier>`.
+- [ ] The identifier is identical in `bibliography.bib`, the directory name, the file names and `source.citationKey`; everything is lowercase.
+- [ ] The figure labels (`f2b`, `sf2b`, `figure: 2b`) match the article.
+- [ ] SVG: units as in the figure, scaling factors considered, `scan rate:` and `tags:` labels present.
+- [ ] YAML: only information stated in the publication; comments are complete sentences ending with a period.
+- [ ] The data converts (`convert-svg-one <identifier>` or `convert-raw`) and matches the figure.
+- [ ] No PDF is committed.
 
-- [ ] Words and identifiers in the filenames must be lowercase.
-- [ ] The filename must be of type `<Name>_<Year>_<FirstWordFirstPage>_<FirstPageNumber>_<fxy>_<Identifier>`, where x is the figure number and y the subfigure label, i.e., 2b. For supporting information figures, use `sfxy` instead.
-- [ ] The figure number must match that of the figure in the article.
+**Code changes only** (delete otherwise):
 
-**Bib file**
-
-- [ ] The identifier must be identical with the filename as well as the citationKey in the YAML.
-- [ ] Remove typos (or unwanted whitespace), specifically in the title such as `Pt (111)` to `Pt(111)`.
-
-**SVG**
-
-- [ ] The curve label should be short and unambiguous?
-- [ ] Figure label should be of type `Figure: xy` (not `Figure: fxy`).
-- [ ] The figure label must be identical to that in the article.
-- [ ] Comments should be complete sentences ending with a period.
-- [ ] A `tags` text label should be included in the SVG indicating the type of measurement (BCV, ORR, COOR, etc).
-- [ ] The units on the axis should be identical to those in the figure.
-- [ ] Considered a possible scaling factor?
-
-**YAML**
-
-- [ ] The identifier must be identical to that in the filename.
-- [ ] Comments should be complete sentences ending with a period.
+- [ ] `pixi run -e dev test` and `pixi run -e dev lint` pass locally.
+- [ ] Changes to the conversion or validation: `convert-force`, `verify-all`, `validate-input` and `validate-generated` pass.
