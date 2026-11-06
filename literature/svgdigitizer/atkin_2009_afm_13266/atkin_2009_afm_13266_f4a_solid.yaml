@@ -24,16 +24,17 @@ system:
         type: wire
     - name: WE
       function: working electrode
-      type: single crystal
+      type: highly oriented thin film
       crystallographicOrientation: '111'
       geometricElectrolyteContactArea:
         value: 0.3
         unit: cm2
+        comment: 'effectiveElectrodeSurfaceArea: area of the Au film exposed to the electrolyte, defined by the O-ring of the electrochemical cell.'
       material: Au
       preparationProcedure:
         description:
           - Annealed at 350°C for 4h under vacuum in a quartz ampule.
-      description: Au on mica
+      description: Au(111) film on mica.
       source:
         manufacturer: Molecular Imaging
   electrolyte:

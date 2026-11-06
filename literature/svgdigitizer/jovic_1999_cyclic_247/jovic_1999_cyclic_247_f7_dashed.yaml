@@ -16,6 +16,9 @@ system:
       type: single crystal
       crystallographicOrientation: '100'
       material: Ag
+      geometricElectrolyteContactArea:
+        value: 0.316
+        unit: cm2
       preparationProcedure:
         description:
           - Ag crystal polished with fine emery paper and alumina.

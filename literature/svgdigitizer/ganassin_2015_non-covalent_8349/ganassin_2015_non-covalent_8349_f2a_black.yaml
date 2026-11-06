@@ -45,4 +45,8 @@ system:
         manufacturer: Mateck
       preparationProcedure:
         url: https://doi.org/10.1039/C3CP51998H
+      shape:
+        diameter:
+          value: 5
+          unit: mm
 

@@ -32,6 +32,7 @@ system:
       geometricElectrolyteContactArea:
         value: 0.196
         unit: cm2
+        comment: Value confirmed by the authors; it is not reported in the publication or its SI.
       material: Au
       preparationProcedure:
         description:

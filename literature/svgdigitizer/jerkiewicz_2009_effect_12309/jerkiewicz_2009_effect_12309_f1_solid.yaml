@@ -79,12 +79,19 @@ system:
       material: Pt
       shape:
         diameter:
-          value: 1.172
-          unit: mm
+          value: 0.1172
+          unit: cm
+          uncertainty:
+            value: 0.0002
+            unit: cm
       crystallographicOrientation: '111'
       geometricElectrolyteContactArea:
-        value: 4.31
-        unit: 1 / mm2
+        value: 0.0431
+        unit: cm2
+        uncertainty:
+          value: 0.0001
+          unit: cm2
+        comment: Determined in air. The authors estimate the uncertainty of the area in contact with the electrolyte to be 0.0005-0.0010 cm2.
       preparationProcedure:
         description:
           - Annealing the Pt(111) electrode in a H2/O2 flame. Cooling in Ar/H2 (2:1) gas atmosphere. Protecting the Pt(111) surface with droplet of high purity water.

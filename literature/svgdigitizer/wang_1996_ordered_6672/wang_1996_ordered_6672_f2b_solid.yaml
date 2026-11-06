@@ -11,6 +11,14 @@ system:
       type: single crystal
       crystallographicOrientation: '110'
       material: Au
+      shape:
+        diameter:
+          value: 10
+          unit: mm
+          comment: Described for the in situ SXS measurements and assumed to be the same crystal used for the voltammetry. The publication does not state the area used to normalize the current. The current densities (a few uA / cm2) are plausible for iodide adsorption when normalized to the 0.79 cm2 front face.
+        height:
+          value: 3
+          unit: mm
   electrolyte:
     components:
       - concentration:
