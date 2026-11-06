@@ -164,6 +164,7 @@ pixi run -e dev validate-generated-identifiers    # Generated data identifiers
 # Bibliography key and encoding validation
 pixi run -e dev validate-bib-keys  # Check bib keys match expected identifiers
 pixi run -e dev validate-bib-utf8  # Check for LaTeX accent encodings
+pixi run -e dev validate-bib-dois  # Check bib DOIs match source.url of the YAMLs
 
 # Use specific schema version (default: echemdb_ecdata.validate.SCHEMA_VERSION)
 # The version is a metadata-schema release tag (e.g. 0.8.0) or branch name (e.g. main)
@@ -252,6 +253,7 @@ Examples:
 - **Don't read all files in `literature/svgdigitizer/`** - There are 273+ entries. Sample a few to understand structure.
 - **Schema validation** is critical - all generated JSON must validate against echemdb-metadata schema
 - **Naming must match** - `citationKey` in YAML must match key in `bibliography.bib`, directory name, and filename prefix
+- **DOIs live in both places** - each bib entry holds the bare `doi` (no `https://doi.org/` prefix) and each YAML holds `source.url: https://doi.org/<doi>`; `validate-bib-dois` keeps them in sync. Sources without a DOI keep their URL in the YAML only (pybtex escapes `_` in bib `url` fields when writing)
 - **Bib keys are computed** - Use `svgdigitizer.pdf.Pdf.build_identifier` + `pybtex` to derive expected keys from BibTeX entries
 - **Lowercase enforced** - All identifiers, filenames, and SVG labels must be lowercase (Windows compatibility)
 - **Raw data support** - `literature/source_data/` holds raw experimental data with CSV files and YAML metadata
@@ -293,6 +295,11 @@ Rules:
   `**Performance:**`. Drop sections that do not apply.
 - **Start each bullet with its section's verb** - `Added ...`, `Changed ...`,
   `Fixed ...`, `Removed ...`, `Deprecated ...`, `Improved ...` (Performance).
+- **Run `pixi run check-news`** - enforces these rules (also in CI, which additionally
+  requires every PR to add or change a news file). Full rules: "News entry" in
+  `CONTRIBUTING.md`.
+- **Exception** - changes that do not belong in the ChangeLog (CI, doc typos) use a
+  branch named `silent-fix-<topic>`; CI then skips the "news file added" check.
 
 ## Skills / Copilot Prompts
 

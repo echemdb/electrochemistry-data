@@ -49,6 +49,7 @@ This performs the following checks automatically:
 #### Bibliography Checks
 - `citationKey` in YAML matches the directory name
 - Bibliography entry exists in `bibliography.bib`
+- Bibliography entry has a bare `doi` (e.g. `10.1021/jp9026755`, no `https://doi.org/` prefix) matching `source.url` in the YAML; sources without a DOI have no `doi` field (`validate-bib-dois`)
 - Computed identifier (via `svgdigitizer.pdf.Pdf.build_identifier`) matches the citation key
 - Title has no spurious spaces before parentheses (e.g., `Pt (111)` → `Pt(111)`)
 
@@ -284,3 +285,4 @@ create it based on `doc/news/TEMPLATE.rst`.
 4. **Uppercase in filenames**: All identifiers must be lowercase (Windows compatibility)
 5. **Missing counter electrode**: The PR checklist expects WE, RE, and optionally CE
 6. **Journal name in bib entry**: The `journal` field must use the full long journal name (e.g., `"Journal of Electroanalytical Chemistry"`, not `"J. Electroanal. Chem."`). Abbreviated names are not allowed. If the new bib entry uses an abbreviation, expand it to the full name manually.
+7. **MISSING DOI / DOI MISMATCH**: BibTeX exports (e.g. from Google Scholar) often lack the DOI. Add `doi = "<DOI>"` (bare DOI, taken from `source.url`) to the bib entry.

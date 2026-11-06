@@ -1,0 +1,33 @@
+name: Data submission question
+description: Ask a question about adding data from a publication or your own measurements.
+title: "Question: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please check [CONTRIBUTING.md](https://github.com/echemdb/electrochemistry-data/blob/main/CONTRIBUTING.md) first.
+        If you already have files, you can also open a draft pull request and ask there.
+  - type: dropdown
+    id: route
+    attributes:
+      label: Kind of data
+      options:
+        - Digitized figure (svgdigitizer)
+        - Own source data (CSV)
+        - Not sure yet
+    validations:
+      required: true
+  - type: input
+    id: publication
+    attributes:
+      label: Publication
+      description: DOI or identifier of the publication, if known.
+      placeholder: https://doi.org/10.1021/jp9533382
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What do you want to add, and where are you stuck? Include error messages of `validate-input` if any.
+    validations:
+      required: true
