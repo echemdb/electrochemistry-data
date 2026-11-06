@@ -48,6 +48,10 @@ requests = ">=2.32,<3"
 [tool.pixi.pypi-dependencies]
 echemdb_ecdata = { path = ".", editable = true }
 
+[tool.pixi.tasks]
+# Check that the news entries in doc/news/ are well-formed (see CONTRIBUTING.md)
+check-news = "python .github/scripts/check_news.py"
+
 [tool.pixi.feature.python-310.dependencies]
 python = "3.10.*"
 
