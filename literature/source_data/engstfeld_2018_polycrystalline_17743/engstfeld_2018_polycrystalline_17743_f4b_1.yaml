@@ -85,7 +85,6 @@ source:
 figureDescription:
   type: raw
   measurementType: CV
-  comment: A description of the measurement data. # Add whatever you think is important to understand the data. This will be updated by the `svgdigitizer.electrochemistry.cv.CV` module and takes the comment from the svg file.
   scanRate:
     value: 50
     unit: mV / s

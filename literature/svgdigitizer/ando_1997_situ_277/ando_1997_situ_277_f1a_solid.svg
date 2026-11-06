@@ -173,5 +173,5 @@
        sodipodi:role="line"
        id="tspan3"
        x="20.041462"
-       y="510.14639">comment: This curve contains two cycles, a solid and a dashed one.</tspan></text>
+       y="510.14639">comment: The digitized curve combines the solid line (first cycle, started at the OCP) and the broken line (second cycle, recorded after the positive scan to -0.28 V) of the figure.</tspan></text>
 </svg>

@@ -158,7 +158,7 @@
        sodipodi:role="line"
        id="tspan835"
        x="432.85428"
-       y="6132.0747">comment: The scan rate is not given in the publication. It was manually determined from the charge integration as 20 mV / s.</tspan></text>
+       y="6132.0747">comment: The scan rate is not given in the publication. It was calculated by the curator from the reported charge as 20 mV / s.</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"
