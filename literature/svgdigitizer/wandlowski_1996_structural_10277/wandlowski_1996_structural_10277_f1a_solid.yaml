@@ -14,6 +14,13 @@ system:
       preparationProcedure:
         description:
           - Electrodes were annealed and quenched in water. Measurements with hanging meniscus technique.
+      shape:
+        diameter:
+          value: 4
+          unit: mm
+        height:
+          value: 4
+          unit: mm
   electrolyte:
     components:
       - concentration:

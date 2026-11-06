@@ -13,6 +13,11 @@ system:
       type: single crystal
       crystallographicOrientation: '0001'
       material: Ru
+      geometricElectrolyteContactArea:
+        value: 0.283
+        unit: cm2
+        calculation: pi * (6 mm / 2)^2, from the O-ring diameter given in the publication.
+        comment: 'effectiveElectrodeSurfaceArea: area of the crystal exposed to the electrolyte, defined by the O-ring gasket (diameter 6 mm, Kalrez) of the flow cell.'
       preparationProcedure:
         description:
           - Sputtering and flash annealing under UHV conditions with repeated cycles of oxygen adsorption and desorption.

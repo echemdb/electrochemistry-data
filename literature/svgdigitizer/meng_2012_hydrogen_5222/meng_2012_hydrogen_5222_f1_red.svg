@@ -76,7 +76,7 @@
        sodipodi:role="line"
        id="tspan3"
        x="2093.8689"
-       y="1028.2762">comment: Parts of the curve are hardly visible. Also the units on the y-axis are given in `uA / cm2 / M` which is currently not supported by the echemdb module of unitpackage, nor is M a supported unit  by astropy.  See also issue unitpackage/issues/112.</tspan></text>
+       y="1028.2762">comment: Parts of the curve are hardly visible. The y-axis unit uA / cm2 / M (current normalized to the concentration) cannot be represented, see https://github.com/echemdb/unitpackage/issues/112.</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:32px;font-family:Arial;-inkscape-font-specification:Arial;fill:none;stroke:#0000ff;stroke-width:1.13386;stroke-opacity:1"

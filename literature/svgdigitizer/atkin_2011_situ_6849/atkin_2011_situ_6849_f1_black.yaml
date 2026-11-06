@@ -23,12 +23,17 @@ system:
         type: wire
     - name: WE
       function: working electrode
-      type: single crystal
+      type: highly oriented thin film
       crystallographicOrientation: '111'
       material: Au
+      geometricElectrolyteContactArea:
+        value: 0.3
+        unit: cm2
+        comment: 'effectiveElectrodeSurfaceArea: area of the Au film exposed to the electrolyte, defined by the O-ring of the electrochemical cell.'
       preparationProcedure:
         description:
           - Annealing in a hydrogen flame.
+      description: 300 nm thick Au(111) film on mica.
   electrolyte:
     components:
       - name: BMPyr-FAP

@@ -159,14 +159,4 @@
        id="tspan1"
        x="248.76442"
        y="2875.5481">tags: BCV</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-size:40px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#00aa00;stroke:#00d400;stroke-width:0.5"
-     x="101.36784"
-     y="336.89899"
-     id="text2"><tspan
-       sodipodi:role="line"
-       id="tspan2"
-       x="101.36784"
-       y="336.89899">comment: Reference electrode given as E1/2(Fc/Fc+).</tspan></text>
 </svg>

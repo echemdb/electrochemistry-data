@@ -81,6 +81,7 @@ system:
       geometricElectrolyteContactArea:
         value: 0.1241
         unit: cm2
+        comment: Value provided by the authors; it is not reported in the publication. It corresponds to the oval surface with diameters of 4 and 3.95 mm.
       shape:
         type: cylinder
         height:

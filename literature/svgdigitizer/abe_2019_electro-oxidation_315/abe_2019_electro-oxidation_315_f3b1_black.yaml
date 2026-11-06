@@ -53,3 +53,8 @@ system:
           - subsequently cooled in air down to 473 K
           - protected with water
           - immediately transferred into the electrochemical cell.
+      shape:
+        diameter:
+          value: 3
+          unit: mm
+          comment: Approximate diameter of the single-crystal bead.

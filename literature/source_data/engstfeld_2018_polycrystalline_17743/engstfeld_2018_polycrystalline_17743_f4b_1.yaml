@@ -28,8 +28,7 @@ system:
       function: working electrode
       crystallographicOrientation: '100'
       type: single crystal
-      geometricElectrolyteContactArea:
-        unit: 1 / cm2
+      description: The geometric area in contact with the electrolyte corresponds to the diameter of the sample (6.0 mm).
       material: Cu
       preparationProcedure:
         description:
@@ -37,7 +36,7 @@ system:
       shape:
         diameter:
           unit: mm
-          value: 4.4
+          value: 6
         height:
           unit: mm
           value: 2
@@ -86,7 +85,6 @@ source:
 figureDescription:
   type: raw
   measurementType: CV
-  comment: A description of the measurement data. # Add whatever you think is important to understand the data. This will be updated by the `svgdigitizer.electrochemistry.cv.CV` module and takes the comment from the svg file.
   scanRate:
     value: 50
     unit: mV / s

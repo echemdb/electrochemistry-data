@@ -28,8 +28,7 @@ system:
       function: working electrode
       type: single crystal
       crystallographicOrientation: '100'
-      geometricElectrolyteContactArea:
-        unit: 1 / cm2
+      description: The geometric area in contact with the electrolyte is determined by the inner diameter of the O-ring of the flow cell (4.4 mm).
       material: Cu
       preparationProcedure:
         description:
@@ -37,7 +36,7 @@ system:
       shape:
         diameter:
           unit: mm
-          value: 4.4
+          value: 8
         height:
           unit: mm
           value: 2
@@ -86,7 +85,6 @@ source:
 figureDescription:
   type: raw
   measurementType: CV
-  comment: A description of the measurement data. # Add whatever you think is important to understand the data. This will be updated by the `svgdigitizer.electrochemistry.cv.CV` module and takes the comment from the svg file.
   scanRate:
     value: 50
     unit: mV / s

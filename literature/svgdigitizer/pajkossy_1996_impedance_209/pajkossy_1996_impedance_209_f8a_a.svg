@@ -156,7 +156,7 @@
        sodipodi:role="line"
        id="tspan3536-4"
        x="-1346.3966"
-       y="167.83231">comment: Main peak does not fit the y-axis limits.</tspan></text>
+       y="167.83231">comment: The main peak exceeds the y-axis limits and is cut off.</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:80px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px"

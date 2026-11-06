@@ -9,14 +9,22 @@ system:
   electrodes:
     - name: REF
       function: reference electrode
-      type: RHE
+      type: SCE
     - name: WE
       function: working electrode
       type: single crystal
-      crystallographicOrientation: '110'
+      crystallographicOrientation: '100'
       geometricElectrolyteContactArea:
+        value: 1.12
         unit: cm2
       material: Pt
+      shape:
+        diameter:
+          value: 11
+          unit: mm
+        height:
+          value: 3
+          unit: mm
       preparationProcedure:
         description:
           - Annealed in an H2-O2 flame.
@@ -56,9 +64,10 @@ system:
         comment: Cu-ion source not provied.
       - name: Ar
         pressure:
-          unit: 1
-          value: bar
+          unit: bar
+          value: 1
         proportion:
+          unit: volume percent
           value: 100
         type: gas
     ph:

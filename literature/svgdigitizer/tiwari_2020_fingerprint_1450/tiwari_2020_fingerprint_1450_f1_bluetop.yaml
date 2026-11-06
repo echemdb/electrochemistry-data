@@ -69,8 +69,10 @@ system:
         diameter:
           value: 6
           unit: mm
+          comment: 'SI: typical diameter of the exposed surface is 6 mm.'
         height:
           value: 3
           unit: mm
+          comment: 'SI: thickness 3 mm.'
       preparationProcedure:
         url: https://doi.org/10.1021/acsenergylett.9b01064
