@@ -9,10 +9,13 @@ on:
       - opened
       - synchronize
       - reopened
-    paths:
-      - "echemdb_ecdata/**"
-      - "pyproject.toml"
-      - ".github/workflows/validation.yml"
+    # Run on any change except pure data or documentation PRs (those are
+    # covered by build.yml / quick-data-check.yml).
+    paths-ignore:
+      - "literature/**"
+      - "data/**"
+      - "doc/**"
+      - "**/*.md"
 
 jobs:
   verify-file-schemas:
