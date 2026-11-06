@@ -151,7 +151,7 @@ Unlike in that workflow, the BibTeX entry goes into the shared
      adsorption), `COOR`, `FAOR`, `MOR`, `HER`, `OER` and `ORR`,
    - a `linked:` label for other measurements shown in the same figure (e.g.
      `linked: DEMS`), if any,
-   - a `comment:` label, if needed (see below).
+   - a `comment:` label, if needed (see [Comments](#comments)).
 3. **Create one YAML file per SVG** with the same name. Start from the
    [svgdigitizer example](https://github.com/echemdb/metadata-schema/blob/main/examples/file_schemas/svgdigitizer.yaml)
    of the metadata schema or from a similar existing entry in
@@ -200,16 +200,55 @@ can submit it directly as CSV without digitizing. The data goes into
   diameter), say so in a comment of that quantity.
 - **The schema decides what is required.** `pixi run -e dev validate-input` reports
   missing required fields; everything else is optional but welcome.
-- **Comments are complete sentences ending with a period.** A comment describes the
-  data and how it was traced, for example "The zero-current baseline was estimated by
-  the curator." Information that has a dedicated field (reference electrode,
-  techniques, …) goes into that field and not into a comment, and the scientific
-  interpretation of the data belongs in the publication, not in the metadata.
+- **Comments** follow the rules in [Comments](#comments) below.
 - If the metadata cannot be expressed with the schema, do not work around it with a
   comment. Open an issue (here or in
   [metadata-schema](https://github.com/echemdb/metadata-schema/issues)) instead.
 - Add yourself as `curator` in `curation.process` with your name, ORCID and the
   date.
+
+### Comments
+
+Every curve can carry a curator comment, which is shown on the page of the entry on
+echemdb.org. For digitized figures it is the `comment:` text label in the SVG; for
+source data it is `figureDescription.comment` in the YAML. Comments are complete
+sentences ending with a period.
+
+A curve comment is meant for notes on **the data and how it was obtained from the
+figure**:
+
+1. **Technical difficulties during tracing**: overlapping or stacked curves, broad or
+   noisy lines, peaks exceeding the axis limits, curves cut off by the axes, gaps in
+   the curve, imprecise axis labels.
+2. **Values determined by the curator**: e.g. a zero-current baseline that is not given
+   in the figure, a scan rate calculated from a reported charge, an estimated
+   concentration.
+3. **Apparent errors or inconsistencies in the original figure**: e.g. a potential axis
+   possibly labeled vs. SHE instead of RHE, or a unit that cannot be represented. The
+   data itself is **never corrected**; the issue is only noted.
+
+It is **not** meant for
+
+- the scientific context or the focus of the publication,
+- experimental details that are not specific to the curve (electrolyte preparation,
+  counter or reference electrode, …). These belong in the structured metadata, or in
+  the `comment` of the corresponding YAML object (e.g. of a `source`, an electrolyte
+  component, or a quantity),
+- missing information: a field that is not given in the publication is simply left out,
+- template placeholders.
+
+Use the standard phrases wherever the same issue appears, so that the website shows a
+consistent wording:
+
+| Issue | Standard phrase |
+| --- | --- |
+| baseline not given | The zero-current baseline (j-axis offset) is not given in the figure and was estimated by the curator. |
+| noisy original | The original curve is noisy. / The original curve is very noisy. |
+| broad line | The curve is drawn with a broad line. |
+| overlapping curves | The curve partly overlaps with other curves in the figure. |
+| curve cut off | The curve is cut off by the figure axes at … |
+| imprecise axis | The y-axis labels are imprecise. |
+| scan rate calculated | The scan rate is not given in the publication. It was calculated by the curator from the reported charge as … |
 
 ### Checking your data
 
