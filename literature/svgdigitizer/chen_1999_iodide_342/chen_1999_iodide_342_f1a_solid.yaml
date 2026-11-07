@@ -94,4 +94,4 @@ experimental:
       value: 20
       uncertainty:
         value: 2
-echemdbSchemaVersion: 0.8.2
+echemdbSchemaVersion: 0.9.0

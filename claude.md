@@ -166,6 +166,9 @@ pixi run -e dev validate-bib-keys  # Check bib keys match expected identifiers
 pixi run -e dev validate-bib-utf8  # Check for LaTeX accent encodings
 pixi run -e dev validate-bib-dois  # Check bib DOIs match source.url of the YAMLs
 
+# Every input YAML must end with echemdbSchemaVersion == SCHEMA_VERSION
+pixi run -e dev validate-schema-version-stamps
+
 # Use specific schema version (default: echemdb_ecdata.validate.SCHEMA_VERSION)
 # The version is a metadata-schema release tag (e.g. 0.8.0) or branch name (e.g. main)
 pixi run -e dev validate-input --version 0.8.0
@@ -204,7 +207,8 @@ pixi run -e dev rename-identifiers OLD_NAME NEW_NAME
 # Migrate input YAML metadata across breaking metadata-schema releases.
 # Applies the migration steps from mdstools.schema.migrations (e.g. the 0.8.0
 # move of system.electrolyte.temperature to experimental.operationParameters)
-# and stamps rewritten files with echemdbSchemaVersion.
+# and sets echemdbSchemaVersion in ALL input YAML (text-level edit for files
+# without structural changes). Run it on every schema version update.
 pixi run -e dev migrate-metadata          # Apply changes
 pixi run -e dev migrate-metadata-dry-run  # Preview only
 ```

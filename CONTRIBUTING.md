@@ -206,6 +206,10 @@ can submit it directly as CSV without digitizing. The data goes into
   [metadata-schema](https://github.com/echemdb/metadata-schema/issues)) instead.
 - Add yourself as `curator` in `curation.process` with your name, ORCID and the
   date.
+- End the file with `echemdbSchemaVersion: <version>`, the metadata-schema version
+  the file follows (`SCHEMA_VERSION` in
+  [`echemdb_ecdata/validate.py`](echemdb_ecdata/validate.py)). `validate-input`
+  reports a missing or outdated stamp.
 
 ### Comments
 
@@ -317,8 +321,11 @@ but it only changes the two version strings. To complete the update:
 2. Set `SCHEMA_VERSION` in `echemdb_ecdata/validate.py` and the `mdstools` tag in
    `pyproject.toml` to the new version, then run `pixi lock`.
 3. Run `pixi run -e dev migrate-metadata-dry-run`, check that the listed files and
-   steps match the breaking changes, then `pixi run -e dev migrate-metadata`. Only
-   files with structural changes are rewritten; look at a few diffs.
+   steps match the breaking changes, then `pixi run -e dev migrate-metadata`. Run it
+   for every version update, also without breaking changes: it sets
+   `echemdbSchemaVersion` in all input YAML files to the new version. Files with
+   structural changes are rewritten (look at a few diffs); all others only get the
+   stamp line changed.
 4. Set `echemdbSchemaVersion` in `test/generated/source_data/*.json.expected` to the new
    version.
 5. Rebuild and check everything: `pixi run -e dev convert-force`,

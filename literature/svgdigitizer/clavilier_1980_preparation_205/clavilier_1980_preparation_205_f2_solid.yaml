@@ -48,3 +48,4 @@ system:
           unit: mm
           comment: Approximate diameter of the single-crystal bead.
 
+echemdbSchemaVersion: 0.9.0

@@ -77,4 +77,4 @@ system:
           - Cleaned carefully after each process.
           - Electropolished at 0 °C in a solution of 2 parts methanol and 1 part HNO3 (65%), following Kötz and Lewerenz.
           - Details see https://doi.org/10.1016/S0022-0728(79)80245-4 and https://doi.org/10.1016/S0022-0728(80)80075-1.
-echemdbSchemaVersion: 0.8.2
+echemdbSchemaVersion: 0.9.0

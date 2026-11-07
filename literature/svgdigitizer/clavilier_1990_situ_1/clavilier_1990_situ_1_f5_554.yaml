@@ -43,3 +43,4 @@ system:
           - heating in a gas flame
           - cooling in air to 300-200 °C 
           - protecting the surface with a droplet of ultrapure water
+echemdbSchemaVersion: 0.9.0

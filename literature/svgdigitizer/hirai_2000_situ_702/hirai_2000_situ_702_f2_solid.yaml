@@ -48,3 +48,4 @@ system:
           - Created from a single crystalline rod.
           - Orientation by Laue backscattering, mechanically polished and etched.
           - details see https://doi.org/10.2355/isijinternational.40.702
+echemdbSchemaVersion: 0.9.0

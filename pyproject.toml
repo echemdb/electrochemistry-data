@@ -94,7 +94,7 @@ verify-all = 'python -c "from echemdb_ecdata.digitize import verify_batch_conver
 # Validation
 # ==========
 # Two umbrella tasks run all relevant checks:
-#   validate-input     - YAML schema, filenames/identifiers, bib keys and DOIs, and units (for input files in literature/)
+#   validate-input     - YAML schema, filenames/identifiers, bib keys and DOIs, units, and schema version stamps (for input files in literature/)
 #   validate-generated - JSON schema and identifiers (for generated files in data/generated/)
 # To validate against a specific metadata-schema version use e.g. `--version 0.8.0` (a release tag) or `--version main` (a branch name).
 #
@@ -116,9 +116,11 @@ validate-bib-utf8 = 'python -c "from echemdb_ecdata.bibliography import validate
 validate-bib-dois = 'python -c "from echemdb_ecdata.validate import validate_bib_dois; raise SystemExit(1 if validate_bib_dois() else 0)"'
 # Unit validation (all units in literature/ must parse with astropy)
 validate-units = 'python -c "from echemdb_ecdata.validate import validate_units; raise SystemExit(1 if validate_units() else 0)"'
+# Schema version stamps (every YAML in literature/ declares echemdbSchemaVersion == SCHEMA_VERSION)
+validate-schema-version-stamps = 'python -c "from echemdb_ecdata.migrate import validate_schema_version_stamps; raise SystemExit(1 if validate_schema_version_stamps() else 0)"'
 # Umbrella tasks (used in CI)
-validate-input = { depends-on = ["validate-svgdigitizer-yaml", "validate-source-yaml", "validate-identifiers", "validate-bib-keys", "validate-bib-utf8", "validate-bib-dois", "validate-units"] }
-validate-new-input = { args = [ { "arg" = "base_ref", "default" = "origin/main" } ], cmd = "python -c \"from echemdb_ecdata.validate import validate_new_input; validate_new_input('{{ base_ref }}')\"" }
+validate-input = { depends-on = ["validate-svgdigitizer-yaml", "validate-source-yaml", "validate-identifiers", "validate-bib-keys", "validate-bib-utf8", "validate-bib-dois", "validate-units", "validate-schema-version-stamps"] }
+validate-new-input = { args = [ { "arg" = "base_ref", "default" = "origin/main" } ], depends-on = ["validate-schema-version-stamps"], cmd = "python -c \"from echemdb_ecdata.validate import validate_new_input; validate_new_input('{{ base_ref }}')\"" }
 validate-generated = { depends-on = ["validate-svgdigitizer", "validate-raw", "validate-generated-identifiers"] }
 # Fix utilities
 fix-lowercase = 'python -c "from echemdb_ecdata.fix import lowercase_svgdigitizer_files; lowercase_svgdigitizer_files()"'

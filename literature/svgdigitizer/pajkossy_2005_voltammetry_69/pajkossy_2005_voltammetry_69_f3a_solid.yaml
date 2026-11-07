@@ -54,4 +54,4 @@ experimental:
       uncertainty:
         value: 1.0
         unit: deg_C
-echemdbSchemaVersion: 0.8.2
+echemdbSchemaVersion: 0.9.0
