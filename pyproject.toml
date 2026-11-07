@@ -175,7 +175,7 @@ doc = "cd doc && make html SPHINXOPTS='-W -n --keep-going'"
 # (not published on PyPI; pinned to the release tag matching SCHEMA_VERSION
 # in echemdb_ecdata/validate.py). Lives in the dev feature (not test) because
 # mdstools requires Python >=3.11 and the python-310 environment must still solve.
-mdstools = { git = "https://github.com/echemdb/metadata-schema.git", tag = "0.8.3" }
+mdstools = { git = "https://github.com/echemdb/metadata-schema.git", tag = "0.9.0" }
 
 [tool.pixi.feature.dev.dependencies]
 # mdstools depends on linkml >=1.11.1 (1.11.0 was yanked), which requires

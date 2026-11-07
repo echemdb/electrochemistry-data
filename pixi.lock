@@ -868,7 +868,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/websocket-client-1.9.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/zipp-4.1.0-pyhcf101f3_0.conda
       - pypi: ./
-      - pypi: git+https://github.com/echemdb/metadata-schema.git?tag=0.8.3#f48f583f83b1de9f5601d05dae5e5fcd1c25a3f0
+      - pypi: git+https://github.com/echemdb/metadata-schema.git?tag=0.9.0#3aed350705d8c1f4a1fd180dce9672dd31026456
       - pypi: https://files.pythonhosted.org/packages/00/cc/7fbd75d3362e939eb98bcf9bd22f3f7df8c237a85148899ed3d38e5614e5/json_flattener-0.1.9-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/04/5f/9ff93450ba96b09c7c2b3f81c94de31c89f92292f1380261bd7195bea4ea/contourpy-1.3.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/09/05/d129d016f5124adb882816bdaef44bb877e313ceb0a109abcf553f1ac90c/pyjsg-0.12.4-py3-none-any.whl
@@ -1191,7 +1191,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-64/zstandard-0.25.0-py314hd1e8ddb_1.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-64/zstd-1.5.7-h3eecb57_6.conda
       - pypi: ./
-      - pypi: git+https://github.com/echemdb/metadata-schema.git?tag=0.8.3#f48f583f83b1de9f5601d05dae5e5fcd1c25a3f0
+      - pypi: git+https://github.com/echemdb/metadata-schema.git?tag=0.9.0#3aed350705d8c1f4a1fd180dce9672dd31026456
       - pypi: https://files.pythonhosted.org/packages/00/cc/7fbd75d3362e939eb98bcf9bd22f3f7df8c237a85148899ed3d38e5614e5/json_flattener-0.1.9-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/09/05/d129d016f5124adb882816bdaef44bb877e313ceb0a109abcf553f1ac90c/pyjsg-0.12.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/0c/ec/e1db9922bceb168197a558a2b8c03a7963f1afe93517ddd3cf99f202f996/jsonref-1.1.0-py3-none-any.whl
@@ -1517,7 +1517,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/win-64/zstandard-0.25.0-py314hc5dbbe4_1.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/zstd-1.5.7-h534d264_6.conda
       - pypi: ./
-      - pypi: git+https://github.com/echemdb/metadata-schema.git?tag=0.8.3#f48f583f83b1de9f5601d05dae5e5fcd1c25a3f0
+      - pypi: git+https://github.com/echemdb/metadata-schema.git?tag=0.9.0#3aed350705d8c1f4a1fd180dce9672dd31026456
       - pypi: https://files.pythonhosted.org/packages/00/cc/7fbd75d3362e939eb98bcf9bd22f3f7df8c237a85148899ed3d38e5614e5/json_flattener-0.1.9-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/09/05/d129d016f5124adb882816bdaef44bb877e313ceb0a109abcf553f1ac90c/pyjsg-0.12.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/0c/ec/e1db9922bceb168197a558a2b8c03a7963f1afe93517ddd3cf99f202f996/jsonref-1.1.0-py3-none-any.whl
@@ -5975,7 +5975,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/greenlet?source=compressed-mapping
+  - pkg:pypi/greenlet?source=hash-mapping
   run_exports: {}
   size: 267632
   timestamp: 1781762129332
@@ -8202,7 +8202,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/click?source=compressed-mapping
+  - pkg:pypi/click?source=hash-mapping
   run_exports: {}
   size: 106227
   timestamp: 1783085395110
@@ -8216,7 +8216,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/click?source=compressed-mapping
+  - pkg:pypi/click?source=hash-mapping
   run_exports: {}
   size: 107155
   timestamp: 1783085363526
@@ -8530,7 +8530,7 @@ packages:
   - python >=3.10
   license: Unlicense
   purls:
-  - pkg:pypi/filelock?source=compressed-mapping
+  - pkg:pypi/filelock?source=hash-mapping
   run_exports: {}
   size: 36989
   timestamp: 1781381078337
@@ -10885,7 +10885,7 @@ packages:
   license: BSD-2-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/sphinxcontrib-serializinghtml?source=compressed-mapping
+  - pkg:pypi/sphinxcontrib-serializinghtml?source=hash-mapping
   run_exports: {}
   size: 30640
   timestamp: 1781260357443
@@ -11011,7 +11011,7 @@ packages:
   - ipywidgets >=6.0
   license: MPL-2.0 and MIT
   purls:
-  - pkg:pypi/tqdm?source=compressed-mapping
+  - pkg:pypi/tqdm?source=hash-mapping
   run_exports: {}
   size: 94965
   timestamp: 1781741268338
@@ -11028,7 +11028,7 @@ packages:
   - ipywidgets >=6.0
   license: MPL-2.0 and MIT
   purls:
-  - pkg:pypi/tqdm?source=compressed-mapping
+  - pkg:pypi/tqdm?source=hash-mapping
   run_exports: {}
   size: 94630
   timestamp: 1781741323148
@@ -15729,9 +15729,9 @@ packages:
   - svgdigitizer>=0.14.5,<0.15
   - unitpackage>=0.13.1,<0.14
   requires_python: '>=3.10'
-- pypi: git+https://github.com/echemdb/metadata-schema.git?tag=0.8.3#f48f583f83b1de9f5601d05dae5e5fcd1c25a3f0
+- pypi: git+https://github.com/echemdb/metadata-schema.git?tag=0.9.0#3aed350705d8c1f4a1fd180dce9672dd31026456
   name: mdstools
-  version: 0.8.3
+  version: 0.9.0
   requires_dist:
   - click>=8,<9
   - pandas>=2,<4
