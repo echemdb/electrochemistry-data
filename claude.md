@@ -295,6 +295,11 @@ Rules:
   `**Performance:**`. Drop sections that do not apply.
 - **Start each bullet with its section's verb** - `Added ...`, `Changed ...`,
   `Fixed ...`, `Removed ...`, `Deprecated ...`, `Improved ...` (Performance).
+- **Bulk changes: say what, not where** - for schema migrations, bulk fixes or
+  reformatting, name the rule or the changed field; never list the affected entries.
+- **Schema version updates** - follow "Updating the metadata-schema version" in
+  `CONTRIBUTING.md` (bump, migrate, fixtures, rebuild, validate). The news entry is
+  one line: `Changed metadata-schema version from X to Y.`
 - **Run `pixi run check-news`** - enforces these rules (also in CI, which additionally
   requires every PR to add or change a news file). Full rules: "News entry" in
   `CONTRIBUTING.md`.

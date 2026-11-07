@@ -303,8 +303,36 @@ The metadata itself is defined in
 [metadata-schema](https://github.com/echemdb/metadata-schema). Its validation tools
 (`mdstools`) are a dependency of this repository; keep the `mdstools` tag in
 `pyproject.toml` in sync with `SCHEMA_VERSION` in
-[`echemdb_ecdata/validate.py`](echemdb_ecdata/validate.py). After a breaking schema
-release, `pixi run -e dev migrate-metadata` upgrades the YAML files in `literature/`.
+[`echemdb_ecdata/validate.py`](echemdb_ecdata/validate.py).
+
+### Updating the metadata-schema version
+
+A scheduled workflow opens a pull request when a new metadata-schema release appears,
+but it only changes the two version strings. To complete the update:
+
+1. Read the release notes in the
+   [ChangeLog of metadata-schema](https://github.com/echemdb/metadata-schema/blob/main/ChangeLog)
+   for every version since the current one, and note the breaking changes (usually in
+   minor releases, `0.x.0` → `0.y.0`).
+2. Set `SCHEMA_VERSION` in `echemdb_ecdata/validate.py` and the `mdstools` tag in
+   `pyproject.toml` to the new version, then run `pixi lock`.
+3. Run `pixi run -e dev migrate-metadata-dry-run`, check that the listed files and
+   steps match the breaking changes, then `pixi run -e dev migrate-metadata`. Only
+   files with structural changes are rewritten; look at a few diffs.
+4. Set `echemdbSchemaVersion` in `test/generated/source_data/*.json.expected` to the new
+   version.
+5. Rebuild and check everything: `pixi run -e dev convert-force`,
+   `pixi run -e dev validate-input`, `pixi run -e dev validate-generated`,
+   `pixi run -e dev test`. The validation output names the schema version it checked
+   against.
+6. Write a one-line news entry under `**Changed:**`, e.g.
+   `* Changed metadata-schema version from 0.8.3 to 0.9.0.` The breaking changes are
+   documented in the release notes of metadata-schema, and the migrated entries in the
+   diff.
+
+If a breaking change cannot be migrated automatically, report it on
+[metadata-schema](https://github.com/echemdb/metadata-schema/issues) rather than
+editing the files by hand.
 
 ### Checks
 
@@ -345,6 +373,9 @@ Every pull request adds `doc/news/<branch-name>.rst`. These files are merged int
 - write each entry so that it is understandable on its own (entries are merged and
   reordered), name the affected entries with RST double backticks
   (``` ``markovic_1996_oxygen_6715`` ```) and reference issues as `(#123)`,
+- describe changes that touch many entries at once (schema migrations, bulk fixes,
+  reformatting) by **what** changed, not **where**: name the rule or the field that
+  changed and do not list the affected entries (the diff shows them),
 - save as UTF-8 without BOM. On Windows, do not create the file with PowerShell
   `>`, `Set-Content` or `Out-File`; use your editor.
 
