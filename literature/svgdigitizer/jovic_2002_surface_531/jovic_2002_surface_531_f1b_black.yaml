@@ -81,4 +81,4 @@ system:
           - Electrochemically polished in a phosphoric acid solution at constant voltage.
           - Thoroughly washed with pure water, cleaned in H2SO4 and washed again with pure water.
         url: http://dx.doi.org/10.2298/JSC0207531J
-echemdbSchemaVersion: 0.8.2
+echemdbSchemaVersion: 0.9.0

@@ -69,3 +69,4 @@ system:
           - flame annealing in a butane torch, while glowing red hot for at least 30 s
           - cooling in Ar/H2 (ca. 40% H2) for 2 min
           - protecting surface with a drop of Ar/H2 saturated ultrapure water
+echemdbSchemaVersion: 0.9.0

@@ -57,3 +57,4 @@ system:
         description:
           - Oriented by Laue diffraction, mechanically and chemically polished.
           - Annealed at 653 K for 48 h in ultrapure hydrogen (6 N) at normal pressure (1 atm).
+echemdbSchemaVersion: 0.9.0

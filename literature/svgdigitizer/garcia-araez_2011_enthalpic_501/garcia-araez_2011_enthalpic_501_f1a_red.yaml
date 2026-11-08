@@ -65,4 +65,4 @@ system:
       type: single crystal
       material: Pt
       crystallographicOrientation: '100'
-echemdbSchemaVersion: 0.8.2
+echemdbSchemaVersion: 0.9.0

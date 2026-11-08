@@ -49,3 +49,4 @@ system:
           - Sputtering at room temperature with 1 keV Ar ions, followed by five cycles of oxygen adsorption/desorption.
           - Flash annealed in UHV at 1400 °C.
         url: https://doi.org/10.1016/0039-6028(75)90409-4
+echemdbSchemaVersion: 0.9.0

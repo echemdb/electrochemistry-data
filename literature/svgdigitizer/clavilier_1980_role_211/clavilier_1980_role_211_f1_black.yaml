@@ -34,3 +34,4 @@ system:
       preparationProcedure:
         url: https://doi.org/10.1016/S0022-0728(79)80022-4
 
+echemdbSchemaVersion: 0.9.0

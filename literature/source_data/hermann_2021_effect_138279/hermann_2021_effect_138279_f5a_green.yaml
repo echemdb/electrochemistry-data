@@ -137,4 +137,4 @@ dataDescription:
       reference: MSE-sat
     - name: I
       unit: A
-echemdbSchemaVersion: 0.8.2
+echemdbSchemaVersion: 0.9.0

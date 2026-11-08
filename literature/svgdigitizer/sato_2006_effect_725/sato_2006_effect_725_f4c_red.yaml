@@ -69,4 +69,4 @@ experimental:
     temperature:
       value: 25
       unit: deg_C
-echemdbSchemaVersion: 0.8.2
+echemdbSchemaVersion: 0.9.0

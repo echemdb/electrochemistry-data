@@ -97,4 +97,4 @@ system:
           - Annealing the Pt(111) electrode in a H2/O2 flame. Cooling in Ar/H2 (2:1) gas atmosphere. Protecting the Pt(111) surface with droplet of high purity water.
   electrochemicalCell:
     type: glass cell
-echemdbSchemaVersion: 0.8.2
+echemdbSchemaVersion: 0.9.0
