@@ -336,6 +336,11 @@ but it only changes the two version strings. To complete the update:
    `* Changed metadata-schema version from 0.8.3 to 0.9.0.` The breaking changes are
    documented in the release notes of metadata-schema, and the migrated entries in the
    diff.
+7. After merging, update the open pull requests that add or change input YAML. GitHub
+   does not re-run their checks when `main` changes, so they only fail
+   `validate-schema-version-stamps` on their next push. Merge `main` into each of
+   them and run `pixi run -e dev migrate-metadata` on that branch, or ask the
+   contributor to do so in a comment.
 
 If a breaking change cannot be migrated automatically, report it on
 [metadata-schema](https://github.com/echemdb/metadata-schema/issues) rather than
