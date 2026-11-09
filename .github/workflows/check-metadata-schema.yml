@@ -78,7 +78,8 @@ jobs:
 
           Before merging:
           - Run \`pixi lock\` locally and push the updated \`pixi.lock\` (the mdstools pin changed).
-          - If the release contains breaking schema changes, run \`pixi run -e dev migrate-metadata\` and commit the migrated files.
-          - Review the [release notes](https://github.com/echemdb/metadata-schema/releases/tag/${LATEST}) and verify that the schema changes are compatible." \
+          - Run \`pixi run -e dev migrate-metadata\` and commit the migrated files (it also sets \`echemdbSchemaVersion\` in all input YAML files, which \`validate-input\` requires).
+          - Review the [release notes](https://github.com/echemdb/metadata-schema/releases/tag/${LATEST}) and verify that the schema changes are compatible.
+          - Follow the remaining steps in \"Updating the metadata-schema version\" in CONTRIBUTING.md." \
             --head "$BRANCH" \
             --base main

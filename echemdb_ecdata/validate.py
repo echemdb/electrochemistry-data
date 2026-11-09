@@ -82,7 +82,7 @@ logger = logging.getLogger("echemdb_ecdata")
 #: (e.g. ``0.8.0``) or a branch name (e.g. ``main``).
 #: Change this single value to update the version across all validation tasks.
 #: Keep the ``mdstools`` git tag in ``pyproject.toml`` in sync with this value.
-SCHEMA_VERSION = "0.8.3"
+SCHEMA_VERSION = "0.9.0"
 
 
 def _load_metadata_file(path):

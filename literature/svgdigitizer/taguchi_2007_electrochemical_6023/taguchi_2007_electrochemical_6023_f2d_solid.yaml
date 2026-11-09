@@ -69,3 +69,4 @@ system:
           - flame-annealing
           - cooling in a gas stream of H2/Ar
           - quenching with ultra-pure water saturated by with H2/Ar gas
+echemdbSchemaVersion: 0.9.0

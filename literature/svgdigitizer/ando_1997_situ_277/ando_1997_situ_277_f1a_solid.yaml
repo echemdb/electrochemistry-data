@@ -60,3 +60,4 @@ system:
       preparationProcedure:
         description:
           - Surfaces of crystals were polished and metallographically finished with 0.25 µm diamond paste, and sonicated in trichloroethylene, acetone and finally pure water.
+echemdbSchemaVersion: 0.9.0

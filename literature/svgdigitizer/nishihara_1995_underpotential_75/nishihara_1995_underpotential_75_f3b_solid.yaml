@@ -59,3 +59,4 @@ system:
         description:
           - Annealing in a hydrogen/air flame.
           - Quenched in hydrogen-bubbled water under an argon atmosphere.
+echemdbSchemaVersion: 0.9.0

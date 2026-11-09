@@ -50,3 +50,4 @@ system:
           value: 5
           unit: mm
 
+echemdbSchemaVersion: 0.9.0

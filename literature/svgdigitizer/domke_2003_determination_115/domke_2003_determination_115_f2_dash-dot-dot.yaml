@@ -54,3 +54,4 @@ system:
         description:
           - heating for 10 s in a gas-oxygen flame
           - cooled in a reductive atmosphere (H2+Ar)
+echemdbSchemaVersion: 0.9.0

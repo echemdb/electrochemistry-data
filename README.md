@@ -206,8 +206,9 @@ pixi run -e dev fix-identifiers-dry-run  # Preview only
 # Rename directories and files after a bib key change (manual)
 pixi run -e dev rename-identifiers OLD_NAME NEW_NAME
 
-# Migrate input YAML metadata across breaking metadata-schema releases
-# (applies the migration steps shipped with the metadata-schema repository)
+# Migrate input YAML metadata to a new metadata-schema release
+# (applies the migration steps shipped with the metadata-schema repository
+# and sets echemdbSchemaVersion in all input YAML files)
 pixi run -e dev migrate-metadata          # Apply changes
 pixi run -e dev migrate-metadata-dry-run  # Preview only
 ```

@@ -52,4 +52,4 @@ experimental:
     temperature:
       unit: K
       value: 298.15
-echemdbSchemaVersion: 0.8.2
+echemdbSchemaVersion: 0.9.0

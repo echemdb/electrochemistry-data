@@ -70,4 +70,4 @@ system:
           - cooled in H2/Ar
           - transfer with the surface protected by a droplet of ultrapure water
           - immersed under potential control
-echemdbSchemaVersion: 0.8.2
+echemdbSchemaVersion: 0.9.0

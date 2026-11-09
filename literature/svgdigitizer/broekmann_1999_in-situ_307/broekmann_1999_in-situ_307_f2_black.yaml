@@ -50,3 +50,4 @@ system:
           - Inductive annealed for 6h at 900 °C in 5N argon.
           - 15 min inductive annealing before each measurement.
           - details see https://doi.org/10.1016/j.electacta.2006.11.048.
+echemdbSchemaVersion: 0.9.0

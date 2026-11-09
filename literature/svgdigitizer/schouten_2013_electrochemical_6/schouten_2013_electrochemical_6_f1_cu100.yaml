@@ -72,5 +72,7 @@ system:
     components:
       - name: glass
         part: cell
-    cleaningProcedure: Boiled in ultra clean water.
-echemdbSchemaVersion: 0.8.2
+    preparationProcedure:
+      description:
+        - Boiled in ultra clean water.
+echemdbSchemaVersion: 0.9.0

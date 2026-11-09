@@ -50,3 +50,4 @@ system:
           - Electropolished in 60% ortho-phosphoric acid for 5 min at 1.80 V.
           - Subsequently annealed at 1000 K for 16 h in 6N hydrogen at normal pressure.
         url: https://doi.org/10.1016/S0022-0728(03)00115-3
+echemdbSchemaVersion: 0.9.0

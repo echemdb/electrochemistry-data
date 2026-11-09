@@ -186,7 +186,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/36/e1/a8933a72c45a87177fbde2696e0d0755c8c9062f8c077a961c6215fa27b1/fonttools-4.63.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/3a/83/4f5b250220e1a5acd31345a5ec1c95a7769725d0d8135276f399f44062f8/svg_path-7.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/58/3b/1cdec6772bdbaf7b25dab360c59f03cadf05492dd724c6540af905389b07/pandas-3.0.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl
@@ -207,6 +206,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c5/7b/bca5613a0c3b542420cf92bd5e5fb8ebd5435ce1011a091f66bb7693285e/humanize-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/c7/0d/67e5b4109ea4a837e80daa87c2c696711955e40449a97e8926672534def2/click-8.4.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e4/a0/aa1ee2240f29481a04a827c313333b4ecd8a14d6ac3e15d3f41a30574781/pymupdf-1.27.2.3-cp310-abi3-manylinux_2_28_x86_64.whl
@@ -376,7 +376,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/2c/19/04f9b178c2d8a15b076c8b5140708fa6ffc5601fb6f1e975537072df5b2a/mergedeep-1.3.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/3a/83/4f5b250220e1a5acd31345a5ec1c95a7769725d0d8135276f399f44062f8/svg_path-7.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/57/52/a94102ac99eb78e2fe9b826674f9ef9ee23327110ea6ab4776c1b4eb6209/matplotlib-3.11.0-cp314-cp314-macosx_10_15_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/70/a8/bf0811d859e13801279a2ae64f37a408027b282f2047bc0001c75dd356ad/chardet-7.4.3-cp314-cp314-macosx_10_15_x86_64.whl
@@ -403,6 +402,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c7/0d/67e5b4109ea4a837e80daa87c2c696711955e40449a97e8926672534def2/click-8.4.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/cd/58/7dfa0c761cb3b2964e2a84c4dc986c926a87de0cb9fb60d5b28ded3f2914/fonttools-4.63.0-cp314-cp314-macosx_10_15_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/09/ddbdfa7ee91fbabd6f63d7d744884cbdfe3e7ff9b8604749fb38bddf5c5d/pymupdf-1.27.2.3-cp310-abi3-macosx_10_9_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
@@ -576,7 +576,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/44/47/5fb10fe73f96b31253a41647c362ea9e0380920bddf16028414a051247fc/pymupdf-1.27.2.3-cp310-abi3-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/4f/01/1a8769c5aa58d239d2ab51ccf08c60e6ef9ab898edecf6fe4465fd03a340/astropy-7.2.1-cp311-abi3-win_amd64.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/7d/c2/57f54b03d0f22d4044b8afb9ca0e184f8b1afd57b4f735c2fa70883dc601/contourpy-1.3.3-cp314-cp314-win_amd64.whl
@@ -598,6 +597,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c7/0d/67e5b4109ea4a837e80daa87c2c696711955e40449a97e8926672534def2/click-8.4.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/cd/8b/601e6566b957ca50e28725cb6c355c59c2c8609751efbecd980db44e0349/pillow-12.2.0-cp314-cp314-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl
@@ -868,7 +868,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/websocket-client-1.9.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/zipp-4.1.0-pyhcf101f3_0.conda
       - pypi: ./
-      - pypi: git+https://github.com/echemdb/metadata-schema.git?tag=0.8.3#f48f583f83b1de9f5601d05dae5e5fcd1c25a3f0
+      - pypi: git+https://github.com/echemdb/metadata-schema.git?tag=0.9.0#3aed350705d8c1f4a1fd180dce9672dd31026456
       - pypi: https://files.pythonhosted.org/packages/00/cc/7fbd75d3362e939eb98bcf9bd22f3f7df8c237a85148899ed3d38e5614e5/json_flattener-0.1.9-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/04/5f/9ff93450ba96b09c7c2b3f81c94de31c89f92292f1380261bd7195bea4ea/contourpy-1.3.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/09/05/d129d016f5124adb882816bdaef44bb877e313ceb0a109abcf553f1ac90c/pyjsg-0.12.4-py3-none-any.whl
@@ -895,7 +895,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/40/ea/66c21d1f5fec82e6218a70b5672870f76878f41bf3b9570235b4e7223118/pyshex-0.9.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/44/bd/cb244695f67f77b0a36200ce1670fc42a6fe2770847e870daab99cc2b177/sphinx_click-6.2.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/58/3b/1cdec6772bdbaf7b25dab360c59f03cadf05492dd724c6540af905389b07/pandas-3.0.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/5e/1d/d8d5be9e72e518b42f544e196de9c07161b0933143c9d0e4e2e33de60d79/pyshexc-0.10.3.post1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5f/97/d8a785d2c7131c731c90cb0e65af9400081af4380bea4ec04868dc21aa92/rdflib_shim-1.0.3-py3-none-any.whl
@@ -930,6 +929,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/cb/51/3e7e021920cfe2f7d18b672642e13f7dc4f53545d530b52ee6533b6681ca/CFGraph-0.2.1.tar.gz
       - pypi: https://files.pythonhosted.org/packages/d0/d2/760527679057a7dad67f4e41f3e0c463b247f0bdbffc594e0add7c9077d6/rdflib_jsonld-0.6.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/1e/fb11174c9eaebcec27d36e9e994b90ffa168bc3226925900b9dbbf16c9da/pytest-logging-2015.11.4.tar.gz
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e4/a0/aa1ee2240f29481a04a827c313333b4ecd8a14d6ac3e15d3f41a30574781/pymupdf-1.27.2.3-cp310-abi3-manylinux_2_28_x86_64.whl
@@ -1191,7 +1191,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-64/zstandard-0.25.0-py314hd1e8ddb_1.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-64/zstd-1.5.7-h3eecb57_6.conda
       - pypi: ./
-      - pypi: git+https://github.com/echemdb/metadata-schema.git?tag=0.8.3#f48f583f83b1de9f5601d05dae5e5fcd1c25a3f0
+      - pypi: git+https://github.com/echemdb/metadata-schema.git?tag=0.9.0#3aed350705d8c1f4a1fd180dce9672dd31026456
       - pypi: https://files.pythonhosted.org/packages/00/cc/7fbd75d3362e939eb98bcf9bd22f3f7df8c237a85148899ed3d38e5614e5/json_flattener-0.1.9-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/09/05/d129d016f5124adb882816bdaef44bb877e313ceb0a109abcf553f1ac90c/pyjsg-0.12.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/0c/ec/e1db9922bceb168197a558a2b8c03a7963f1afe93517ddd3cf99f202f996/jsonref-1.1.0-py3-none-any.whl
@@ -1215,7 +1215,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/40/ea/66c21d1f5fec82e6218a70b5672870f76878f41bf3b9570235b4e7223118/pyshex-0.9.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/44/bd/cb244695f67f77b0a36200ce1670fc42a6fe2770847e870daab99cc2b177/sphinx_click-6.2.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/57/52/a94102ac99eb78e2fe9b826674f9ef9ee23327110ea6ab4776c1b4eb6209/matplotlib-3.11.0-cp314-cp314-macosx_10_15_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/5e/1d/d8d5be9e72e518b42f544e196de9c07161b0933143c9d0e4e2e33de60d79/pyshexc-0.10.3.post1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5f/97/d8a785d2c7131c731c90cb0e65af9400081af4380bea4ec04868dc21aa92/rdflib_shim-1.0.3-py3-none-any.whl
@@ -1254,6 +1253,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/cd/58/7dfa0c761cb3b2964e2a84c4dc986c926a87de0cb9fb60d5b28ded3f2914/fonttools-4.63.0-cp314-cp314-macosx_10_15_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/d0/d2/760527679057a7dad67f4e41f3e0c463b247f0bdbffc594e0add7c9077d6/rdflib_jsonld-0.6.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/db/7d/7f3d619e951c88ed75c6037b246ddcf2d322812ee8ea189be89511721d54/watchdog-6.0.0.tar.gz
       - pypi: https://files.pythonhosted.org/packages/dc/09/ddbdfa7ee91fbabd6f63d7d744884cbdfe3e7ff9b8604749fb38bddf5c5d/pymupdf-1.27.2.3-cp310-abi3-macosx_10_9_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/dc/1e/fb11174c9eaebcec27d36e9e994b90ffa168bc3226925900b9dbbf16c9da/pytest-logging-2015.11.4.tar.gz
@@ -1517,7 +1517,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/win-64/zstandard-0.25.0-py314hc5dbbe4_1.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/zstd-1.5.7-h534d264_6.conda
       - pypi: ./
-      - pypi: git+https://github.com/echemdb/metadata-schema.git?tag=0.8.3#f48f583f83b1de9f5601d05dae5e5fcd1c25a3f0
+      - pypi: git+https://github.com/echemdb/metadata-schema.git?tag=0.9.0#3aed350705d8c1f4a1fd180dce9672dd31026456
       - pypi: https://files.pythonhosted.org/packages/00/cc/7fbd75d3362e939eb98bcf9bd22f3f7df8c237a85148899ed3d38e5614e5/json_flattener-0.1.9-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/09/05/d129d016f5124adb882816bdaef44bb877e313ceb0a109abcf553f1ac90c/pyjsg-0.12.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/0c/ec/e1db9922bceb168197a558a2b8c03a7963f1afe93517ddd3cf99f202f996/jsonref-1.1.0-py3-none-any.whl
@@ -1545,7 +1545,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/49/ec/e1281156cdc7a66693838ad7a0865ad641c74abd337a957d668b575aaffb/wrapt-2.2.2-cp314-cp314-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/4f/01/1a8769c5aa58d239d2ab51ccf08c60e6ef9ab898edecf6fe4465fd03a340/astropy-7.2.1-cp311-abi3-win_amd64.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5e/1d/d8d5be9e72e518b42f544e196de9c07161b0933143c9d0e4e2e33de60d79/pyshexc-0.10.3.post1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5f/97/d8a785d2c7131c731c90cb0e65af9400081af4380bea4ec04868dc21aa92/rdflib_shim-1.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
@@ -1580,6 +1579,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/cd/8b/601e6566b957ca50e28725cb6c355c59c2c8609751efbecd980db44e0349/pillow-12.2.0-cp314-cp314-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/d0/d2/760527679057a7dad67f4e41f3e0c463b247f0bdbffc594e0add7c9077d6/rdflib_jsonld-0.6.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/db/d9/c495884c6e548fce18a8f40568ff120bc3a4b7b99813081c8ac0c936fa64/watchdog-6.0.0-py3-none-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/dc/1e/fb11174c9eaebcec27d36e9e994b90ffa168bc3226925900b9dbbf16c9da/pytest-logging-2015.11.4.tar.gz
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
@@ -1767,7 +1767,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/3a/83/4f5b250220e1a5acd31345a5ec1c95a7769725d0d8135276f399f44062f8/svg_path-7.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/a8/4dac1f8f8235e5d25b9955d02ff6f29396191d4e665d71122c3722ca83c5/pandas-2.3.3-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/82/3b/64d4899d73f91ba49a8c18a8ff3f0ea8f1c1d75481760df8c68ef5235bf5/rich-15.0.0-py3-none-any.whl
@@ -1787,6 +1786,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/ba/1e/acc4d70f88a0a277e4a1fa77ebb985ceabaf900430f875bf9338e11c9420/pydantic_core-2.46.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/c5/7b/bca5613a0c3b542420cf92bd5e5fb8ebd5435ce1011a091f66bb7693285e/humanize-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e4/a0/aa1ee2240f29481a04a827c313333b4ecd8a14d6ac3e15d3f41a30574781/pymupdf-1.27.2.3-cp310-abi3-manylinux_2_28_x86_64.whl
@@ -1968,7 +1968,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/3a/aa/d0b28e1c811cd4d5f5c2bfe2e022292bd255ae5744a3b9ac7d6c8f72dd75/pillow-12.2.0-cp310-cp310-macosx_10_10_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/3d/f7/f425a00df4fcc22b292c6895c6831c0c8ae1d9fac1e024d16f98a9ce8749/pandas-2.3.3-cp310-cp310-macosx_10_9_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/6a/4f/27f91eb9cdaa37835e52496dcad00fd89969ef5154795697987d031d0605/astropy-6.1.7-cp310-cp310-macosx_10_9_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/6b/1b/7f73766c119a1344eb69e31890ede7c5825ce03d69a9d29292d1bd1cfa1b/chardet-7.4.3-cp310-cp310-macosx_10_9_x86_64.whl
@@ -1989,6 +1988,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/b8/46/ad12b5c10eae602d7ef814b02afa08aacbf89da917fed5b071282b7eadc2/fonttools-4.63.0-cp310-cp310-macosx_10_9_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/c5/7b/bca5613a0c3b542420cf92bd5e5fb8ebd5435ce1011a091f66bb7693285e/humanize-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/09/ddbdfa7ee91fbabd6f63d7d744884cbdfe3e7ff9b8604749fb38bddf5c5d/pymupdf-1.27.2.3-cp310-abi3-macosx_10_9_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
@@ -2168,7 +2168,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/3a/83/4f5b250220e1a5acd31345a5ec1c95a7769725d0d8135276f399f44062f8/svg_path-7.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/44/47/5fb10fe73f96b31253a41647c362ea9e0380920bddf16028414a051247fc/pymupdf-1.27.2.3-cp310-abi3-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/54/ec/5162b8582f2c994721018d0c9ece9dc6ff769d298a8ac6b6a652c307e7df/contourpy-1.3.2-cp310-cp310-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/6e/e1/af92dc2132547e3998476a4b0ab19d15c50d8ec1d85e658fe6503e125fd1/astropy-6.1.7-cp310-cp310-win_amd64.whl
@@ -2190,6 +2189,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c5/7b/bca5613a0c3b542420cf92bd5e5fb8ebd5435ce1011a091f66bb7693285e/humanize-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d1/84/55bc4881973d3f79b479a5a2e2df61c8c9a04fcb986a213ac9c02cfb659b/scipy-1.15.3-cp310-cp310-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e5/4d/2c2f0069970b6907de8fb5b05c5c0193cc22f717df151d1c7aef1c738f58/fonttools-4.63.0-cp310-cp310-win_amd64.whl
@@ -2381,7 +2381,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/32/f1/bbecd2f867b97abebe0f9b53d750f862251b40337e061b36676ded3d920f/pandas-3.0.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/3a/83/4f5b250220e1a5acd31345a5ec1c95a7769725d0d8135276f399f44062f8/svg_path-7.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/53/f4/f0b4f9ba7ec14a7af8151f3ad71ecfe3561e6ba38cfab1db3681ba4ca112/matplotlib-3.11.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/5f/4b/6157f24ca425b89fe2eb7e7be642375711ab671135be21e6faa100f7448c/contourpy-1.3.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
@@ -2401,6 +2400,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c2/45/dfe920d041c48c02c4385e9e21408d632a1da61f1c119a3e3b5630b4fde9/astropy-7.2.1-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/c5/7b/bca5613a0c3b542420cf92bd5e5fb8ebd5435ce1011a091f66bb7693285e/humanize-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e4/a0/aa1ee2240f29481a04a827c313333b4ecd8a14d6ac3e15d3f41a30574781/pymupdf-1.27.2.3-cp310-abi3-manylinux_2_28_x86_64.whl
@@ -2580,7 +2580,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/42/16/b5c76b838fd9bf6ce84d3a53346b8874ec05c5f0040d75ef2c320100cd2a/pandas-3.0.3-cp311-cp311-macosx_10_9_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/49/50/965308c703f085f225db2886813b27e015b8b3438c350b22dd65b52c2a2c/fonttools-4.63.0-cp311-cp311-macosx_10_9_x86_64.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5c/fa/6d7708d2cfc1a832acb6aeb0cd16e801902df8a0f583bb3b4b527fde022e/pydantic_core-2.46.4-cp311-cp311-macosx_10_12_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/68/e1/748f5663efe6edcfc4e74b2b93edfb9b8b99b67f21a854c3ae416500a2d9/pillow-12.2.0-cp311-cp311-macosx_10_10_x86_64.whl
@@ -2601,6 +2600,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c5/7b/bca5613a0c3b542420cf92bd5e5fb8ebd5435ce1011a091f66bb7693285e/humanize-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ce/a2/78f662f1b18968531f67d3fcde1b7ea8496920bacd4f16ddb5b79d112e46/matplotlib-3.11.0-cp311-cp311-macosx_10_12_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/09/ddbdfa7ee91fbabd6f63d7d744884cbdfe3e7ff9b8604749fb38bddf5c5d/pymupdf-1.27.2.3-cp310-abi3-macosx_10_9_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/df/75/b4ce781849931fef6fd529afa6b63711d5a733065722d0c3e2724af9e40a/scipy-1.17.1-cp311-cp311-macosx_10_14_x86_64.whl
@@ -2780,7 +2780,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/44/47/5fb10fe73f96b31253a41647c362ea9e0380920bddf16028414a051247fc/pymupdf-1.27.2.3-cp310-abi3-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/4f/01/1a8769c5aa58d239d2ab51ccf08c60e6ef9ab898edecf6fe4465fd03a340/astropy-7.2.1-cp311-abi3-win_amd64.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5d/a6/e9b8f8a3e99602792b01fa7d0a731737615ab56d8bfd0b52935a0ef88b85/chardet-7.4.3-cp311-cp311-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/69/42/836b6f3cd7f3e5fa10a1f1a5420447c17966044c8fbf589cc0452d5502db/pillow-12.2.0-cp311-cp311-win_amd64.whl
@@ -2803,6 +2802,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c5/7b/bca5613a0c3b542420cf92bd5e5fb8ebd5435ce1011a091f66bb7693285e/humanize-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d0/9f/970fcbf381e82ec66fdf5da8ea76e2e9240f61a24011ce9fd1d42c37ac2d/matplotlib-3.11.0-cp311-cp311-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl
@@ -2991,7 +2991,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/3a/83/4f5b250220e1a5acd31345a5ec1c95a7769725d0d8135276f399f44062f8/svg_path-7.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/43/e3/fdc657359e919462369869f1c9f0e973f353f9a9ee295a39b1fea8ee1a77/pillow-12.2.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5f/97/2aab507d3d00ca626e8e57c1eac6a79e4e5fbcc63eb99733ff55d1717f65/pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/65/b6/09b01cdbc15224e2850365192d17b7bdebb8bdbd8780ed221fcdf0d9a515/pandas-3.0.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
@@ -3013,6 +3012,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c5/7b/bca5613a0c3b542420cf92bd5e5fb8ebd5435ce1011a091f66bb7693285e/humanize-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/cc/8f/ec6289987824b29529d0dfda0d74a07cec60e54b9c92f3c9da4c0ac732de/contourpy-1.3.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dd/aa/1b939f6c67ed68635bb538e6752d3dacc02f66535182e939a89581a44e9c/scipy-1.18.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
@@ -3194,7 +3194,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/3a/83/4f5b250220e1a5acd31345a5ec1c95a7769725d0d8135276f399f44062f8/svg_path-7.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/44/a0/c815bea63117fa63e4e1c01f8a1110d2112fa003f838e6467094ec2432ce/fonttools-4.63.0-cp312-cp312-macosx_10_13_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/58/be/7482c8a5ebebbc6470b3eb791812fff7d5e0216c2be3827b30b8bb6603ed/pillow-12.2.0-cp312-cp312-macosx_10_13_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/61/33/29de185079e6675c3f375546e30a559b7ddc75ce972f18d6e566cd9ea4eb/chardet-7.4.3-cp312-cp312-macosx_10_13_x86_64.whl
@@ -3216,6 +3215,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c5/7b/bca5613a0c3b542420cf92bd5e5fb8ebd5435ce1011a091f66bb7693285e/humanize-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ce/8c/af022f0af448d7747c5154288d46b5f2bc5f17366eaa0e23e9aa04d59f3b/pydantic_core-2.46.4-cp312-cp312-macosx_10_12_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/da/17/f5276b496c61477a6c4fc5e7401f4bfe1c2e5ef7c6cd67896f2ade3809cb/matplotlib-3.11.0-cp312-cp312-macosx_10_13_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/dc/09/ddbdfa7ee91fbabd6f63d7d744884cbdfe3e7ff9b8604749fb38bddf5c5d/pymupdf-1.27.2.3-cp310-abi3-macosx_10_9_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
@@ -3402,7 +3402,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/44/47/5fb10fe73f96b31253a41647c362ea9e0380920bddf16028414a051247fc/pymupdf-1.27.2.3-cp310-abi3-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/4f/01/1a8769c5aa58d239d2ab51ccf08c60e6ef9ab898edecf6fe4465fd03a340/astropy-7.2.1-cp311-abi3-win_amd64.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5d/7b/25a221d2c761c6a8ae21bfa3874988ff2583e19cf8a27bf2fee358df7942/pillow-12.2.0-cp312-cp312-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl
@@ -3422,6 +3421,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/b9/c5/fc1b368f303087d20e8c9bf3d6ceb186263cfac0ade735cd938538bea839/pandas-3.0.3-cp312-cp312-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/c5/7b/bca5613a0c3b542420cf92bd5e5fb8ebd5435ce1011a091f66bb7693285e/humanize-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e5/2f/a58a4443a4d052a4ea77557478336aefc26c7981f6408d37adba763aa758/matplotlib-3.11.0-cp312-cp312-win_amd64.whl
@@ -3610,7 +3610,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/3a/83/4f5b250220e1a5acd31345a5ec1c95a7769725d0d8135276f399f44062f8/svg_path-7.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/4b/32/e0f13a1c5b0f8572d0ec6ae2f6c677b7991fafd95da523159c19eff0696a/contourpy-1.3.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/67/ee/21d4e8536afd1a328f01b359b4d3997b291ffd35a237c877b331c1c3b71c/pillow-12.2.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl
@@ -3630,6 +3629,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c5/7b/bca5613a0c3b542420cf92bd5e5fb8ebd5435ce1011a091f66bb7693285e/humanize-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ce/36/0b805d8c485f872f65a509cbe3b58a5d0d17bee855333b54a150c79d3061/fonttools-4.63.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e4/a0/aa1ee2240f29481a04a827c313333b4ecd8a14d6ac3e15d3f41a30574781/pymupdf-1.27.2.3-cp310-abi3-manylinux_2_28_x86_64.whl
@@ -3811,7 +3811,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/3a/83/4f5b250220e1a5acd31345a5ec1c95a7769725d0d8135276f399f44062f8/svg_path-7.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/51/a2/5d30b469c5267a17b39dec53208222f76a8d351dfac4af661888c5aee77d/pydantic_core-2.46.4-cp313-cp313-macosx_10_12_x86_64.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/55/41/aa47f156b061d14c98b906f76c428507397708ec63ff94f410ae1752b426/matplotlib-3.11.0-cp313-cp313-macosx_10_13_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/68/35/0167aad910bbdb9599272bd96d01a9ec6852f36b9455cf2ca67bd4cc2d23/contourpy-1.3.3-cp313-cp313-macosx_10_13_x86_64.whl
@@ -3833,6 +3832,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c5/90/62d8302883c44308c477e222c3daf7c813a34c8e96985882fbd53d964352/pandas-3.0.3-cp313-cp313-macosx_10_13_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/ce/48/adbb40df306f587054a348831220812b9b1d787aff714cfbc8556e38fccd/kiwisolver-1.5.0-cp313-cp313-macosx_10_13_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/09/ddbdfa7ee91fbabd6f63d7d744884cbdfe3e7ff9b8604749fb38bddf5c5d/pymupdf-1.27.2.3-cp310-abi3-macosx_10_9_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
@@ -4020,7 +4020,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/44/47/5fb10fe73f96b31253a41647c362ea9e0380920bddf16028414a051247fc/pymupdf-1.27.2.3-cp310-abi3-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/4f/01/1a8769c5aa58d239d2ab51ccf08c60e6ef9ab898edecf6fe4465fd03a340/astropy-7.2.1-cp311-abi3-win_amd64.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/7e/e8/cff247591966f2d22ec8c003cd7587e27b7ba7b81ab2fb888e3ab75dc285/pydantic_core-2.46.4-cp313-cp313-win_amd64.whl
@@ -4039,6 +4038,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/be/8a/be60e3bbcf513cc5a50f4a3e88e1dcecebb79c1ad607a7222877becaa101/kiwisolver-1.5.0-cp313-cp313-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/c5/7b/bca5613a0c3b542420cf92bd5e5fb8ebd5435ce1011a091f66bb7693285e/humanize-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl
@@ -4226,7 +4226,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/36/e1/a8933a72c45a87177fbde2696e0d0755c8c9062f8c077a961c6215fa27b1/fonttools-4.63.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/3a/83/4f5b250220e1a5acd31345a5ec1c95a7769725d0d8135276f399f44062f8/svg_path-7.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/58/3b/1cdec6772bdbaf7b25dab360c59f03cadf05492dd724c6540af905389b07/pandas-3.0.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl
@@ -4246,6 +4245,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c2/45/dfe920d041c48c02c4385e9e21408d632a1da61f1c119a3e3b5630b4fde9/astropy-7.2.1-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/c5/7b/bca5613a0c3b542420cf92bd5e5fb8ebd5435ce1011a091f66bb7693285e/humanize-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e4/a0/aa1ee2240f29481a04a827c313333b4ecd8a14d6ac3e15d3f41a30574781/pymupdf-1.27.2.3-cp310-abi3-manylinux_2_28_x86_64.whl
@@ -4424,7 +4424,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/2c/19/04f9b178c2d8a15b076c8b5140708fa6ffc5601fb6f1e975537072df5b2a/mergedeep-1.3.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/3a/83/4f5b250220e1a5acd31345a5ec1c95a7769725d0d8135276f399f44062f8/svg_path-7.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/57/52/a94102ac99eb78e2fe9b826674f9ef9ee23327110ea6ab4776c1b4eb6209/matplotlib-3.11.0-cp314-cp314-macosx_10_15_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/70/a8/bf0811d859e13801279a2ae64f37a408027b282f2047bc0001c75dd356ad/chardet-7.4.3-cp314-cp314-macosx_10_15_x86_64.whl
@@ -4450,6 +4449,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c5/7b/bca5613a0c3b542420cf92bd5e5fb8ebd5435ce1011a091f66bb7693285e/humanize-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/cd/58/7dfa0c761cb3b2964e2a84c4dc986c926a87de0cb9fb60d5b28ded3f2914/fonttools-4.63.0-cp314-cp314-macosx_10_15_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/09/ddbdfa7ee91fbabd6f63d7d744884cbdfe3e7ff9b8604749fb38bddf5c5d/pymupdf-1.27.2.3-cp310-abi3-macosx_10_9_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
@@ -4632,7 +4632,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/44/47/5fb10fe73f96b31253a41647c362ea9e0380920bddf16028414a051247fc/pymupdf-1.27.2.3-cp310-abi3-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/4f/01/1a8769c5aa58d239d2ab51ccf08c60e6ef9ab898edecf6fe4465fd03a340/astropy-7.2.1-cp311-abi3-win_amd64.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/7d/c2/57f54b03d0f22d4044b8afb9ca0e184f8b1afd57b4f735c2fa70883dc601/contourpy-1.3.3-cp314-cp314-win_amd64.whl
@@ -4653,6 +4652,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c5/7b/bca5613a0c3b542420cf92bd5e5fb8ebd5435ce1011a091f66bb7693285e/humanize-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/cd/8b/601e6566b957ca50e28725cb6c355c59c2c8609751efbecd980db44e0349/pillow-12.2.0-cp314-cp314-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl
@@ -4884,7 +4884,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/36/e1/a8933a72c45a87177fbde2696e0d0755c8c9062f8c077a961c6215fa27b1/fonttools-4.63.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/3a/83/4f5b250220e1a5acd31345a5ec1c95a7769725d0d8135276f399f44062f8/svg_path-7.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/58/3b/1cdec6772bdbaf7b25dab360c59f03cadf05492dd724c6540af905389b07/pandas-3.0.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl
@@ -4905,6 +4904,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c5/7b/bca5613a0c3b542420cf92bd5e5fb8ebd5435ce1011a091f66bb7693285e/humanize-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/c7/0d/67e5b4109ea4a837e80daa87c2c696711955e40449a97e8926672534def2/click-8.4.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e4/a0/aa1ee2240f29481a04a827c313333b4ecd8a14d6ac3e15d3f41a30574781/pymupdf-1.27.2.3-cp310-abi3-manylinux_2_28_x86_64.whl
@@ -5104,7 +5104,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/2c/19/04f9b178c2d8a15b076c8b5140708fa6ffc5601fb6f1e975537072df5b2a/mergedeep-1.3.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/3a/83/4f5b250220e1a5acd31345a5ec1c95a7769725d0d8135276f399f44062f8/svg_path-7.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/57/52/a94102ac99eb78e2fe9b826674f9ef9ee23327110ea6ab4776c1b4eb6209/matplotlib-3.11.0-cp314-cp314-macosx_10_15_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/70/a8/bf0811d859e13801279a2ae64f37a408027b282f2047bc0001c75dd356ad/chardet-7.4.3-cp314-cp314-macosx_10_15_x86_64.whl
@@ -5131,6 +5130,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c7/0d/67e5b4109ea4a837e80daa87c2c696711955e40449a97e8926672534def2/click-8.4.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/cd/58/7dfa0c761cb3b2964e2a84c4dc986c926a87de0cb9fb60d5b28ded3f2914/fonttools-4.63.0-cp314-cp314-macosx_10_15_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/09/ddbdfa7ee91fbabd6f63d7d744884cbdfe3e7ff9b8604749fb38bddf5c5d/pymupdf-1.27.2.3-cp310-abi3-macosx_10_9_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
@@ -5340,7 +5340,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/44/47/5fb10fe73f96b31253a41647c362ea9e0380920bddf16028414a051247fc/pymupdf-1.27.2.3-cp310-abi3-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/48/ca/36339329c4604adbcc99c899b7eb1ce1a555c499b6a6860757dc9bfed36d/narwhals-2.22.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/4f/01/1a8769c5aa58d239d2ab51ccf08c60e6ef9ab898edecf6fe4465fd03a340/astropy-7.2.1-cp311-abi3-win_amd64.whl
-      - pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/61/30/040c8afebe44b44d8ecef4a1f6ee947cbddba7eaf7527f18653cfff3f073/petl-1.7.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/7d/c2/57f54b03d0f22d4044b8afb9ca0e184f8b1afd57b4f735c2fa70883dc601/contourpy-1.3.3-cp314-cp314-win_amd64.whl
@@ -5362,6 +5361,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c7/0d/67e5b4109ea4a837e80daa87c2c696711955e40449a97e8926672534def2/click-8.4.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/cd/8b/601e6566b957ca50e28725cb6c355c59c2c8609751efbecd980db44e0349/pillow-12.2.0-cp314-cp314-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/d1/a4/9bb9ec6ee97fa2a543fd8dd61ae6ba3dee0fc6dec1b55210c2641cef0448/unitpackage-0.13.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl
@@ -5522,7 +5522,7 @@ packages:
   - zstd >=1.5.7,<1.6.0a0
   license: BSD-3-Clause AND MIT AND EPL-2.0
   purls:
-  - pkg:pypi/backports-zstd?source=compressed-mapping
+  - pkg:pypi/backports-zstd?source=hash-mapping
   run_exports: {}
   size: 239892
   timestamp: 1781450817988
@@ -5537,7 +5537,7 @@ packages:
   - zstd >=1.5.7,<1.6.0a0
   license: BSD-3-Clause AND MIT AND EPL-2.0
   purls:
-  - pkg:pypi/backports-zstd?source=compressed-mapping
+  - pkg:pypi/backports-zstd?source=hash-mapping
   run_exports: {}
   size: 242845
   timestamp: 1781450812380
@@ -5975,7 +5975,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/greenlet?source=compressed-mapping
+  - pkg:pypi/greenlet?source=hash-mapping
   run_exports: {}
   size: 267632
   timestamp: 1781762129332
@@ -6788,7 +6788,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/nh3?source=compressed-mapping
+  - pkg:pypi/nh3?source=hash-mapping
   run_exports: {}
   size: 672346
   timestamp: 1782129862714
@@ -7572,7 +7572,7 @@ packages:
   license: Apache-2.0
   license_family: Apache
   purls:
-  - pkg:pypi/tornado?source=compressed-mapping
+  - pkg:pypi/tornado?source=hash-mapping
   run_exports: {}
   size: 864705
   timestamp: 1781006801632
@@ -7602,7 +7602,7 @@ packages:
   license: Apache-2.0
   license_family: Apache
   purls:
-  - pkg:pypi/tornado?source=compressed-mapping
+  - pkg:pypi/tornado?source=hash-mapping
   run_exports: {}
   size: 918368
   timestamp: 1781006801436
@@ -8064,7 +8064,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/beautifulsoup4?source=compressed-mapping
+  - pkg:pypi/beautifulsoup4?source=hash-mapping
   run_exports: {}
   size: 92704
   timestamp: 1780853175566
@@ -8175,7 +8175,7 @@ packages:
   - python >=3.10
   license: ISC
   purls:
-  - pkg:pypi/certifi?source=compressed-mapping
+  - pkg:pypi/certifi?source=hash-mapping
   run_exports: {}
   size: 133877
   timestamp: 1781719949728
@@ -8202,7 +8202,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/click?source=compressed-mapping
+  - pkg:pypi/click?source=hash-mapping
   run_exports: {}
   size: 106227
   timestamp: 1783085395110
@@ -8216,7 +8216,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/click?source=compressed-mapping
+  - pkg:pypi/click?source=hash-mapping
   run_exports: {}
   size: 107155
   timestamp: 1783085363526
@@ -8400,7 +8400,7 @@ packages:
   license: BSD-2-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/decorator?source=compressed-mapping
+  - pkg:pypi/decorator?source=hash-mapping
   run_exports: {}
   size: 16102
   timestamp: 1779115228886
@@ -8530,7 +8530,7 @@ packages:
   - python >=3.10
   license: Unlicense
   purls:
-  - pkg:pypi/filelock?source=compressed-mapping
+  - pkg:pypi/filelock?source=hash-mapping
   run_exports: {}
   size: 36989
   timestamp: 1781381078337
@@ -8686,7 +8686,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/idna?source=compressed-mapping
+  - pkg:pypi/idna?source=hash-mapping
   run_exports: {}
   size: 163869
   timestamp: 1781620148226
@@ -8712,7 +8712,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/importlib-metadata?source=compressed-mapping
+  - pkg:pypi/importlib-metadata?source=hash-mapping
   run_exports: {}
   size: 34766
   timestamp: 1779714582554
@@ -9055,7 +9055,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/json5?source=compressed-mapping
+  - pkg:pypi/json5?source=hash-mapping
   run_exports: {}
   size: 39373
   timestamp: 1781926894833
@@ -9690,7 +9690,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/nbclient?source=compressed-mapping
+  - pkg:pypi/nbclient?source=hash-mapping
   run_exports: {}
   size: 29138
   timestamp: 1780661039538
@@ -9873,7 +9873,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/pip?source=compressed-mapping
+  - pkg:pypi/pip?source=hash-mapping
   run_exports: {}
   size: 1202377
   timestamp: 1780262809860
@@ -9887,7 +9887,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/pip?source=compressed-mapping
+  - pkg:pypi/pip?source=hash-mapping
   run_exports: {}
   size: 1203173
   timestamp: 1780262795392
@@ -9918,7 +9918,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/platformdirs?source=compressed-mapping
+  - pkg:pypi/platformdirs?source=hash-mapping
   run_exports: {}
   size: 26308
   timestamp: 1779972894916
@@ -10016,7 +10016,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/pycparser?source=compressed-mapping
+  - pkg:pypi/pycparser?source=hash-mapping
   run_exports: {}
   size: 55886
   timestamp: 1779293633166
@@ -10186,7 +10186,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/pytest?source=compressed-mapping
+  - pkg:pypi/pytest?source=hash-mapping
   run_exports: {}
   size: 306724
   timestamp: 1782127176429
@@ -10461,7 +10461,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/requests?source=compressed-mapping
+  - pkg:pypi/requests?source=hash-mapping
   run_exports: {}
   size: 68709
   timestamp: 1778851103479
@@ -10739,7 +10739,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/soupsieve?source=compressed-mapping
+  - pkg:pypi/soupsieve?source=hash-mapping
   run_exports: {}
   size: 38802
   timestamp: 1779635534390
@@ -10885,7 +10885,7 @@ packages:
   license: BSD-2-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/sphinxcontrib-serializinghtml?source=compressed-mapping
+  - pkg:pypi/sphinxcontrib-serializinghtml?source=hash-mapping
   run_exports: {}
   size: 30640
   timestamp: 1781260357443
@@ -11011,7 +11011,7 @@ packages:
   - ipywidgets >=6.0
   license: MPL-2.0 and MIT
   purls:
-  - pkg:pypi/tqdm?source=compressed-mapping
+  - pkg:pypi/tqdm?source=hash-mapping
   run_exports: {}
   size: 94965
   timestamp: 1781741268338
@@ -11028,7 +11028,7 @@ packages:
   - ipywidgets >=6.0
   license: MPL-2.0 and MIT
   purls:
-  - pkg:pypi/tqdm?source=compressed-mapping
+  - pkg:pypi/tqdm?source=hash-mapping
   run_exports: {}
   size: 94630
   timestamp: 1781741323148
@@ -11041,7 +11041,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/traitlets?source=compressed-mapping
+  - pkg:pypi/traitlets?source=hash-mapping
   run_exports: {}
   size: 115158
   timestamp: 1780507822178
@@ -11203,7 +11203,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/wcwidth?source=compressed-mapping
+  - pkg:pypi/wcwidth?source=hash-mapping
   run_exports: {}
   size: 133769
   timestamp: 1780932915297
@@ -11277,7 +11277,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/zipp?source=compressed-mapping
+  - pkg:pypi/zipp?source=hash-mapping
   run_exports: {}
   size: 24190
   timestamp: 1779159948016
@@ -13553,7 +13553,7 @@ packages:
   - zstd >=1.5.7,<1.6.0a0
   license: BSD-3-Clause AND MIT AND EPL-2.0
   purls:
-  - pkg:pypi/backports-zstd?source=compressed-mapping
+  - pkg:pypi/backports-zstd?source=hash-mapping
   run_exports: {}
   size: 238542
   timestamp: 1781450836106
@@ -13569,7 +13569,7 @@ packages:
   - python_abi 3.13.* *_cp313
   license: BSD-3-Clause AND MIT AND EPL-2.0
   purls:
-  - pkg:pypi/backports-zstd?source=compressed-mapping
+  - pkg:pypi/backports-zstd?source=hash-mapping
   run_exports: {}
   size: 241936
   timestamp: 1781450845361
@@ -15501,7 +15501,7 @@ packages:
   license: Apache-2.0
   license_family: Apache
   purls:
-  - pkg:pypi/tornado?source=compressed-mapping
+  - pkg:pypi/tornado?source=hash-mapping
   run_exports: {}
   size: 885527
   timestamp: 1781006887264
@@ -15517,7 +15517,7 @@ packages:
   license: Apache-2.0
   license_family: Apache
   purls:
-  - pkg:pypi/tornado?source=compressed-mapping
+  - pkg:pypi/tornado?source=hash-mapping
   run_exports: {}
   size: 865801
   timestamp: 1781006895319
@@ -15533,7 +15533,7 @@ packages:
   license: Apache-2.0
   license_family: Apache
   purls:
-  - pkg:pypi/tornado?source=compressed-mapping
+  - pkg:pypi/tornado?source=hash-mapping
   run_exports: {}
   size: 888693
   timestamp: 1781006912014
@@ -15726,12 +15726,12 @@ packages:
   name: echemdb-ecdata
   requires_dist:
   - pydantic>=2.12.5,<3
-  - svgdigitizer>=0.14.5,<0.15
+  - svgdigitizer>=0.15.0,<0.16
   - unitpackage>=0.13.1,<0.14
   requires_python: '>=3.10'
-- pypi: git+https://github.com/echemdb/metadata-schema.git?tag=0.8.3#f48f583f83b1de9f5601d05dae5e5fcd1c25a3f0
+- pypi: git+https://github.com/echemdb/metadata-schema.git?tag=0.9.0#3aed350705d8c1f4a1fd180dce9672dd31026456
   name: mdstools
-  version: 0.8.3
+  version: 0.9.0
   requires_dist:
   - click>=8,<9
   - pandas>=2,<4
@@ -17569,28 +17569,6 @@ packages:
   requires_dist:
   - typing-extensions>=4.14.1
   requires_python: '>=3.9'
-- pypi: https://files.pythonhosted.org/packages/53/b8/7ec68b8d1e1598ea236b870e7d7a86502742c04ca10cc3483a6f3bf297e3/svgdigitizer-0.14.5-py3-none-any.whl
-  name: svgdigitizer
-  version: 0.14.5
-  sha256: 0a3455e9ef4e1da6c3cde2dcc5776e0bbeeee0ccc35106ff9cc483d3b7bf0bd4
-  requires_dist:
-  - astropy>=5,<9
-  - click>=8,<9
-  - frictionless>=5.8.3,<6
-  - latexcodec>=2.0.1
-  - matplotlib>=3.5,<4
-  - mergedeep>=1.3.4,<2
-  - pandas>=1.3,<4
-  - pillow>=9,<13
-  - pybtex>=0.25,<0.27
-  - pymupdf>=1.27.1,<2
-  - pyyaml>=6,<7
-  - requests>2,<3
-  - scipy>=1.7,<2
-  - svg-path>=4.1,<8
-  - svgpathtools>=1.4,<2
-  - svgwrite>=1.4,<2
-  requires_python: '>=3.10'
 - pypi: https://files.pythonhosted.org/packages/53/f4/f0b4f9ba7ec14a7af8151f3ad71ecfe3561e6ba38cfab1db3681ba4ca112/matplotlib-3.11.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
   name: matplotlib
   version: 3.11.0
@@ -20347,6 +20325,28 @@ packages:
   - pandas>=1.3,<4
   - plotly>=5,<7
   - pybtex>=0.25,<0.26
+  requires_python: '>=3.10'
+- pypi: https://files.pythonhosted.org/packages/d8/54/e848ae25eac266c3c9f209bc6af53b53ce0c383f225ab860f22626ec7723/svgdigitizer-0.15.0-py3-none-any.whl
+  name: svgdigitizer
+  version: 0.15.0
+  sha256: 37757eceac8a08d1e1fbc956c4484b15dbad3cfc65b6397693f390f28f60e2e8
+  requires_dist:
+  - astropy>=5,<9
+  - click>=8,<9
+  - frictionless>=5.8.3,<6
+  - latexcodec>=2.0.1
+  - matplotlib>=3.5,<4
+  - mergedeep>=1.3.4,<2
+  - pandas>=1.3,<4
+  - pillow>=9,<13
+  - pybtex>=0.25,<0.27
+  - pymupdf>=1.27.1,<2
+  - pyyaml>=6,<7
+  - requests>2,<3
+  - scipy>=1.7,<2
+  - svg-path>=4.1,<8
+  - svgpathtools>=1.4,<2
+  - svgwrite>=1.4,<2
   requires_python: '>=3.10'
 - pypi: https://files.pythonhosted.org/packages/da/17/f5276b496c61477a6c4fc5e7401f4bfe1c2e5ef7c6cd67896f2ade3809cb/matplotlib-3.11.0-cp312-cp312-macosx_10_13_x86_64.whl
   name: matplotlib
