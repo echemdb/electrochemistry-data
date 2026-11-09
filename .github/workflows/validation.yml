@@ -9,13 +9,8 @@ on:
       - opened
       - synchronize
       - reopened
-    # Run on any change except pure data or documentation PRs (those are
-    # covered by build.yml / quick-data-check.yml).
-    paths-ignore:
-      - "literature/**"
-      - "data/**"
-      - "doc/**"
-      - "**/*.md"
+    # No path filter: validating all input files is cheap, so it runs on every
+    # PR. Only the data generation (build.yml) is expensive.
 
 jobs:
   verify-file-schemas:

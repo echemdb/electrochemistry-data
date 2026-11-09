@@ -9,7 +9,7 @@ on:
       - synchronize
       - reopened
     # Run on any change except pure data or documentation PRs (those are
-    # covered by build.yml / quick-data-check.yml).
+    # covered by build.yml / validation.yml).
     paths-ignore:
       - "literature/**"
       - "data/**"

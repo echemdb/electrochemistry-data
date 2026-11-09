@@ -165,6 +165,7 @@ pixi run -e dev validate-generated-identifiers    # Generated data identifiers
 pixi run -e dev validate-bib-keys  # Check bib keys match expected identifiers
 pixi run -e dev validate-bib-utf8  # Check for LaTeX accent encodings
 pixi run -e dev validate-bib-dois  # Check bib DOIs match source.url of the YAMLs
+pixi run -e dev validate-citation-keys  # Check every YAML citationKey exists in the bib
 
 # Every input YAML must end with echemdbSchemaVersion == SCHEMA_VERSION
 pixi run -e dev validate-schema-version-stamps
