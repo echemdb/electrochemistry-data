@@ -9,8 +9,6 @@ on:
       - opened
       - synchronize
       - reopened
-    # No path filter: validating all input files is cheap, so it runs on every
-    # PR. Only the data generation (build.yml) is expensive.
 
 jobs:
   verify-file-schemas:
