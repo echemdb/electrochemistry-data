@@ -9,10 +9,6 @@ on:
       - opened
       - synchronize
       - reopened
-    paths:
-      - "echemdb_ecdata/**"
-      - "pyproject.toml"
-      - ".github/workflows/validation.yml"
 
 jobs:
   verify-file-schemas:

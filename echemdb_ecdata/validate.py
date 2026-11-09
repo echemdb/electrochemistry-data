@@ -930,7 +930,8 @@ def validate_new_input(base_ref="origin/main"):
 
     """
     result = subprocess.run(
-        ["git", "diff", "--name-only", "--diff-filter=AM", f"{base_ref}...HEAD"],
+        # R: renamed entries (e.g., after fix-identifiers) are listed by their new path.
+        ["git", "diff", "--name-only", "--diff-filter=AMR", f"{base_ref}...HEAD"],
         capture_output=True,
         text=True,
         check=True,
@@ -948,9 +949,10 @@ def validate_new_input(base_ref="origin/main"):
     svg_dirs = _changed_dirs("literature/svgdigitizer/")
     src_dirs = _changed_dirs("literature/source_data/")
 
+    # Without changed entries (e.g., a bibliography-only change) the
+    # cross-cutting checks below still run.
     if not svg_dirs and not src_dirs:
         print("No changed literature entries found.")
-        return
 
     for data_dir in svg_dirs:
         print(f"\nValidating {data_dir} ...")
