@@ -4,6 +4,66 @@ electrochemistry-data Change Log
 
 .. current developments
 
+v0.10.0
+====================
+
+**Added:**
+
+* Added DOIs to all entries in ``literature/bibliography/bibliography.bib`` that have one, taken from ``source.url`` of the corresponding YAML files, so that the ``bibdata`` shipped with each datapackage includes a persistent identifier (#179).
+* Added ``pixi run -e dev validate-bib-dois`` (part of ``validate-input`` and ``validate-new-input``), which checks that the ``doi`` of each bibliography entry is a bare DOI and agrees with ``source.url`` of every entry citing it.
+* Added ``validate-citation-keys`` to ``validate-input``, checking that every
+  ``citationKey`` resolves to a bibliography entry.
+* Added ``CONTRIBUTING.md`` that distinguishes data contributions (adding, checking and correcting entries, no programming required) from technical contributions (tooling, CI, review assistants), with a step-by-step guide for adding digitized figures and source data, the expected level of detail of the metadata, rules and standard phrases for curator comments, local checks, the review and release process, and how to report errors in existing entries. (#180)
+* Added issue templates for errors in existing entries and for questions about data submissions.
+* Added the ``check-news`` pixi task and a CI workflow that checks that every pull request adds a well-formed news entry.
+* Added the working electrode area reported in the publication to ``atkin_2011_situ_6849``, ``atkin_2014_structure_44``, ``borisenko_2006_situ_6250``, ``borisenko_2012_situ_1736``, ``gasparotto_2009_situ_11140`` (``0.3 cm2``) and ``jovic_1999_cyclic_247`` (``0.316 cm2``). Areas defined by an O-ring are marked with ``effectiveElectrodeSurfaceArea`` in the quantity comment.
+* Added the working electrode area of ``alves_2011_electrochemistry_6010`` (``0.283 cm2``), calculated from the 6 mm O-ring of the flow cell.
+* Added electrode diameters reported in the publications to ``abe_2019_electro-oxidation_315``, ``abou_2003_electrosorption_211``, ``clavilier_1980_preparation_205``, ``ganassin_2015_non-covalent_8349``, ``meng_2012_hydrogen_5222``, ``wandlowski_1996_structural_10277`` and ``wang_1996_ordered_6672``.
+* Added comments on the origin of the electrode area or diameter to ``friedl_2017_interface_216``, ``hermann_2021_effect_138279``, ``schonig_2023_entropic_5948`` and ``tiwari_2020_fingerprint_1450``.
+* Added a checklist for updating the metadata-schema version to ``CONTRIBUTING.md``, and the rule that news entries for bulk changes describe what changed instead of listing the affected entries.
+* Added a check to ``validate-input`` that every input YAML declares ``echemdbSchemaVersion`` equal to the current schema version.
+
+**Changed:**
+
+* Changed the ``doi`` of ``sato_2006_effect_725`` from a URL to a bare DOI and removed the redundant ``url`` field of ``blizanac_2004_anion_625``.
+* Changed the ``data`` and ``Test`` CI workflows to trigger via
+  ``paths-ignore`` instead of an allowlist, so that changes outside the
+  data/documentation fast-path (e.g. workflows, ``util/``, ``pixi.lock``, root
+  config) now run the full checks. Pure-documentation PRs are still skipped;
+  ``Test`` additionally skips pure-data PRs.
+* Changed the ``Validate Examples`` CI workflow to run ``validate-input`` on
+  every PR.
+* Changed the curator comments (`figureDescription.comment`) of digitized entries to consistent full sentences that only describe the data and how it was traced, e.g., a unified phrase for curator-estimated zero-current baselines and fixed typos.
+* Changed the pull request template to a short checklist that links to ``CONTRIBUTING.md``.
+* Changed the contributing section of the README to link to ``CONTRIBUTING.md``.
+* Changed metadata-schema version from 0.8.3 to 0.9.0.
+* Changed ``migrate-metadata`` to set ``echemdbSchemaVersion`` in all input YAML files, editing only the stamp line in files without structural changes.
+* Changed svgdigitizer dependency from 0.14.5 to 0.15.0, which records the name and version of svgdigitizer as ``figureDescription.software`` in the generated data packages.
+
+**Removed:**
+
+* Removed the ``Quick Data Check`` CI workflow, which is covered by
+  ``Validate Examples``.
+* Removed curator comments that do not describe the traced data (scientific context, details already contained in the metadata such as the reference electrode or techniques, missing counter electrode information) from `abou_2003_electrosorption_211`, `gomez-marin_2012_pt-111_558`, `kerner_2002_measurement_2055` (f2a), `lipkowski_1998_ionic_2875`, and `wallauer_2013_differential_1143`.
+* Removed the template placeholder comment from the source data of `engstfeld_2018_polycrystalline_17743`.
+* Removed support for Python 3.10, which reached its end of life in October 2026. The database tooling now requires Python 3.11 or later.
+* Removed the workaround for UTF-8 characters outside latin-1 in ``validate-bib-keys``, which svgdigitizer 0.15.0 handles itself.
+
+**Fixed:**
+
+* Fixed ``validate-new-input`` skipping renamed entries and, for changes
+  without a changed entry (e.g. bibliography only), the bibliography checks.
+* Fixed invalid ``geometricElectrolyteContactArea`` of the working electrode in 43 entries (#181). The key is removed where the publication does not report an area; the electrode diameter from the publication is recorded in ``shape.diameter`` instead (``briega-martos_2020_hydrogen_135452``, ``briega-martos_2021_cation_48``, ``chen_2024_deconvolution_4958``, ``cuesta_2000_adsorption_5684``, ``engstfeld_2018_polycrystalline_17743``, ``sato_2006_effect_725``).
+* Fixed the working electrode area of ``jerkiewicz_2009_effect_12309`` (``0.0431 cm2`` instead of ``4.31 1 / mm2``) and the electrode diameter, using the values and uncertainties reported in the publication.
+* Fixed the electrode diameter of ``engstfeld_2018_polycrystalline_17743`` (6 mm sample in the hanging meniscus cell, 8 mm sample in the flow cell) and described how the electrolyte contact area is defined in each cell.
+* Fixed ``durand_1992_situ_1977``: added the working electrode area (``1.12 cm2``) and dimensions, corrected the crystallographic orientation (``100`` instead of ``110``), the reference electrode (SCE instead of RHE), and the swapped value and unit of the Ar pressure.
+* Fixed empty ``shape.height`` entries without a value in ``briega-martos_2020_hydrogen_135452``, ``briega-martos_2021_cation_48`` and ``chen_2024_deconvolution_4958``.
+* Fixed the working electrode of ``howlett_2006_electrochemistry_1483``: removed the area of ``1 cm2``, which the publication does not report.
+* Fixed the working electrode type of the Au(111) films on mica (``atkin_2009_afm_13266``, ``atkin_2011_situ_6849``, ``atkin_2014_structure_44``, ``borisenko_2006_situ_6250``, ``borisenko_2012_situ_1736``, ``endres_2006_probing_1377``, ``gasparotto_2009_situ_11140``) from ``single crystal`` to ``highly oriented thin film``.
+* Fixed ``blizanac_2004_anion_625`` by removing the electrode diameter, which was derived from the area and not reported in the publication.
+
+
+
 v0.9.2
 ====================
 
