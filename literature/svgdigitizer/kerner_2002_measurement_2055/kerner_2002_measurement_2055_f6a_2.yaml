@@ -42,7 +42,7 @@ system:
     type: aqueous
 source:
   citationKey: kerner_2002_measurement_2055
-  url: https://doi.org/10.1016/0022-0728(92)80223-Q
+  url: https://doi.org/10.1016/S0013-4686(02)00073-7
   techniques:
     - EIS
 curation:
