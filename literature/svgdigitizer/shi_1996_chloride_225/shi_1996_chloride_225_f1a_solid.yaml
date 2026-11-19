@@ -45,7 +45,7 @@ system:
     type: aqueous
 source:
   citationKey: shi_1996_chloride_225
-  url: https://doi.org/10.1016/0022-0728(92)80223-Q
+  url: https://doi.org/10.1016/0022-0728(95)04313-6
 curation:
   process:
     - role: curator
